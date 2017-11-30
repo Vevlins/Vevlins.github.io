@@ -1,15 +1,24 @@
 body {
+  background-color: #f2f2f2;
   font-size: 1.25rem;
   font-family: monospace, sans-serif;
-  padding: 50px;
+  line-height: 1.5;
+  padding: 2% 20%;
+}
+.code,
+.gutter {
+  background-color: #333;
+  color: #f9f9f9;
+  padding: 0 10px;
 }
 .header {
   margin-top: 2em;
+  margin-bottom: 1em;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
 }
-.header .blog-title .logo {
+.header .title .logo {
   color: #aaa;
   font-size: 2em;
   font-family: "Comic Sans MS", cursive, LiSu, sans-serif;
@@ -46,6 +55,9 @@ body {
 .posts .post-title .post-title-link {
   color: #368ccb;
   text-decoration: none;
+}
+.posts .post-content {
+  color: #aaa;
 }
 .posts .post-content a {
   color: #368ccb;
