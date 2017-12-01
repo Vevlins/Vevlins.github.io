@@ -18,6 +18,10 @@ body {
   align-items: baseline;
   justify-content: space-between;
 }
+.header #logo {
+  width: 2em;
+  height: 2em;
+}
 .header .title .logo {
   color: #aaa;
   font-size: 2em;
@@ -39,9 +43,17 @@ body {
 .header .menu .menu-item-link:hover {
   color: #368ccb;
 }
+@media only screen and (max-width: 720px) {
+  #logo {
+    display: none;
+  }
+  .logo {
+    margin-right: 1em;
+  }
+}
 .post {
   margin: 1em auto;
-  padding: 30px 50px;
+  padding: 1.5em 2em;
   background-color: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 0 2px #ddd;
