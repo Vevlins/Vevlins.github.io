@@ -58,6 +58,52 @@ body {
   border: 1px solid #ddd;
   box-shadow: 0 0 2px #ddd;
 }
+.post .post-meta {
+  font-size: 0.7em;
+  padding: 1em 0;
+}
+.post ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+.post ul li {
+  list-style-type: none;
+  display: inline;
+  margin-right: 0.5em;
+}
+.post ul li a {
+  font-size: 0.7em;
+  text-decoration: none;
+  border-radius: 0.2em;
+  color: #fff;
+  background-color: #0c9;
+  padding: 0.3em 0.5em;
+}
+.post .title {
+  margin: 0;
+}
+.posts ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+.posts ul li {
+  list-style-type: none;
+  display: inline;
+  margin-right: 0.5em;
+}
+.posts ul li a {
+  font-size: 0.7em;
+  text-decoration: none;
+  border-radius: 0.2em;
+  color: #fff;
+  background-color: #0c9;
+  padding: 0.3em 0.5em;
+}
+.posts .title {
+  margin: 0;
+}
 .posts .post:first-child {
   margin-top: 0;
 }
@@ -77,4 +123,51 @@ body {
 }
 .posts .post-meta {
   color: #bababa;
+}
+.archive {
+  margin: 1em auto;
+  padding: 30px 50px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 2px #ddd;
+}
+.archive .post-archive {
+  list-style: none;
+  padding: 0;
+}
+.archive .post-archive .post-item {
+  margin: 5px 0;
+}
+.archive .post-archive .post-item .post-date {
+  display: inline-block;
+  margin-right: 10px;
+  color: #bababa;
+}
+.archive .post-archive .post-item .post-title {
+  color: #368ccb;
+  text-decoration: none;
+}
+.page-nav {
+  text-align: center;
+  font-size: 1em;
+  padding: 0.5em;
+}
+.page-nav > * {
+  background-color: #ddd;
+  margin-right: 0.5em;
+  padding: 0.5em;
+}
+.page-nav .extend {
+  padding: 0.5em;
+  text-decoration: none;
+  color: #0c9;
+}
+.page-nav .page-number {
+  padding: 0.5em;
+  text-decoration: none;
+  color: #0c9;
+}
+.page-nav .current {
+  padding: 0.5em;
+  color: #333;
 }
