@@ -228,3 +228,14 @@ main {
   background-color: #c30 !important;
   font-weight: 300;
 }
+.sns {
+  padding: 0;
+}
+.sns li {
+  list-style-type: none;
+  display: inline-block;
+}
+.sns li a {
+  text-decoration: none;
+  color: #444;
+}
