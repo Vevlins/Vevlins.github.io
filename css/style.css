@@ -134,6 +134,7 @@ main {
   margin-top: 2em;
   border: solid 1px #eee;
   margin-bottom: 2em;
+  background-color: #f0f0f0;
 }
 .post .toc .toc .toc-item .toc-link {
   color: #444;
