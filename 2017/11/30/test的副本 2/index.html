@@ -4,23 +4,22 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>
-        Ponyo
+        Toki
     </title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" href="/css/hljs.min.css">    
+    <script src="/js/gitment.browser.js"></script>
+    <script src="/js/hljs.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
-  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 </head>
 <body>
     <header class="header">
     <h1>
         <a class="title" href="/">
-            Ponyo
+            Toki
         </a>
     </h1>
     <h2>
@@ -52,6 +51,12 @@
                 <li class="menu-item">
                     <a href="/atom.xml" class="menu-item-link">
                         RSS
+                    </a>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="/about" class="menu-item-link">
+                        About
                     </a>
                 </li>
                 
@@ -93,11 +98,11 @@
   var gitment = new Gitment({
     // 根据文章标题设置唯一评论id
     id: window.location.herf,
-    owner: 'vevlins',
-    repo: 'Vevlins.github.io',
+    owner: "{{theme.Comment.Owner}}",
+    repo: "{{theme.Comment.Repo}}",
     oauth: {
-      client_id: '9199cb7b2557d42a8f45',
-      client_secret: '33a73359c982e32c57b49eae93bf0245d3f1266f',
+      client_id:  "{{theme.Comment.Id}}",
+      client_secret: "{{theme.Comment.Secret}}",
     },
   })
   gitment.render('comments')
@@ -108,5 +113,6 @@
     <a href="//github.com/Vevlins/toki" class="link" target="_blank">Toki</a>  by Vevlins
     </div>
 </footer>
+
 </body>
 </html>
