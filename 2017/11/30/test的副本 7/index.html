@@ -7,12 +7,19 @@
         Ponyo
     </title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 </head>
 <body>
     <header class="header">
     <h1>
-        <a class="title">
+        <a class="title" href="/">
             Ponyo
         </a>
     </h1>
@@ -53,24 +60,52 @@
 </header>
     <main class="main">
         <article class="post">
-  <div class="post-title">
-    <h2 class="title">test</h2>
-  </div>
-  <span id="busuanzi_value_page_pv"></span>次
- <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aaa/">aaa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bbb/">bbb</a></li></ul>
-
-   <div class="post-meta">
-    <span class="post-time">2017-11-30</span>
-  </div>
-  <div id="toc" class="toc-article">
-
+            <h1>
+                <a class="title" href="/2017/11/30/test的副本 7/"> 
+                    test 
+                </a>
+            </h1>
+            <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2017-11-30   
+                </a>
+                
+                
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/aaa/">aaa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bbb/">bbb</a></li></ul>
+            </div>
+              <div class="toc">
+  
 </div>
+            <div class="content">
+                <p>dddddddd</p>
 
-  <div class="post-content">
-    <p>dddddddd</p>
-
-  </div>
+            </div>
 </article>
+<div id="comments"></div>
+<script>
+  var gitment = new Gitment({
+    // 根据文章标题设置唯一评论id
+    id: '{{page.articleID}}',
+    owner: 'vevlins',
+    repo: 'Vevlins.github.io',
+    oauth: {
+      client_id: '9199cb7b2557d42a8f45',
+      client_secret: '33a73359c982e32c57b49eae93bf0245d3f1266f',
+    },
+  })
+  gitment.render('comments')
+</script>
     </main>
+    <footer class="footer">
+    <div class="copyright">©️2017
+    <a href="//github.com/Vevlins/toki" class="link" target="_blank">Toki</a>  by Vevlins
+    </div>
+</footer>
 </body>
 </html>
