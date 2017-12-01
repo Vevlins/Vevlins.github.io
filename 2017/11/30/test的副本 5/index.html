@@ -8,6 +8,8 @@
         Hexo
     </title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 
 </head>
 <body>
@@ -59,12 +61,27 @@
    <div class="post-meta">
     <span class="post-time">2017-11-30</span>
   </div>
+  <div id="toc" class="toc-article">
+
+</div>
+
   <div class="post-content">
     <p>dddddddd</p>
 
   </div>
 </article>
-
+<div id="gitment"></div>
+<script>
+var gitment = new Gitment({
+  owner: 'vevlins',
+  repo: ' Vevlins.github.io',
+  oauth: {
+    client_id: '9199cb7b2557d42a8f45',
+    client_secret: '33a73359c982e32c57b49eae93bf0245d3f1266f',
+  },
+})
+gitment.render('gitment')
+</script>
     </main>
 </body>
 </html>
