@@ -15,7 +15,7 @@ body {
   font-size: 1.25rem;
   font-family: Coustard, "华文细黑", "Times New Roman", "Microsoft YaHei", "微软雅黑", serif;
   line-height: 1.5;
-  padding: 0 30%;
+  padding: 0 20%;
   display: flex;
   flex-flow: column;
   align-items: space-between;
@@ -134,7 +134,7 @@ main {
   margin-top: 2em;
   border: solid 1px #eee;
   margin-bottom: 2em;
-  background-color: #f0f0f0;
+  background-color: #f3f3f3;
 }
 .post .toc .toc .toc-item .toc-link {
   color: #444;
