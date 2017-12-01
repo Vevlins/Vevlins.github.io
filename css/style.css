@@ -13,7 +13,7 @@ body {
   margin: 0;
   height: 100%;
   font-size: 1.25rem;
-  font-family: Coustard, STXihei, "华文细黑", "Times New Roman", "Microsoft YaHei", "微软雅黑", serif;
+  font-family: Coustard, "华文细黑", "Times New Roman", "Microsoft YaHei", "微软雅黑", serif;
   line-height: 1.5;
   padding: 0 30%;
   display: flex;
