@@ -11,6 +11,7 @@
      <link rel="stylesheet" href="/css/gitment.css">
     <link rel="stylesheet" href="/css/hljs.min.css">  
     <script src="/js/hljs.min.js"></script>  
+    <script src="/js/toki.js"></script>  
     <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 
@@ -116,30 +117,7 @@ int main(){
             </div>
 </article>
 
-    <div id="comments"></div>
-<script>
-  var gitment = new Gitment({
-    owner: 'Vevlins',
-    repo: 'Vevlins.github.io',
-    oauth: {
-      client_id:  '8d83609a651e972e308d',
-      client_secret: 'db70b2bac2d75a88a78ebe04f556a0502cc3dd2b',
-    },
-  })
-
-
-  //   var gitment = new Gitment({
-  //   // 根据文章标题设置唯一评论id
-  //   id: window.location.herf,
-  //   owner: 'Vevlins',
-  //   repo: ' Vevlins.github.io',
-  //   oauth: {
-  //     client_id:  '8d83609a651e972e308d',
-  //     client_secret: 'db70b2bac2d75a88a78ebe04f556a0502cc3dd2b',
-  //   },
-  // })
-  gitment.render('comments')
-</script>
+    
     </main>
     <footer class="footer">
     <div class="copyright">©️2017
