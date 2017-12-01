@@ -201,3 +201,28 @@ main {
   color: #c30;
   text-decoration: none;
 }
+#comments {
+  border-top: 1px dotted #ccc;
+  margin-top: 5em;
+}
+#comments * {
+  font-family: Coustard !important;
+}
+#comments .gitment-header-issue-link,
+#comments .gitment-editor-footer-tip,
+#comments .gitment-footer-container {
+  display: none !important;
+}
+#comments .gitment-editor-login-link {
+  padding: 0.2em 0.5em;
+  color: #c30 !important;
+  text-decoration: none !important;
+}
+#comments .gitment-editor-login-link:hover {
+  color: #fff !important;
+  background-color: #c30;
+  opacity: 0.9;
+}
+#comments .gitment-editor-submit {
+  background-color: #c30 !important;
+}
