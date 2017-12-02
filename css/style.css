@@ -6,6 +6,13 @@
   font-family: "Coustard";
   src: url("../font/Coustard.ttf");
 }
+@font-face {
+  font-family: 'Noto Serif';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Noto Serif Bold Italic'), local('NotoSerif-BoldItalic'), url("../font/Wreg0Be4tcFGM2t6VWytvKpkxQ1nyBMhaPnv_ZMXNdQ.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
 html {
   height: 100%;
 }
@@ -37,6 +44,17 @@ body {
 }
 main {
   flex: 1;
+}
+@media screen and (max-width: 1300px) {
+  body {
+    padding: 0 10%;
+  }
+  .title {
+    font-size: 1em !important;
+  }
+  #comments {
+    display: none;
+  }
 }
 .header > * {
   margin: 0;
@@ -92,10 +110,10 @@ main {
 }
 .post .title {
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.2em;
   text-decoration: none;
   color: #444;
-  font-weight: 300;
+  font-weight: 600;
   margin-bottom: 0.5em;
 }
 .post .title:hover {
@@ -179,8 +197,16 @@ main {
 }
 .more {
   font-size: 0.7em;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 .more a {
+  width: 100%;
+  display: flex;
   text-decoration: none;
   color: #444;
   border-bottom: 1px dotted #ccc;
@@ -191,20 +217,17 @@ main {
 .more a:hover {
   color: #c30;
 }
-.more > div {
-  width: 30%;
-}
-.more .prev {
-  float: left;
+.more .prev,
+.more .next {
+  width: 40%;
 }
 .more .prev a {
   float: left;
-}
-.more .next {
-  float: right;
+  display: block;
 }
 .more .next a {
   float: right;
+  display: block;
 }
 .archive > * {
   margin: 0;
@@ -221,6 +244,8 @@ main {
 .archive .post-archive .post-item {
   padding: 0.2em 0;
   list-style-type: square;
+  display: flex;
+  justify-content: space-between;
 }
 .archive .post-archive .post-item .date {
   margin-right: 1em;
