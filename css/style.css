@@ -55,6 +55,9 @@ main {
   #comments {
     display: none;
   }
+  .post .toc .toc {
+    padding: 1.2em !important;
+  }
 }
 .header > * {
   margin: 0;
