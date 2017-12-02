@@ -9,13 +9,28 @@
 html {
   height: 100%;
 }
+img {
+  max-width: 100%;
+}
+::selection {
+  background: #333;
+  color: #fff;
+}
+::-moz-selection {
+  background: #333;
+  color: #fff;
+}
+::-webkit-selection {
+  background: #333;
+  color: #fff;
+}
 body {
   margin: 0;
   height: 100%;
   font-size: 1.25rem;
-  font-family: Coustard, "华文细黑", "Times New Roman", "Microsoft YaHei", "微软雅黑", serif;
+  font-family: 'Noto Serif', 'Times New Roman', serif !important;
   line-height: 1.5;
-  padding: 0 20%;
+  padding: 0 30%;
   display: flex;
   flex-flow: column;
   align-items: space-between;
@@ -31,7 +46,7 @@ main {
 }
 .header .title {
   text-decoration: none;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 2.5em;
   color: #333;
   font-family: UnifrakturMaguntia;
@@ -41,12 +56,14 @@ main {
   color: #444;
 }
 .header .motto {
+  font-family: Coustard !important;
   color: #444;
   font-size: 0.4em;
   font-weight: 500;
   margin: 1em 0;
 }
 .header .navbar {
+  font-family: Coustard !important;
   border: solid 1px #eee;
   border-width: 1px 0;
   margin-bottom: 2em;
@@ -74,10 +91,15 @@ main {
   justify-content: center;
 }
 .post .title {
+  text-align: center;
   font-size: 1.5em;
   text-decoration: none;
-  color: #333;
+  color: #444;
+  font-weight: 300;
   margin-bottom: 0.5em;
+}
+.post .title:hover {
+  color: #c30;
 }
 .post .meta > * {
   margin: 0;
@@ -94,6 +116,9 @@ main {
   text-decoration: none;
   color: #444;
 }
+.post .meta .category-list .category-list-item .category-list-link:hover {
+  color: #c30;
+}
 .post .meta .tag-list .tag-list-item {
   display: inline-block;
   margin-right: 0.3em;
@@ -101,6 +126,9 @@ main {
 .post .meta .tag-list .tag-list-item .tag-list-link {
   text-decoration: none;
   color: #444;
+}
+.post .meta .tag-list .tag-list-item .tag-list-link:hover {
+  color: #c30;
 }
 .post .content {
   display: block;
@@ -110,7 +138,7 @@ main {
 .post .content a:link,
 .post .content a:active,
 .post .content a:visited {
-  color: #c30;
+  color: #444;
   padding: 0 0.3em;
 }
 .post .content a:hover {
@@ -124,6 +152,9 @@ main {
   font-size: 0.7em;
   color: #444;
 }
+.post .continue a:hover {
+  color: #c30;
+}
 .post .toc {
   justify-content: start;
   font-size: 0.9em;
@@ -134,7 +165,6 @@ main {
   margin-top: 2em;
   border: solid 1px #eee;
   margin-bottom: 2em;
-  background-color: #f3f3f3;
 }
 .post .toc .toc .toc-item .toc-link {
   color: #444;
@@ -147,11 +177,46 @@ main {
   background-color: #c30;
   color: #fff;
 }
+.more {
+  font-size: 0.7em;
+}
+.more a {
+  text-decoration: none;
+  color: #444;
+  border-bottom: 1px dotted #ccc;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.more a:hover {
+  color: #c30;
+}
+.more > div {
+  width: 30%;
+}
+.more .prev {
+  float: left;
+}
+.more .prev a {
+  float: left;
+}
+.more .next {
+  float: right;
+}
+.more .next a {
+  float: right;
+}
 .archive > * {
   margin: 0;
   padding: 0;
   color: #333;
   font-size: 0.8em;
+}
+.archive .post-archive .year {
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  margin: 1em;
 }
 .archive .post-archive .post-item {
   padding: 0.2em 0;
@@ -161,6 +226,9 @@ main {
   margin-right: 1em;
 }
 .archive .post-archive .post-item .title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   float: right;
   color: #333;
   text-decoration: none;
