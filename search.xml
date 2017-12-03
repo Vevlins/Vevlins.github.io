@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[Trump-Russia- Michael Flynn admits lying to FBI]]></title>
+      <url>/2017/11/30/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<a id="more"></a>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="c">#include&lt;stdio.h&gt;
+int main(){
+    printf(&quot;Hello World&quot;);
+    exit(0);
+}
+</code></pre>
+<pre><code class="bash">$ hexo new &quot;My New Post&quot;
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="javascript">a.each()
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> front-end </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> web </tag>
+            
+            <tag> sass </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Michael Flynn admits lying to FBI]]></title>
+      <url>/2015/12/02/prince/</url>
+      <content type="html"><![CDATA[<p>President Donald Trump’s ex-national security adviser, Michael Flynn, has pleaded guilty to making a false statement to the FBI in January.</p>
+<p>Mr Flynn was forced to resign the following month after misleading the White House about meeting the Russian ambassador before Mr Trump took office.</p>
+<p>The charges were brought by Special Counsel Robert Mueller, as part of his investigation into alleged Russian meddling in the 2016 US election.<br>Mr Flynn arrived at court on Friday.<br><a id="more"></a><br>He admitted to one count of knowingly making “false, fictitious and fraudulent statements”.</p>
+<p>According to an AFP reporter, Mr Flynn was asked by Judge Rudolph Contreras if he wished to plead guilty and responded with the words “Yes, sir”. The judge continued: “I accept your guilty plea. There will be no trial and there will be probably no appeal.”</p>
+<p>A short time later he issued a statement in which he said “I recognize that the actions I acknowledged in court today were wrong and, through my faith in God, I am working to set things right”.</p>
+<p>The former aide is the most senior member of the Trump administration so far to have been indicted by the Mueller investigation.</p>
+<p>In October, Mr Trump’s former presidential campaign manager, Paul Manafort, was accused of conspiring to defraud the US in his dealings with Ukraine. It also emerged that another ex-aide, George Papadopoulos, had pleaded guilty to making false statements to FBI agents.</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Trump </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> FBI </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+</search>
