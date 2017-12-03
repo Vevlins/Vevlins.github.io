@@ -31,6 +31,9 @@ img {
   background: #333;
   color: #fff;
 }
+.intro {
+  font-size: 0.8em;
+}
 body {
   margin: 0;
   height: 100%;
@@ -42,7 +45,8 @@ body {
   flex-flow: column;
   align-items: space-between;
 }
-main {
+main,
+.search-items {
   flex: 1;
 }
 @media screen and (max-width: 1300px) {
@@ -100,9 +104,22 @@ main {
   display: inline-block;
   padding: 0.4em 0.8em;
 }
+.header .navbar .menu .menu-item .search {
+  display: flex;
+  align-items: center;
+}
 .header .navbar .menu .menu-item .menu-item-link {
   font-size: 0.8em;
   text-decoration: none;
+  color: #333;
+}
+.header .navbar .menu .menu-item .search-icon {
+  font-size: 0.6em;
+}
+.header .navbar .menu .menu-item .search-input {
+  font-family: Coustard !important;
+  border: none !important;
+  font-size: 0.8em;
   color: #333;
 }
 .post {
@@ -240,6 +257,9 @@ main {
 .more .next a {
   float: right;
   display: block;
+}
+.gitment-editor-tab {
+  border-width: 0 1px 0 0;
 }
 .bdsharebuttonbox {
   padding-top: 2em;
