@@ -53,7 +53,10 @@ main {
     font-size: 1em !important;
   }
   #comments {
-    display: none;
+    margin: 0 -5%;
+  }
+  .gitment-editor-tab:not(.gitment-selected) {
+    display: none !important;
   }
   .post .toc .toc {
     padding: 1.2em !important;
@@ -117,10 +120,13 @@ main {
   text-decoration: none;
   color: #444;
   font-weight: 600;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 .post .title:hover {
   color: #c30;
+}
+.post .meta {
+  margin-bottom: 1em;
 }
 .post .meta > * {
   margin: 0;
@@ -166,6 +172,9 @@ main {
   background-color: #c30;
   opacity: 0.8;
   color: #fff;
+}
+.post .content p {
+  text-indent: 2em;
 }
 .post .continue a {
   border-bottom: 1px dotted #ccc;
@@ -231,6 +240,19 @@ main {
 .more .next a {
   float: right;
   display: block;
+}
+.jiathis_style {
+  padding-top: 2em;
+  display: flex;
+  justify-content: center;
+}
+.jiathis_style .jtico {
+  background-image: none !important;
+  margin: 0 !important;
+  color: #444;
+  overflow: visible !important;
+  font-size: 0.8em !important;
+  color: #444 !important;
 }
 .archive > * {
   margin: 0;
@@ -300,7 +322,7 @@ main {
 }
 #comments {
   border-top: 1px dotted #ccc;
-  margin-top: 5em;
+  margin-top: 2em;
 }
 #comments * {
   font-family: Coustard !important;

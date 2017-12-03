@@ -5,3 +5,10 @@ items.forEach(function(item){
         item.style.color = '#333'
     }
 })
+
+// setTimeout(function(){
+//     var login = document.querySelector('.gitment-editor-login-link')
+    
+//     document.querySelector('.gitment-editor-login').innerHTML = login.outerHTML
+    
+// },2000)
