@@ -49,7 +49,7 @@ main {
   body {
     padding: 0 10%;
   }
-  .title {
+  .post .title {
     font-size: 1em !important;
   }
   #comments {
@@ -241,18 +241,15 @@ main {
   float: right;
   display: block;
 }
-.jiathis_style {
+.bdsharebuttonbox {
   padding-top: 2em;
   display: flex;
   justify-content: center;
 }
-.jiathis_style .jtico {
+.bdsharebuttonbox a {
   background-image: none !important;
-  margin: 0 !important;
-  color: #444;
-  overflow: visible !important;
+  text-decoration: none;
   font-size: 0.8em !important;
-  color: #444 !important;
 }
 .archive > * {
   margin: 0;
