@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="/css/hljs.min.css">
     <script src="/js/hljs.min.js"></script>  
     <script src="/js/gitment.browser.js"></script>  
-
-
 </head>
 <body>
     <header class="header">
@@ -125,7 +123,31 @@ int main(){
     </div>
     
 </div>
-    <div id="comments"></div>
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+
+<a class="jiathis_button_tsina">
+    <i class="fa fa-weibo" aria-hidden="true" style="color:#ff6363"></i>
+</a>
+<a class="jiathis_button_weixin">
+<i class="fa fa-weixin" aria-hidden="true" style="color:#1cbd8f"></i>
+</a>
+<a class="jiathis_button_twitter">
+<i class="fa fa-twitter" aria-hidden="true" style="color:#00A7EB"></i>
+</a>
+<a class="jiathis_button_fb">
+<i class="fa fa-facebook" aria-hidden="true" style="color:#3b5998"></i>
+</a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	summary:"",
+	shortUrl:true,
+	hideMore:true
+}
+</script>
+<!-- JiaThis Button END -->
+<div id="comments"></div>
 
 <script>
     var gitment = new Gitment({
@@ -148,6 +170,7 @@ int main(){
 </footer>
 
     <script src="/js/toki.js"></script>  
+    <script src="http://v3.jiathis.com/code/jia.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
