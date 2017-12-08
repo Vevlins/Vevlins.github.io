@@ -13,6 +13,7 @@ search.onclick = function(e){
     search.style.display = 'none'
     search_input.style.display = 'block'
     search_input.focus()
+
 }
 search_input.onblur = function(){
     search_input.style.display = 'none'
@@ -26,27 +27,33 @@ function matcher(post, regExp) {
 }
   
 render = function(result){
-    var items = ''
-    result.forEach(post => {
-        var title = post.title
-        var date = post.date
-        var path = '../../../../../../../'+post.path
-        date = new Date(date)
-        date = date.toLocaleDateString()
-       var item = `<li class='post-item'> \
-        <span class='date'>${date}</span> \
-        <a class='title' href='${path}'>${title}</a> \
-      </li>`
-      items += item
-    });
-    
-   items = `<section class='archive'>
-    <ul class='post-archive'>
-        ${items}
-    </ul>
-  </section>`
+    if(result.length == 0){
+        document.querySelector('.not-found').style.display ='block'
+        document.querySelector('.search-items').innerHTML = ''
+    }else{
+        var items = ''
+        result.forEach(post => {
+            var title = post.title
+            var date = post.date
+            var path = '../../../../../../../'+post.path
+            date = new Date(date)
+            date = date.toLocaleDateString()
+           var item = `<li class='post-item'> \
+            <span class='date'>${date}</span> \
+            <a class='title' href='${path}'>${title}</a> \
+          </li>`
+          items += item
+        });
+        
+       items = `<section class='archive'>
+        <ul class='post-archive'>
+            ${items}
+        </ul>
+      </section>`
+      document.querySelector('.search-items').innerHTML = items
+      document.querySelector('.not-found').style.display ='none'
+    }
   document.querySelector('main').style.display = 'none'
-  document.querySelector('.search-items').innerHTML = items
 }
 
 onEnter = function(e){
@@ -64,3 +71,13 @@ onEnter = function(e){
     })
 }
 }
+
+$(window).scroll(function(){
+    if(document.documentElement.clientWidth <1300) return;
+    var height = document.body.offsetHeight
+    if($(window).scrollTop()>height/4){
+        $('#top').show()
+    }else{
+        $('#top').hide()
+    }
+}); 

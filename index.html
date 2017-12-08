@@ -17,7 +17,7 @@
     <script src="/js/gitment.browser.js"></script>  
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="header">
     <h1>
         <a class="title" href="/">
             Toki
@@ -67,7 +67,7 @@
                         Search                   
                         <i class="fa fa-long-arrow-right search-icon" aria-hidden="true"></i>
                     </a>
-                        <input placeholder="Search..." class="search-input" style="display:none" onkeydown="onEnter(event)"></input>
+                        <input placeholder="Search..." class="search-input" style="display:none;border:none!important;" onkeydown="onEnter(event)" onkeypress="onEnter(event)"></input>
                 </li>
         </ul>
     </nav>
@@ -210,8 +210,10 @@
 <p>He was also appointed as tánaiste - deputy prime minister - following the resignation of his colleague, Frances Fitzgerald, over a political row that threatened to bring down the government.</p>
 <p>Speaking on the BBC’s Andrew Marr Show, he said Ireland did not want to exercise its veto on the issue.</p>
 <p>“There is no desire, I can tell you, in Ireland, to delay this process,” he said.</p>
-<pre><code>The hardest border - BBC News
-</code></pre><p>“But at the same time, we have a responsibility as a government to represent the interests on the island of Ireland.</p>
+<blockquote>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p>
+</blockquote>
+<p>“But at the same time, we have a responsibility as a government to represent the interests on the island of Ireland.</p>
 <p>“We believe that, as an island, Ireland is uniquely vulnerable and exposed to a potential bad outcome from Brexit.</p>
 <p>“That is why we are looking for more progress than we have.” </p>
 
@@ -227,15 +229,19 @@
 </section>
 
     </main>
+    <a class="not-found">not found!</a>
     <div class="search-items">
     </div>
+    <a href="#header" id="top" style="display:none">
+        <i class="fa fa-sort-asc fa-2x"></i>
+    </a>
     <footer class="footer">
     <div class="copyright">©️2017
     <a href="//github.com/Vevlins/toki" class="link" target="_blank">Toki</a>  by Vevlins
     </div>
 </footer>
 
-    <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <script src="/js/jquery.js"></script>
     <script src="/js/toki.js"></script>  
   <script>hljs.initHighlightingOnLoad();</script>
 </body>
