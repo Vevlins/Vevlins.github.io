@@ -258,6 +258,23 @@ main,
 .post .content p {
   text-indent: 2em;
 }
+.post .content hr {
+  border: none;
+  border-bottom: 1px dotted #ccc;
+}
+.post .content table {
+  padding: 0;
+  border-collapse: collapse;
+}
+.post .content tr:nth-child(even) {
+  background-color: #eee;
+}
+.post .content th,
+.post .content td {
+  border: 1px solid #ccc;
+  margin: 0;
+  padding: 0.3em 0.5em;
+}
 .post .continue a {
   border-bottom: 1px dotted #ccc;
   text-decoration: none;
