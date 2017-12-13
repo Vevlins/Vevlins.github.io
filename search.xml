@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[ddddddd]]></title>
-      <url>/cjb4zh8f900047j2pupgscpj9/</url>
+      <url>/cjb5aadmt0002o12p4j1hjets/</url>
       <content type="html"></content>
       
         
@@ -12,7 +12,7 @@
     
     <entry>
       <title><![CDATA[博客文集《前方的路》发布]]></title>
-      <url>/cjb4zh8ff00097j2pzpmrszkn/</url>
+      <url>/cjb5aadn2000ao12psd3xnz86/</url>
       <content type="html"><![CDATA[<p>我写博客十多年了，从一个愤青 + 文青的学生，变成如今沉默寡言的<em>中年人</em>。一路上，随手写下的文字，累积有1000多篇。我早想整理出书，一方面为了纪念，另一方面现在的博客网站不易用，老文章很难找，迫切需要一个便于查找和阅读的精华版。<br>This is <a href="http://example.com/" title="Title" target="_blank" rel="noopener">an example</a> inline link.  </p>
 <hr>
 <table>
@@ -52,7 +52,7 @@
     
     <entry>
       <title><![CDATA[Afghan leader Ashraf Ghani apologises for headscarf remark]]></title>
-      <url>/cjb4zh8f700027j2ppx5p0jyf/</url>
+      <url>/cjb5aadmp0000o12pg1dubsy5/</url>
       <content type="html"><![CDATA[<p>The Afghan president has apologised to women for remarks he made about the traditional headscarf.</p>
 <p>On Saturday, Ashraf Ghani responded to claims that some government officials have links to so-called Islamic State. He said people should provide evidence or wear a woman’s headscarf.</p>
 <p>It provoked a backlash from people who viewed the comments as sexist.</p>
@@ -73,26 +73,17 @@
     
     <entry>
       <title><![CDATA[Trump-Russia- Michael Flynn admits lying to FBI]]></title>
-      <url>/cjb4zh8fe00087j2pboazvna0/</url>
+      <url>/cjb5aadmz0007o12pcn8yz2xi/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><a id="more"></a>
-<pre><code class="c">#include&lt;stdio.h&gt;
-int main(){
-    printf(&quot;Hello World&quot;);
-    exit(0);
-}
-</code></pre>
-<pre><code class="bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World"</span>);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="javascript">a.each()
-</code></pre>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.each()</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
       
@@ -115,12 +106,12 @@ int main(){
     
     <entry>
       <title><![CDATA[ABC's Brian Ross suspended for erroneous report on Flynn plea deal]]></title>
-      <url>/cjb4zh8f200007j2pademseox/</url>
+      <url>/cjb5aadmw0005o12prquzagk1/</url>
       <content type="html"><![CDATA[<p>US news network ABC has suspended its chief investigative reporter after he made a “serious error” about Donald Trump’s former top aide, Michael Flynn.</p>
 <p>Brian Ross reported Mr Trump was a candidate when he directed Michael Flynn to make contact with Moscow.<br><img src="https://ichef.bbci.co.uk/news/660/cpsprodpb/E3FB/production/_99036385_mediaitem99036384.jpg" alt=""><br>But he later clarified that the orders came when Mr Trump was president-elect.</p>
 <p>The actions of Mr Trump’s campaign team are under investigation over whether they colluded with Russia to help sway the election in his favour.<br><a id="more"></a><br>On Friday, Michael Flynn - who Mr Trump sacked as national security adviser - pleaded guilty to lying to the FBI about his contacts with Russian officials prior to the president’s inauguration in January.</p>
 <pre><code>Six big takeaways from the Flynn deal
-Russia-Trump: Who&#39;s who in the drama to end all dramas?
+Russia-Trump: Who&apos;s who in the drama to end all dramas?
 The Trump-Russia saga in 200 words
 </code></pre><p>As part of a plea bargain, Mr Flynn agreed to co-operate with special prosecutor Robert Mueller’s investigation into possible collusion between the Trump campaign and Russia ahead of the 2016 election.</p>
 <p>US intelligence agencies have already concluded that Russian President Vladimir Putin directed a state effort to influence the US election in favour of Mr Trump.</p>
@@ -159,7 +150,7 @@ Trump-Russia: Six big takeaways from the Flynn deal
 1 December 2017
 Video Crowds shout at ex-Trump adviser Michael Flynn at court
 1 December 2017
-Russia-Trump: Who&#39;s who in the drama to end all dramas?
+Russia-Trump: Who&apos;s who in the drama to end all dramas?
 1 December 2017
 Video Michael Flynn: The man at the centre of Trump’s Russia crisis
 5 June 2017
@@ -184,13 +175,13 @@ From the section US &amp; Canada
 <p>Video<br>A coal worker’s unlikely career change</p>
 <p>Most Read</p>
 <pre><code>1 Russia-Trump: President hits out at FBI over Russia inquiry
-2 West Coast main line faces &#39;major&#39; disruption
-3 What&#39;s different about a Trump Christmas?
-4 Brexit supporters list demands for &#39;divorce bill&#39; talks
+2 West Coast main line faces &apos;major&apos; disruption
+3 What&apos;s different about a Trump Christmas?
+4 Brexit supporters list demands for &apos;divorce bill&apos; talks
 5 North Korea: US in race to address threat, says HR McMaster
-6 ABC&#39;s Brian Ross suspended for erroneous report on Flynn plea deal
-7 &#39;Supermoon&#39; to brighten up skies for stargazers
-8 Man&#39;s body found at Hawthorn High School, Pontypridd
+6 ABC&apos;s Brian Ross suspended for erroneous report on Flynn plea deal
+7 &apos;Supermoon&apos; to brighten up skies for stargazers
+8 Man&apos;s body found at Hawthorn High School, Pontypridd
 9 Renting in retirement: How feasible is it?
 10 Social mobility board quits over lack of progress
 </code></pre>]]></content>
@@ -200,7 +191,7 @@ From the section US &amp; Canada
     
     <entry>
       <title><![CDATA[Ireland has 'no desire' to delay Brexit - deputy PM]]></title>
-      <url>/cjb4zh8fd00077j2pgwv09mzz/</url>
+      <url>/cjb5aadmy0006o12pbz4wqupb/</url>
       <content type="html"><![CDATA[<p>Ireland’s deputy prime minister has said his country has “no desire” to delay the UK’s Brexit talks.</p>
 <p>But Simon Coveney also warned that not enough progress had been made on the border with Northern Ireland.</p>
 <p>While Ireland was not looking for “full detail”, it was seeking the parameters within which a solution could be found.</p>

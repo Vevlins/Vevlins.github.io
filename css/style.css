@@ -217,9 +217,10 @@ main,
 }
 .post .content blockquote {
   padding: 1em;
-  border-left: 8px solid #ff6363;
+  border-left: 8px solid #aeb6bf;
+  color: #6b7a8c;
   margin: 0.5em 0 !important;
-  background-color: #f8f9f9;
+  background-color: #fdfefe;
 }
 .post .content hr {
   border: none;
@@ -240,8 +241,8 @@ main,
 }
 .post .content img {
   display: block;
-  position: relative;
   margin: 1em auto;
+  max-width: 100%;
 }
 .post .continue a {
   border-bottom: 1px dotted #ccc;
