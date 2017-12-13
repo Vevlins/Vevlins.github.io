@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://vevlins.github.io/"/>
-  <updated>2017-12-12T07:30:54.286Z</updated>
+  <updated>2017-12-13T08:39:41.380Z</updated>
   <id>https://vevlins.github.io/</id>
   
   <author>
@@ -17,20 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>博客文集《前方的路》发布</title>
-    <link href="https://vevlins.github.io/cjb3bpdjc0007dm2pvirhr5mt/"/>
-    <id>https://vevlins.github.io/cjb3bpdjc0007dm2pvirhr5mt/</id>
-    <published>2017-12-08T12:02:56.000Z</published>
-    <updated>2017-12-12T07:30:54.286Z</updated>
+    <title>ddddddd</title>
+    <link href="https://vevlins.github.io/cjb4u3h3z0002il2ppyam0lxn/"/>
+    <id>https://vevlins.github.io/cjb4u3h3z0002il2ppyam0lxn/</id>
+    <published>2017-12-13T08:39:41.000Z</published>
+    <updated>2017-12-13T08:39:41.380Z</updated>
     
-    <content type="html"><![CDATA[<p>我写博客十多年了，从一个愤青 + 文青的学生，变成如今沉默寡言的<em>中年人</em>。一路上，随手写下的文字，累积有1000多篇。我早想整理出书，一方面为了纪念，另一方面现在的博客网站不易用，老文章很难找，迫切需要一个便于查找和阅读的精华版。  </p><p>This is <a href="http://example.com/" title="Title" target="_blank" rel="noopener">an example</a> inline link.  </p><hr><table><thead><tr><th>第一格表头</th><th>第二格表头</th></tr></thead><tbody><tr><td>内容单元格 第一列第一格</td><td>内容单元格第二列第一格</td></tr><tr><td>内容单元格 第一列第二格 多加文字</td><td>内容单元格第二列第二格  </td></tr></tbody></table><p>三年前，我整理过一次，也出版了，书名是《如何变得有思想》。那本书的<code>可读性</code>很差，文章按主题分类（人物篇、历史篇、科技篇……）。我后来醒悟，这样做是不对的。我要给读者看的是一个故事，就是我的故事，而不是一篇篇零散的文章。  </p><p>今年，我投入很多时间，把过去的文章按照时间排序，重新编成一本书。书名改成《前方的路》，出自黑塞的小说《德米安》，意为寻找人生的出路。  </p><p>明年，这本书会和《未来世界的幸存者》一起出版。我跟出版社建议，可以做成一套两卷本的《阮一峰文集》。  </p><p>古人说，人生要立功、立德、立言。完成了这两本书，我就”立言”了。想说的话都说了，以后会少说多做，专心搞技术，完成几个真正有用的技术项目。  </p>]]></content>
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>博客文集《前方的路》发布</title>
+    <link href="https://vevlins.github.io/cjb4u3h46000ail2pdevgrqxl/"/>
+    <id>https://vevlins.github.io/cjb4u3h46000ail2pdevgrqxl/</id>
+    <published>2017-12-08T12:02:56.000Z</published>
+    <updated>2017-12-12T12:51:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>我写博客十多年了，从一个愤青 + 文青的学生，变成如今沉默寡言的<em>中年人</em>。一路上，随手写下的文字，累积有1000多篇。我早想整理出书，一方面为了纪念，另一方面现在的博客网站不易用，老文章很难找，迫切需要一个便于查找和阅读的精华版。<br>This is <a href="http://example.com/" title="Title" target="_blank" rel="noopener">an example</a> inline link.  </p><hr><div id="flowchart-0" class="flow-chart"></div><table><thead><tr><th>第一格表头</th><th>第二格表头</th></tr></thead><tbody><tr><td>内容单元格 第一列第一格</td><td>内容单元格第二列第一格</td></tr><tr><td>内容单元格 第一列第二格 多加文字</td><td>内容单元格第二列第二格  </td></tr></tbody></table><p>三年前，我整理过一次，也出版了，书名是《如何变得有思想》。那本书的<code>可读性</code>很差，文章按主题分类（人物篇、历史篇、科技篇……）。我后来醒悟，这样做是不对的。我要给读者看的是一个故事，就是我的故事，而不是一篇篇零散的文章。  </p><p>今年，我投入很多时间，把过去的文章按照时间排序，重新编成一本书。书名改成《前方的路》，出自黑塞的小说《德米安》，意为寻找人生的出路。  </p><p>明年，这本书会和《未来世界的幸存者》一起出版。我跟出版社建议，可以做成一套两卷本的《阮一峰文集》。  </p><p>古人说，人生要立功、立德、立言。完成了这两本书，我就”立言”了。想说的话都说了，以后会少说多做，专心搞技术，完成几个真正有用的技术项目。  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: Start|past:>http://www.google.com[blank]e=>end: End:>http://www.google.comop1=>operation: My Operation|pastop2=>operation: Stuff|currentsub1=>subroutine: My Subroutine|invalidcond=>condition: Yesor No?|approved:>http://www.google.comc2=>condition: Good idea|rejectedio=>inputoutput: catch something...|requestst->op1(right)->condcond(yes, right)->c2cond(no)->sub1(left)->op1c2(yes)->io->ec2(no)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;我写博客十多年了，从一个愤青 + 文青的学生，变成如今沉默寡言的&lt;em&gt;中年人&lt;/em&gt;。一路上，随手写下的文字，累积有1000多篇。我早想整理出书，一方面为了纪念，另一方面现在的博客网站不易用，老文章很难找，迫切需要一个便于查找和阅读的精华版。  &lt;/p&gt;
-&lt;p&gt;This
+        &lt;p&gt;我写博客十多年了，从一个愤青 + 文青的学生，变成如今沉默寡言的&lt;em&gt;中年人&lt;/em&gt;。一路上，随手写下的文字，累积有1000多篇。我早想整理出书，一方面为了纪念，另一方面现在的博客网站不易用，老文章很难找，迫切需要一个便于查找和阅读的精华版。&lt;br&gt;This is &lt;a
       
     
     </summary>
@@ -44,8 +57,8 @@
   
   <entry>
     <title>Afghan leader Ashraf Ghani apologises for headscarf remark</title>
-    <link href="https://vevlins.github.io/cjb3bpdj20002dm2p90omo49d/"/>
-    <id>https://vevlins.github.io/cjb3bpdj20002dm2p90omo49d/</id>
+    <link href="https://vevlins.github.io/cjb4u3h3v0000il2pf8u49z31/"/>
+    <id>https://vevlins.github.io/cjb4u3h3v0000il2pf8u49z31/</id>
     <published>2017-12-03T16:04:02.000Z</published>
     <updated>2017-12-03T16:07:21.557Z</updated>
     
@@ -68,8 +81,8 @@
   
   <entry>
     <title>Trump-Russia- Michael Flynn admits lying to FBI</title>
-    <link href="https://vevlins.github.io/cjb3bpdiy0000dm2pkv6hjmqy/"/>
-    <id>https://vevlins.github.io/cjb3bpdiy0000dm2pkv6hjmqy/</id>
+    <link href="https://vevlins.github.io/cjb4u3h450007il2pnzs8jkmi/"/>
+    <id>https://vevlins.github.io/cjb4u3h450007il2pnzs8jkmi/</id>
     <published>2017-11-30T08:47:25.147Z</published>
     <updated>2017-12-03T16:07:46.668Z</updated>
     
@@ -93,8 +106,8 @@
   
   <entry>
     <title>ABC&#39;s Brian Ross suspended for erroneous report on Flynn plea deal</title>
-    <link href="https://vevlins.github.io/cjb3bpdj70005dm2pdvfrctgm/"/>
-    <id>https://vevlins.github.io/cjb3bpdj70005dm2pdvfrctgm/</id>
+    <link href="https://vevlins.github.io/cjb4u3h430005il2p0c4t7kh5/"/>
+    <id>https://vevlins.github.io/cjb4u3h430005il2p0c4t7kh5/</id>
     <published>2015-12-03T16:05:34.000Z</published>
     <updated>2017-12-06T12:14:11.000Z</updated>
     
@@ -113,8 +126,8 @@
   
   <entry>
     <title>Ireland has &#39;no desire&#39; to delay Brexit - deputy PM</title>
-    <link href="https://vevlins.github.io/cjb3bpdjb0006dm2pgauj1y7j/"/>
-    <id>https://vevlins.github.io/cjb3bpdjb0006dm2pgauj1y7j/</id>
+    <link href="https://vevlins.github.io/cjb4u3h440006il2pnr7rwoox/"/>
+    <id>https://vevlins.github.io/cjb4u3h440006il2pnr7rwoox/</id>
     <published>2015-12-03T16:01:48.000Z</published>
     <updated>2017-12-06T11:40:48.352Z</updated>
     
