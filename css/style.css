@@ -208,6 +208,16 @@ main,
 .post .content svg {
   max-width: 100%;
 }
+.post .content *:not(pre) code {
+  background-color: #eaeaea;
+  padding: 0.1em;
+  font-weight: 300;
+  font-size: 0.95em;
+  margin: 0 0.2em;
+  font-family: 'Noto Serif', 'Times New Roman', serif !important;
+  border: 1px solid rgba(51,51,51,0.1);
+  border-radius: 0.1em;
+}
 .post .content strong,
 .post .content em {
   font-weight: 900;
@@ -369,13 +379,13 @@ main,
 #comments .gitment-editor-preview {
   font-family: 'Noto Serif', 'Times New Roman', serif !important;
 }
-#comments 。gitment-editor-logout-link,
+#comments .gitment-editor-logout-link,
 #comments .gitment-editor-login-link {
   padding: 0.2em 0.5em;
   color: #c30 !important;
   text-decoration: none !important;
 }
-#comments 。gitment-editor-logout-link:hover,
+#comments .gitment-editor-logout-link:hover,
 #comments .gitment-editor-login-link:hover {
   color: #fff !important;
   background-color: #c30 !important;
