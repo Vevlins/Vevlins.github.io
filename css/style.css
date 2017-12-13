@@ -369,14 +369,16 @@ main,
 #comments .gitment-editor-preview {
   font-family: 'Noto Serif', 'Times New Roman', serif !important;
 }
+#comments 。gitment-editor-logout-link,
 #comments .gitment-editor-login-link {
   padding: 0.2em 0.5em;
   color: #c30 !important;
   text-decoration: none !important;
 }
+#comments 。gitment-editor-logout-link:hover,
 #comments .gitment-editor-login-link:hover {
   color: #fff !important;
-  background-color: #c30;
+  background-color: #c30 !important;
   opacity: 0.9;
 }
 #comments .gitment-editor-submit {
