@@ -58,7 +58,7 @@ main,
     display: none !important;
   }
   .post .toc .toc-list {
-    padding: 1.8em !important;
+    padding-left: 2em !important;
   }
   #top {
     display: none;
@@ -164,13 +164,16 @@ main,
   margin-bottom: 0.3em;
 }
 .post .title:hover {
-  color: #c30;
+  color: #2b3f52;
 }
 .post .content {
   display: block;
   color: #444;
   font-size: 0.8em;
   margin: 2em 0;
+}
+.post .content h1 {
+  font-size: 1.8em;
 }
 .post .content a:link,
 .post .content a:active,
@@ -179,26 +182,29 @@ main,
   padding: 0 0.3em;
 }
 .post .content a:hover {
-  background-color: #c30;
   opacity: 0.8;
   color: #fff;
 }
+.post .content * {
+  word-break: break-all !important;
+  word-wrap: none !important;
+}
 .post .content pre *::selection {
-  background: #fff !important;
-  color: #000 !important;
+  background: #333 !important;
+  color: #fff !important;
 }
 .post .content pre *::-moz-selection {
-  background: #fff !important;
-  color: #000 !important;
+  background: #333 !important;
+  color: #fff !important;
 }
 .post .content pre *::-webkit-selection {
-  background: #fff !important;
-  color: #000 !important;
+  background: #333 !important;
+  color: #fff !important;
 }
 .post .content iframe {
   max-width: 100%;
-  display: flex;
-  align-self: center;
+  margin: 0 auto;
+  display: block;
 }
 .post .content p {
   text-indent: 2em;
@@ -208,46 +214,104 @@ main,
 .post .content svg {
   max-width: 100%;
 }
+.post .content body {
+  font-size: 1em;
+  font-family: Georgia, "PingFang SC", "Microsoft Yahei", Helvetica, arial, serif;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #516272;
+  padding: 2em 0;
+}
+.post .content h1,
+.post .content h2,
+.post .content h3,
+.post .content h4,
+.post .content h5,
+.post .content h6 {
+  color: #2b3f52;
+  border-bottom: 1px solid #516272;
+}
+.post .content p {
+  text-indent: 2em;
+}
+.post .content blockquote {
+  padding-left: 1em;
+  border-left: 0.4em solid #516272;
+  background-color: #f7f9fa;
+  padding: 0.3em 0.5em;
+  margin: 1em 0 1em 0;
+}
+.post .content .headerlink {
+  text-decoration: none;
+}
+.post .content .headerlink::before {
+  content: '#';
+}
 .post .content *:not(pre) code {
-  background-color: #eaeaea;
+  background-color: #f7f9fa;
+  padding: 0.1em 0.2em;
+  border: 1px solid #eaeded;
+  margin: 0.2em;
+  font-size: 0.9em;
+  color: #66bb6a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.post .content a {
   padding: 0.1em;
-  font-weight: 300;
-  font-size: 0.95em;
-  margin: 0 0.2em;
-  font-family: 'Noto Serif', 'Times New Roman', serif !important;
-  border: 1px solid rgba(51,51,51,0.1);
-  border-radius: 0.1em;
+}
+.post .content a:link,
+.post .content a:active,
+.post .content a:visited {
+  color: #a0aabf;
+  font-style: italic;
+}
+.post .content a:hover {
+  color: #aeb6bf;
+}
+.post .content pre {
+  display: block;
+  word-wrap: break-word;
+  word-break: break-all;
+  background-color: #f7f9f9;
+  padding: 0.6em;
+  border: 1px solid #eaeded;
+  border-radius: 3px;
 }
 .post .content strong,
 .post .content em {
-  font-weight: 900;
-  font-style: normal;
-  color: #000;
-  padding: 0 0.3em;
+  font-size: 1.1em;
 }
-.post .content blockquote {
-  padding: 1em;
-  border-left: 8px solid #aeb6bf;
-  color: #6b7a8c;
-  margin: 0.5em 0 !important;
-  background-color: #fdfefe;
+.post .content pre code {
+  color: #2b3f52 !important;
+  display: block;
+  overflow: scroll;
+  word-wrap: break-word;
+  word-break: break-all;
+  background-color: inherit;
+  border: none !important;
 }
 .post .content hr {
   border: none;
-  border-bottom: 1px dotted #ccc;
+  border-bottom: 2px dashed #ccc;
+}
+.post .content sup a {
+  padding: 0 !important;
+  font-style: normal !important;
 }
 .post .content table {
-  padding: 0;
   border-collapse: collapse;
+  background-color: #f8f9f9;
 }
-.post .content tr:nth-child(even) {
-  background-color: #eee;
-}
-.post .content th,
-.post .content td {
+.post .content tr,
+.post .content td,
+.post .content th {
   border: 1px solid #ccc;
   margin: 0;
   padding: 0.3em 0.5em;
+}
+.post .content tr:nth-child(even) {
+  background-color: #ebedef;
 }
 .post .content img {
   display: block;
@@ -261,7 +325,7 @@ main,
   color: #444;
 }
 .post .continue a:hover {
-  color: #c30;
+  color: #2b3f52;
 }
 .more {
   font-size: 0.7em;
@@ -283,18 +347,17 @@ main,
   text-overflow: ellipsis;
 }
 .more a:hover {
-  color: #c30;
+  color: #2b3f52;
 }
 .more .prev,
 .more .next {
   width: 40%;
 }
 .more .prev a {
-  float: left;
   display: block;
 }
 .more .next a {
-  float: right;
+  text-align: right;
   display: block;
 }
 .archive > * {
@@ -333,6 +396,7 @@ main,
   font-size: 0.7em;
   padding: 0.5em;
   margin: 5em 0;
+  font-weight: bold;
 }
 .page-nav > * {
   margin-right: 0.5em;
@@ -343,7 +407,7 @@ main,
 .page-nav a:active,
 .page-nav a:link,
 .page-nav a:visited {
-  color: #c30;
+  color: #2b3f52;
 }
 .page-nav .current {
   color: #333;
@@ -354,14 +418,14 @@ main,
   justify-content: center;
   align-items: center;
   color: #444;
-  margin-top: 5em;
+  margin-top: 2em;
 }
 .footer .footer-copyright {
   font-size: 0.6em;
   color: #444;
 }
 .footer .footer-copyright .link {
-  color: #c30;
+  color: #2b3f52;
   text-decoration: none;
 }
 #comments {
@@ -382,17 +446,17 @@ main,
 #comments .gitment-editor-logout-link,
 #comments .gitment-editor-login-link {
   padding: 0.2em 0.5em;
-  color: #c30 !important;
+  color: #2b3f52 !important;
   text-decoration: none !important;
 }
 #comments .gitment-editor-logout-link:hover,
 #comments .gitment-editor-login-link:hover {
   color: #fff !important;
-  background-color: #c30 !important;
+  background-color: #2b3f52 !important;
   opacity: 0.9;
 }
 #comments .gitment-editor-submit {
-  background-color: #c30 !important;
+  background-color: #2b3f52 !important;
   font-weight: 300;
 }
 #comments .write {
@@ -481,7 +545,7 @@ main,
   display: flex;
   padding: 1em;
   font-size: 0.8em;
-  border-left: 8px solid #ff6363;
+  border-left: 8px solid #2b3f52;
   margin: 0.5em 0 !important;
   margin-top: 3em !important;
   background-color: #f8f9f9;
@@ -493,7 +557,7 @@ main,
 }
 .copyright a:link,
 .copyright a:visited {
-  color: #ff6363 !important;
+  color: #aeb6bf !important;
   text-decoration: none;
 }
 .meta {
@@ -522,7 +586,7 @@ main,
   color: #444;
 }
 .meta .category-list .category-list-item .category-list-link:hover {
-  color: #c30;
+  color: #2b3f52;
 }
 .meta .tag-list {
   white-space: nowrap;
@@ -537,7 +601,7 @@ main,
   color: #444;
 }
 .meta .tag-list .tag-list-item .tag-list-link:hover {
-  color: #c30;
+  color: #2b3f52;
 }
 .bdsharebuttonbox {
   padding-top: 2em;
@@ -557,13 +621,14 @@ main,
 }
 .tip button {
   align-self: center;
-  background-color: #ff6363;
+  background-color: #2b3f52;
   border: none;
   color: #fff;
   font-size: 0.8em;
   padding: 0.4em 0.9em;
   border-radius: 0.3em;
   font-weight: 400;
+  outline: none;
 }
 .tip button:active {
   opacity: 0.9;
@@ -601,10 +666,13 @@ main,
   color: #444;
 }
 .toc .toc-list {
-  padding: 2em 5em;
+  font-size: 0.9em;
   margin-top: 2em;
-  border: solid 1px #eee;
-  margin-bottom: 2em;
+  padding-left: 2em;
+  border-left: 0.3em solid #2b3f52;
+}
+.toc .toc-list .toc-list-item .toc-list-child {
+  padding-left: 2em;
 }
 .toc .toc-list .toc-list-item .toc-list-link {
   color: #444;
@@ -614,6 +682,4 @@ main,
 }
 .toc .toc-list .toc-list-item .toc-list-link:hover {
   opacity: 0.8;
-  background-color: #c30;
-  color: #fff;
 }

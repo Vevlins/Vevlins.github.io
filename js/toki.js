@@ -1,7 +1,7 @@
 var url = window.location.href
 var items = document.querySelectorAll('.menu-item-link')
 items.forEach(function(item){
-    if(item.href == url) {item.style.color = '#c30'}else{
+    if(item.href == url) {item.style.color = '#607d8b'}else{
         item.style.color = '#333'
     }
 })
@@ -15,9 +15,11 @@ search.onclick = function(e){
     search_input.focus()
 
 }
-search_input.onblur = function(){
-    search_input.style.display = 'none'
-    search.style.display = 'block'
+search_input.onblur = function(e){
+    setTimeout(function(){
+        search_input.style.display = 'none'
+        search.style.display = 'block'
+    }, 50);
 }
 function matcher(post, regExp) {
     // 匹配优先级：title > tags > text
@@ -72,7 +74,7 @@ onEnter = function(e){
 }
 }
 
-$(window).scroll(function(){
+window.onscroll = function(){
     if(document.documentElement.clientWidth <1300) return;
     var height = document.body.offsetHeight
     if($(window).scrollTop()>height/4){
@@ -80,7 +82,7 @@ $(window).scroll(function(){
     }else{
         $('#top').hide()
     }
-}); 
+}
 
 $('.tip-btn').click(function(){
     var flex= $('.tip-img').css('display') == 'flex'

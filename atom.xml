@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://vevlins.github.io/"/>
-  <updated>2017-12-13T12:58:45.526Z</updated>
+  <updated>2017-12-14T12:39:18.005Z</updated>
   <id>https://vevlins.github.io/</id>
   
   <author>
@@ -17,120 +17,158 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>博客文集《前方的路》发布</title>
-    <link href="https://vevlins.github.io/2017/12/08/%E5%8D%9A%E5%AE%A2%E6%96%87%E9%9B%86%E3%80%8A%E5%89%8D%E6%96%B9%E7%9A%84%E8%B7%AF%E3%80%8B%E5%8F%91%E5%B8%83/"/>
-    <id>https://vevlins.github.io/2017/12/08/博客文集《前方的路》发布/</id>
-    <published>2017-12-08T12:02:56.000Z</published>
-    <updated>2017-12-13T12:58:45.526Z</updated>
+    <title>Hello World</title>
+    <link href="https://vevlins.github.io/2017/12/14/Hello-World/"/>
+    <id>https://vevlins.github.io/2017/12/14/Hello-World/</id>
+    <published>2017-12-14T12:38:07.000Z</published>
+    <updated>2017-12-14T12:39:18.005Z</updated>
     
-    <content type="html"><![CDATA[<p>我写博客十多年了，从一个愤青 + 文青的学生，变成如今沉默寡言的<em>中年人</em>。一路上，随手写下的文字，累积有1000多篇。我早想整理出书，一方面为了纪念，另一方面现在的博客网站不易用，老文章很难找，迫切需要一个便于查找和阅读的精华版。<br>This is <a href="http://example.com/" title="Title" target="_blank" rel="noopener">an example</a> inline link.  </p><hr><table><thead><tr><th>第一格表头</th><th>第二格表头</th></tr></thead><tbody><tr><td>内容单元格 第一列第一格</td><td>内容单元格第二列第一格</td></tr><tr><td>内容单元格 第一列第二格 多加文字</td><td>内容单元格第二列第二格  </td></tr></tbody></table><p>三年前，我整理过一次，也出版了，书名是《如何变得有思想》。那本书的<code>可读性</code>很差，文章按主题分类（人物篇、历史篇、科技篇……）。我后来醒悟，这样做是不对的。我要给读者看的是一个故事，就是我的故事，而不是一篇篇零散的文章。  </p><p>今年，我投入很多时间，把过去的文章按照时间排序，重新编成一本书。书名改成《前方的路》，出自黑塞的小说《德米安》，意为寻找人生的出路。  </p><p>明年，这本书会和《未来世界的幸存者》一起出版。我跟出版社建议，可以做成一套两卷本的《阮一峰文集》。  </p><p>古人说，人生要立功、立德、立言。完成了这两本书，我就”立言”了。想说的话都说了，以后会少说多做，专心搞技术，完成几个真正有用的技术项目。  </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;我写博客十多年了，从一个愤青 + 文青的学生，变成如今沉默寡言的&lt;em&gt;中年人&lt;/em&gt;。一路上，随手写下的文字，累积有1000多篇。我早想整理出书，一方面为了纪念，另一方面现在的博客网站不易用，老文章很难找，迫切需要一个便于查找和阅读的精华版。&lt;br&gt;This is &lt;a
-      
-    
-    </summary>
-    
-    
-      <category term="ES6" scheme="https://vevlins.github.io/tags/ES6/"/>
-    
-      <category term="博客" scheme="https://vevlins.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Afghan leader Ashraf Ghani apologises for headscarf remark</title>
-    <link href="https://vevlins.github.io/2017/12/04/Afghan-leader-Ashraf-Ghani-apologises-for-headscarf-remark/"/>
-    <id>https://vevlins.github.io/2017/12/04/Afghan-leader-Ashraf-Ghani-apologises-for-headscarf-remark/</id>
-    <published>2017-12-03T16:04:02.000Z</published>
-    <updated>2017-12-03T16:07:21.557Z</updated>
-    
-    <content type="html"><![CDATA[<p>The Afghan president has apologised to women for remarks he made about the traditional headscarf.</p><p>On Saturday, Ashraf Ghani responded to claims that some government officials have links to so-called Islamic State. He said people should provide evidence or wear a woman’s headscarf.</p><p>It provoked a backlash from people who viewed the comments as sexist.</p><p>Mr Ghani later apologised to women who felt offended and said his comments had been misinterpreted.</p><p>In a statement, the Afghan presidential palace said: “The president is a very prominent advocate of women’s rights and has taken unique steps to strengthen and preserve their position since his tenure as the president of Afghanistan.”<br><a id="more"></a><br>    Afghan president has ‘worst job on Earth’<br>    Who is Ashraf Ghani?</p><p>It said Mr Ghani’s use of the word “Chaadar”, scarf in English, had been misinterpreted.</p><p>It is “a common saying which is never aimed to offend the highly valuable place of women in the country,” it added.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;The Afghan president has apologised to women for remarks he made about the traditional headscarf.&lt;/p&gt;
-&lt;p&gt;On Saturday, Ashraf Ghani responded to claims that some government officials have links to so-called Islamic State. He said people should provide evidence or wear a woman’s headscarf.&lt;/p&gt;
-&lt;p&gt;It provoked a backlash from people who viewed the comments as sexist.&lt;/p&gt;
-&lt;p&gt;Mr Ghani later apologised to women who felt offended and said his comments had been misinterpreted.&lt;/p&gt;
-&lt;p&gt;In a statement, the Afghan presidential palace said: “The president is a very prominent advocate of women’s rights and has taken unique steps to strengthen and preserve their position since his tenure as the president of Afghanistan.”&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Afghan" scheme="https://vevlins.github.io/tags/Afghan/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Trump-Russia- Michael Flynn admits lying to FBI</title>
-    <link href="https://vevlins.github.io/2017/11/30/hello-world/"/>
-    <id>https://vevlins.github.io/2017/11/30/hello-world/</id>
-    <published>2017-11-30T08:47:25.147Z</published>
-    <updated>2017-12-03T16:07:46.668Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><a id="more"></a><pre><code class="c">#include&lt;stdio.h&gt;int main(){    printf(&quot;Hello World&quot;);    exit(0);}</code></pre><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="javascript">a.each()</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><a id="more"></a><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;
-    
-    </summary>
-    
-      <category term="front-end" scheme="https://vevlins.github.io/categories/front-end/"/>
-    
-    
-      <category term="web" scheme="https://vevlins.github.io/tags/web/"/>
-    
-      <category term="sass" scheme="https://vevlins.github.io/tags/sass/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ABC&#39;s Brian Ross suspended for erroneous report on Flynn plea deal</title>
-    <link href="https://vevlins.github.io/2015/12/04/ABC-s-Brian-Ross-suspended-for-erroneous-report-on-Flynn-plea-deal/"/>
-    <id>https://vevlins.github.io/2015/12/04/ABC-s-Brian-Ross-suspended-for-erroneous-report-on-Flynn-plea-deal/</id>
-    <published>2015-12-03T16:05:34.000Z</published>
-    <updated>2017-12-06T12:14:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>US news network ABC has suspended its chief investigative reporter after he made a “serious error” about Donald Trump’s former top aide, Michael Flynn.</p><p>Brian Ross reported Mr Trump was a candidate when he directed Michael Flynn to make contact with Moscow.<br><img src="https://ichef.bbci.co.uk/news/660/cpsprodpb/E3FB/production/_99036385_mediaitem99036384.jpg" alt=""><br>But he later clarified that the orders came when Mr Trump was president-elect.</p><p>The actions of Mr Trump’s campaign team are under investigation over whether they colluded with Russia to help sway the election in his favour.<br><a id="more"></a><br>On Friday, Michael Flynn - who Mr Trump sacked as national security adviser - pleaded guilty to lying to the FBI about his contacts with Russian officials prior to the president’s inauguration in January.</p><pre><code>Six big takeaways from the Flynn dealRussia-Trump: Who&#39;s who in the drama to end all dramas?The Trump-Russia saga in 200 words</code></pre><p>As part of a plea bargain, Mr Flynn agreed to co-operate with special prosecutor Robert Mueller’s investigation into possible collusion between the Trump campaign and Russia ahead of the 2016 election.</p><p>US intelligence agencies have already concluded that Russian President Vladimir Putin directed a state effort to influence the US election in favour of Mr Trump.</p><p>President Trump has repeatedly denied any involvement, and tweeted on Sunday that he had never asked former FBI director James Comey to stop the investigation into Mr Flynn.<br>What did the original report say?</p><p>Brian Ross’s special report was aired after Mr Flynn’s plea deal was announced on Friday.</p><p>Quoting a single anonymous source, it said he was prepared to testify that Mr Trump had directed him to make contact with Russian officials when he was still a candidate for the presidency.</p><p>If found true, the claim would have conflicted with the president’s comments at the time of Mr Flynn’s sacking earlier this year. In February, he told reporters: “No, I didn’t direct him, but I would have directed him if he didn’t do it, okay?”</p><p>Off the back of the report, Wall Street’s main indexes fell by more than one percent.<br>Why was a correction issued?</p><p>In a later edition of ABC’s World News Tonight, Mr Ross clarified that his source had in fact said that Donald Trump’s orders came during the presidential transition, after the election had taken place.</p><p>“It was shortly after the election that President-elect Trump directed Flynn to contact Russian officials on topics that included working jointly against ISIS (so-called Islamic State),” he said.</p><p>But the news network was criticised for simply clarifying the error and was later forced to issue a full correction.<br>Skip Twitter post by @ABC</p><pre><code>.@ABC News statement on Michael Flynn report: https://t.co/sd9TeFiiLQ pic.twitter.com/UtHFHeuwcM— ABC News (@ABC) December 2, 2017</code></pre><p>Report</p><p>End of Twitter post by @ABC</p><p>President Trump was quick to praise the move, and suggested the report was part of a “fake news” agenda set against him.<br>Skip Twitter post by @realDonaldTrump</p><pre><code>Congratulations to @ABC News for suspending Brian Ross for his horrendously inaccurate and dishonest report on the Russia, Russia, Russia Witch Hunt. More Networks and “papers” should do the same with their Fake News!— Donald J. Trump (@realDonaldTrump) December 3, 2017</code></pre><p>Report</p><p>End of Twitter post by @realDonaldTrump</p><p>Mr Ross, 69, also took to Twitter to comment on the mistake, saying: “My job is to hold people accountable and that’s why I agree with being held accountable myself.”</p><p>The journalist has been criticised in the past for previous errors, including suggesting that the gunman in a mass shooting at a cinema in Colorado had a connection to the conservative Tea Party group.<br>Related Topics</p><pre><code>Donald TrumpRussia-Trump inquiry</code></pre><p>Share this story About sharing</p><pre><code>EmailFacebookMessengerTwitterPinterestLinkedIn</code></pre><p>More on this story</p><pre><code>Trump-Russia saga in 200 words1 December 2017Trump-Russia: Six big takeaways from the Flynn deal1 December 2017Video Crowds shout at ex-Trump adviser Michael Flynn at court1 December 2017Russia-Trump: Who&#39;s who in the drama to end all dramas?1 December 2017Video Michael Flynn: The man at the centre of Trump’s Russia crisis5 June 2017</code></pre><p>US &amp; Canada<br>US ‘in race to address N Korea threat’</p><pre><code>3 December 2017From the section US &amp; Canada </code></pre><p>Full article US ‘in race to address N Korea threat’<br>Metropolitan Opera investigates abuse claims</p><pre><code>3 December 2017From the section Entertainment &amp; Arts </code></pre><p>Full article Metropolitan Opera investigates abuse claims<br>Trump says Flynn’s Russia dealings lawful</p><pre><code>3 December 2017From the section US &amp; Canada </code></pre><p>Full article Trump says Flynn’s Russia dealings lawful<br>Top Stories<br>Trump lashes out at FBI over Russia probe</p><p>In a Twitter tirade, the president issues a fresh denial that he tried to obstruct FBI investigation.<br>23 minutes ago<br>Thirteen dead in S Korea boat crash<br>8 hours ago<br>Smog halts cricket Test in Delhi<br>5 hours ago<br>Features<br>From tropical rice fields to Olympic ice</p><p>The Tibetan Muslims who made Kashmir home</p><p>Video<br>Lighting dark skin for the screen</p><p>Video<br>Saudi House of Cards</p><p>Miguel, sex, and the apocalypse</p><p>What’s different about a Trump Christmas?</p><p>Heart op that took medicine into the media age</p><p>Reality Check: Are 90% of Zimbabweans unemployed?</p><p>Video<br>A coal worker’s unlikely career change</p><p>Most Read</p><pre><code>1 Russia-Trump: President hits out at FBI over Russia inquiry2 West Coast main line faces &#39;major&#39; disruption3 What&#39;s different about a Trump Christmas?4 Brexit supporters list demands for &#39;divorce bill&#39; talks5 North Korea: US in race to address threat, says HR McMaster6 ABC&#39;s Brian Ross suspended for erroneous report on Flynn plea deal7 &#39;Supermoon&#39; to brighten up skies for stargazers8 Man&#39;s body found at Hawthorn High School, Pontypridd9 Renting in retirement: How feasible is it?10 Social mobility board quits over lack of progress</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;US news network ABC has suspended its chief investigative reporter after he made a “serious error” about Donald Trump’s former top aide, Michael Flynn.&lt;/p&gt;
-&lt;p&gt;Brian Ross reported Mr Trump was a candidate when he directed Michael Flynn to make contact with Moscow.&lt;br&gt;&lt;img src=&quot;https://ichef.bbci.co.uk/news/660/cpsprodpb/E3FB/production/_99036385_mediaitem99036384.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;But he later clarified that the orders came when Mr Trump was president-elect.&lt;/p&gt;
-&lt;p&gt;The actions of Mr Trump’s campaign team are under investigation over whether they colluded with Russia to help sway the election in his favour.&lt;br&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ hexo new &amp;quot;My New Post&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
     
+      <category term="hello" scheme="https://vevlins.github.io/tags/hello/"/>
+    
+      <category term="world" scheme="https://vevlins.github.io/tags/world/"/>
+    
   </entry>
   
   <entry>
-    <title>Ireland has &#39;no desire&#39; to delay Brexit - deputy PM</title>
-    <link href="https://vevlins.github.io/2015/12/04/desire-to-delay-Brexit-deputy-PM/"/>
-    <id>https://vevlins.github.io/2015/12/04/desire-to-delay-Brexit-deputy-PM/</id>
-    <published>2015-12-03T16:01:48.000Z</published>
-    <updated>2017-12-06T11:40:48.352Z</updated>
+    <title>一份简历</title>
+    <link href="https://vevlins.github.io/2017/12/14/%E4%B8%80%E4%BB%BD%E7%AE%80%E5%8E%86/"/>
+    <id>https://vevlins.github.io/2017/12/14/一份简历/</id>
+    <published>2017-12-14T12:18:59.000Z</published>
+    <updated>2017-12-14T12:40:25.719Z</updated>
     
-    <content type="html"><![CDATA[<p>Ireland’s deputy prime minister has said his country has “no desire” to delay the UK’s Brexit talks.</p><p>But Simon Coveney also warned that not enough progress had been made on the border with Northern Ireland.</p><p>While Ireland was not looking for “full detail”, it was seeking the parameters within which a solution could be found.</p><p>His comments came ahead of a week of crucial decisions on whether the UK and EU would move ahead to the next phase of Brexit negotiations.</p><p>UK Prime Minister Theresa May is due to meet European Commission President Jean-Claude Juncker on Monday to assess whether sufficient progress has been made on three core issues of citizens’ rights, the “divorce bill” and the future of the Irish border with Northern Ireland.</p><p>The 27 other member states will then meet on Wednesday to make a decision on going to a second phase of talks.<br>What does Ireland say about the border?</p><p>Mr Coveney has been heavily involved with Ireland’s stance on Brexit since becoming the foreign minister during the summer.</p><p>He was also appointed as tánaiste - deputy prime minister - following the resignation of his colleague, Frances Fitzgerald, over a political row that threatened to bring down the government.</p><p>Speaking on the BBC’s Andrew Marr Show, he said Ireland did not want to exercise its veto on the issue.</p><p>“There is no desire, I can tell you, in Ireland, to delay this process,” he said.</p><blockquote><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem consectetuer libero luctus adipiscing.</p></blockquote><p>“But at the same time, we have a responsibility as a government to represent the interests on the island of Ireland.</p><p>“We believe that, as an island, Ireland is uniquely vulnerable and exposed to a potential bad outcome from Brexit.</p><p>“That is why we are looking for more progress than we have.” </p>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://images.ifanr.cn/wp-content/uploads/2015/12/typer.jpg" alt="">  </p><p>首先，一份好的简历不光说明事实，更通过FAB模式来增强其说服力。</p><p>其次，写简历和写议论文不同，过分的论证会显得自夸，反而容易引起反感，所以要点到为止。这里的技巧是，提供论据，把论点留给阅读简历的人自己去得出。放论据要具体，最基本的是要数字化，好的论据要让人印象深刻。</p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=450567505&auto=0&height=66"></iframe><p>有同学问，如果我在项目里边没有那么显赫的成绩可以说怎么办？讲不出成绩时，就讲你的成长。因为学习能力也是每家公司都看中的东西。你可以写你在这个项目里边遇到了一个什么样的问题，别人怎么解决的，你怎么解决的，你的方案好在什么地方，最终这个方案的效果如何。</p><p>举个例子，下边内容是虚构的：</p><p>2006年，我参与了手机XX网发布系统WAPCMS的开发（这部分是大家都会写的）。作为核心程序员，我不但完成了网站界面、调度队列的开发工作，更提出了高效的组件级缓存系统，通过碎片化缓冲有效的提升了系统的渲染效率。（这部分是很多同学忘掉的，要写出你在这个项目中具体负责的部分，以及你贡献出来的价值。）在该系统上线后，Web前端性能从10QPS提升到200QPS，服务器由10台减少到3台（通过量化的数字来增强可信度）。2008年我升任WAPCMS项目负责人，带领一个3人小组支持着每天超过2亿的PV（这就是Benefit。你能带给前雇主的价值，也就是你能带给新雇主的价值。）。</p><p><strong>具体</strong>、量化、有说服力，是技术简历特别需要注重的地方。</p><p>以上内容在写完简历后，对每一段进行评估，完成后再删除）</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Ireland’s deputy prime minister has said his country has “no desire” to delay the UK’s Brexit talks.&lt;/p&gt;
-&lt;p&gt;But Simon Coveney also warned
+        &lt;p&gt;&lt;img src=&quot;http://images.ifanr.cn/wp-content/uploads/2015/12/typer.jpg&quot; alt=&quot;&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;首先，一份好的简历不光说明事实，更通过FAB模式来增强其说服力。&lt;/p&gt;
+&lt;p&gt;其次，写简历和写议
       
     
     </summary>
     
+      <category term="求职" scheme="https://vevlins.github.io/categories/%E6%B1%82%E8%81%8C/"/>
     
-      <category term="Ireland" scheme="https://vevlins.github.io/tags/Ireland/"/>
+    
+      <category term="简历" scheme="https://vevlins.github.io/tags/%E7%AE%80%E5%8E%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>欢迎使用马克飞象</title>
+    <link href="https://vevlins.github.io/2017/12/14/%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8%E9%A9%AC%E5%85%8B%E9%A3%9E%E8%B1%A1/"/>
+    <id>https://vevlins.github.io/2017/12/14/欢迎使用马克飞象/</id>
+    <published>2017-12-14T12:06:45.000Z</published>
+    <updated>2017-12-14T12:08:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="欢迎使用马克飞象"><a href="#欢迎使用马克飞象" class="headerlink" title="欢迎使用马克飞象"></a>欢迎使用马克飞象</h1><p>@(示例笔记本)[马克飞象|帮助|Markdown]</p><p><strong>马克飞象</strong>是一款专为印象笔记（Evernote）打造的Markdown编辑器，通过精心的设计与技术实现，配合印象笔记强大的存储和同步功能，带来前所未有的书写体验。特点概述：</p><ul><li><strong>功能丰富</strong> ：支持高亮代码块、<em>LaTeX</em> 公式、流程图，本地图片以及附件上传，甚至截图粘贴，工作学习好帮手；</li><li><strong>得心应手</strong> ：简洁高效的编辑器，提供[桌面客户端][1]以及[离线Chrome App][2]，支持移动端 Web；</li><li><strong>深度整合</strong> ：支持选择笔记本和添加标签，支持从印象笔记跳转编辑，轻松管理。</li></ul><hr><h2 id="Markdown简介"><a href="#Markdown简介" class="headerlink" title="Markdown简介"></a>Markdown简介</h2><blockquote><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— <a href="https://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="noopener">维基百科</a></p></blockquote><p>正如您在阅读的这份文档，它使用简单的符号标识不同的标题，将某些文字标记为<strong>粗体</strong>或者<em>斜体</em>，创建一个<a href="http://www.example.com" target="_blank" rel="noopener">链接</a>或一个脚注[^demo]。下面列举了几个高级功能，更多语法请按<code>Ctrl + /</code>查看帮助。 </p><h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><pre><code class="python">@requires_authorizationdef somefunc(param1=&#39;&#39;, param2=0):    &#39;&#39;&#39;A docstring&#39;&#39;&#39;    if param1 &gt; param2: # interesting        print &#39;Greater&#39;    return (param2 - param1 + 1) or Noneclass SomeClass:    pass&gt;&gt;&gt; message = &#39;&#39;&#39;interpreter... prompt&#39;&#39;&#39;</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;欢迎使用马克飞象&quot;&gt;&lt;a href=&quot;#欢迎使用马克飞象&quot; class=&quot;headerlink&quot; title=&quot;欢迎使用马克飞象&quot;&gt;&lt;/a&gt;欢迎使用马克飞象&lt;/h1&gt;&lt;p&gt;@(示例笔记本)[马克飞象|帮助|Markdown]&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;马克飞象
+      
+    
+    </summary>
+    
+      <category term="markdown" scheme="https://vevlins.github.io/categories/markdown/"/>
+    
+    
+      <category term="马克飞象" scheme="https://vevlins.github.io/tags/%E9%A9%AC%E5%85%8B%E9%A3%9E%E8%B1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Dillinger</title>
+    <link href="https://vevlins.github.io/2017/12/14/Dillinger/"/>
+    <id>https://vevlins.github.io/2017/12/14/Dillinger/</id>
+    <published>2017-12-14T11:53:38.000Z</published>
+    <updated>2017-12-14T12:01:08.937Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Dillinger"><a href="#Dillinger" class="headerlink" title="Dillinger"></a>Dillinger</h1><p><a href="https://nodesource.com/products/nsolid" target="_blank" rel="noopener"><img src="http://cdn2.jianshu.io/assets/web/web-note-ad-1-10f08e404d3887d2d45a4bc8f1831403.png" alt="N|Solid"></a></p><p>Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.</p><ul><li>Type some Markdown on the left</li><li>See HTML in the right</li><li>Magic </li></ul><a id="more"></a><h1 id="New-Features"><a href="#New-Features" class="headerlink" title="New Features!"></a>New Features!</h1><ul><li>Import a HTML file and watch it magically convert to Markdown</li><li>Drag and drop images (requires your Dropbox account be linked)</li></ul><p>You can also:</p><ul><li>Import and save files from GitHub, Dropbox, Google Drive and One Drive</li><li>Drag and drop markdown and HTML files into Dillinger</li><li>Export documents as Markdown, HTML and PDF</li></ul><p>Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.  As <a href="http://daringfireball.net" target="_blank" rel="noopener">John Gruber</a> writes on the <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown site</a></p><blockquote><p>The overriding design goal for Markdown’sformatting syntax is to make it as readable as possible. The idea is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions.</p></blockquote><p>This text you see here is <em>actually</em> written in Markdown! To get a feel for Markdown’s syntax, type some text into the left window and watch the results in the right.</p><h3 id="Tech"><a href="#Tech" class="headerlink" title="Tech"></a>Tech</h3><p>Dillinger uses a number of open source projects to work properly:</p><ul><li><a href="http://angularjs.org" target="_blank" rel="noopener">AngularJS</a> - HTML enhanced for web apps!</li><li><a href="http://ace.ajax.org" target="_blank" rel="noopener">Ace Editor</a> - awesome web-based text editor</li><li><a href="https://github.com/markdown-it/markdown-it" target="_blank" rel="noopener">markdown-it</a> - Markdown parser done right. Fast and easy to extend.</li><li><a href="http://twitter.github.com/bootstrap/" target="_blank" rel="noopener">Twitter Bootstrap</a> - great UI boilerplate for modern web apps</li><li><a href="http://nodejs.org" target="_blank" rel="noopener">node.js</a> - evented I/O for the backend</li><li><a href="http://expressjs.com" target="_blank" rel="noopener">Express</a> - fast node.js network app framework <a href="http://twitter.com/tjholowaychuk" target="_blank" rel="noopener">@tjholowaychuk</a></li><li><a href="http://gulpjs.com" target="_blank" rel="noopener">Gulp</a> - the streaming build system</li><li><a href="http://breakdance.io" target="_blank" rel="noopener">Breakdance</a> - HTML to Markdown converter</li><li><a href="http://jquery.com" target="_blank" rel="noopener">jQuery</a> - duh</li></ul><p>And of course Dillinger itself is open source with a <a href="https://github.com/joemccann/dillinger" target="_blank" rel="noopener">public repository</a><br> on GitHub.</p><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><p>Dillinger requires <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a> v4+ to run.</p><p>Install the dependencies and devDependencies and start the server.</p><pre><code class="sh">$ cd dillinger$ npm install -d$ node app</code></pre><p>For production environments…</p><pre><code class="sh">$ npm install --production$ NODE_ENV=production node app</code></pre><h3 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h3><p>Dillinger is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.</p><table><thead><tr><th>Plugin</th><th>README</th></tr></thead><tbody><tr><td>Dropbox</td><td><a href="https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md" target="_blank" rel="noopener">plugins/dropbox/README.md</a></td></tr><tr><td>Github</td><td><a href="https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md" target="_blank" rel="noopener">plugins/github/README.md</a></td></tr><tr><td>Google Drive</td><td><a href="https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md" target="_blank" rel="noopener">plugins/googledrive/README.md</a></td></tr><tr><td>OneDrive</td><td><a href="https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md" target="_blank" rel="noopener">plugins/onedrive/README.md</a></td></tr><tr><td>Medium</td><td><a href="https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md" target="_blank" rel="noopener">plugins/medium/README.md</a></td></tr><tr><td>Google Analytics</td><td><a href="https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md" target="_blank" rel="noopener">plugins/googleanalytics/README.md</a></td></tr></tbody></table><h3 id="Development"><a href="#Development" class="headerlink" title="Development"></a>Development</h3><p>Want to contribute? Great!</p><p>Dillinger uses Gulp + Webpack for fast developing.<br>Make a change in your file and instantanously see your updates!</p><p>Open your favorite Terminal and run these commands.</p><p>First Tab:</p><pre><code class="sh">$ node app</code></pre><p>Second Tab:</p><pre><code class="sh">$ gulp watch</code></pre><p>(optional) Third:</p><pre><code class="sh">$ karma test</code></pre><h4 id="Building-for-source"><a href="#Building-for-source" class="headerlink" title="Building for source"></a>Building for source</h4><p>For production release:</p><pre><code class="sh">$ gulp build --prod</code></pre><p>Generating pre-built zip archives for distribution:</p><pre><code class="sh">$ gulp build dist --prod</code></pre><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><p>Dillinger is very easy to install and deploy in a Docker container.</p><p>By default, the Docker will expose port 8080, so change this within the Dockerfile if necessary. When ready, simply use the Dockerfile to build the image.</p><pre><code class="sh">cd dillingerdocker build -t joemccann/dillinger:${package.json.version}</code></pre><p>This will create the dillinger image and pull in the necessary dependencies. Be sure to swap out <code>${package.json.version}</code> with the actual version of Dillinger.</p><p>Once done, run the Docker image and map the port to whatever you wish on your host. In this example, we simply map port 8000 of the host to port 8080 of the Docker (or whatever port was exposed in the Dockerfile):</p><pre><code class="sh">docker run -d -p 8000:8080 --restart=&quot;always&quot; &lt;youruser&gt;/dillinger:${package.json.version}</code></pre><p>Verify the deployment by navigating to your server address in your preferred browser.</p><pre><code class="sh">127.0.0.1:8000</code></pre><h4 id="Kubernetes-Google-Cloud"><a href="#Kubernetes-Google-Cloud" class="headerlink" title="Kubernetes + Google Cloud"></a>Kubernetes + Google Cloud</h4><p>See <a href="https://github.com/joemccann/dillinger/blob/master/KUBERNETES.md" target="_blank" rel="noopener">KUBERNETES.md</a></p><h3 id="Todos"><a href="#Todos" class="headerlink" title="Todos"></a>Todos</h3><ul><li>Write MORE Tests</li><li>Add Night Mode</li></ul><h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>MIT</p><p><strong>Free Software, Hell Yeah!</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Dillinger&quot;&gt;&lt;a href=&quot;#Dillinger&quot; class=&quot;headerlink&quot; title=&quot;Dillinger&quot;&gt;&lt;/a&gt;Dillinger&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://nodesource.com/products/nsolid&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;http://cdn2.jianshu.io/assets/web/web-note-ad-1-10f08e404d3887d2d45a4bc8f1831403.png&quot; alt=&quot;N|Solid&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type some Markdown on the left&lt;/li&gt;
+&lt;li&gt;See HTML in the right&lt;/li&gt;
+&lt;li&gt;Magic &lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="Dillinger" scheme="https://vevlins.github.io/tags/Dillinger/"/>
+    
+      <category term="Online" scheme="https://vevlins.github.io/tags/Online/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Welcome to MWeb</title>
+    <link href="https://vevlins.github.io/2017/12/14/Welcome-to-MWeb/"/>
+    <id>https://vevlins.github.io/2017/12/14/Welcome-to-MWeb/</id>
+    <published>2017-12-14T05:46:23.000Z</published>
+    <updated>2017-12-14T12:01:22.758Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Welcome-to-MWeb"><a href="#Welcome-to-MWeb" class="headerlink" title="Welcome to MWeb"></a>Welcome to MWeb</h1><p>What is MWeb? MWeb is a Pro Markdown writing, note taking and static blog generator App.</p><p>MWeb has two Mode, External Mode and Library Mode.<br>In External Mode, you can edit classic text and markdown files from anywhere on your Mac. As an example, you can point MWeb to a folder on Dropbox. Shortcuts <code>CMD + E</code> or <code>View</code> - <code>Open External</code> to open External Mode.<br>Library Mode design for note taking and static blog/website generator. Shortcuts <code>CMD + L</code> or <code>View</code> - <code>Open Library</code> to open Library Mode.<br>External Mode’s folders and Library Mode are supported <strong>Full Text Search</strong>, drag &amp; drop or paste to insert images.</p><a id="more"></a><h2 id="View-Mode-and-Live-Preview"><a href="#View-Mode-and-Live-Preview" class="headerlink" title="View Mode and Live Preview"></a>View Mode and Live Preview</h2><p>For Minimal UI, MWeb’s interface only has a few buttons. The right-top corner buttons shortcuts: <code>CMD + 7/8/9</code>. <code>CMD + 7</code> is Library Mode only. For enable Typewriter Scrolling, Dark Mode and switch panes, please check the <code>View</code> menu.</p><ul><li>Shortcut: <code>CMD + 1</code> to toggle Editor Only and Three Panes.</li><li>Shortcut: <code>CMD + 2</code> to toggle Two Panes and Editor Only.</li><li>Shortcut: <code>CMD + 3</code> to toggle Three Panes and Editor Only.</li><li>Shortcut: <code>CMD + 4</code> to toggle Editor/Preview and Three Panes.</li><li>Shortcut: <code>CMD + R</code> to toggle Editor and Live Preview.</li></ul><p><strong>Note</strong>: When <code>Preferences</code> - <code>General</code> - <code>Resize window when hide pane</code> is enable, shortcuts <code>CMD + 1/2/3/4</code> behavior will be changed. You can enable this option and try it. When the <code>Live Preview (CMD + R) open new window</code> is enable, shortcut <code>CMD + R</code> will open new window for Live Preview.</p><h2 id="More-about-MWeb"><a href="#More-about-MWeb" class="headerlink" title="More about MWeb"></a>More about MWeb</h2><ul><li>MWeb used Github Flavored Markdown syntax, please open <code>Help</code> - <code>Markdown syntax</code> for detail.</li><li>MWeb official website: <a href="http://www.mweb.im" target="_blank" rel="noopener">http://www.mweb.im</a></li><li>MWeb documents: <code>Help</code> - <code>Help...</code> or <a href="http://www.mweb.im/help.html" target="_blank" rel="noopener">http://www.mweb.im/help.html</a>.</li></ul><h2 id="Help-us-to-make-MWeb-better"><a href="#Help-us-to-make-MWeb-better" class="headerlink" title="Help us to make MWeb better!"></a>Help us to make MWeb better!</h2><ol><li>Tell your friends about MWeb.</li><li>Send a feedback: <a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#99;&#111;&#100;&#x65;&#x72;&#102;&#111;&#114;&#97;&#114;&#x74;&#43;&#x32;&#x33;&#51;&#x40;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#99;&#111;&#100;&#x65;&#x72;&#102;&#111;&#114;&#97;&#114;&#x74;&#43;&#x32;&#x33;&#51;&#x40;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a></li><li>Leave a review or at least a rating in Mac App Store.</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Welcome-to-MWeb&quot;&gt;&lt;a href=&quot;#Welcome-to-MWeb&quot; class=&quot;headerlink&quot; title=&quot;Welcome to MWeb&quot;&gt;&lt;/a&gt;Welcome to MWeb&lt;/h1&gt;&lt;p&gt;What is MWeb? MWeb is a Pro Markdown writing, note taking and static blog generator App.&lt;/p&gt;
+&lt;p&gt;MWeb has two Mode, External Mode and Library Mode.&lt;br&gt;In External Mode, you can edit classic text and markdown files from anywhere on your Mac. As an example, you can point MWeb to a folder on Dropbox. Shortcuts &lt;code&gt;CMD + E&lt;/code&gt; or &lt;code&gt;View&lt;/code&gt; - &lt;code&gt;Open External&lt;/code&gt; to open External Mode.&lt;br&gt;Library Mode design for note taking and static blog/website generator. Shortcuts &lt;code&gt;CMD + L&lt;/code&gt; or &lt;code&gt;View&lt;/code&gt; - &lt;code&gt;Open Library&lt;/code&gt; to open Library Mode.&lt;br&gt;External Mode’s folders and Library Mode are supported &lt;strong&gt;Full Text Search&lt;/strong&gt;, drag &amp;amp; drop or paste to insert images.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="https://vevlins.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="MWeb" scheme="https://vevlins.github.io/tags/MWeb/"/>
+    
+      <category term="Markdown" scheme="https://vevlins.github.io/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>欢迎使用MWeb</title>
+    <link href="https://vevlins.github.io/2017/12/14/%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8MWeb/"/>
+    <id>https://vevlins.github.io/2017/12/14/欢迎使用MWeb/</id>
+    <published>2017-12-14T05:42:22.000Z</published>
+    <updated>2017-12-14T12:01:38.351Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="欢迎使用-MWeb"><a href="#欢迎使用-MWeb" class="headerlink" title="欢迎使用 MWeb"></a>欢迎使用 MWeb</h1><p>首先介绍一下 MWeb 是什么，MWeb 是专业的 Markdown 写作、记笔记、静态博客生成软件。</p><p>然后这里<strong>重点说明</strong>一下：MWeb 有<strong>两个模式</strong>，外部模式和文档库模式。外部模式中把本地硬盘或 Dropbox 等网盘的文件夹引入，就可以使用 MWeb 的拖拽、粘贴插入图片、图床等特色功能。文档库模式设计为用于记笔记和静态博客生成。对于有<strong>同步和协作需求</strong>的朋友，请使用外部模式！使用视图菜单或者快捷键 <code>CMD + E</code> 可以打开外部模式，<code>CMD + L</code> 可以打开文档库。</p><a id="more"></a><h2 id="MWeb-大概用法、视图模式和预览界面"><a href="#MWeb-大概用法、视图模式和预览界面" class="headerlink" title="MWeb 大概用法、视图模式和预览界面"></a>MWeb 大概用法、视图模式和预览界面</h2><p>MWeb 使用菜单、快捷键和少量按钮完成所有操作，一般常用的操作都会有快捷键。整个界面使用三栏式结构，非常简洁。左边的第一第二栏是使用<strong>右键</strong>和底部的几个按钮操作，另外就是右上角有三个按钮了（外部模式是两个），快捷键分别是：<code>CMD + 7/8/9</code>。另外就是切换视图模式的快捷键了，建议看一下 <code>标记</code> 菜单和 <code>视图</code> 菜单。</p><ul><li>快捷键：<code>CMD + 1</code> 是在仅编辑器模式和三栏模式中切换。</li><li>快捷键：<code>CMD + 2</code> 是在二栏模式和仅编辑器模式中切换。</li><li>快捷键：<code>CMD + 3</code> 是在三栏模式和仅编辑器模式中切换。</li><li>快捷键：<code>CMD + 4</code> 是在编辑器/预览模式和三栏模式中切换。</li><li>快捷键：<code>CMD + R</code> 是在编辑器和预览模式中切换。</li></ul><p><strong>特别说明</strong>：当 <code>偏好设置</code> - <code>通用设置</code> 中 <code>切换视图模式（二三栏）时，保持编辑器大小不变</code> 被勾选后，<code>CMD + 1/2/3/4</code> 的行为会发生变化，具体如何，可以尝试一下。而 <code>在新窗口中打开实时预览（CMD + R）</code> 这个选项被选中后，快捷键 <code>CMD + R</code> 会打开新的窗口来预览文档。</p><h2 id="更多的了解-MWeb"><a href="#更多的了解-MWeb" class="headerlink" title="更多的了解 MWeb"></a>更多的了解 MWeb</h2><ul><li>MWeb 使用的是 Github Flavored Markdown 语法，请一定要打开 <code>帮助</code> - <code>Markdown 语法</code> 菜单看一下。</li><li>请一定要去官网首页看看，网址：<a href="http://zh.mweb.im" target="_blank" rel="noopener">http://zh.mweb.im</a>。</li><li>请一定要看一下官网的帮助，用菜单 <code>帮助</code> - <code>帮助...</code> 即可打开，也可以用网址：<a href="http://zh.mweb.im/help.html" target="_blank" rel="noopener">http://zh.mweb.im/help.html</a>。</li></ul><h2 id="帮助我们改进-MWeb"><a href="#帮助我们改进-MWeb" class="headerlink" title="帮助我们改进 MWeb"></a>帮助我们改进 MWeb</h2><p>如果你喜欢 MWeb，想让它变得更好，你可以：</p><ol><li>推荐 MWeb，让更多的人知道。</li><li>给我们发反馈和建议：<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#99;&#x6f;&#x64;&#101;&#114;&#x66;&#x6f;&#x72;&#x61;&#x72;&#x74;&#43;&#x32;&#51;&#x33;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#99;&#x6f;&#x64;&#101;&#114;&#x66;&#x6f;&#x72;&#x61;&#x72;&#x74;&#43;&#x32;&#51;&#x33;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a></li><li>在 Mac App Store 上评价 （如果是在 MAS 上购买的话）。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;欢迎使用-MWeb&quot;&gt;&lt;a href=&quot;#欢迎使用-MWeb&quot; class=&quot;headerlink&quot; title=&quot;欢迎使用 MWeb&quot;&gt;&lt;/a&gt;欢迎使用 MWeb&lt;/h1&gt;&lt;p&gt;首先介绍一下 MWeb 是什么，MWeb 是专业的 Markdown 写作、记笔记、静态博客生成软件。&lt;/p&gt;
+&lt;p&gt;然后这里&lt;strong&gt;重点说明&lt;/strong&gt;一下：MWeb 有&lt;strong&gt;两个模式&lt;/strong&gt;，外部模式和文档库模式。外部模式中把本地硬盘或 Dropbox 等网盘的文件夹引入，就可以使用 MWeb 的拖拽、粘贴插入图片、图床等特色功能。文档库模式设计为用于记笔记和静态博客生成。对于有&lt;strong&gt;同步和协作需求&lt;/strong&gt;的朋友，请使用外部模式！使用视图菜单或者快捷键 &lt;code&gt;CMD + E&lt;/code&gt; 可以打开外部模式，&lt;code&gt;CMD + L&lt;/code&gt; 可以打开文档库。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="https://vevlins.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="MWeb" scheme="https://vevlins.github.io/tags/MWeb/"/>
+    
+      <category term="Markdown" scheme="https://vevlins.github.io/tags/Markdown/"/>
     
   </entry>
   
