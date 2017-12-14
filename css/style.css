@@ -290,7 +290,6 @@ main,
 .post .content pre code {
   color: #2b3f52 !important;
   display: block;
-  overflow: scroll;
   word-wrap: break-word;
   word-break: break-all;
   background-color: inherit;
