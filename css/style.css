@@ -71,6 +71,9 @@ main,
   .tip ul {
     width: 80% !important;
   }
+  .tip li {
+    padding: 0.2em !important;
+  }
 }
 .header > * {
   margin: 0;
@@ -110,10 +113,6 @@ main,
 .header .navbar .menu .menu-item {
   display: inline-block;
   padding: 0.4em 0.8em;
-}
-.header .navbar .menu .menu-item .search {
-  display: flex;
-  align-items: center;
 }
 .header .navbar .menu .menu-item .menu-item-link {
   font-size: 0.8em;
@@ -653,11 +652,12 @@ main,
   margin: 0.5em 0 0 0;
   padding: 0.5em;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .tip ul li {
   list-style-type: none;
   display: inline-block;
+  padding: 1em;
 }
 .tip ul li img {
   width: 100%;
