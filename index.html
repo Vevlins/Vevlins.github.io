@@ -128,7 +128,8 @@
 </code></pre><p>其中config文件是存储与主题相关的变量，如点赞、评论功能是否开启，在整个站点下也有一个config文件，它是用来存储一些和整个站点有关的，比如站点的标题。而并非所有的hexo主题都支持点赞，所以点赞功能的开启放在具体的theme下更合适。  </p>
 <p>Layout文件夹下存放的是布局模板文件，可以用ejs、jade等编写，里边包含index、post等hexo中默认使用的模板，也可以编写一个自己额外定义的页面，比如about页。对于这些自己额外编写的模板，需要用户自己执行<code>hexo new [layout] &lt;title&gt;</code>中声明<code>layout:about</code>才可以。_partial子文件夹中存放的是一些可以服用的组件或者想要细分的部分，如打赏部分、点赞部分，可以分离出来，使得结构更加清晰明了。</p>
 <p>Source文件夹下存放的是资源文件，比如css文件，字体文件，图片文件等。source文件在最后生成的时候会把其中的文件都直接放在根目录下，所以在文件中引用地址的时候不需要写<code>source</code>，而是直接写<code>./css/app.css</code>就可以。</p>
-<h2 id="hexo变量和函数"><a href="#hexo变量和函数" class="headerlink" title="hexo变量和函数"></a>hexo变量和函数</h2><p>想要编写一个hexo模板，我们在其中必定要添加一些hexo站点下的信息，如网站的title。还有我们之前提到的主题下也有一个config文件，其中的变量我们也需要调用。除了以上两个部分，hexo还提供了一些用来简化操作的辅助函数。<br>具体的变量和辅助函数可以访问<a href="https://hexo.io/" target="_blank" rel="noopener">hexo官网</a>。这里只介绍一些常用的。<br>变量： </p>
+<h2 id="hexo变量和函数"><a href="#hexo变量和函数" class="headerlink" title="hexo变量和函数"></a>hexo变量和函数</h2><p>想要编写一个hexo模板，我们在其中必定要添加一些hexo站点下的信息，如网站的title。还有我们之前提到的主题下也有一个config文件，其中的变量我们也需要调用。除了以上两个部分，hexo还提供了一些用来简化操作的辅助函数。<br>具体的变量和辅助函数可以访问<a href="https://hexo.io/" target="_blank" rel="noopener">hexo官网</a>。这里只介绍一些常用的。</p>
+<p>变量： </p>
 <ul>
 <li>page.title</li>
 <li>site.posts</li>
