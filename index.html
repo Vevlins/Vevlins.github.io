@@ -90,6 +90,171 @@
     
         <article class="post">
             <h1>
+                <a class="title" href="/2017/12/23/HTML5完全学习笔记四：api全解/"> 
+                    HTML5完全学习笔记四：api全解 
+                </a>
+            </h1>
+                        <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2017-12-23   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+            </div>
+            <div class="content">
+                
+                <h1 id="HTML5完全学习笔记四：api全解"><a href="#HTML5完全学习笔记四：api全解" class="headerlink" title="HTML5完全学习笔记四：api全解"></a>HTML5完全学习笔记四：api全解</h1><h2 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h2><p>地理位置 API 通过 navigator.geolocation 提供。默认不开启,需要请求.<br>Geolocation API 的数据来源可能是 GPS、IP 地址、RFID、WiFi、蓝牙 MAC 地址、GSM/CDMA 卡 ID 等。</p>
+<p>方法如下:</p>
+<ul>
+<li>Geolocation.getCurrentPosition():获取位置返回position对象<blockquote>
+<p>这会异步地请求获取用户位置，并查询定位硬件来获取最新信息。当定位被确定后，定义的回调函数就会被执行。您可以选择性地提供第二个回调函数，当有错误时会被执行。第三个参数也是可选的，您可以通过该对象参数设定最长可接受的定位返回时间、等待请求的时间和是否获取高精度定位。</p>
+                
+            </div>
+            <div class="continue">
+            <a href="/2017/12/23/HTML5完全学习笔记四：api全解/">
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+        </article>
+        
+        <article class="post">
+            <h1>
+                <a class="title" href="/2017/12/23/HTML5完全学习笔记三：canvas全解/"> 
+                    # HTML5完全学习笔记三：canvas全解 
+                </a>
+            </h1>
+                        <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2017-12-23   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+            </div>
+            <div class="content">
+                
+                <h1 id="HTML5完全学习笔记三：canvas全解"><a href="#HTML5完全学习笔记三：canvas全解" class="headerlink" title="HTML5完全学习笔记三：canvas全解"></a>HTML5完全学习笔记三：canvas全解</h1><p>Canvas用于通过js绘制图片和动画。最早由apple引入webkit。</p>
+<p>Canvas元素只有width和height属性，默认情况下的值为300*150.该元素可以使用CSS来定义大小，但在绘制时图像会伸缩以适应它的框架尺寸：如果CSS的尺寸与初始画布的比例不一致，它会出现扭曲。尽量使用width和height来设定canvas的形状大小而非css。</p>
+<h2 id="getContext"><a href="#getContext" class="headerlink" title="getContext"></a>getContext</h2><p>访问绘图上下文，检测是否支持canvas也可以通过检测getcontext。</p>
+<pre><code>var canvas = document.getElementById(&#39;tutorial&#39;);
+
+if (canvas.getContext){
+  var ctx = canvas.getContext(&#39;2d&#39;);
+} else {
+}
+</code></pre>
+                
+            </div>
+            <div class="continue">
+            <a href="/2017/12/23/HTML5完全学习笔记三：canvas全解/">
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+        </article>
+        
+        <article class="post">
+            <h1>
+                <a class="title" href="/2017/12/23/HTML5完全学习笔记二：events全解/"> 
+                    HTML5完全学习笔记二：events全解 
+                </a>
+            </h1>
+                        <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2017-12-23   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+            </div>
+            <div class="content">
+                
+                <h1 id="HTML5完全学习笔记二：events全解"><a href="#HTML5完全学习笔记二：events全解" class="headerlink" title="HTML5完全学习笔记二：events全解"></a>HTML5完全学习笔记二：events全解</h1><h2 id="窗口事件"><a href="#窗口事件" class="headerlink" title="窗口事件"></a>窗口事件</h2><p>适用于body标签</p>
+<ul>
+<li>onafterprint<blockquote>
+<p>注意： 目前只有 Internet Explorer 和 Firefox 浏览器支持 onafterprint 事件属性。在 IE 浏览器中, onafterprint 属性在打印对话框之前执行Javascript而不是之后。//?是否意味着在ie中onafterprint=onberforeprint</p>
+                
+            </div>
+            <div class="continue">
+            <a href="/2017/12/23/HTML5完全学习笔记二：events全解/">
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+        </article>
+        
+        <article class="post">
+            <h1>
+                <a class="title" href="/2017/12/23/HTML5完全学习笔记一：element全解/"> 
+                    HTML5完全学习笔记一：element全解 
+                </a>
+            </h1>
+                        <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2017-12-23   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+            </div>
+            <div class="content">
+                
+                <h1 id="HTML5完全学习笔记一：element全解"><a href="#HTML5完全学习笔记一：element全解" class="headerlink" title="HTML5完全学习笔记一：element全解"></a>HTML5完全学习笔记一：element全解</h1><h2 id="lt-DOCTYPE-gt"><a href="#lt-DOCTYPE-gt" class="headerlink" title="&lt;!DOCTYPE&gt;"></a>&lt;!DOCTYPE&gt;</h2><h3 id="是什么："><a href="#是什么：" class="headerlink" title="是什么："></a>是什么：</h3><p>Doctype并不是html标签，它是一个声明，必须在html文件第一行，告诉浏览器用哪种模式进行渲染。对大小写不敏感。</p>
+<h3 id="H4和h5中的不同："><a href="#H4和h5中的不同：" class="headerlink" title="H4和h5中的不同："></a>H4和h5中的不同：</h3><p>在html4中，需要引用DTD，因为html4基于SGML，在h5中则不需要引用DTD。在html4中有三种声明，在h5中只有一种声明，即<code>&lt;!DOCTYPE html&gt;</code>。</p>
+<h3 id="浏览器的三种模式："><a href="#浏览器的三种模式：" class="headerlink" title="浏览器的三种模式："></a>浏览器的三种模式：</h3><p>浏览器有三种模式：怪异模式（Quirks mode）、接近标准模式（Almost standards mode）、以及标准模式（Standards mode）。</p>
+<p>怪异模式，有时也称混合模式，是为了解决在W3C标准制定之前的页面兼容问题，而标准模式则会以W3C标准进行解析。接近标准模式和标准模式几乎一样。当doctype有问题或者不存在时会启动怪异模式。</p>
+<p>除了doctype以外，还可以通过<code>x-ua-compatible</code>来进行文档类型的判定。这种设定要比doctype的优先级高。既可以写在head里，也可以在发送请求时写在header里。</p>
+<p>怪异模式和标准模式的区别主要有盒模型、内联元素、溢出处理等处。<br>
+                
+            </div>
+            <div class="continue">
+            <a href="/2017/12/23/HTML5完全学习笔记一：element全解/">
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+        </article>
+        
+        <article class="post">
+            <h1>
                 <a class="title" href="/2017/12/19/制作第一个hexo主题/"> 
                     制作第一个hexo主题 
                 </a>
@@ -237,166 +402,10 @@
             </div>
         </article>
         
-        <article class="post">
-            <h1>
-                <a class="title" href="/2017/12/14/Hello-World/"> 
-                    Hello World 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-14   
-                </a>
-                
-                
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello/">hello</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/world/">world</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-                
-            </div>
-            <div class="continue">
-            <a href="/2017/12/14/Hello-World/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2017/12/14/一份简历/"> 
-                    一份简历 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-14   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/求职/">求职</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/简历/">简历</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <p><img src="http://images.ifanr.cn/wp-content/uploads/2015/12/typer.jpg" alt="">  </p>
-<p>首先，一份好的简历不光说明事实，更通过FAB模式来增强其说服力。</p>
-<p>其次，写简历和写议论文不同，过分的论证会显得自夸，反而容易引起反感，所以要点到为止。这里的技巧是，提供论据，把论点留给阅读简历的人自己去得出。放论据要具体，最基本的是要数字化，好的论据要让人印象深刻。</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=450567505&auto=0&height=66"></iframe>
-
-<p>有同学问，如果我在项目里边没有那么显赫的成绩可以说怎么办？讲不出成绩时，就讲你的成长。因为学习能力也是每家公司都看中的东西。你可以写你在这个项目里边遇到了一个什么样的问题，别人怎么解决的，你怎么解决的，你的方案好在什么地方，最终这个方案的效果如何。</p>
-<p>举个例子，下边内容是虚构的：</p>
-<p>2006年，我参与了手机XX网发布系统WAPCMS的开发（这部分是大家都会写的）。作为核心程序员，我不但完成了网站界面、调度队列的开发工作，更提出了高效的组件级缓存系统，通过碎片化缓冲有效的提升了系统的渲染效率。（这部分是很多同学忘掉的，要写出你在这个项目中具体负责的部分，以及你贡献出来的价值。）在该系统上线后，Web前端性能从10QPS提升到200QPS，服务器由10台减少到3台（通过量化的数字来增强可信度）。2008年我升任WAPCMS项目负责人，带领一个3人小组支持着每天超过2亿的PV（这就是Benefit。你能带给前雇主的价值，也就是你能带给新雇主的价值。）。</p>
-<p><strong>具体</strong>、量化、有说服力，是技术简历特别需要注重的地方。</p>
-<p>以上内容在写完简历后，对每一段进行评估，完成后再删除）</p>
-
-                
-            </div>
-            <div class="continue">
-            <a href="/2017/12/14/一份简历/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2017/12/14/Dillinger/"> 
-                    Dillinger 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-14   
-                </a>
-                
-                
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dillinger/">Dillinger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Online/">Online</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <h1 id="Dillinger"><a href="#Dillinger" class="headerlink" title="Dillinger"></a>Dillinger</h1><p><a href="https://nodesource.com/products/nsolid" target="_blank" rel="noopener"><img src="http://cdn2.jianshu.io/assets/web/web-note-ad-1-10f08e404d3887d2d45a4bc8f1831403.png" alt="N|Solid"></a></p>
-<p>Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.</p>
-<ul>
-<li>Type some Markdown on the left</li>
-<li>See HTML in the right</li>
-<li>Magic </li>
-</ul>
-                
-            </div>
-            <div class="continue">
-            <a href="/2017/12/14/Dillinger/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2017/12/14/Welcome-to-MWeb/"> 
-                    Welcome to MWeb 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-14   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MWeb/">MWeb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <h1 id="Welcome-to-MWeb"><a href="#Welcome-to-MWeb" class="headerlink" title="Welcome to MWeb"></a>Welcome to MWeb</h1><p>What is MWeb? MWeb is a Pro Markdown writing, note taking and static blog generator App.</p>
-<p>MWeb has two Mode, External Mode and Library Mode.<br>In External Mode, you can edit classic text and markdown files from anywhere on your Mac. As an example, you can point MWeb to a folder on Dropbox. Shortcuts <code>CMD + E</code> or <code>View</code> - <code>Open External</code> to open External Mode.<br>Library Mode design for note taking and static blog/website generator. Shortcuts <code>CMD + L</code> or <code>View</code> - <code>Open Library</code> to open Library Mode.<br>External Mode’s folders and Library Mode are supported <strong>Full Text Search</strong>, drag &amp; drop or paste to insert images.</p>
-                
-            </div>
-            <div class="continue">
-            <a href="/2017/12/14/Welcome-to-MWeb/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
 </section>
 
   <nav class="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/pagez/2/">2</a><a class="extend next" rel="next" href="/pagez/2/">下一页 &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/pagez/2/">2</a><a class="page-number" href="/pagez/3/">3</a><a class="extend next" rel="next" href="/pagez/2/">下一页 &raquo;</a>
   </nav>
 
     </main>

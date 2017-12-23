@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>
+        
+            # HTML5完全学习笔记三：canvas全解
+        
+    </title>
+    <link rel="icon" href="/img/favicon.png"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" href="/css/hljs.min.css">
+    <script src="/js/hljs.min.js"></script>  
+    <script src="/js/gitment.browser.js"></script>  
+</head>
+<body>
+    <header class="header" id="header">
+    <h1>
+        <a class="title" href="/">
+            Toki
+        </a>
+    </h1>
+    <h2>
+        <a class="motto">
+            Ponyo loves Sōsuke!
+        </a>
+    </h2>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/archives/" class="menu-item-link">
+                        Archives
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/about/" class="menu-item-link">
+                        About
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="https://github.com/vevlins/" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/atom.xml" class="menu-item-link">
+                        RSS
+                    </a>
+                </li>
+            
+                
+            
+                
+                
+                <li class="menu-item">
+                    <a class="menu-item-link search">
+                        Search                   
+                        <i class="fa fa-long-arrow-right search-icon" aria-hidden="true"></i>
+                    </a>
+                        <input placeholder="Search..." class="search-input" style="display:none;border:none!important;" onkeydown="onEnter(event)" onkeypress="onEnter(event)"></input>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+            <h1>
+                <a class="title" href="/2017/12/23/HTML5完全学习笔记三：canvas全解/"> 
+                    # HTML5完全学习笔记三：canvas全解 
+                </a>
+            </h1>
+            <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2017-12-23   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+            </div>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#HTML5完全学习笔记三：canvas全解"><span class="toc-list-text">HTML5完全学习笔记三：canvas全解</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#getContext"><span class="toc-list-text">getContext</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#绘制矩形"><span class="toc-list-text">绘制矩形</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#通过路径绘图"><span class="toc-list-text">通过路径绘图</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#移动笔触"><span class="toc-list-text">移动笔触</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#绘制直线"><span class="toc-list-text">绘制直线</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#圆弧"><span class="toc-list-text">圆弧</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#贝塞尔曲线"><span class="toc-list-text">贝塞尔曲线</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#path2D"><span class="toc-list-text">path2D</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#色彩"><span class="toc-list-text">色彩</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#线型"><span class="toc-list-text">线型</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#渐变"><span class="toc-list-text">渐变</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#图案样式"><span class="toc-list-text">图案样式</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#阴影"><span class="toc-list-text">阴影</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#填充规则"><span class="toc-list-text">填充规则</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#绘制文本"><span class="toc-list-text">绘制文本</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#绘制图片"><span class="toc-list-text">绘制图片</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#缩放"><span class="toc-list-text">缩放</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#切片"><span class="toc-list-text">切片</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#变形"><span class="toc-list-text">变形</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#移动"><span class="toc-list-text">移动</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#旋转"><span class="toc-list-text">旋转</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#缩放-1"><span class="toc-list-text">缩放</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#变形-1"><span class="toc-list-text">变形</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#合成"><span class="toc-list-text">合成</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#剪切"><span class="toc-list-text">剪切</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#动画"><span class="toc-list-text">动画</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#ImageData-对象"><span class="toc-list-text">ImageData 对象</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#反锯齿"><span class="toc-list-text">反锯齿</span></a></li></ol></li></ol>
+</div>
+            <div class="content">
+                <h1 id="HTML5完全学习笔记三：canvas全解"><a href="#HTML5完全学习笔记三：canvas全解" class="headerlink" title="HTML5完全学习笔记三：canvas全解"></a>HTML5完全学习笔记三：canvas全解</h1><p>Canvas用于通过js绘制图片和动画。最早由apple引入webkit。</p>
+<p>Canvas元素只有width和height属性，默认情况下的值为300*150.该元素可以使用CSS来定义大小，但在绘制时图像会伸缩以适应它的框架尺寸：如果CSS的尺寸与初始画布的比例不一致，它会出现扭曲。尽量使用width和height来设定canvas的形状大小而非css。</p>
+<h2 id="getContext"><a href="#getContext" class="headerlink" title="getContext"></a>getContext</h2><p>访问绘图上下文，检测是否支持canvas也可以通过检测getcontext。</p>
+<pre><code>var canvas = document.getElementById(&#39;tutorial&#39;);
+
+if (canvas.getContext){
+  var ctx = canvas.getContext(&#39;2d&#39;);
+} else {
+}
+</code></pre><a id="more"></a>
+<h2 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h2><p>Canvas只支持一种原生的图像绘制，就是矩形。其他图形的绘制都需要路径实现。</p>
+<p>绘制矩形的方式：</p>
+<ul>
+<li>fillRect(x, y, width, height)//fill表示填充</li>
+<li>strokeRect(x, y, width, height)//stroke表示边框</li>
+<li>clearRect(x, y, width, height)//清除使之变透明</li>
+<li>rect(x, y, width, height)//该方法执行时，笔触自动回复道默认位置//？执行时？是指绘制完之后再绘制下一个的时候吗？</li>
+</ul>
+<h2 id="通过路径绘图"><a href="#通过路径绘图" class="headerlink" title="通过路径绘图"></a>通过路径绘图</h2><ul>
+<li>首先，你需要创建路径起始点。<blockquote>
+<p>beginPath()：当前路径为空，即调用beginPath()之后，或者canvas刚建的时候，第一条路径构造命令通常被视为是moveTo（），无论最后的是什么。出于这个原因，你几乎总是要在设置路径之后专门指定你的起始位置。</p>
+</blockquote>
+</li>
+<li>然后你使用画图命令去画出路径。</li>
+<li>之后你把路径封闭。<blockquote>
+<p>cloasepath（）：绘制一条从当前点到开始点的直线来闭合图形。如果图形是已经闭合了的，即当前点为开始点，该函数什么也不做。</p>
+</blockquote>
+</li>
+<li>一旦路径生成，你就能通过描边或填充路径区域来渲染图形。<blockquote>
+<p>当你调用fill()函数时，所有没有闭合的形状都会自动闭合，所以你不需要调用closePath()函数。但是调用stroke()时不会自动闭合。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="移动笔触"><a href="#移动笔触" class="headerlink" title="移动笔触"></a>移动笔触</h3><p>moveTo（x，y）：用来绘制不连续的路径。</p>
+<h3 id="绘制直线"><a href="#绘制直线" class="headerlink" title="绘制直线"></a>绘制直线</h3><p>lineTo（x，y）：绘制从当前到目的坐标的直线。</p>
+<h3 id="圆弧"><a href="#圆弧" class="headerlink" title="圆弧"></a>圆弧</h3><p>arc(x, y, radius, startAngle, endAngle, anticlockwise)：画一个以（x,y）为圆心的以radius为半径的圆弧（圆），从startAngle开始到endAngle结束，按照anticlockwise给定的方向（默认为顺时针）来生成。</p>
+<p>其中的角度单位是弧度而非度数。<code>radians=(Math.PI/180)*degrees</code>。</p>
+<h3 id="贝塞尔曲线"><a href="#贝塞尔曲线" class="headerlink" title="贝塞尔曲线"></a>贝塞尔曲线</h3><p>quadraticCurveTo(cp1x, cp1y, x, y)：绘制二次贝塞尔曲线，cp1x,cp1y为一个控制点，x,y为结束点。</p>
+<p>bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)：绘制三次贝塞尔曲线，cp1x,cp1y为控制点一，cp2x,cp2y为控制点二，x,y为结束点。</p>
+<h2 id="path2D"><a href="#path2D" class="headerlink" title="path2D"></a>path2D</h2><p>Path2D用来缓存或记录绘画命令。简单来说，可以认为它用来存储一系列的绘画指令，用以简化重复操作。</p>
+<pre><code class="javascript">function draw() {
+  var canvas = document.getElementById(&#39;canvas&#39;);
+  if (canvas.getContext){
+    var ctx = canvas.getContext(&#39;2d&#39;);
+
+    var rectangle = new Path2D();
+    rectangle.rect(10, 10, 50, 50);
+
+    var circle = new Path2D();
+    circle.moveTo(125, 35);
+    circle.arc(100, 35, 25, 0, 2 * Math.PI);
+
+    ctx.stroke(rectangle);
+    ctx.fill(circle);
+  }
+}
+</code></pre>
+<h2 id="色彩"><a href="#色彩" class="headerlink" title="色彩"></a>色彩</h2><p>fillStyle = color：设置图形的填充颜色；strokeStyle = color：设置图形轮廓的颜色。</p>
+<blockquote>
+<p>注意: 一旦您设置了 strokeStyle 或者 fillStyle 的值，那么这个新值就会成为新绘制的图形的默认值。如果你要给每个图形上不同的颜色，你需要重新设置 fillStyle 或 strokeStyle 的值。</p>
+<p>globalAlpha = transparencyValue；可选的范围是0.0-1.0，会设置之后所有被绘制的canvas图形的透明度。但是由于支持rgba格式的颜色，所以这个方法并不必要。</p>
+</blockquote>
+<h2 id="线型"><a href="#线型" class="headerlink" title="线型"></a>线型</h2><ul>
+<li>lineWidth = value<br>设置线条宽度。</li>
+<li>lineCap = type<br>设置线条末端样式。butt(默认)，round 和 square。<br><img src="https://developer.mozilla.org/@api/deki/files/88/=Canvas_linecap.png" alt=""></li>
+<li>lineJoin = type<br>设定线条与线条间接合处的样式。round, bevel 和 miter(默认).<br><img src="https://developer.mozilla.org/@api/deki/files/89/=Canvas_linejoin.png" alt=""></li>
+<li>miterLimit = value<br>限制当两条线相交时交接处最大长度；所谓交接处长度（斜接长度）是指线条交接处内角顶点到外角顶点的长度。</li>
+<li>getLineDash()<br>返回一个包含当前虚线样式，长度为非负偶数的数组。</li>
+<li>setLineDash(segments)<br>设置当前虚线样式。<br>这里的参数一般情况下应该为两个，表示线长和间隔长度，其他情况时代表从左侧到右侧的每一块长度的循环单元，这里的长度块既包含线也包含间隔。</li>
+<li>lineDashOffset = value<br>设置虚线样式的起始偏移量。</li>
+</ul>
+<h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><p>我们用下面的方法新建一个 canvasGradient 对象，并且赋给图形的 fillStyle 或 strokeStyle 属性。</p>
+<p>createLinearGradient(x1, y1, x2, y2)：createLinearGradient 方法接受 4 个参数，表示渐变的起点 (x1,y1) 与终点 (x2,y2)。<br>createRadialGradient(x1, y1, r1, x2, y2, r2)：createRadialGradient 方法接受 6 个参数，前三个定义一个以 (x1,y1) 为原点，半径为 r1 的圆，后三个参数则定义另一个以 (x2,y2) 为原点，半径为 r2 的圆。</p>
+<p>创建出 canvasGradient 对象后，我们就可以用 addColorStop 方法给它上色了。</p>
+<p>gradient.addColorStop(position, color)：addColorStop 方法接受 2 个参数，position 参数必须是一个 0.0 与 1.0 之间的数值，表示渐变中颜色所在的相对位置。例如，0.5 表示颜色会出现在正中间。color 参数必须是一个有效的 CSS 颜色值（如 #FFFFFF rgba(0,0,0,1)，等等）。这里的相对位置就是图形化后的色标位置。</p>
+<pre><code class="javascript">var lineargradient = ctx.createLinearGradient(0,0,150,150);
+lineargradient.addColorStop(0,&#39;white&#39;);
+lineargradient.addColorStop(1,&#39;black&#39;);
+</code></pre>
+<h2 id="图案样式"><a href="#图案样式" class="headerlink" title="图案样式"></a>图案样式</h2><p>createPattern(image, type)：该方法接受两个参数。Image 可以是一个 Image 对象的引用，或者另一个 canvas 对象。Type 必须是下面的字符串值之一：repeat，repeat-x，repeat-y 和 no-repeat。<br><strong><em> 使用 Image 对象的 onload handler 来确保设置图案之前图像已经装载完毕。</em></strong></p>
+<pre><code class="javascript">function draw() {
+  var ctx = document.getElementById(&#39;canvas&#39;).getContext(&#39;2d&#39;);
+  // 创建新 image 对象，用作图案
+  var img = new Image();
+  img.src = &#39;images/wallpaper.png&#39;;
+  img.onload = function(){
+    // 创建图案
+    var ptrn = ctx.createPattern(img,&#39;repeat&#39;);
+    ctx.fillStyle = ptrn;
+    ctx.fillRect(0,0,150,150);
+
+  }
+}
+</code></pre>
+<h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><ul>
+<li>shadowOffsetX = float<br>shadowOffsetX 和 shadowOffsetY 用来设定阴影在 X 和 Y 轴的延伸距离，它们是不受变换矩阵所影响的。负值表示阴影会往上或左延伸，正值则表示会往下或右延伸，它们默认都为 0。</li>
+<li>shadowOffsetY = float<br>shadowOffsetX 和 shadowOffsetY 用来设定阴影在 X 和 Y 轴的延伸距离，它们是不受变换矩阵所影响的。负值表示阴影会往上或左延伸，正值则表示会往下或右延伸，它们默认都为 0。</li>
+<li>shadowBlur = float<br>shadowBlur 用于设定阴影的模糊程度，其数值并不跟像素数量挂钩，也不受变换矩阵的影响，默认为 0。</li>
+<li>shadowColor = color<br>shadowColor 是标准的 CSS 颜色值，用于设定阴影颜色效果，默认是全透明的黑色。</li>
+</ul>
+<h2 id="填充规则"><a href="#填充规则" class="headerlink" title="填充规则"></a>填充规则</h2><p>用fill、clip、ispointinpath时可以选择填充规则：nonzero（默认）/evenodd<br>（填充中间部分）</p>
+<h2 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h2><p>fillText(text, x, y [, maxWidth]):在指定的(x,y)位置填充指定的文本，绘制的最大宽度是可选的.<br>strokeText(text, x, y [, maxWidth]):在指定的(x,y)位置绘制文本边框，绘制的最大宽度是可选的.</p>
+<p>文本还可以设置样式：</p>
+<ul>
+<li>font = value<br>当前我们用来绘制文本的样式. 这个字符串使用和 CSS font 属性相同的语法. 默认的字体是 10px sans-serif。</li>
+<li>textAlign = value<br>文本对齐选项. 可选的值包括：start, end, left, right or center. 默认值是 start。</li>
+<li>textBaseline = value<br>基线对齐选项. 可选的值包括：top, hanging, middle, alphabetic, ideographic, bottom。默认值是 alphabetic。</li>
+<li>direction = value<br>文本方向。可能的值包括：ltr, rtl, inherit。默认值是 inherit。</li>
+</ul>
+<p>文本测量：measureText()：将返回一个 TextMetrics对象的宽度、所在像素，这些体现文本特性的属性。</p>
+<h2 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h2><p>在绘制之前，要先通过dom方法来获取图片/视频的帧/canvas对象。</p>
+<p>drawImage(image, x, y):其中 image 是 image 或者 canvas 对象，x 和 y 是其在目标 canvas 里的起始坐标。</p>
+<pre><code class="javascript">function draw() {
+    var ctx = document.getElementById(&#39;canvas&#39;).getContext(&#39;2d&#39;);
+    var img = new Image();
+    img.onload = function(){
+      ctx.drawImage(img,0,0);
+      ctx.beginPath();
+      ctx.moveTo(30,96);
+      ctx.lineTo(70,66);
+      ctx.lineTo(103,76);
+      ctx.lineTo(170,15);
+      ctx.stroke();
+    }
+    img.src = &#39;images/backdrop.png&#39;;
+  }
+</code></pre>
+<h3 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h3><p>drawImage(image, x, y, width, height)：这个方法多了2个参数：width 和 height，这两个参数用来控制 当像canvas画入时应该缩放的大小。</p>
+<h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p>drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)：第一个参数和其它的是相同的，都是一个图像或者另一个 canvas 的引用。其它8个参数，前4个是定义图像源的切片位置和大小，后4个则是定义切片的目标显示位置和大小。</p>
+<h2 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h2><p>save()restore()：save 和 restore 方法是用来保存和恢复 canvas 状态的，都没有参数。Canvas 的状态就是当前画面应用的所有样式和变形的一个快照。</p>
+<blockquote>
+<p>Canvas状态存储在栈中，每当save()方法被调用后，当前的状态就被推送到栈中保存。一个绘画状态包括：当前应用的变形（即移动，旋转和缩放，见下）strokeStyle, fillStyle, globalAlpha, lineWidth, lineCap, lineJoin,miterLimit,shadowOffsetX, shadowOffsetY, shadowBlur,shadowColor,globalCompositeOperation 的值当前的裁切路径（clipping path）</p>
+</blockquote>
+<pre><code class="javascript">function draw() {
+  var ctx = document.getElementById(&#39;canvas&#39;).getContext(&#39;2d&#39;);
+
+  ctx.fillRect(0,0,150,150);   // 使用默认设置绘制一个矩形
+  ctx.save();                  // 保存默认状态
+
+  ctx.fillStyle = &#39;#09F&#39;       // 在原有配置基础上对颜色做改变
+  ctx.fillRect(15,15,120,120); // 使用新的设置绘制一个矩形
+
+  ctx.save();                  // 保存当前状态
+  ctx.fillStyle = &#39;#FFF&#39;       // 再次改变颜色配置
+  ctx.globalAlpha = 0.5;    
+  ctx.fillRect(30,30,90,90);   // 使用新的配置绘制一个矩形
+
+  ctx.restore();               // 重新加载之前的颜色状态
+  ctx.fillRect(45,45,60,60);   // 使用上一次的配置绘制一个矩形
+
+  ctx.restore();               // 加载默认颜色配置
+  ctx.fillRect(60,60,30,30);   // 使用加载的配置绘制一个矩形
+}
+</code></pre>
+<p><img src="https://mdn.mozillademos.org/files/249/Canvas_savestate.png" alt=""></p>
+<h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><p>translate(x, y)：translate 方法接受两个参数。x 是左右偏移量，y 是上下偏移量，如右图所示。用来移动 canvas 和它的原点到一个不同的位置。</p>
+<p>translate和moveto的区别是什么？</p>
+<h3 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h3><p>rotate(angle)：这个方法只接受一个参数：旋转的角度(angle)，它是顺时针方向的，以弧度为单位的值。旋转的中心点始终是 canvas 的原点，如果要改变它，我们需要用到 translate 方法。</p>
+<h3 id="缩放-1"><a href="#缩放-1" class="headerlink" title="缩放"></a>缩放</h3><p>scale(x, y)：scale 方法接受两个参数。x,y 分别是横轴和纵轴的缩放因子，它们都必须是正值。值比 1.0 小表示缩小，比 1.0 大则表示放大，值为 1.0 时什么效果都没有。</p>
+<h3 id="变形-1"><a href="#变形-1" class="headerlink" title="变形"></a>变形</h3><p>transform(m11, m12, m21, m22, dx, dy)</p>
+<pre><code>m11 m21 dx
+m12 m22 dy
+0     0     1
+</code></pre><p>用以上矩阵进行图像变换。</p>
+<p>setTransform()：将当前的变换矩阵设置为默认的单位矩阵，然后在单位矩阵之上运用用户指定的变换。</p>
+<p>resetTransform()：重置为单位矩阵。</p>
+<h2 id="合成"><a href="#合成" class="headerlink" title="合成"></a>合成</h2><p>globalCompositeOperation：覆盖规则，当其为“source-over”，后来者居上，当其为“destination-over”则相反。</p>
+<h2 id="剪切"><a href="#剪切" class="headerlink" title="剪切"></a>剪切</h2><blockquote>
+<p>clip()方法从原始画布中剪切任意形状和尺寸。提示：一旦剪切了某个区域，则所有之后的绘图都会被限制在被剪切的区域内（不能访问画布上的其他区域）。您也可以在使用 clip() 方法前通过使用 save() 方法对当前画布区域进行保存，并在以后的任意时间对其进行恢复（通过 restore() 方法）</p>
+</blockquote>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>requestAnimationFrame(callback)</p>
+<blockquote>
+<p>。这个方法提供了更加平缓并更加有效率的方式来执行动画，当系统准备好了重绘条件的时候，才调用绘制动画帧。一般每秒钟回调函数执行60次，也有可能会被降低。<br>回调函数只会被传入一个参数，DOMHighResTimeStamp，指示当前被 requestAnimationFrame 序列化的函数队列被触发的时间。即使经过了许多对之前回调的计算工作时间，单个帧中的多个回调也都将被传入相同的时间戳。此数值是一个十进制数，单位毫秒，最小精度为1ms(1000μs)。</p>
+</blockquote>
+<h2 id="ImageData-对象"><a href="#ImageData-对象" class="headerlink" title="ImageData 对象"></a>ImageData 对象</h2><p>其包含的内容有:width、height、data:Uint8ClampedArray 类型</p>
+<p>createImageData(width, height):创建对象,颜色为黑色.</p>
+<p>getImageData(left, top, width, height):这个方法会返回一个ImageData对象，它代表了画布区域的对象数据.</p>
+<p>putImageData(myImageData, dx, dy):对场景进行像素数据的写入.</p>
+<h2 id="反锯齿"><a href="#反锯齿" class="headerlink" title="反锯齿"></a>反锯齿</h2><p>imageSmoothingEnabled属性//默认情况下启用(true)</p>
+<p>参考资料：</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes" target="_blank" rel="noopener">使用canvas来绘制图形 - Web API 接口 | MDN</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/TextMetrics" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/TextMetrics</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas" target="_blank" rel="noopener">像素操作 - Web API 接口 | MDN</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Optimizing_canvas" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Optimizing_canvas</a></li>
+</ul>
+
+            </div>
+          
+           
+            <div class="copyright">
+                <div class="name">
+                    <a>本文作者:</a>
+                    <a>Sōsuke</a>
+                </div>
+                <div class="link">
+                    <a>本文链接:</a>
+                    <a class="permalink" href="https://vevlins.github.io/2017/12/23/HTML5完全学习笔记三：canvas全解/">https://vevlins.github.io/2017/12/23/HTML5完全学习笔记三：canvas全解/</a>
+                </div>
+                <div class="license">
+                    <a>版权声明:</a>
+                    <a>本博客所有文章除特别声明外，均采用许可协议 CC BY-NC-SA 3.0 CN。转载请注明出处！</a>
+                </div>
+            </div>
+            
+
+          
+
+
+</article>
+
+
+<div class="tip">
+<button class="tip-btn">
+    打赏
+</button>
+<div class="tip-img">
+<ul>
+    
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+ 
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+</ul>
+</div>
+</div>
+
+<div class="more">
+
+    <div class="prev">
+   <a href="/2017/12/23/HTML5完全学习笔记四：api全解/">  HTML5完全学习笔记四：api全解</a>
+    </div>
+
+<div></div>
+
+    <div class="next">
+    <a href="/2017/12/23/HTML5完全学习笔记二：events全解/"> HTML5完全学习笔记二：events全解 </a>
+    </div>
+    
+</div>
+
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_weixin fa fa-weixin" data-cmd="weixin" title="分享到微信" style="color:#1cbd8f">
+</a>
+<a href="#" class="bds_tsina fa fa-weibo" data-cmd="tsina" title="分享到新浪微博" style="color:#ff6363">
+</a>
+<a href="#" class="bds_twi fa fa-twitter" data-cmd="twi" title="分享到Twitter" style="color:#00A7EB">
+</a>
+<a href="#" class="bds_fbook fa fa-facebook" data-cmd="fbook" title="分享到Facebook" style="color:#00A7EB">
+</a>
+</div>
+<script>
+window._bd_share_config={
+    "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},
+    "share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='../../../../../static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+ 
+<div id="comments"></div>
+
+<script>
+    var gitment = new Gitment({
+    id: "Sat Dec 23 2017 18:57:41 GMT+0800",
+    owner: "Vevlins",
+    repo: "Vevlins.github.io",
+    oauth: {
+      client_id:"8d83609a651e972e308d",
+      client_secret: "37e40c89a47e957f654e86f71c5caaccad0774de",
+    }
+  })
+  gitment.render('comments')
+</script>
+    </main>
+    <a class="not-found">not found!</a>
+    <div class="search-items">
+    </div>
+    <a href="#header" id="top" style="display:none">
+        <i class="fa fa-sort-asc fa-2x"></i>
+    </a>
+    <footer class="footer">
+    <div class="footer-copyright">©️2017
+    <a href="//github.com/Vevlins/toki" class="link" target="_blank">Toki</a>  by Vevlins
+    </div>
+</footer>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/toki.js"></script>  
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

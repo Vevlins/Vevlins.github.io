@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>
+        
+            HTML5完全学习笔记二：events全解
+        
+    </title>
+    <link rel="icon" href="/img/favicon.png"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" href="/css/hljs.min.css">
+    <script src="/js/hljs.min.js"></script>  
+    <script src="/js/gitment.browser.js"></script>  
+</head>
+<body>
+    <header class="header" id="header">
+    <h1>
+        <a class="title" href="/">
+            Toki
+        </a>
+    </h1>
+    <h2>
+        <a class="motto">
+            Ponyo loves Sōsuke!
+        </a>
+    </h2>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/archives/" class="menu-item-link">
+                        Archives
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/about/" class="menu-item-link">
+                        About
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="https://github.com/vevlins/" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/atom.xml" class="menu-item-link">
+                        RSS
+                    </a>
+                </li>
+            
+                
+            
+                
+                
+                <li class="menu-item">
+                    <a class="menu-item-link search">
+                        Search                   
+                        <i class="fa fa-long-arrow-right search-icon" aria-hidden="true"></i>
+                    </a>
+                        <input placeholder="Search..." class="search-input" style="display:none;border:none!important;" onkeydown="onEnter(event)" onkeypress="onEnter(event)"></input>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+            <h1>
+                <a class="title" href="/2017/12/23/HTML5完全学习笔记二：events全解/"> 
+                    HTML5完全学习笔记二：events全解 
+                </a>
+            </h1>
+            <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2017-12-23   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+            </div>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#HTML5完全学习笔记二：events全解"><span class="toc-list-text">HTML5完全学习笔记二：events全解</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#窗口事件"><span class="toc-list-text">窗口事件</span></a></li></ol></li></ol>
+</div>
+            <div class="content">
+                <h1 id="HTML5完全学习笔记二：events全解"><a href="#HTML5完全学习笔记二：events全解" class="headerlink" title="HTML5完全学习笔记二：events全解"></a>HTML5完全学习笔记二：events全解</h1><h2 id="窗口事件"><a href="#窗口事件" class="headerlink" title="窗口事件"></a>窗口事件</h2><p>适用于body标签</p>
+<ul>
+<li>onafterprint<blockquote>
+<p>注意： 目前只有 Internet Explorer 和 Firefox 浏览器支持 onafterprint 事件属性。在 IE 浏览器中, onafterprint 属性在打印对话框之前执行Javascript而不是之后。//?是否意味着在ie中onafterprint=onberforeprint</p>
+<a id="more"></a></blockquote>
+</li>
+<li>onbeforeprint</li>
+<li>onbeforeunload    <blockquote>
+<p> 在onload之前执行，可以阻止unload的执行，在页面关闭页面或者刷新时执行</p>
+</blockquote>
+</li>
+<li>onblur</li>
+<li>onerror<blockquote>
+<p>此外，onerror方法还提供了三个参数用来确定错误确切的信息，分别是：1）message：一个字符串，声明了出现的错误的信息(不同的浏览器中返回的消息内容略有差异)。2）url：一个字符串，声明了出现错误的文档的URL。3）line：一个数字，声明了出现错误的代码行的行号。</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>当JavaScript运行时错误（包括语法错误）发生时，window会触发一个ErrorEvent接口的error事件，并执行window.onerror()。当一项资源（如<img>或<script>）加载失败，加载资源的元素会触发一个Event接口的error事件，并执行该元素上的onerror()处理函数。这些error事件不会向上冒泡到window，不过（至少在Firefox中）能被单一的window.addEventListener捕获。</p>
+<ul>
+<li>onfocus</li>
+<li>onhaschange<br>锚改变时触发，有两个属性newURL和oldURL。</li>
+<li>onload<br>onload 通常用于 <body> 元素，在页面完全载入后(包括图片、css文件等等。)执行脚本代码。</li>
+<li>onmessage<br>Web Workers </li>
+<li>onoffline</li>
+<li>ononline<br>使用navigator.onLine 也可以检测是否在线</li>
+<li>onpagehide</li>
+<li>onpageshow<br>onpageshow 事件类似于 onload 事件，onload 事件在页面第一次加载时触发， onpageshow 事件在每次加载页面时触发，即 onload 事件在页面从浏览器缓存中读取时不触发。</li>
+<li>onpopstate<br>每当处于激活状态的历史记录条目发生变化时,popstate事件就会在对应window对象上触发. 如果当前处于激活状态的历史记录条目是由history.pushState()方法创建,或者由history.replaceState()方法修改过的, 则popstate事件对象的state属性包含了这个历史记录条目的state对象的一个拷贝.调用history.pushState()或者history.replaceState()不会触发popstate事件. popstate事件只会在浏览器某些行为下触发, 比如点击后退、前进按钮(或者在JavaScript中调用history.back()、history.forward()、history.go()方法).当网页加载时,各浏览器对popstate事件是否触发有不同的表现,Chrome 和 Safari会触发popstate事件, 而Firefox不会.</li>
+<li>onredo</li>
+<li>onresize</li>
+<li>onstorage<br>web存储区域（DOM Storage）更新时触发onstorage事件。如果变更了Storage对象的属性值，或者调用了setItem()、removeItem()等方法，就会触发onstorage事件。//这里的或者是什么意思，如果调用setitem但并不更改值只是设定为和之前的值一样，是否会触发这个事件。</li>
+<li>onundo</li>
+<li>onunload</li>
+</ul>
+</blockquote>
+<p>//有些类似于生命周期函数或者就是生命周期函数？</p>
+<h2 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h2><p>适用于在form内部的所有元素</p>
+<ul>
+<li>onblur</li>
+<li>onchange</li>
+<li>oncontextmenu<blockquote>
+<p>此事件会发生在没有阻止右键事件的情况下而且这不取决于此元素是否拥有了”contextmenu”属性.</p>
+</blockquote>
+</li>
+<li>onfocus</li>
+<li>onformchange</li>
+<li>onforminput</li>
+<li>oninput</li>
+<li>oninvalid</li>
+<li>onselect</li>
+<li>onsubmit</li>
+</ul>
+<h2 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h2><ul>
+<li>onkeydown</li>
+<li>onkeypress</li>
+<li>onkeyup</li>
+</ul>
+<h2 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h2><ul>
+<li>onclick</li>
+<li>ondbclick</li>
+<li>ondrag</li>
+<li>ondragend</li>
+<li>ondragenter</li>
+<li>ondragleave</li>
+<li>ondragover</li>
+<li>ondragstart</li>
+<li>ondrop</li>
+<li>onmousedown</li>
+<li>onmousemove</li>
+<li>onmouseout</li>
+<li>onmouseover</li>
+<li>onmouseup</li>
+<li>onmousewheel</li>
+<li>onscrolll</li>
+</ul>
+<h2 id="多媒体事件"><a href="#多媒体事件" class="headerlink" title="多媒体事件"></a>多媒体事件</h2><ul>
+<li>onabort</li>
+<li>oncanplay</li>
+<li>oncanplaythrough</li>
+<li>ondurationchange</li>
+<li>onemptied</li>
+<li>onended</li>
+<li>onerror</li>
+<li>onloadeddata</li>
+<li>onloadedmetadata</li>
+<li>onloadstart</li>
+<li>onpause</li>
+<li>onplay</li>
+<li>onplaying</li>
+<li>onprogress</li>
+<li>onratechange</li>
+<li>onreadystatechange</li>
+<li>onseeked</li>
+<li>onseeking</li>
+<li>onstalled</li>
+<li>onsuspend</li>
+<li>ontimeupdate</li>
+<li>onvolumechage</li>
+<li>onwaiting</li>
+</ul>
+<h2 id="其他事件"><a href="#其他事件" class="headerlink" title="其他事件"></a>其他事件</h2><ul>
+<li>onshow：menu显示时触发，兼容性不佳</li>
+<li>ontoggle：打开或关闭details时触发</li>
+</ul>
+<p>参考资料：</p>
+<ul>
+<li><a href="http://www.runoob.com/tags/ref-eventattributes.html">HTML 事件 | 菜鸟教程</a></li>
+<li><a href="https://www.cnblogs.com/arinna/archive/2011/08/08/2130629.html">JavaScript中的onerror事件 - arinna - 博客园</a></li>
+</ul>
+</script></p></blockquote>
+            </div>
+          
+           
+            <div class="copyright">
+                <div class="name">
+                    <a>本文作者:</a>
+                    <a>Sōsuke</a>
+                </div>
+                <div class="link">
+                    <a>本文链接:</a>
+                    <a class="permalink" href="https://vevlins.github.io/2017/12/23/HTML5完全学习笔记二：events全解/">https://vevlins.github.io/2017/12/23/HTML5完全学习笔记二：events全解/</a>
+                </div>
+                <div class="license">
+                    <a>版权声明:</a>
+                    <a>本博客所有文章除特别声明外，均采用许可协议 CC BY-NC-SA 3.0 CN。转载请注明出处！</a>
+                </div>
+            </div>
+            
+
+          
+
+
+</article>
+
+
+<div class="tip">
+<button class="tip-btn">
+    打赏
+</button>
+<div class="tip-img">
+<ul>
+    
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+ 
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+</ul>
+</div>
+</div>
+
+<div class="more">
+
+    <div class="prev">
+   <a href="/2017/12/23/HTML5完全学习笔记三：canvas全解/">  # HTML5完全学习笔记三：canvas全解</a>
+    </div>
+
+<div></div>
+
+    <div class="next">
+    <a href="/2017/12/23/HTML5完全学习笔记一：element全解/"> HTML5完全学习笔记一：element全解 </a>
+    </div>
+    
+</div>
+
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_weixin fa fa-weixin" data-cmd="weixin" title="分享到微信" style="color:#1cbd8f">
+</a>
+<a href="#" class="bds_tsina fa fa-weibo" data-cmd="tsina" title="分享到新浪微博" style="color:#ff6363">
+</a>
+<a href="#" class="bds_twi fa fa-twitter" data-cmd="twi" title="分享到Twitter" style="color:#00A7EB">
+</a>
+<a href="#" class="bds_fbook fa fa-facebook" data-cmd="fbook" title="分享到Facebook" style="color:#00A7EB">
+</a>
+</div>
+<script>
+window._bd_share_config={
+    "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},
+    "share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='../../../../../static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+ 
+<div id="comments"></div>
+
+<script>
+    var gitment = new Gitment({
+    id: "Sat Dec 23 2017 18:56:55 GMT+0800",
+    owner: "Vevlins",
+    repo: "Vevlins.github.io",
+    oauth: {
+      client_id:"8d83609a651e972e308d",
+      client_secret: "37e40c89a47e957f654e86f71c5caaccad0774de",
+    }
+  })
+  gitment.render('comments')
+</script>
+    </main>
+    <a class="not-found">not found!</a>
+    <div class="search-items">
+    </div>
+    <a href="#header" id="top" style="display:none">
+        <i class="fa fa-sort-asc fa-2x"></i>
+    </a>
+    <footer class="footer">
+    <div class="footer-copyright">©️2017
+    <a href="//github.com/Vevlins/toki" class="link" target="_blank">Toki</a>  by Vevlins
+    </div>
+</footer>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/toki.js"></script>  
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
