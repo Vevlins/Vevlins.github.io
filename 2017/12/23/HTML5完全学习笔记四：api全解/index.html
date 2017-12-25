@@ -117,11 +117,11 @@
                 <h1 id="HTML5完全学习笔记四：api全解"><a href="#HTML5完全学习笔记四：api全解" class="headerlink" title="HTML5完全学习笔记四：api全解"></a>HTML5完全学习笔记四：api全解</h1><h2 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h2><p>地理位置 API 通过 navigator.geolocation 提供。默认不开启,需要请求.<br>Geolocation API 的数据来源可能是 GPS、IP 地址、RFID、WiFi、蓝牙 MAC 地址、GSM/CDMA 卡 ID 等。</p>
 <p>方法如下:</p>
 <ul>
-<li>Geolocation.getCurrentPosition():获取位置返回position对象<blockquote>
+<li>Geolocation.getCurrentPosition():获取位置返回position对象</li>
+</ul>
+<blockquote>
 <p>这会异步地请求获取用户位置，并查询定位硬件来获取最新信息。当定位被确定后，定义的回调函数就会被执行。您可以选择性地提供第二个回调函数，当有错误时会被执行。第三个参数也是可选的，您可以通过该对象参数设定最长可接受的定位返回时间、等待请求的时间和是否获取高精度定位。</p>
 </blockquote>
-</li>
-</ul>
 <a id="more"></a>
 <pre><code class="javascript">var options = {
   enableHighAccuracy: true,

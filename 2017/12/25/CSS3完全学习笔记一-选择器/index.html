@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>
+        
+            CSS3完全学习笔记一:选择器
+        
+    </title>
+    <link rel="icon" href="/img/favicon.png"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" href="/css/hljs.min.css">
+    <script src="/js/hljs.min.js"></script>  
+    <script src="/js/gitment.browser.js"></script>  
+</head>
+<body>
+    <header class="header" id="header">
+    <h1>
+        <a class="title" href="/">
+            Toki
+        </a>
+    </h1>
+    <h2>
+        <a class="motto">
+            Ponyo loves Sōsuke!
+        </a>
+    </h2>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/archives/" class="menu-item-link">
+                        Archives
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/about/" class="menu-item-link">
+                        About
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="https://github.com/vevlins/" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/atom.xml" class="menu-item-link">
+                        RSS
+                    </a>
+                </li>
+            
+                
+            
+                
+                
+                <li class="menu-item">
+                    <a class="menu-item-link search">
+                        Search                   
+                        <i class="fa fa-long-arrow-right search-icon" aria-hidden="true"></i>
+                    </a>
+                        <input placeholder="Search..." class="search-input" style="display:none;border:none!important;" onkeydown="onEnter(event)" onkeypress="onEnter(event)"></input>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+            <h1>
+                <a class="title" href="/2017/12/25/CSS3完全学习笔记一-选择器/"> 
+                    CSS3完全学习笔记一:选择器 
+                </a>
+            </h1>
+            <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2017-12-25   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+            </div>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#CSS3完全学习笔记一-选择器"><span class="toc-list-text">CSS3完全学习笔记一:选择器</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#选择器"><span class="toc-list-text">选择器</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Css选择器的分类"><span class="toc-list-text">Css选择器的分类:</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#伪-pseudo-类和伪选择器"><span class="toc-list-text">伪(pseudo)类和伪选择器:</span></a></li></ol></li></ol>
+</div>
+            <div class="content">
+                <h1 id="CSS3完全学习笔记一-选择器"><a href="#CSS3完全学习笔记一-选择器" class="headerlink" title="CSS3完全学习笔记一:选择器"></a>CSS3完全学习笔记一:选择器</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
+<li>.class   .intro 选择所有class中包含该值的元素</li>
+<li>#id #intro  选择所有id=intro的元素</li>
+<li>* 所有元素</li>
+<li>element p 选择所有的p元素</li>
+<li>,   div,p 选择所有的div元素和p元素</li>
+<li>elment element 选择子(包含直接子元素和孙元素等)元素</li>
+<li>> 直接子元素</li>
+<li>+ 紧挨着前者的后者(直接弟节点)</li>
+<li>[attribute] 包含该属性的</li>
+<li>[attribute=value] 属性值为value的元素,加不加引号都可以</li>
+<li>[attribute~=value] 属性值中包含该部分,类似于文本的匹配</li>
+<li>[attribute|=value] 选择指定属性具有指定值开始(以-分隔开)的元素,可以没有后续部分</li>
+<li>:link 未访问链接<a id="more"></a></li>
+<li>:visited 访问过的链接</li>
+<li>:active 活动链接,当点击链接时,该链接变为活动链接</li>
+<li>:hover 鼠标在链接上边时</li>
+<li>:focus  获得焦点的输入元素</li>
+<li>:first-letter 第一个字母<blockquote>
+<p>只能设置以下属性: font properties;color properties ;background properties;margin properties;padding properties;border properties;text-decoration;vertical-align (only if float is ‘none’);text-transform;line-height;float;clear</p>
+</blockquote>
+</li>
+</ul>
+<p>这个地方的具体选择元素仍有困惑,比如设置为div:first-letter时,内直接嵌套p,那么p的首字母可以表现,而在p之前填充其他span、img标签则p没有表现.</p>
+<ul>
+<li>:first-line 第一行</li>
+<li>:first-child  p:first-child  当p元素是父元素的第一个子元素时</li>
+<li>:before 在元素之前添加内容,使用content 属性来指定要插入的内容。</li>
+<li>:after 之后</li>
+<li>:lang(language) p:lang(it) lang属性值的起始值为it的p元素</li>
+</ul>
+<hr>
+<p>之后为css3新定义选择器</p>
+<ul>
+<li>element1~element2 p~ul p元素同一父元素之后的每一个ul元素. 与+类似,非直接弟节点</li>
+<li>[attribute^=value] 属性以value开头,与|=类似,但是不要求以-分割</li>
+<li>[attribute$=value] 结尾</li>
+<li>[attribute*=value] 包含子串</li>
+<li>:first-of-type  p:first-of-type, 是其父元素的第一个p子元素,与:nth-of-type(1)相同</li>
+<li>:last-of-type,与:nth-last-of-type(1)相同</li>
+<li>:only-of-type 唯一,不排除其他元素</li>
+<li>:only-child 是父亲的唯一子元素</li>
+<li>:nth-child(n) 是父亲的第n的子元素<blockquote>
+<p>选择父元素E的第n个子元素F。其中n可以是整数（1，2，3）、关键字（even，odd）、可以是公式（2n+1）,而且n值起始值为1，而不是0.</p>
+</blockquote>
+</li>
+<li>:last-child 最后一个子元素</li>
+<li>:nth-last-child(n) 倒数第n</li>
+<li>:nth-of-type(n)。第n个该类型的</li>
+<li>:nth-last-of-type(n) 倒数第n</li>
+<li>:root。根元素,在html中始终是<html></html></li>
+<li>:empty 没有子元素和文本节点</li>
+<li>:target//??? 匹配hash与id相对应的元素,但是safari、chrome没有效果</li>
+<li>:enabled 启用的输入元素</li>
+<li>:disabled</li>
+<li>:checked 选中的输入元素</li>
+<li>:not(selector)     排除</li>
+<li>::selection 被选中的部分<blockquote>
+<p>只可以应用于少数的CSS属性：color, background, cursor,和outline。</p>
+</blockquote>
+</li>
+<li>:out-of-range 匹配值在指定区间之外的input元素</li>
+<li>:in-range    </li>
+<li>:read-write  用于匹配可读及可写的元素/区别于只读元素</li>
+<li>:read-only 匹配设置 “readonly”（只读） 属性的元素</li>
+<li>:optional 可选的输入元素,区别于required</li>
+<li>:required </li>
+<li>:valid 输入值合法的元素</li>
+<li>:invalid 输入值不合法的元素</li>
+</ul>
+<hr>
+<h2 id="Css选择器的分类"><a href="#Css选择器的分类" class="headerlink" title="Css选择器的分类:"></a>Css选择器的分类:</h2><p><img src="http://ozc9m7ly1.bkt.clouddn.com/282324267509975.jpg" alt=""></p>
+<h2 id="伪-pseudo-类和伪选择器"><a href="#伪-pseudo-类和伪选择器" class="headerlink" title="伪(pseudo)类和伪选择器:"></a>伪(pseudo)类和伪选择器:</h2><p>伪类:对现有元素进行筛选;伪选择器:创造出不存在的新元素.</p>
+<blockquote>
+<p>The pseudo-class concept is introduced to permit selection based on information that lies outside of the document tree or that cannot be expressed using the other simple selectors.</p>
+<p>Pseudo-elements create abstractions about the document tree beyond those specified by the document language. For instance, document languages do not offer mechanisms to access the first letter or first line of an element’s content. Pseudo-elements allow authors to refer to this otherwise inaccessible information. Pseudo-elements may also provide authors a way to refer to content that does not exist in the source document.</p>
+</blockquote>
+<p>伪类总是以一个冒号开头。伪元素通常以两个冒号开头。在 CSS2 时代，伪元素和伪类均是以一个冒号开头的；在 CSS2.1 之后，为了对伪元素和伪类加以区分，规定伪类继续以一个冒号开头，而伪元素改为以两个冒号开头。但是为了向前兼容，浏览器同样接受 CSS2 时代已经存在的伪元素（它们包括:before, :after, :first-line, :first-letter）的单冒号写法。但是对于 CSS2 之后所有新增的伪元素（例如::selection），必须采用双冒号写法。</p>
+<p>一些老旧的浏览器不支持双冒号的写法，因此如果必须兼容旧浏览器，则应该使用单冒号写法。IE 从 9 开始支持双冒号写法。//是否意味着ie9之前的浏览器无法使用::selection?</p>
+<p>参考资料:</p>
+<ul>
+<li><a href="https://www.cnblogs.com/AllenChou/p/4684753.html" target="_blank" rel="noopener">最全CSS3选择器 - AllenChou - 博客园</a></li>
+<li><a href="https://www.renfei.org/blog/css-pseudo-class-and-pseudo-element.html" target="_blank" rel="noopener">CSS 伪类和伪元素的区别 - Blog - Renfei Song</a></li>
+<li><a href="http://www.runoob.com/cssref/css-ref-aural.html" target="_blank" rel="noopener">CSS 听觉参考手册 | 菜鸟教程</a></li>
+</ul>
+
+            </div>
+          
+           
+            <div class="copyright">
+                <div class="name">
+                    <a>本文作者:</a>
+                    <a>Sōsuke</a>
+                </div>
+                <div class="link">
+                    <a>本文链接:</a>
+                    <a class="permalink" href="https://vevlins.github.io/2017/12/25/CSS3完全学习笔记一-选择器/">https://vevlins.github.io/2017/12/25/CSS3完全学习笔记一-选择器/</a>
+                </div>
+                <div class="license">
+                    <a>版权声明:</a>
+                    <a>本博客所有文章除特别声明外，均采用许可协议 CC BY-NC-SA 3.0 CN。转载请注明出处！</a>
+                </div>
+            </div>
+            
+
+          
+
+
+</article>
+
+
+<div class="tip">
+<button class="tip-btn">
+    打赏
+</button>
+<div class="tip-img">
+<ul>
+    
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+ 
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+</ul>
+</div>
+</div>
+
+<div class="more">
+
+<div></div>
+
+    <div class="next">
+    <a href="/2017/12/25/http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT/"> http无状态和鉴权解决方案:cookie、session、token、oauth2及JWT </a>
+    </div>
+    
+</div>
+
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_weixin fa fa-weixin" data-cmd="weixin" title="分享到微信" style="color:#1cbd8f">
+</a>
+<a href="#" class="bds_tsina fa fa-weibo" data-cmd="tsina" title="分享到新浪微博" style="color:#ff6363">
+</a>
+<a href="#" class="bds_twi fa fa-twitter" data-cmd="twi" title="分享到Twitter" style="color:#00A7EB">
+</a>
+<a href="#" class="bds_fbook fa fa-facebook" data-cmd="fbook" title="分享到Facebook" style="color:#00A7EB">
+</a>
+</div>
+<script>
+window._bd_share_config={
+    "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},
+    "share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='../../../../../static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+ 
+<div id="comments"></div>
+
+<script>
+    var gitment = new Gitment({
+    id: "Mon Dec 25 2017 19:55:15 GMT+0800",
+    owner: "Vevlins",
+    repo: "Vevlins.github.io",
+    oauth: {
+      client_id:"8d83609a651e972e308d",
+      client_secret: "37e40c89a47e957f654e86f71c5caaccad0774de",
+    }
+  })
+  gitment.render('comments')
+</script>
+    </main>
+    <a class="not-found">not found!</a>
+    <div class="search-items">
+    </div>
+    <a href="#header" id="top" style="display:none">
+        <i class="fa fa-sort-asc fa-2x"></i>
+    </a>
+    <footer class="footer">
+    <div class="footer-copyright">©️2017
+    <a href="//github.com/Vevlins/toki" class="link" target="_blank">Toki</a>  by Vevlins
+    </div>
+</footer>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/toki.js"></script>  
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
