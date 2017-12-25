@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>
+        
+            http无状态和鉴权解决方案:cookie、session、token、oauth2及JWT
+        
+    </title>
+    <link rel="icon" href="/img/favicon.png"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" href="/css/hljs.min.css">
+    <script src="/js/hljs.min.js"></script>  
+    <script src="/js/gitment.browser.js"></script>  
+</head>
+<body>
+    <header class="header" id="header">
+    <h1>
+        <a class="title" href="/">
+            Toki
+        </a>
+    </h1>
+    <h2>
+        <a class="motto">
+            Ponyo loves Sōsuke!
+        </a>
+    </h2>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/archives/" class="menu-item-link">
+                        Archives
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/about/" class="menu-item-link">
+                        About
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="https://github.com/vevlins/" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/atom.xml" class="menu-item-link">
+                        RSS
+                    </a>
+                </li>
+            
+                
+            
+                
+                
+                <li class="menu-item">
+                    <a class="menu-item-link search">
+                        Search                   
+                        <i class="fa fa-long-arrow-right search-icon" aria-hidden="true"></i>
+                    </a>
+                        <input placeholder="Search..." class="search-input" style="display:none;border:none!important;" onkeydown="onEnter(event)" onkeypress="onEnter(event)"></input>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+            <h1>
+                <a class="title" href="/2017/12/25/http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT/"> 
+                    http无状态和鉴权解决方案:cookie、session、token、oauth2及JWT 
+                </a>
+            </h1>
+            <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2017-12-25   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/session/">session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+            </div>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT"><span class="toc-list-text">http无状态和鉴权解决方案:cookie、session、token、oauth2及JWT</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#cookie"><span class="toc-list-text">cookie</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#session"><span class="toc-list-text">session</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#token"><span class="toc-list-text">token</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#jwt"><span class="toc-list-text">jwt</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#oauth2"><span class="toc-list-text">oauth2</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#小结"><span class="toc-list-text">小结</span></a></li></ol></li></ol>
+</div>
+            <div class="content">
+                <h1 id="http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT"><a href="#http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT" class="headerlink" title="http无状态和鉴权解决方案:cookie、session、token、oauth2及JWT"></a>http无状态和鉴权解决方案:cookie、session、token、oauth2及JWT</h1><p>http协议本身是无状态的,但是在实际的web开发中常有一些操作需要有状态.比如想要访问一些私人访问权限的文章,或者这种操作需要明确当前用户身份.</p>
+<p>显然,最简单的方案就是每次都发送账户和密码,但是这样重复操作用用户并不友好,对服务器页增添了额外的压力.为了解决无状态带来的鉴权问题,一般有以下几种解决方案:cookie、session、token.至于标题中提及的outh2、jwt本质上也是token方案.</p>
+<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>Cookie是储存在客户端的一串字符,一般说来大小不超过4kb.比如我们常见的记住密码功能,或者一些基于之前输入的提醒和默认配置,就是通过cookie来实现的,cookie简单说来就是一种本地存储方法.但是这里存储的信息常用来进行鉴权操作.cookie只能保存文本信息,浏览器可以禁止cookie.cookie的期限可以被自由设定,可以是仅仅一次浏览起效,也可以长达一年.如果是短期的,那么这些信息会被存储在内存中,如果是长期则会存储在硬盘上.cookie的起效范围是路径下的所有子路径.不允许其他来源的访问.</p>
+<p>单纯的采用cookie来认证身份会带来一个比较麻烦的问题,就是伪造比较容易.因为这样处理,cookie中必然要带有身份信息,但是服务器也要解析这个身份信息,所以必然要在原理上支持双向的编码和解码,那么这个信息很容易被破解和进一步伪造.想一想,如果想要解决这个问题,我们常用的方案应该是加一个secret,而这个secret应该是放在服务器上的,服务器返回这样一个<code>带有secret编码的字符串</code>,而在服务器端再带上这个secret反向解密,如此一来,问题不就解决了吗?确实如此,但是这不代表cookie就安全,因为这已经不叫cookie了,而是我们要讲的第二个对象:session.<br><a id="more"></a></p>
+<h2 id="session"><a href="#session" class="headerlink" title="session"></a>session</h2><p>通过上面说的东西,我们已经能够获得身份信息,额外的,我们还可以把更复杂形式的信息都存储进来,因为这里没有cookie的纯文本限制.但是刚才说的<code>带有secret编码的字符串</code>也就是sessionid,依然要存储在客户端.是不是意味着session必定要依赖cookie呢?不是!想一想,我们实际上需要的是在每一次请求(至少是需要判定身份状态的请求中),都带上这个字符串,我们有以下这几种解决方案:</p>
+<ul>
+<li>cookie</li>
+<li>表单隐藏字段:在form中放置一个隐藏的域</li>
+<li>url重写:在url后边加上session的query段</li>
+</ul>
+<p>Session也可以设定有效时间.其实际的存储可以在内存、缓存、文件中.通过类似//可能具体实现不同.//hash表的数据结构存储.cookie是一个存在的实体,session是一种机制.</p>
+<h2 id="token"><a href="#token" class="headerlink" title="token"></a>token</h2><p>对token的理解还不够,可能多有纰漏之处,待之后再进行修改.</p>
+<p>使用基于 Token 的身份验证方法，在服务端不需要存储用户的登录记录。大概的流程是这样的：</p>
+<ul>
+<li>客户端使用用户名跟密码请求登录</li>
+<li>服务端收到请求，去验证用户名与密码</li>
+<li>验证成功后，服务端会签发一个 Token，再把这个 Token 发送给客户端<br>客户端收到 Token 以后可以把它存储起来，比如放在 Cookie 里或者 Local Storage 里</li>
+<li>客户端每次向服务端请求资源的时候需要带着服务端签发的 Token</li>
+<li>服务端收到请求，然后去验证客户端请求里面带着的 Token，如果验证成功，就向客户端返回请求的数据</li>
+</ul>
+<p>可以看出来,这里的token与sessionid有些类似,其区别:</p>
+<ul>
+<li>sessionid是带着之前的状态的,在服务器端可以getSession(sessionid)</li>
+<li>token是在登录验证之后发放的一个包含着用户基本信息的较长的字符串,用处是验证身份以及简化后续获取信息的难度.</li>
+<li>token机制更灵活,可以实现跨域</li>
+</ul>
+<h3 id="jwt"><a href="#jwt" class="headerlink" title="jwt"></a>jwt</h3><p>Jwt简单说来是一种token的具体实现规范!</p>
+<p>Jwt标准的token有三个部分,中间用点分隔开，并且都会使用 Base64 编码:</p>
+<ul>
+<li>header<blockquote>
+<p>header 部分主要是两部分内容，一个是 Token 的类型，另一个是使用的算法</p>
+</blockquote>
+</li>
+<li>Payload <blockquote>
+<p>里面是 Token 的具体内容，这些内容里面有一些是标准字段，你也可以添加其它需要的内容</p>
+</blockquote>
+</li>
+<li>Signature<blockquote>
+<p>编码以上两个部分并且加入一个secret使用信息摘要算法得出一个字符串</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="oauth2"><a href="#oauth2" class="headerlink" title="oauth2"></a>oauth2</h3><p>简单来说,oauth是用来向第三方平台提供可以细致的权限管理的一种方案.</p>
+<p>如何直接向第三方提供账号和密码,可能存在的问题有:</p>
+<ul>
+<li>不安全</li>
+<li>无法更细致的限制授权范围和有效期</li>
+<li>只有修改密码才能收回权限</li>
+<li>一个第三方程序被破解将会导致用户密码泄漏</li>
+</ul>
+<p>OAuth的基本思路如下:</p>
+<blockquote>
+<p>OAuth在”客户端”与”服务提供商”之间，设置了一个授权层（authorization layer）。”客户端”不能直接登录”服务提供商”，只能登录授权层，以此将用户与客户端区分开来。”客户端”登录授权层所用的令牌（token），与用户的密码不同。用户可以在登录的时候，指定授权层令牌的权限范围和有效期。”客户端”登录授权层以后，”服务提供商”根据令牌的权限范围和有效期，向”客户端”开放用户储存的资料。</p>
+</blockquote>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这篇文章讲解的三种方案:cookie、session、token的理解可能会有问题,尤其是token和session很容易让人觉得token就是一种sessionid而已.简单的理解方式:</p>
+<ul>
+<li>Cookie 就是一个写着自己是谁的小纸条.共产党看到你,就无条件相信了你是狗蛋</li>
+<li>Session是加入了领导最喜欢的一首诗的名字,然后和同志姓名拼起来编码成了一个字符串交给你.当共产党拿到的时候要先反向破解,然后认定你就是狗蛋,再去查找记事本上狗蛋的编制给他发了这个月的口粮.</li>
+<li>Token是组织上经过审查认定你就是狗蛋,为了嫌麻烦不想下次再查记事本,所以把你的编制信息直接拼起来编码发给你,下次去的时候他们翻译出来你的编制直接给你发.</li>
+</ul>
+<p>目前对于这篇文章的内容依然有不理解之处,等待进一步修改.</p>
+<p>参考资料:</p>
+<ul>
+<li><a href="https://my.oschina.net/biezhi/blog/490242#OSC_h2_3" target="_blank" rel="noopener">Http Session和Cookie - _</a></li>
+<li><a href="http://blog.csdn.net/java_faep/article/details/78082802" target="_blank" rel="noopener">服务器端Session和客户端Session（和Cookie区别） - 曾梦想仗剑走天涯的博客 - CSDN博客</a></li>
+<li><a href="https://www.zhihu.com/question/31079651" target="_blank" rel="noopener">https://www.zhihu.com/question/31079651</a></li>
+<li><a href="http://blog.leapoahead.com/2015/09/06/understanding-jwt/" target="_blank" rel="noopener">http://blog.leapoahead.com/2015/09/06/understanding-jwt/</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html" target="_blank" rel="noopener">理解OAuth 2.0 - 阮一峰的网络日志</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/28295641" target="_blank" rel="noopener">Web App Token 鉴权方案的设计与思考</a></li>
+<li><a href="https://www.zhihu.com/question/39137156/answer/80228149" target="_blank" rel="noopener">app开发token、cookie的区别，账号密码加密又是如何保证安全？ - 知乎</a></li>
+<li><a href="http://tech.colla.me/zh/show/token_session_cookie" target="_blank" rel="noopener">cookie &amp; session &amp; token的简单理解 | colla.me</a></li>
+<li><a href="https://ninghao.net/blog/2834" target="_blank" rel="noopener">基于 Token 的身份验证 - 宁皓网</a></li>
+</ul>
+
+            </div>
+          
+           
+            <div class="copyright">
+                <div class="name">
+                    <a>本文作者:</a>
+                    <a>Sōsuke</a>
+                </div>
+                <div class="link">
+                    <a>本文链接:</a>
+                    <a class="permalink" href="https://vevlins.github.io/2017/12/25/http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT/">https://vevlins.github.io/2017/12/25/http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT/</a>
+                </div>
+                <div class="license">
+                    <a>版权声明:</a>
+                    <a>本博客所有文章除特别声明外，均采用许可协议 CC BY-NC-SA 3.0 CN。转载请注明出处！</a>
+                </div>
+            </div>
+            
+
+          
+
+
+</article>
+
+
+<div class="tip">
+<button class="tip-btn">
+    打赏
+</button>
+<div class="tip-img">
+<ul>
+    
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+ 
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+</ul>
+</div>
+</div>
+
+<div class="more">
+
+<div></div>
+
+    <div class="next">
+    <a href="/2017/12/23/HTML5完全学习笔记四：api全解/"> HTML5完全学习笔记四：api全解 </a>
+    </div>
+    
+</div>
+
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_weixin fa fa-weixin" data-cmd="weixin" title="分享到微信" style="color:#1cbd8f">
+</a>
+<a href="#" class="bds_tsina fa fa-weibo" data-cmd="tsina" title="分享到新浪微博" style="color:#ff6363">
+</a>
+<a href="#" class="bds_twi fa fa-twitter" data-cmd="twi" title="分享到Twitter" style="color:#00A7EB">
+</a>
+<a href="#" class="bds_fbook fa fa-facebook" data-cmd="fbook" title="分享到Facebook" style="color:#00A7EB">
+</a>
+</div>
+<script>
+window._bd_share_config={
+    "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},
+    "share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='../../../../../static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+ 
+<div id="comments"></div>
+
+<script>
+    var gitment = new Gitment({
+    id: "Mon Dec 25 2017 18:33:12 GMT+0800",
+    owner: "Vevlins",
+    repo: "Vevlins.github.io",
+    oauth: {
+      client_id:"8d83609a651e972e308d",
+      client_secret: "37e40c89a47e957f654e86f71c5caaccad0774de",
+    }
+  })
+  gitment.render('comments')
+</script>
+    </main>
+    <a class="not-found">not found!</a>
+    <div class="search-items">
+    </div>
+    <a href="#header" id="top" style="display:none">
+        <i class="fa fa-sort-asc fa-2x"></i>
+    </a>
+    <footer class="footer">
+    <div class="footer-copyright">©️2017
+    <a href="//github.com/Vevlins/toki" class="link" target="_blank">Toki</a>  by Vevlins
+    </div>
+</footer>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/toki.js"></script>  
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
