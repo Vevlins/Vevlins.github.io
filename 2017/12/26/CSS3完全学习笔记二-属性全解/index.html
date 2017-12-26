@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>
         
-            Toki
+            CSS3完全学习笔记二: 属性全解
         
     </title>
     <link rel="icon" href="/img/favicon.png"/>
@@ -86,15 +86,13 @@
     </nav>
 </header>
     <main class="main">
-        <section class="posts">
-    
         <article class="post">
             <h1>
                 <a class="title" href="/2017/12/26/CSS3完全学习笔记二-属性全解/"> 
                     CSS3完全学习笔记二: 属性全解 
                 </a>
             </h1>
-                        <div class="meta">
+            <div class="meta">
                 <a class="date"> 
                     <i class="fa fa-calendar" aria-hidden="true"></i>                    
                     2017-12-26   
@@ -112,8 +110,10 @@
                 
                     <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
             </div>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#CSS3完全学习笔记二-属性全解"><span class="toc-list-text">CSS3完全学习笔记二: 属性全解</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#动画属性"><span class="toc-list-text">动画属性</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#keyframes"><span class="toc-list-text">@keyframes</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#animation"><span class="toc-list-text">animation</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#背景属性"><span class="toc-list-text">背景属性</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#background"><span class="toc-list-text">background</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#边框和outline属性"><span class="toc-list-text">边框和outline属性</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#border"><span class="toc-list-text">border</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#outline"><span class="toc-list-text">outline</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#outline-offset"><span class="toc-list-text">outline-offset</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#border-image"><span class="toc-list-text">border-image</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#border-radius"><span class="toc-list-text">border-radius</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#box-shadow"><span class="toc-list-text">box-shadow</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#盒子属性"><span class="toc-list-text">盒子属性</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#overflow"><span class="toc-list-text">overflow</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#padding"><span class="toc-list-text">padding</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#height-width"><span class="toc-list-text">height/width</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#margin"><span class="toc-list-text">margin</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#box-sizing"><span class="toc-list-text">box-sizing</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#resize"><span class="toc-list-text">resize</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#颜色属性"><span class="toc-list-text">颜色属性</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#opacity"><span class="toc-list-text">opacity</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#字体属性"><span class="toc-list-text">字体属性</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#font"><span class="toc-list-text">font</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#font-face"><span class="toc-list-text">@font-face</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#内容生成属性"><span class="toc-list-text">内容生成属性</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#content"><span class="toc-list-text">content</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#quotes"><span class="toc-list-text">quotes</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#列表属性"><span class="toc-list-text">列表属性</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#list-style"><span class="toc-list-text">list-style</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#多列属性"><span class="toc-list-text">多列属性</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#column-count"><span class="toc-list-text">column-count</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#column-fil"><span class="toc-list-text">column-fil</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#column-gap"><span class="toc-list-text">column-gap</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#column-rule"><span class="toc-list-text">column-rule</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#column-span"><span class="toc-list-text">column-span</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#columns"><span class="toc-list-text">columns</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#定位属性"><span class="toc-list-text">定位属性</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#visibility"><span class="toc-list-text">visibility</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#z-index"><span class="toc-list-text">z-index</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#position"><span class="toc-list-text">position</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#display"><span class="toc-list-text">display</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#cursor"><span class="toc-list-text">cursor</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#float"><span class="toc-list-text">float</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#clear"><span class="toc-list-text">clear</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#clip"><span class="toc-list-text">clip</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#表格属性"><span class="toc-list-text">表格属性</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#border-collapse"><span class="toc-list-text">border-collapse</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#border-spacing"><span class="toc-list-text">border-spacing</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#caption-side"><span class="toc-list-text">caption-side</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#empty-cells"><span class="toc-list-text">empty-cells</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#table-layout"><span class="toc-list-text">table-layout</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#文本属性"><span class="toc-list-text">文本属性</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#color"><span class="toc-list-text">color</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#direction"><span class="toc-list-text">direction</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#letter-spacing"><span class="toc-list-text">letter-spacing</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#line-height"><span class="toc-list-text">line-height</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#text-align"><span class="toc-list-text">text-align</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#text-decoration"><span class="toc-list-text">text-decoration</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#text-indent"><span class="toc-list-text">text-indent</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#text-transform"><span class="toc-list-text">text-transform</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#vertical-align"><span class="toc-list-text">vertical-align</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#white-space"><span class="toc-list-text">white-space</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#word-spacing"><span class="toc-list-text">word-spacing</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#text-align-last"><span class="toc-list-text">text-align-last</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#text-overflow"><span class="toc-list-text">text-overflow</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#text-shadow"><span class="toc-list-text">text-shadow</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#word-break"><span class="toc-list-text">word-break</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#word-wrap"><span class="toc-list-text">word-wrap</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#过渡"><span class="toc-list-text">过渡</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#transition"><span class="toc-list-text">transition</span></a></li></ol></li></ol></li></ol>
+</div>
             <div class="content">
-                
                 <h1 id="CSS3完全学习笔记二-属性全解"><a href="#CSS3完全学习笔记二-属性全解" class="headerlink" title="CSS3完全学习笔记二: 属性全解"></a>CSS3完全学习笔记二: 属性全解</h1><p>对于目前没有主流浏览器支持的属性和一些需要特别学习的属性,在这篇笔记中没有学习.</p>
 <h2 id="动画属性"><a href="#动画属性" class="headerlink" title="动画属性"></a>动画属性</h2><h3 id="keyframes"><a href="#keyframes" class="headerlink" title="@keyframes"></a>@keyframes</h3><p>使用@keyframes规则，你可以创建动画。<br>创建动画是通过逐步改变从一个CSS样式设定到另一个。指定的变化时发生时使用％，或关键字”from”和”to”，这是和0％到100％相同。</p>
 <p>语法:</p>
@@ -565,197 +565,91 @@
 <li><a href="http://www.runoob.com/cssref/pr-class-display.html" target="_blank" rel="noopener">CSS display 属性 | 菜鸟教程</a></li>
 </ul>
 
-                
             </div>
-            <div class="continue">
-            <a href="/2017/12/26/CSS3完全学习笔记二-属性全解/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
+          
+           
+            <div class="copyright">
+                <div class="name">
+                    <a>本文作者:</a>
+                    <a>Sōsuke</a>
+                </div>
+                <div class="link">
+                    <a>本文链接:</a>
+                    <a class="permalink" href="https://vevlins.github.io/2017/12/26/CSS3完全学习笔记二-属性全解/">https://vevlins.github.io/2017/12/26/CSS3完全学习笔记二-属性全解/</a>
+                </div>
+                <div class="license">
+                    <a>版权声明:</a>
+                    <a>本博客所有文章除特别声明外，均采用许可协议 CC BY-NC-SA 3.0 CN。转载请注明出处！</a>
+                </div>
             </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2017/12/25/CSS3完全学习笔记一-选择器/"> 
-                    CSS3完全学习笔记一:选择器 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-25   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <h1 id="CSS3完全学习笔记一-选择器"><a href="#CSS3完全学习笔记一-选择器" class="headerlink" title="CSS3完全学习笔记一:选择器"></a>CSS3完全学习笔记一:选择器</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
-<li>.class   .intro 选择所有class中包含该值的元素</li>
-<li>#id #intro  选择所有id=intro的元素</li>
-<li>* 所有元素</li>
-<li>element p 选择所有的p元素</li>
-<li>,   div,p 选择所有的div元素和p元素</li>
-<li>elment element 选择子(包含直接子元素和孙元素等)元素</li>
-<li>> 直接子元素</li>
-<li>+ 紧挨着前者的后者(直接弟节点)</li>
-<li>[attribute] 包含该属性的</li>
-<li>[attribute=value] 属性值为value的元素,加不加引号都可以</li>
-<li>[attribute~=value] 属性值中包含该部分,类似于文本的匹配</li>
-<li>[attribute|=value] 选择指定属性具有指定值开始(以-分隔开)的元素,可以没有后续部分</li>
-<li>:link 未访问链接
-                
-            </div>
-            <div class="continue">
-            <a href="/2017/12/25/CSS3完全学习笔记一-选择器/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2017/12/25/http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT/"> 
-                    http无状态和鉴权解决方案:cookie、session、token、oauth2及JWT 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-25   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/session/">session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <h1 id="http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT"><a href="#http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT" class="headerlink" title="http无状态和鉴权解决方案:cookie、session、token、oauth2及JWT"></a>http无状态和鉴权解决方案:cookie、session、token、oauth2及JWT</h1><p>http协议本身是无状态的,但是在实际的web开发中常有一些操作需要有状态.比如想要访问一些私人访问权限的文章,或者这种操作需要明确当前用户身份.</p>
-<p>显然,最简单的方案就是每次都发送账户和密码,但是这样重复操作用用户并不友好,对服务器页增添了额外的压力.为了解决无状态带来的鉴权问题,一般有以下几种解决方案:cookie、session、token.至于标题中提及的outh2、jwt本质上也是token方案.</p>
-<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>Cookie是储存在客户端的一串字符,一般说来大小不超过4kb.比如我们常见的记住密码功能,或者一些基于之前输入的提醒和默认配置,就是通过cookie来实现的,cookie简单说来就是一种本地存储方法.但是这里存储的信息常用来进行鉴权操作.cookie只能保存文本信息,浏览器可以禁止cookie.cookie的期限可以被自由设定,可以是仅仅一次浏览起效,也可以长达一年.如果是短期的,那么这些信息会被存储在内存中,如果是长期则会存储在硬盘上.cookie的起效范围是路径下的所有子路径.不允许其他来源的访问.</p>
-<p>单纯的采用cookie来认证身份会带来一个比较麻烦的问题,就是伪造比较容易.因为这样处理,cookie中必然要带有身份信息,但是服务器也要解析这个身份信息,所以必然要在原理上支持双向的编码和解码,那么这个信息很容易被破解和进一步伪造.想一想,如果想要解决这个问题,我们常用的方案应该是加一个secret,而这个secret应该是放在服务器上的,服务器返回这样一个<code>带有secret编码的字符串</code>,而在服务器端再带上这个secret反向解密,如此一来,问题不就解决了吗?确实如此,但是这不代表cookie就安全,因为这已经不叫cookie了,而是我们要讲的第二个对象:session.<br>
-                
-            </div>
-            <div class="continue">
-            <a href="/2017/12/25/http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2017/12/23/HTML5完全学习笔记四：api全解/"> 
-                    HTML5完全学习笔记四：api全解 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-23   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <h1 id="HTML5完全学习笔记四：api全解"><a href="#HTML5完全学习笔记四：api全解" class="headerlink" title="HTML5完全学习笔记四：api全解"></a>HTML5完全学习笔记四：api全解</h1><h2 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h2><p>地理位置 API 通过 navigator.geolocation 提供。默认不开启,需要请求.<br>Geolocation API 的数据来源可能是 GPS、IP 地址、RFID、WiFi、蓝牙 MAC 地址、GSM/CDMA 卡 ID 等。</p>
-<p>方法如下:</p>
+            
+
+          
+
+
+</article>
+
+
+<div class="tip">
+<button class="tip-btn">
+    打赏
+</button>
+<div class="tip-img">
 <ul>
-<li>Geolocation.getCurrentPosition():获取位置返回position对象</li>
+    
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+ 
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
 </ul>
-<blockquote>
-<p>这会异步地请求获取用户位置，并查询定位硬件来获取最新信息。当定位被确定后，定义的回调函数就会被执行。您可以选择性地提供第二个回调函数，当有错误时会被执行。第三个参数也是可选的，您可以通过该对象参数设定最长可接受的定位返回时间、等待请求的时间和是否获取高精度定位。</p>
-</blockquote>
-                
-            </div>
-            <div class="continue">
-            <a href="/2017/12/23/HTML5完全学习笔记四：api全解/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2017/12/23/HTML5完全学习笔记三：canvas全解/"> 
-                    HTML5完全学习笔记三：canvas全解 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-23   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <h1 id="HTML5完全学习笔记三：canvas全解"><a href="#HTML5完全学习笔记三：canvas全解" class="headerlink" title="HTML5完全学习笔记三：canvas全解"></a>HTML5完全学习笔记三：canvas全解</h1><p>Canvas用于通过js绘制图片和动画。最早由apple引入webkit。</p>
-<p>Canvas元素只有width和height属性，默认情况下的值为300*150.该元素可以使用CSS来定义大小，但在绘制时图像会伸缩以适应它的框架尺寸：如果CSS的尺寸与初始画布的比例不一致，它会出现扭曲。尽量使用width和height来设定canvas的形状大小而非css。</p>
-<h2 id="getContext"><a href="#getContext" class="headerlink" title="getContext"></a>getContext</h2><p>访问绘图上下文，检测是否支持canvas也可以通过检测getcontext。</p>
-<pre><code>var canvas = document.getElementById(&#39;tutorial&#39;);
+</div>
+</div>
 
-if (canvas.getContext){
-  var ctx = canvas.getContext(&#39;2d&#39;);
-} else {
-}
-</code></pre>
-                
-            </div>
-            <div class="continue">
-            <a href="/2017/12/23/HTML5完全学习笔记三：canvas全解/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-</section>
+<div class="more">
 
-  <nav class="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/pagez/2/">2</a><a class="page-number" href="/pagez/3/">3</a><a class="extend next" rel="next" href="/pagez/2/">下一页 &raquo;</a>
-  </nav>
+<div></div>
 
+    <div class="next">
+    <a href="/2017/12/25/CSS3完全学习笔记一-选择器/"> CSS3完全学习笔记一:选择器 </a>
+    </div>
+    
+</div>
+
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_weixin fa fa-weixin" data-cmd="weixin" title="分享到微信" style="color:#1cbd8f">
+</a>
+<a href="#" class="bds_tsina fa fa-weibo" data-cmd="tsina" title="分享到新浪微博" style="color:#ff6363">
+</a>
+<a href="#" class="bds_twi fa fa-twitter" data-cmd="twi" title="分享到Twitter" style="color:#00A7EB">
+</a>
+<a href="#" class="bds_fbook fa fa-facebook" data-cmd="fbook" title="分享到Facebook" style="color:#00A7EB">
+</a>
+</div>
+<script>
+window._bd_share_config={
+    "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},
+    "share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='../../../../../static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+ 
+<div id="comments"></div>
+
+<script>
+    var gitment = new Gitment({
+    id: "Tue Dec 26 2017 23:10:01 GMT+0800",
+    owner: "Vevlins",
+    repo: "Vevlins.github.io",
+    oauth: {
+      client_id:"8d83609a651e972e308d",
+      client_secret: "37e40c89a47e957f654e86f71c5caaccad0774de",
+    }
+  })
+  gitment.render('comments')
+</script>
     </main>
     <a class="not-found">not found!</a>
     <div class="search-items">
