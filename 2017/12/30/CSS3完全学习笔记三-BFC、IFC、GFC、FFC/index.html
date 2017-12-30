@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>
         
-            CSS计数器:counter
+            CSS3完全学习笔记三:BFC、IFC、GFC、FFC
         
     </title>
     <link rel="icon" href="/img/favicon.png"/>
@@ -88,14 +88,14 @@
     <main class="main">
         <article class="post">
             <h1>
-                <a class="title" href="/2017/12/27/CSS计数器-counter/"> 
-                    CSS计数器:counter 
+                <a class="title" href="/2017/12/30/CSS3完全学习笔记三-BFC、IFC、GFC、FFC/"> 
+                    CSS3完全学习笔记三:BFC、IFC、GFC、FFC 
                 </a>
             </h1>
             <div class="meta">
                 <a class="date"> 
                     <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-27   
+                    2017-12-30   
                 </a>
                 
                 <a class="category">
@@ -108,46 +108,63 @@
                     <i class="fa fa-tags" aria-hidden="true"></i>  
                 </a>
                 
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/counter/">counter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bfc/">bfc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ifc/">ifc</a></li></ul>
             </div>
 <div class="toc">
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#CSS计数器-counter"><span class="toc-list-text">CSS计数器:counter</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#counter-reset"><span class="toc-list-text">counter-reset</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#counter-increment"><span class="toc-list-text">counter-increment</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#counter"><span class="toc-list-text">counter</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#counters"><span class="toc-list-text">counters</span></a></li></ol></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#CSS3完全学习笔记三-BFC、IFC、GFC、FFC"><span class="toc-list-text">CSS3完全学习笔记三:BFC、IFC、GFC、FFC</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#BFC"><span class="toc-list-text">BFC</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#IFC"><span class="toc-list-text">IFC</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#GFC"><span class="toc-list-text">GFC</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#FFC"><span class="toc-list-text">FFC</span></a></li></ol></li></ol>
 </div>
             <div class="content">
-                <h1 id="CSS计数器-counter"><a href="#CSS计数器-counter" class="headerlink" title="CSS计数器:counter"></a>CSS计数器:counter</h1><p>Css计数器是css2开始支持的,只能用在content属性上.//关于css3的变化,语焉不详.援引css88的说法是:<code>在CSS2.1中counter()只能被使用在content属性上。</code></p>
-<p>Counter并非只是一个单纯的属性,而是包含了以下几部分:</p>
+                <h1 id="CSS3完全学习笔记三-BFC、IFC、GFC、FFC"><a href="#CSS3完全学习笔记三-BFC、IFC、GFC、FFC" class="headerlink" title="CSS3完全学习笔记三:BFC、IFC、GFC、FFC"></a>CSS3完全学习笔记三:BFC、IFC、GFC、FFC</h1><p>//待续!</p>
+<p>FC的全称是Formatting Contexts,格式上下文.它决定了其子元素如何定位以及和其他元素的关系.原本的FC有两种,也就是BFC和IFC,其余两者是CSS3中定义的.</p>
+<h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><p>Block Formatting Context 叫做“块级格式化上下文”.</p>
+<p>规则如下:</p>
 <ul>
-<li>counter-reset</li>
-<li>counter-increment</li>
-<li>counter</li>
-<li>counters</li>
+<li>内部的盒子会在垂直方向，一个个地放置；</li>
+<li>盒子垂直方向的距离由margin决定，属于同一个BFC的两个相邻Box的上下margin会发生重叠；</li>
+<li>每个元素的左边，与包含的盒子的左边相接触，即使存在浮动也是如此；</li>
+<li>BFC的区域不会与float重叠；</li>
+<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之也如此；</li>
+<li>计算BFC的高度时，浮动元素也参与计算。</li>
 </ul>
-<h2 id="counter-reset"><a href="#counter-reset" class="headerlink" title="counter-reset"></a>counter-reset</h2><p>在某个地方声明一个计数器,并且最初值为0.</p>
-<p>语法:</p>
-<pre><code class="css">counter-reset: [&lt;user-ident&gt; &lt;integer&gt;?]+ | none
-</code></pre>
-<p>可以看出来,这里还可以设置初始值,需要注意的是,0是不会被显示在第一个上的,真正的显示是1,类似于++i.</p>
-<h2 id="counter-increment"><a href="#counter-increment" class="headerlink" title="counter-increment"></a>counter-increment</h2><p>计数器增加.</p>
-<p>这里还可以设置增量的不长,取负值也是允许的,如<code>counter-increment: counter-name 2;</code></p>
-<h2 id="counter"><a href="#counter" class="headerlink" title="counter"></a>counter</h2><p>用在content属性内,控制显示的值.</p>
-<p>可以设置表现形式,比如字母,罗马数字,具体的选项有:decimal, decimal-leading-zero, lower-roman, upper-roman, lower-greek, lower-latin, upper-latin, armenian, georgian, lower-alpha, upper-alpha.</p>
-<p>设置的语法为:<code>content: counter(counter-name, lower-roman);</code></p>
-<p>你也可以设置更灵活的方法,比如设置为第1章,第2章.只需要在content中进行拼凑即可.<code>content: &quot;第 &quot; counter(section) &quot; 章:</code></p>
-<h2 id="counters"><a href="#counters" class="headerlink" title="counters"></a>counters</h2><p>支持嵌套.</p>
-<p>语法:</p>
-<pre><code class="css">counters( &lt;ident&gt;, &lt;string&gt; [, [ &lt;counter-style&gt; | none ] ]? )
-</code></pre>
-<p>如果想要支持嵌套,<code>content: counters(section, &quot;.&quot;);</code>,需要使用counters并且声明使用的分割符号.</p>
-<hr>
-<p>在查阅资料的时候,偶然发现了以下两个规则:<code>@counter-style</code>和<code>symbols()</code>,他们可以用来在list里显示自定义的前缀,但是只有firefox支持,所以不做进一步学习.</p>
+<p>产生原因如下:</p>
+<ul>
+<li>根元素-body</li>
+<li>float的属性不为none；</li>
+<li>position为absolute或fixed；</li>
+<li>display为table-cell, table-caption, inline-block//?</li>
+<li>overflow不为visible</li>
+</ul>
+<p>用处:</p>
+<ul>
+<li>清除浮动</li>
+<li>解决margin重叠<a id="more"></a>
+</li>
+</ul>
+<h2 id="IFC"><a href="#IFC" class="headerlink" title="IFC"></a>IFC</h2><p>Inline Formatting Context叫做“内联格式化上下文”.</p>
+<p>规则如下:</p>
+<ul>
+<li>框会从包含块的顶部开始，一个接一个地水平摆放。</li>
+<li>摆放这些框的时候，它们在水平方向上的外边距、边框、内边距所占用的空间都会被考虑在内。在垂直方向上，这些框可能会以不同形式来对齐：它们可能会把底部或顶部对齐，也可能把其内部的文本基线对齐。能把在一行上的框都完全包含进去的一个矩形区域，被称为该行的行框。水平的margin、padding、border有效，垂直无效。不能指定宽高。</li>
+<li>行框的宽度是由包含块和存在的浮动来决定。</li>
+</ul>
+<p>用处:</p>
+<ul>
+<li>水平居中：当一个块要在环境中水平居中时，设置其为inline-block则会在外层产生IFC，通过text-align则可以使其水平居中。</li>
+<li>垂直居中：创建一个IFC，用其中一个元素撑开父元素的高度，然后设置其vertical-align:middle，其他行内元素则可以在此父元素下垂直居中。</li>
+</ul>
+<h2 id="GFC"><a href="#GFC" class="headerlink" title="GFC"></a>GFC</h2><p>GridLayout Formatting Contexts叫做”网格布局格式化上下文“.</p>
+<p>产生原因:</p>
+<ul>
+<li>display值为grid</li>
+</ul>
+<h2 id="FFC"><a href="#FFC" class="headerlink" title="FFC"></a>FFC</h2><p>Flex Formatting Contexts叫做”自适应格式化上下文”.Flex Box 由伸缩容器和伸缩项目组成。通过设置元素的 display 属性为 flex 或 inline-flex 可以得到一个伸缩容器。设置为 flex 的容器被渲染为一个块级元素，而设置为 inline-flex 的容器则渲染为一个行内元素。</p>
+<p>产生原因:</p>
+<ul>
+<li>display值为flex或者inline-flex</li>
+</ul>
 <p>参考资料:</p>
 <ul>
-<li><a href="http://www.css88.com/archives/6394" target="_blank" rel="noopener">http://www.css88.com/archives/6394</a></li>
-<li><a href="https://css-tricks.com/almanac/properties/c/counter-increment/" target="_blank" rel="noopener">counter-increment | CSS-Tricks</a></li>
-<li><a href="https://css-tricks.com/almanac/properties/c/counter-reset/" target="_blank" rel="noopener">https://css-tricks.com/almanac/properties/c/counter-reset/</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Counters" target="_blank" rel="noopener">使用CSS计数器 - Web开发者指南 | MDN</a></li>
-<li><a href="https://www.quackit.com/css/functions/css_counters_function.cfm" target="_blank" rel="noopener">CSS counters() Function</a></li>
-<li><a href="https://www.quackit.com/css/functions/css\_symbols_function.cfm" target="_blank" rel="noopener">https://www.quackit.com/css/functions/css\_symbols_function.cfm</a></li>
+<li><a href="http://www.cnblogs.com/fsjohnhuang/p/5259121.html" target="_blank" rel="noopener">CSS魔法堂：重新认识Box Model、IFC、BFC和Collapsing margins - ^_^肥仔John - 博客园</a></li>
 </ul>
 
             </div>
@@ -160,7 +177,7 @@
                 </div>
                 <div class="link">
                     <a>本文链接:</a>
-                    <a class="permalink" href="https://vevlins.github.io/2017/12/27/CSS计数器-counter/">https://vevlins.github.io/2017/12/27/CSS计数器-counter/</a>
+                    <a class="permalink" href="https://vevlins.github.io/2017/12/30/CSS3完全学习笔记三-BFC、IFC、GFC、FFC/">https://vevlins.github.io/2017/12/30/CSS3完全学习笔记三-BFC、IFC、GFC、FFC/</a>
                 </div>
                 <div class="license">
                     <a>版权声明:</a>
@@ -197,14 +214,10 @@
 
 <div class="more">
 
-    <div class="prev">
-   <a href="/2017/12/30/CSS3完全学习笔记三-BFC、IFC、GFC、FFC/">  CSS3完全学习笔记三:BFC、IFC、GFC、FFC</a>
-    </div>
-
 <div></div>
 
     <div class="next">
-    <a href="/2017/12/26/CSS3完全学习笔记二-属性全解/"> CSS3完全学习笔记二: 属性全解 </a>
+    <a href="/2017/12/27/CSS计数器-counter/"> CSS计数器:counter </a>
     </div>
     
 </div>
@@ -229,7 +242,7 @@ window._bd_share_config={
 
 <script>
     var gitment = new Gitment({
-    id: "Wed Dec 27 2017 15:49:09 GMT+0800",
+    id: "Sat Dec 30 2017 23:07:58 GMT+0800",
     owner: "Vevlins",
     repo: "Vevlins.github.io",
     oauth: {

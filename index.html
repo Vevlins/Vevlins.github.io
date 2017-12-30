@@ -90,6 +90,65 @@
     
         <article class="post">
             <h1>
+                <a class="title" href="/2017/12/30/CSS3完全学习笔记三-BFC、IFC、GFC、FFC/"> 
+                    CSS3完全学习笔记三:BFC、IFC、GFC、FFC 
+                </a>
+            </h1>
+                        <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2017-12-30   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bfc/">bfc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ifc/">ifc</a></li></ul>
+            </div>
+            <div class="content">
+                
+                <h1 id="CSS3完全学习笔记三-BFC、IFC、GFC、FFC"><a href="#CSS3完全学习笔记三-BFC、IFC、GFC、FFC" class="headerlink" title="CSS3完全学习笔记三:BFC、IFC、GFC、FFC"></a>CSS3完全学习笔记三:BFC、IFC、GFC、FFC</h1><p>//待续!</p>
+<p>FC的全称是Formatting Contexts,格式上下文.它决定了其子元素如何定位以及和其他元素的关系.原本的FC有两种,也就是BFC和IFC,其余两者是CSS3中定义的.</p>
+<h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><p>Block Formatting Context 叫做“块级格式化上下文”.</p>
+<p>规则如下:</p>
+<ul>
+<li>内部的盒子会在垂直方向，一个个地放置；</li>
+<li>盒子垂直方向的距离由margin决定，属于同一个BFC的两个相邻Box的上下margin会发生重叠；</li>
+<li>每个元素的左边，与包含的盒子的左边相接触，即使存在浮动也是如此；</li>
+<li>BFC的区域不会与float重叠；</li>
+<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之也如此；</li>
+<li>计算BFC的高度时，浮动元素也参与计算。</li>
+</ul>
+<p>产生原因如下:</p>
+<ul>
+<li>根元素-body</li>
+<li>float的属性不为none；</li>
+<li>position为absolute或fixed；</li>
+<li>display为table-cell, table-caption, inline-block//?</li>
+<li>overflow不为visible</li>
+</ul>
+<p>用处:</p>
+<ul>
+<li>清除浮动</li>
+<li>解决margin重叠
+                
+            </div>
+            <div class="continue">
+            <a href="/2017/12/30/CSS3完全学习笔记三-BFC、IFC、GFC、FFC/">
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+        </article>
+        
+        <article class="post">
+            <h1>
                 <a class="title" href="/2017/12/27/CSS计数器-counter/"> 
                     CSS计数器:counter 
                 </a>
@@ -287,53 +346,10 @@
             </div>
         </article>
         
-        <article class="post">
-            <h1>
-                <a class="title" href="/2017/12/23/HTML5完全学习笔记四：api全解/"> 
-                    HTML5完全学习笔记四：api全解 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-23   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <h1 id="HTML5完全学习笔记四：api全解"><a href="#HTML5完全学习笔记四：api全解" class="headerlink" title="HTML5完全学习笔记四：api全解"></a>HTML5完全学习笔记四：api全解</h1><h2 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h2><p>地理位置 API 通过 navigator.geolocation 提供。默认不开启,需要请求.<br>Geolocation API 的数据来源可能是 GPS、IP 地址、RFID、WiFi、蓝牙 MAC 地址、GSM/CDMA 卡 ID 等。</p>
-<p>方法如下:</p>
-<ul>
-<li>Geolocation.getCurrentPosition():获取位置返回position对象</li>
-</ul>
-<blockquote>
-<p>这会异步地请求获取用户位置，并查询定位硬件来获取最新信息。当定位被确定后，定义的回调函数就会被执行。您可以选择性地提供第二个回调函数，当有错误时会被执行。第三个参数也是可选的，您可以通过该对象参数设定最长可接受的定位返回时间、等待请求的时间和是否获取高精度定位。</p>
-</blockquote>
-                
-            </div>
-            <div class="continue">
-            <a href="/2017/12/23/HTML5完全学习笔记四：api全解/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
 </section>
 
   <nav class="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/pagez/2/">2</a><a class="page-number" href="/pagez/3/">3</a><a class="extend next" rel="next" href="/pagez/2/">下一页 &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/pagez/2/">2</a><a class="page-number" href="/pagez/3/">3</a><a class="page-number" href="/pagez/4/">4</a><a class="extend next" rel="next" href="/pagez/2/">下一页 &raquo;</a>
   </nav>
 
     </main>
