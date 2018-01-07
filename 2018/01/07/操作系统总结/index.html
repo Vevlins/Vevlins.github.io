@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>
+        
+            操作系统总结
+        
+    </title>
+    <link rel="icon" href="/img/favicon.png"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" href="/css/hljs.min.css">
+    <script src="/js/hljs.min.js"></script>  
+    <script src="/js/gitment.browser.js"></script>  
+</head>
+<body>
+    <header class="header" id="header">
+    <h1>
+        <a class="title" href="/">
+            Toki
+        </a>
+    </h1>
+    <h2>
+        <a class="motto">
+            Ponyo loves Sōsuke!
+        </a>
+    </h2>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/archives/" class="menu-item-link">
+                        Archives
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/about/" class="menu-item-link">
+                        About
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="https://github.com/vevlins/" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/atom.xml" class="menu-item-link">
+                        RSS
+                    </a>
+                </li>
+            
+                
+            
+                
+                
+                <li class="menu-item">
+                    <a class="menu-item-link search">
+                        Search                   
+                        <i class="fa fa-long-arrow-right search-icon" aria-hidden="true"></i>
+                    </a>
+                        <input placeholder="Search..." class="search-input" style="display:none;border:none!important;" onkeydown="onEnter(event)" onkeypress="onEnter(event)"></input>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+            <h1>
+                <a class="title" href="/2018/01/07/操作系统总结/"> 
+                    操作系统总结 
+                </a>
+            </h1>
+            <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2018-01-07   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/os/">os</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/os/">os</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+            </div>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#操作系统总结"><span class="toc-list-text">操作系统总结</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#概述"><span class="toc-list-text">概述</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#进程管理"><span class="toc-list-text">进程管理</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#内存管理"><span class="toc-list-text">内存管理</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#存储管理"><span class="toc-list-text">存储管理</span></a></li></ol></li></ol>
+</div>
+            <div class="content">
+                <h1 id="操作系统总结"><a href="#操作系统总结" class="headerlink" title="操作系统总结"></a>操作系统总结</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>计算机系统的四个组成部分:计算机硬件、操作系统、系统程序与应用程序、用户.</li>
+<li>计算机硬件包含什么:CPU、内存、IO.</li>
+<li>什么是操作系统:管理计算机硬件的程序.</li>
+<li>操作系统的目标:方便性、有效性、可扩充性、开放性.</li>
+<li>操作系统的基本特征:并发性、共享性、虚拟性、异步性.</li>
+<li>操作系统的基本类型:批处理系统、分时系统、实时系统</li>
+<li>内核态和用户态的区别:内核态:控制计算机的硬件资源,并提供上层应用程序运行的环境.用户态:上层应用程序的活动空间,应用程序的执行依赖于内核提供的资源.内核态可以很好的保护硬件和资源的访问.<a id="more"></a></li>
+<li>信号量semaphore的操作:P、V、wait.</li>
+<li>管程Monitor:信号量机制功能强大，但使用时对信号量的操作分散，而且难以控制，读写和维护都很困难。因此后来又提出了一种集中式同步进程——管程。其基本思想是将共享变量和对它们的操作集中在一个模块中.管程就是代表共享资源的数据结构以及由对该共享数据结构实施操作的一组过程所组成的资源管理程序共同构成的一个操作系统的资源管理模块.</li>
+<li>多处理器调度:多处理器调度是根据处理器调度策略每次取出一个任务，将任务分配到处理器上运行的方法。多处理器调度包括给处理器分配进程、在单个处理器上是否使用多道程序技术、实际分派进程三个相关的方面。多处理器系统中线程调度通常有负载共享、成组调度、专用处理器分配、动态调度四种方式.非对称处理、对称多处理.</li>
+<li>处理器亲和性:由于使缓存无效或重构的代价高，因而SMP努力的使一个进程在同一个处理器上运行，这被称为处理器亲和性.</li>
+<li>负载平衡:负载平衡设法将工作负载平均地分配到SMP系统中的所有处理器上.</li>
+<li>竞争范围:多对一和多对多模型上:PCS,进程竞争范围.一对一SCS,系统竞争范围.</li>
+<li>用户态和内核态的转换:系统调用、异常、外围设备中断</li>
+<li>多道程序设计:同时把多个作业放入内存交替执行,共享系统资源.可以减少CPU时间的浪费,增加系统吞吐量,提高系统效率.</li>
+<li>中断和异常:中断也称为外中断,指来自CPU执行指令外部的事件,比如IO等,通常与当前程序无关.异常也称为内中断,是来自CPU执行指令内的事件,如非法操作码、地址越界等.</li>
+<li>机制和策略:机制mechanism提供干什么,策略policy提供怎么做.</li>
+<li>系统调用类别:进程控制、文件管理、设备管理、信息维护、通信</li>
+<li>操作系统的结构:简单结构、分层结构、微内核结构、模块结构</li>
+<li>原语是由若干条机器指令构成的一段程序，用以完成特定功能，这段程序在执行期间不可分割。即原语的执行不能被中断，原语操作具有原子性.</li>
+<li>系统调用:指运行在用户态的程序向内核请求需要更高权限运行的服务。系统调用提供用户程序与操作系统之间的接口。<h2 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h2></li>
+<li>进程:执行中的程序.</li>
+<li>创建新进程的过程:分配进程号、分配空间、初始PCB、设置连接、创建或拓展其他数据结构.</li>
+<li>非抢占和抢占的区别:让进程运行直到结束或阻塞的调度方式;允许将逻辑上可继续运行的在运行过程暂停的调度方式;抢占可以放置单一进程长时间占用cpu.</li>
+<li>CPU调度的原因:提高CPU利用率;每个进程存在io、cpu两个过程,当进行io时可以进程进程调度以改善cpu利用率.</li>
+<li>进程的三状态和无状态:运行、就绪、阻塞;创建、就绪、运行、等待、结束.</li>
+<li>PCB的主要信息:进程状态、程序计数器、CPU寄存器、CPU调度信息.</li>
+<li>长中短期调度:长期:哪一个程序被选中创建进程.中期:是否将进程调度内存.短期:哪个进程获得处理器资源.</li>
+<li>上下文切换:CPU切换到另一个进程需要保存当前进程状态并且恢复另一个进程状态.上下文切换包括保存当前任务运行环境和恢复将要运行任务的运行环境.</li>
+<li>共享内存和消息传递的比较:共享内存有公共状态,消息传递是显示传递.</li>
+<li>线程:CPU使用的基本单位.包括线程ID、程序计数器、寄存器集合、栈.</li>
+<li>线程和进程的比较:进程是系统资源分配的单位,线程的资源调度的单位.进程之间不能共享资源,进程有独立的地址空间,线程必须依赖进程存在.</li>
+<li>多线程模型:一对一、多对一、多对多.</li>
+<li>调度和分派的区别:调度是从就绪队列选择程序,分派是将进程加载到CPU.</li>
+<li>常用调度算法:先到先服务、最短作业优先、最短剩余时间优先、轮转法、多级队列、多级反馈队列.</li>
+<li>死锁:两个及以上的进程或者线程在执行过程中,因争夺资源造成的一种互相等待的现象.</li>
+<li>死锁发生条件:互斥、占有等待、非抢占、循环等待.</li>
+<li>临界资源和临界区:临界资源是每次仅允许一个进程访问的资源,每个进程中访问临界资源的那段代码称为临界区.</li>
+<li>临界区问题解决的 三个条件:呼哧、空闲让进、有限等待.</li>
+<li>调度基本特征:周转时间=作业完成时刻-到达时刻;带权周转时间=周转时间/服务时间;平均周转时间=作业周转总时间/昨夜个数;平均带权周转时间=带权周转总时间.<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2></li>
+<li>内存交换的概念:把处于等待（阻塞）状态（或在CPU调度原则下被剥夺运行权利）的程序（进程）从内存移到辅存（外存），把内存空间腾出来，这一过程又叫换出。把准备好竞争CPU运行的程序从辅存移到内存，这一过程又称为换入。中级调度（策略）就是釆用交换技术。</li>
+<li>连续内存分配方案:单一连续分配、固定分区分配、动态分区分配.</li>
+<li>内部碎片和外部碎片:内部碎片就是已经被分配出去（能明确指出属于哪个进程）却不能被利用的内存空间.外部碎片指的是还没有被分配出去（不属于任何进程），但由于太小了无法分配给申请内存空间的新进程的内存空闲区域.</li>
+<li>页表结构:层次页表、哈希页表、反向页表.</li>
+<li>分页和分段的区别: (1) 页是信息的物理单位，分页是为实现离散分配方式，以消减内存的外零头，提高内存的利用率。段则是信息的逻辑单位，它含有一组其意义相对完整的信息。分段的目的是为了能更好地满足用户的需要。(2) 页的大小固定且由系统决定；而段的长度却不固定，决定于用户所编写的程序。(3) 分页的地址空间是一维的，程序员只需利用一个记忆符，即可表示一个地址；而分段的作业地址空间是二维的，程序员在标识一个地址时，既需给出段名，又需给出段内地址。</li>
+<li>TLB:TLB是一个小的，虚拟寻址的缓存，其中每一行都保存着一个由单个PTE(Page Table Entry,页表项)组成的块。如果没有TLB，则每次取数据都需要两次访问内存，即查页表获得物理地址和取数据.</li>
+<li>虚拟内存:虚拟内存是计算机系统内存管理的一种技术。它使得应用程序认为它拥有连续可用的内存（一个连续完整的地址空间），而实际上，它通常是被分隔成多个物理内存碎片，还有部分暂时存储在外部磁盘存储器上，在需要时进行数据交换.</li>
+<li>按需调页:只有程序执行需要时才载入页，那些从未访问的页不会调入到物理内存，也把这种页交换方式称为懒惰交换.</li>
+<li>抖动问题:在请求分页存储管理中，刚被替换出去的页，立即又要被访问因无空,此时因无空闲内存，又要替换另一页，而后者又是下一次要被访问的页，于是系统需花费大量的时间忙于进行这种频繁的页面交换，致使系统的实际效率很低，这种现象称为抖动现象。一般都是由于置换算法不佳引起.</li>
+<li>buffer和cache的区别:cache 是为了弥补高速设备和低速设备的鸿沟而引入的中间层，最终起到<strong>加快访问速度</strong>的作用。而 buffer 的主要目的进行流量整形，把突发的大数量较小规模的 I/O 整理成平稳的小数量较大规模的 I/O，以<strong>减少响应次数</strong>。</li>
+<li>cache写机制:write through:CPU向cache写入数据时，同时向memory(后端存储)也写一份，使cache 和memory的数据保持一致。优点是简单，缺点是每次都要访问memory，速度比较慢.write back:cpu更新cache时，只是把更新的cache区标记一下，并不同步更新memory,(后端存储)。只是在cache区要被新进入的数据取代时，才更新memory.</li>
+</ul>
+<h2 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h2><ul>
+<li>文件属性有哪些:名称、标识符、类型、位置、大小、保护等.</li>
+<li>文件:记录在外存上的相关信息具有名称的集合.文件是逻辑外存的最小分配单位.</li>
+<li>文件访问模型:顺序访问、直接访问、索引访问.</li>
+<li>目录结构:单层结构、双层结构、树状结构.</li>
+<li>目录的实现方式:线性、哈希.</li>
+<li>数据分配方式:连续、链式、索引.</li>
+<li>空闲空间管理方式:位向量、链表、组、计数.</li>
+<li>磁盘调度算法:FCFS、SSTF、SCAN、C-SCAN、CLOCK.</li>
+<li>DMA:直接内存访问（Direct Memory Access，DMA）是计算机科学中的一种内存访问技术。它允许某些电脑内部的硬件子系统（电脑外设），可以独立地直接读写系统内存，而不需中央处理器（CPU）介入处理.</li>
+<li>DMA解决CPU同访问主存方式:(1)停止CPU访内存；(2)周期挪用；(3)DMA与CPU交替访问内存.</li>
+<li>DMA使用方式:周期存取方式、直接存取方式、数据块传送方式.</li>
+<li>DMA过程:1.告知设备驱动器2.设备驱动器告知磁盘3.磁盘初始化DMA传输.4.磁盘控制器向DMA传送字节5.DMA控制器向缓冲区传输.6.DMA中断CPU.</li>
+</ul>
+<ul>
+<li>调度算法甘特图</li>
+<li>信号量实现同步互斥</li>
+<li>银行家算法</li>
+<li>磁盘调度算法</li>
+<li>页面置换算法</li>
+<li>页表计算</li>
+</ul>
+
+            </div>
+          
+           
+            <div class="copyright">
+                <div class="name">
+                    <a>本文作者:</a>
+                    <a>Sōsuke</a>
+                </div>
+                <div class="link">
+                    <a>本文链接:</a>
+                    <a class="permalink" href="https://vevlins.github.io/2018/01/07/操作系统总结/">https://vevlins.github.io/2018/01/07/操作系统总结/</a>
+                </div>
+                <div class="license">
+                    <a>版权声明:</a>
+                    <a>本博客所有文章除特别声明外，均采用许可协议 CC BY-NC-SA 3.0 CN。转载请注明出处！</a>
+                </div>
+            </div>
+            
+
+          
+
+
+</article>
+
+
+<div class="tip">
+<button class="tip-btn">
+    打赏
+</button>
+<div class="tip-img">
+<ul>
+    
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+ 
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+</ul>
+</div>
+</div>
+
+<div class="more">
+
+<div></div>
+
+    <div class="next">
+    <a href="/2018/01/05/游戏策划案-说想法更合适-社交网络/"> 游戏策划-社交网络 </a>
+    </div>
+    
+</div>
+
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_weixin fa fa-weixin" data-cmd="weixin" title="分享到微信" style="color:#1cbd8f">
+</a>
+<a href="#" class="bds_tsina fa fa-weibo" data-cmd="tsina" title="分享到新浪微博" style="color:#ff6363">
+</a>
+<a href="#" class="bds_twi fa fa-twitter" data-cmd="twi" title="分享到Twitter" style="color:#00A7EB">
+</a>
+<a href="#" class="bds_fbook fa fa-facebook" data-cmd="fbook" title="分享到Facebook" style="color:#00A7EB">
+</a>
+</div>
+<script>
+window._bd_share_config={
+    "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},
+    "share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='../../../../../static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+ 
+<div id="comments"></div>
+
+<script>
+    var gitment = new Gitment({
+    id: "Sun Jan 07 2018 22:14:01 GMT+0800",
+    owner: "Vevlins",
+    repo: "Vevlins.github.io",
+    oauth: {
+      client_id:"8d83609a651e972e308d",
+      client_secret: "37e40c89a47e957f654e86f71c5caaccad0774de",
+    }
+  })
+  gitment.render('comments')
+</script>
+    </main>
+    <a class="not-found">not found!</a>
+    <div class="search-items">
+    </div>
+    <a href="#header" id="top" style="display:none">
+        <i class="fa fa-sort-asc fa-2x"></i>
+    </a>
+    <footer class="footer">
+    <div class="footer-copyright">©️2017
+    <a href="//github.com/Vevlins/toki" class="link" target="_blank">Toki</a>  by Vevlins
+    </div>
+</footer>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/toki.js"></script>  
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
