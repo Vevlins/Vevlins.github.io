@@ -239,27 +239,40 @@ main,
   text-indent: 2em;
 }
 .post .content blockquote {
-  padding-left: 1em;
   border-left: 0.4em solid #516272;
   background-color: #f7f9fa;
-  padding: 0.3em 0.5em;
+  padding: 0.3em 0.5em 0.3em 1em;
   margin: 1em 0 1em 0;
 }
-.post .content .headerlink {
+.post .content h1 .headerlink {
   text-decoration: none;
 }
-.post .content .headerlink::before {
+.post .content h1 .headerlink::before {
   content: '#';
 }
+.post .content h2 .headerlink {
+  text-decoration: none;
+}
+.post .content h2 .headerlink::before {
+  content: '##';
+}
+.post .content h3 .headerlink {
+  text-decoration: none;
+}
+.post .content h3 .headerlink::before {
+  content: '###';
+}
 .post .content *:not(pre) code {
-  background-color: #f7f9fa;
   padding: 0.1em 0.2em;
-  border: 1px solid #eaeded;
   margin: 0.2em;
   font-size: 0.9em;
-  color: #66bb6a;
   border-radius: 3px;
   overflow: hidden;
+  margin: 0 2px;
+  color: #e96900;
+  font-size: 0.8em;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace !important;
+  background-color: #f8f8f8 !important;
 }
 .post .content a {
   padding: 0.1em;
@@ -277,22 +290,25 @@ main,
   display: block;
   word-wrap: break-word;
   word-break: break-all;
-  background-color: #f7f9f9;
   padding: 0.6em;
-  border: 1px solid #eaeded;
-  border-radius: 3px;
+  margin: 0 2px;
+  color: #e96900;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  background-color: #f8f8f8;
 }
 .post .content strong,
 .post .content em {
   font-size: 1.1em;
 }
 .post .content pre code {
-  color: #2b3f52 !important;
   display: block;
   word-wrap: break-word;
   word-break: break-all;
   background-color: inherit;
   border: none !important;
+  font-size: 0.8em;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace !important;
+  background-color: #f8f8f8 !important;
 }
 .post .content hr {
   border: none;
