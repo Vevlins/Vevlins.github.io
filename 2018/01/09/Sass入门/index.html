@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>
+        
+            Sass入门
+        
+    </title>
+    <link rel="icon" href="/img/favicon.png"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" href="/css/hljs.min.css">
+    <script src="/js/hljs.min.js"></script>  
+    <script src="/js/gitment.browser.js"></script>  
+</head>
+<body>
+    <header class="header" id="header">
+    <h1>
+        <a class="title" href="/">
+            Sosuke
+        </a>
+    </h1>
+    <h2>
+        <a class="motto">
+            Ponyo loves Sōsuke!
+        </a>
+    </h2>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/archives/" class="menu-item-link">
+                        Archives
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/about/" class="menu-item-link">
+                        About
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="https://github.com/vevlins/" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/atom.xml" class="menu-item-link">
+                        RSS
+                    </a>
+                </li>
+            
+                
+            
+                
+                
+                <li class="menu-item">
+                    <a class="menu-item-link search">
+                        Search                   
+                        <i class="fa fa-long-arrow-right search-icon" aria-hidden="true"></i>
+                    </a>
+                        <input placeholder="Search..." class="search-input" style="display:none;border:none!important;" onkeydown="onEnter(event)" onkeypress="onEnter(event)"></input>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+            <h1>
+                <a class="title" href="/2018/01/09/Sass入门/"> 
+                    Sass入门 
+                </a>
+            </h1>
+            <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2018-01-09   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sass/">sass</a></li></ul>
+            </div>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#Sass入门"><span class="toc-list-text">Sass入门</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#CIL"><span class="toc-list-text">CIL</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#基本用法"><span class="toc-list-text">基本用法</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#变量"><span class="toc-list-text">变量</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#计算"><span class="toc-list-text">计算</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#嵌套"><span class="toc-list-text">嵌套</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#注释"><span class="toc-list-text">注释</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#复用"><span class="toc-list-text">复用</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#继承"><span class="toc-list-text">继承</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#mixin"><span class="toc-list-text">mixin</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#结构"><span class="toc-list-text">结构</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#import"><span class="toc-list-text">import</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#高级用法"><span class="toc-list-text">高级用法</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#条件语句"><span class="toc-list-text">条件语句</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#循环语句"><span class="toc-list-text">循环语句</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#自定义函数"><span class="toc-list-text">自定义函数</span></a></li></ol></li></ol></li></ol></li></ol>
+</div>
+            <div class="content">
+                <h1 id="Sass入门"><a href="#Sass入门" class="headerlink" title="Sass入门"></a>Sass入门</h1><p>编写css的工具主要有less、sass、stylus.具体谁优谁略很难定论.昨天看了下less,感觉有些用法理解起来很奇怪,而且功能上比sass稍弱一点,所以决定使用sass作为以后编写css的工具.sass和scss是一种东西的两种写法,scss与css的写法一致,而sass需要缩进,无分号等特性.以下介绍的是scss的写法.</p>
+<h2 id="CIL"><a href="#CIL" class="headerlink" title="CIL"></a>CIL</h2><p>安装</p>
+<pre><code class="bash">gem install sass
+</code></pre>
+<p>编译风格:</p>
+<ul>
+<li>nested：嵌套缩进的css代码，它是默认值。</li>
+<li>expanded：没有缩进的、扩展的css代码。</li>
+<li>compact：简洁格式的css代码。</li>
+<li>compressed：压缩后的css代码。</li>
+</ul>
+<p>监听:</p>
+<pre><code class="bash">　// watch a file
+　　sass --watch input.scss:output.css
+　　// watch a directory
+　　sass --watch app/sass:public/stylesheets
+</code></pre>
+<a id="more"></a>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>¥开头,声明方式如css属性一样使用<code>:</code>,如果嵌套在字符串中,比如放在属性名称中,需要写在#{}中.</p>
+<h4 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h4><p>支持计算.</p>
+<h4 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h4><p>这里比较特别的是属性也是可以嵌套的.比如:</p>
+<pre><code>font: {
+    family:xxx;
+    size:xxx;
+}
+</code></pre><p>另外&amp;可以在嵌套中表示上一层.</p>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p><code>/* */</code>样式的注视可以保留到css文件中,如果想要保留到压缩后,需要在一个*之后添加叹号,而<code>//</code>只会保留在sass文件中.</p>
+<h3 id="复用"><a href="#复用" class="headerlink" title="复用"></a>复用</h3><h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p><code>@extend 选择器</code>可以继承所选中选择器的所有属性.</p>
+<h4 id="mixin"><a href="#mixin" class="headerlink" title="mixin"></a>mixin</h4><p>继承只能死板地复制粘贴过来,而mixin则更强大,它可以指定参数和缺省值.声明需要@mixin,使用需要@include</p>
+<pre><code class="sass">　　@mixin left($value: 10px) {
+　　　　float: left;
+　　　　margin-right: $value;
+　　}
+</code></pre>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><h4 id="import"><a href="#import" class="headerlink" title="import"></a>import</h4><p>通过@import可以插入外部文件,局部文件,也就是并不是想要编译出来的文件的用户名以下划线开始.</p>
+<p>默认变量名.这是为了提高复用灵活性的一个特性,你可以在局部文件中声明变量时使用!default,在包含它的文件中另外声明覆盖掉这个default块.</p>
+<h3 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h3><p>这些高级功能可以说是sass与less抉择中最重要的一部分,虽然less也可以实现,但是其实现方案实在是太过诡异.</p>
+<h4 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h4><p>@if、@else用法和常规编程语言高度类似.</p>
+<pre><code class="sass">　　@if lightness($color) &gt; 30% {
+　　　　background-color: #000;
+　　} @else {
+　　　　background-color: #fff;
+　　}
+</code></pre>
+<h4 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h4><pre><code class="sass">//for
+　　@for $i from 1 to 10 {
+　　　　.border-#{$i} {
+　　　　　　border: #{$i}px solid blue;
+　　　　}
+　　}
+//while
+　　$i: 6;
+　　@while $i &gt; 0 {
+　　　　.item-#{$i} { width: 2em * $i; }
+　　　　$i: $i - 2;
+　　}
+//each
+　　@each $member in a, b, c, d {
+　　　　.#{$member} {
+　　　　　　background-image: url(&quot;/image/#{$member}.jpg&quot;);
+　　　　}
+　　}
+</code></pre>
+<h4 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h4><p>使用@function可以编写函数,使用时实际产生的是retrn出来的语句.</p>
+<pre><code class="sass">　　@function double($n) {
+　　　　@return $n * 2;
+　　}
+　　#sidebar {
+　　　　width: double(5px);
+　　}
+</code></pre>
+<p>参考资料:</p>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2012/06/sass.html" target="_blank" rel="noopener">SASS用法指南 - 阮一峰的网络日志</a></li>
+<li><a href="https://www.sass.hk/guide/" target="_blank" rel="noopener">https://www.sass.hk/guide/</a></li>
+<li><a href="https://www.w3cplus.com/sassguide/" target="_blank" rel="noopener">sass入门 - sass教程</a></li>
+<li><a href="https://www.w3cplus.com/preprocessor/sass-other-function.html" target="_blank" rel="noopener">Sass基础——Sass函数_Preprocessor, Sass, SCSS 教程_w3cplus</a></li>
+<li><a href="https://www.sass.hk/skill/sass25.html" target="_blank" rel="noopener">Sass基础——颜色函数 | Sass中文网</a></li>
+</ul>
+
+            </div>
+          
+           
+            <div class="copyright">
+                <div class="name">
+                    <a>本文作者:</a>
+                    <a>Sōsuke</a>
+                </div>
+                <div class="link">
+                    <a>本文链接:</a>
+                    <a class="permalink" href="https://vevlins.github.io/2018/01/09/Sass入门/">https://vevlins.github.io/2018/01/09/Sass入门/</a>
+                </div>
+                <div class="license">
+                    <a>版权声明:</a>
+                    <a>本博客所有文章除特别声明外，均采用许可协议 CC BY-NC-SA 3.0 CN。转载请注明出处！</a>
+                </div>
+            </div>
+            
+
+          
+
+
+</article>
+
+
+<div class="tip">
+<button class="tip-btn">
+    打赏
+</button>
+<div class="tip-img">
+<ul>
+    
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+ 
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+</ul>
+</div>
+</div>
+
+<div class="more">
+
+<div></div>
+
+    <div class="next">
+    <a href="/2018/01/07/操作系统总结/"> 操作系统总结 </a>
+    </div>
+    
+</div>
+
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_weixin fa fa-weixin" data-cmd="weixin" title="分享到微信" style="color:#1cbd8f">
+</a>
+<a href="#" class="bds_tsina fa fa-weibo" data-cmd="tsina" title="分享到新浪微博" style="color:#ff6363">
+</a>
+<a href="#" class="bds_twi fa fa-twitter" data-cmd="twi" title="分享到Twitter" style="color:#00A7EB">
+</a>
+<a href="#" class="bds_fbook fa fa-facebook" data-cmd="fbook" title="分享到Facebook" style="color:#00A7EB">
+</a>
+</div>
+<script>
+window._bd_share_config={
+    "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},
+    "share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='../../../../../static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+ 
+<div id="comments"></div>
+
+<script>
+    var gitment = new Gitment({
+    id: "Tue Jan 09 2018 23:39:41 GMT+0800",
+    owner: "Vevlins",
+    repo: "Vevlins.github.io",
+    oauth: {
+      client_id:"8d83609a651e972e308d",
+      client_secret: "37e40c89a47e957f654e86f71c5caaccad0774de",
+    }
+  })
+  gitment.render('comments')
+</script>
+    </main>
+    <a class="not-found">not found!</a>
+    <div class="search-items">
+    </div>
+    <a href="#header" id="top" style="display:none">
+        <i class="fa fa-sort-asc fa-2x"></i>
+    </a>
+    <footer class="footer">
+    <div class="footer-copyright">©️2017
+    <a href="//github.com/Vevlins/toki" class="link" target="_blank">Toki</a>  by Vevlins
+    </div>
+</footer>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/toki.js"></script>  
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
