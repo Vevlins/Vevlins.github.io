@@ -1810,7 +1810,7 @@ m12 m22 dy
 </ul>
 <h2 id="b"><a href="#b" class="headerlink" title="b"></a>b</h2><p>粗体文本。</p>
 <blockquote>
-<p>根据 HTML 5 的规范，<b> 标签应该做为最后的选择，只有在没有其他标记比较合适时才使用它。HTML 5 规范声明：标题应该用 <h1> - <h6> 标签表示，被强调的文本应该用 <em> 标签表示，重要的文本应该用 <strong> 标签表示，被标记的或者高亮显示的文本应该用 <mark> 标签表示。—菜鸟教程<br>//那么b的具体使用情景到底是什么？</mark></strong></em></h6></h1></b></p>
+<p>根据 HTML 5 的规范，<code>&lt;b&gt;</code> 标签应该做为最后的选择，只有在没有其他标记比较合适时才使用它。HTML 5 规范声明：标题应该用 <code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code> 标签表示，被强调的文本应该用 <code>&lt;em&gt;</code> 标签表示，重要的文本应该用 <code>&lt;strong&gt;</code> 标签表示，被标记的或者高亮显示的文本应该用 <code>&lt;mark&gt;</code> 标签表示。—菜鸟教程</p>
 </blockquote>
 <h2 id="base"><a href="#base" class="headerlink" title="base"></a>base</h2><p>相对链接的基准url。一个文档中最多一个，必须在head中。最好放在head的第一个。base必须要href属性或者target属性的至少一个。</p>
 <p>属性：</p>

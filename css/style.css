@@ -29,8 +29,10 @@ body {
   line-height: 1.5;
   padding: 0 30%;
   display: flex;
+  text-shadow: 1px 1px 2px rgba(50,50,50,0.1);
   flex-flow: column;
   align-items: space-between;
+  background-color: #f9f9f9;
 }
 .not-found {
   display: none;
@@ -82,6 +84,7 @@ main,
   justify-content: center;
 }
 .header .title {
+  text-shadow: 1px 1px 3px rgba(50,50,50,0.3);
   text-decoration: none;
   font-weight: 200;
   font-size: 2.5em;
@@ -128,6 +131,7 @@ main,
   font-size: 0.8em;
   color: #333;
   text-align: center;
+  background-color: #f9f9f9;
 }
 .header .navbar .menu .menu-item .search-input::-ms-input-placeholder {
   text-align: center;
@@ -240,7 +244,7 @@ main,
 }
 .post .content blockquote {
   border-left: 0.4em solid #516272;
-  background-color: #f7f9fa;
+  background-color: #f2f3f4;
   padding: 0.3em 0.5em 0.3em 1em;
   margin: 1em 0 1em 0;
 }
@@ -263,7 +267,7 @@ main,
   content: '###';
 }
 .post .content *:not(pre) code {
-  padding: 0.1em 0.2em;
+  padding: 0.2em 0.4em;
   margin: 0.2em;
   font-size: 0.9em;
   border-radius: 3px;
@@ -272,7 +276,7 @@ main,
   color: #e96900;
   font-size: 0.8em;
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace !important;
-  background-color: #f8f8f8 !important;
+  background-color: #f3f3f3 !important;
 }
 .post .content a {
   padding: 0.1em;
@@ -294,7 +298,7 @@ main,
   margin: 0 2px;
   color: #e96900;
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
-  background-color: #f8f8f8;
+  background-color: #f3f3f3;
 }
 .post .content strong,
 .post .content em {
@@ -304,11 +308,10 @@ main,
   display: block;
   word-wrap: break-word;
   word-break: break-all;
-  background-color: inherit;
   border: none !important;
   font-size: 0.8em;
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace !important;
-  background-color: #f8f8f8 !important;
+  background-color: #f3f3f3 !important;
 }
 .post .content hr {
   border: none;
@@ -459,6 +462,9 @@ main,
 #comments .gitment-editor-main {
   font-family: 'Noto Serif', 'Times New Roman', serif !important;
 }
+#comments .gitment-comment-header {
+  background-color: #f9f9f9;
+}
 #comments .gitment-editor-preview {
   font-family: 'Noto Serif', 'Times New Roman', serif !important;
 }
@@ -567,7 +573,7 @@ main,
   border-left: 8px solid #2b3f52;
   margin: 0.5em 0 !important;
   margin-top: 3em !important;
-  background-color: #f8f9f9;
+  background-color: #f2f3f4;
 }
 .copyright * {
   overflow: hidden;
