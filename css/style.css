@@ -462,10 +462,20 @@ main,
 #comments .gitment-editor-main {
   font-family: 'Noto Serif', 'Times New Roman', serif !important;
 }
+#comments .gitment-editor-main.gitment-white-triangle::after {
+  border-right-color: #fff !important;
+}
+#comments .gitment-editor-main:not(.gitment-white-triangle)::after {
+  border-right-color: #f8f8f8 !important;
+}
+#comments .gitment-comment-main::after {
+  border-right-color: #f8f8f8 !important;
+}
 #comments .gitment-comment-header {
   background-color: #f9f9f9;
 }
 #comments .gitment-editor-preview {
+  background-color: #fff;
   font-family: 'Noto Serif', 'Times New Roman', serif !important;
 }
 #comments .gitment-editor-logout-link,
@@ -668,6 +678,7 @@ main,
   align-content: center;
   justify-content: center;
   display: none;
+  mix-blend-mode: multiply;
 }
 .tip ul {
   width: 60%;

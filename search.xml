@@ -2154,7 +2154,7 @@ m12 m22 dy
 <h2 id="rp"><a href="#rp" class="headerlink" title="rp"></a>rp</h2><p>Ruby注释。用来在不支持ruby的时候显示里边的内容。//此ruby非彼ruby！</p>
 <h2 id="rt"><a href="#rt" class="headerlink" title="rt"></a>rt</h2><p>定义字符的解释或者发音。rt显示在头部。</p>
 <blockquote>
-<p><ruby> 元素由一个或多个需要解释/发音的字符和一个提供该信息的 <rt> 元素组成，还包括可选的 <rp> 元素，定义当浏览器不支持 “ruby” 元素时显示的内容。</p>
+<p><code>&lt;ruby&gt;</code> 元素由一个或多个需要解释/发音的字符和一个提供该信息的 <code>&lt;rt&gt;</code> 元素组成，还包括可选的 <code>&lt;rp&gt;</code> 元素，定义当浏览器不支持 “ruby” 元素时显示的内容。</p>
 </blockquote>
 <h2 id="ruby"><a href="#ruby" class="headerlink" title="ruby"></a>ruby</h2><p>注音或者字符注释。</p>
 <h2 id="s"><a href="#s" class="headerlink" title="s"></a>s</h2><p>标记不正确的文本。与del表现相同。//与del的区别？</p>
@@ -2195,7 +2195,7 @@ m12 m22 dy
 <h2 id="strong"><a href="#strong" class="headerlink" title="strong"></a>strong</h2><p>加粗。</p>
 <h2 id="style"><a href="#style" class="headerlink" title="style"></a>style</h2><p>样式。</p>
 <blockquote>
-<p>注释：如果没有使用 “scoped” 属性，则每一个 <style> 标签必须位于 head 头部区域。</p>
+<p>注释：如果没有使用 “scoped” 属性，则每一个 <code>&lt;style&gt;</code> 标签必须位于 head 头部区域。</p>
 </blockquote>
 <p>属性：</p>
 <ul>
@@ -2215,7 +2215,7 @@ m12 m22 dy
 <li>border：是否有边框：“”，1//这是不是历史遗留问题，用on、off、tf或者只要有属性就可以的这几种方式的区别是什么。safari没看到显示效果。</li>
 </ul>
 <h2 id="tbody"><a href="#tbody" class="headerlink" title="tbody"></a>tbody</h2><blockquote>
-<p><tbody> 元素应该与 <thead> and <tfoot> 元素结合起来使用，用来规定表格的各个部分（主体、表头、页脚）。通过使用这些元素，使浏览器有能力支持独立于表格表头和表格页脚的表格主体滚动。当包含多个页面的长的表格被打印时，表格的表头和页脚可被打印在包含表格数据的每张页面上。<tbody> 标签必须被用在以下情境中：作为 <table> 元素的子元素，出现在 <caption>、<colgroup> 和 <thead> 元素之后。</p>
+<p><code>&lt;tbody&gt;</code> 元素应该与 <code>&lt;thead&gt;</code> and <code>&lt;tfoot&gt;</code> 元素结合起来使用，用来规定表格的各个部分（主体、表头、页脚）。通过使用这些元素，使浏览器有能力支持独立于表格表头和表格页脚的表格主体滚动。当包含多个页面的长的表格被打印时，表格的表头和页脚可被打印在包含表格数据的每张页面上。<code>&lt;tbody&gt;</code> 标签必须被用在以下情境中：作为 <code>&lt;table&gt;</code> 元素的子元素，出现在 <code>&lt;caption&gt;</code>、<code>&lt;colgroup&gt;</code> 和 <code>&lt;thead&gt;</code> 元素之后。</p>
 </blockquote>
 <p>可以简单认为组合多个tr。</p>
 <h2 id="td"><a href="#td" class="headerlink" title="td"></a>td</h2><p>标准单元格，和th创建的表头单元格区分。</p>
@@ -2265,7 +2265,7 @@ m12 m22 dy
 </ul>
 <h2 id="u"><a href="#u" class="headerlink" title="u"></a>u</h2><p>定义与常规文本风格不同的文本，像拼写错误的单词或者汉语中的专有名词。//？语焉不详！！💩</p>
 <blockquote>
-<p>注释：HTML5 规范建议开发者尽量使用其他元素替代 <u> 元素。—菜鸟教程</p>
+<p>注释：HTML5 规范建议开发者尽量使用其他元素替代 <code>&lt;u&gt;</code> 元素。—菜鸟教程</p>
 </blockquote>
 <h2 id="ul"><a href="#ul" class="headerlink" title="ul"></a>ul</h2><p>无序列表。</p>
 <h2 id="var"><a href="#var" class="headerlink" title="var"></a>var</h2><p>对变量格式化。表现为斜体。</p>
@@ -2695,7 +2695,7 @@ docker build -t joemccann/dillinger:${package.json.version}
 </ul>
 <h2 id="Help-us-to-make-MWeb-better"><a href="#Help-us-to-make-MWeb-better" class="headerlink" title="Help us to make MWeb better!"></a>Help us to make MWeb better!</h2><ol>
 <li>Tell your friends about MWeb.</li>
-<li>Send a feedback: <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#99;&#x6f;&#100;&#101;&#x72;&#102;&#x6f;&#x72;&#97;&#x72;&#x74;&#x2b;&#x32;&#x33;&#x33;&#64;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;">&#99;&#x6f;&#100;&#101;&#x72;&#102;&#x6f;&#x72;&#97;&#x72;&#x74;&#x2b;&#x32;&#x33;&#x33;&#64;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;</a></li>
+<li>Send a feedback: <a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#x3a;&#99;&#x6f;&#100;&#101;&#114;&#x66;&#111;&#x72;&#97;&#114;&#x74;&#43;&#50;&#51;&#x33;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;">&#99;&#x6f;&#100;&#101;&#114;&#x66;&#111;&#x72;&#97;&#114;&#x74;&#43;&#50;&#51;&#x33;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#109;</a></li>
 <li>Leave a review or at least a rating in Mac App Store.</li>
 </ol>
 ]]></content>
@@ -2740,7 +2740,7 @@ docker build -t joemccann/dillinger:${package.json.version}
 <h2 id="帮助我们改进-MWeb"><a href="#帮助我们改进-MWeb" class="headerlink" title="帮助我们改进 MWeb"></a>帮助我们改进 MWeb</h2><p>如果你喜欢 MWeb，想让它变得更好，你可以：</p>
 <ol>
 <li>推荐 MWeb，让更多的人知道。</li>
-<li>给我们发反馈和建议：<a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#99;&#x6f;&#100;&#101;&#x72;&#x66;&#111;&#x72;&#97;&#114;&#116;&#x2b;&#50;&#x33;&#51;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;">&#99;&#x6f;&#100;&#101;&#x72;&#x66;&#111;&#x72;&#97;&#114;&#116;&#x2b;&#50;&#x33;&#51;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;</a></li>
+<li>给我们发反馈和建议：<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#x63;&#x6f;&#x64;&#x65;&#114;&#102;&#111;&#x72;&#x61;&#x72;&#x74;&#x2b;&#x32;&#51;&#51;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;">&#x63;&#x6f;&#x64;&#x65;&#114;&#102;&#111;&#x72;&#x61;&#x72;&#x74;&#x2b;&#x32;&#51;&#51;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;</a></li>
 <li>在 Mac App Store 上评价 （如果是在 MAS 上购买的话）。</li>
 </ol>
 ]]></content>
