@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>
+        
+            从零制作网页样式库
+        
+    </title>
+    <link rel="icon" href="/img/favicon.png"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" href="/css/hljs.min.css">
+    <script src="/js/hljs.min.js"></script>  
+    <script src="/js/gitment.browser.js"></script>  
+</head>
+<body>
+    <header class="header" id="header">
+    <h1>
+        <a class="title" href="/">
+            Sosuke
+        </a>
+    </h1>
+    <h2>
+        <a class="motto">
+            Ponyo loves Sōsuke!
+        </a>
+    </h2>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/archives/" class="menu-item-link">
+                        Archives
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/about/" class="menu-item-link">
+                        About
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="https://github.com/vevlins/" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/atom.xml" class="menu-item-link">
+                        RSS
+                    </a>
+                </li>
+            
+                
+            
+                
+                
+                <li class="menu-item">
+                    <a class="menu-item-link search">
+                        Search                   
+                        <i class="fa fa-long-arrow-right search-icon" aria-hidden="true"></i>
+                    </a>
+                        <input placeholder="Search..." class="search-input" style="display:none;border:none!important;" onkeydown="onEnter(event)" onkeypress="onEnter(event)"></input>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+            <h1>
+                <a class="title" href="/2018/03/07/从零制作网页样式库/"> 
+                    从零制作网页样式库 
+                </a>
+            </h1>
+            <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2018-03-07   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li></ul>
+            </div>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#广告-amp-教材"><span class="toc-list-text">广告&教材</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#项目结构"><span class="toc-list-text">项目结构</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#gulp文件"><span class="toc-list-text">gulp文件</span></a></li></ol>
+</div>
+            <div class="content">
+                <h2 id="广告-amp-教材"><a href="#广告-amp-教材" class="headerlink" title="广告&amp;教材"></a>广告&amp;教材</h2><p><a href="https://github.com/Vevlins/ponyo" target="_blank" rel="noopener">GitHub - Vevlins/ponyo: 一个puputongtong的前端样式库</a></p>
+<p>这是我自己做的练习，包含若干基本元素和组件的样式控制，压缩后的体积只有25kb，项目结构和代码都比较清晰，加上这一系列的文章，应该很好理解。</p>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p>不说废话，先来看看项目结构。最主要的部分是<code>src</code>/<code>dist</code>/<code>gulpfile.js</code>。</p>
+<ul>
+<li>src 是dist中的sass和pug编译之后的文件，为常规的css和html文件。</li>
+<li>dist是sass文件和pug文件，sass是用来编写样式的工具，pug是为了编写实例网页，方便我们在开发中实时看到效果。</li>
+<li>gulpfile.js是前端工程自动化的文件，通过gulp这个工具控制sass和pug的编译、css的压缩、浏览器自动刷新等。通过它，我们对源文件进行更改后按下<code>crtl+s</code>就可以在浏览器中看到更改后的样式，而不需要在命令行下手工编译，再在浏览器中刷新。</li>
+</ul>
+<a id="more"></a>
+<p>至于src中sass文件的组成，在以下目录树中有相关注释说明。</p>
+<pre><code>├── LICENSE
+├── README.md
+├── dist //pug和sass输出到dist目录
+│   ├── css
+│   │   ├── ponyo.css
+│   │   └── ponyo.min.css
+│   └── example
+│      └── index.html
+├── docs //托管在github pages的文档
+│   ├── index.html
+│   └── ponyo.min.css
+├── gulpfile.js //！重要，前端工程自动化文件
+├── package-lock.json
+├── package.json
+└── src
+    ├── css
+    │   ├── base//全局的基础样式控制
+    │   │   ├── base.scss
+    │   │   ├── normalize.scss
+    │   │   ├── print.scss
+    │   │   └── typography.scss
+    │   ├── component//由多个标签或者标签加脚本组成的组件
+    │   │   ├── alert.scss
+    │   │   ├── annimation.scss
+    │   │   ├── article.scss
+    │   │   ├── modal.scss
+    │   │   ├── navbar.scss
+    │   │   ├── notice.scss
+    │   │   ├── pagination.scss
+    │   │   ├── panel.scss
+    │   │   ├── progress.scss
+    │   │   ├── tab.scss
+    │   │   └── tip.scss
+    │   ├── element//单一标签
+    │   │   ├── badge.scss
+    │   │   ├── button.scss
+    │   │   ├── form.scss
+    │   │   ├── icon.scss
+    │   │   ├── img.scss
+    │   │   ├── list.scss
+    │   │   └── table.scss
+    │   ├── layout//布局上的样式
+    │   │   ├── grid.scss//栅格系统
+    │   │   └── util.scss
+    │   ├── ponyo.scss
+    │   └── variable.scss
+    ├── example
+    │   └── index.pug
+    └── js
+        ├── component
+        │   ├── alert.js
+        │   ├── collapse.js
+        │   ├── modal.js
+        │   ├── progress.js
+        │   └── tip.js
+        └── ponyo.js
+</code></pre><h2 id="gulp文件"><a href="#gulp文件" class="headerlink" title="gulp文件"></a>gulp文件</h2><p>越是庞大的工程，越要从头开始认真搭建骨架。</p>
+<pre><code>gulp.task(&#39;build:scss&#39;, function () {
+    return gulp.src(&#39;./src/css/ponyo.scss&#39;)
+        .pipe(sourcemaps.init())//sourcemap,调试时用来定位压缩后的文件
+        .pipe(header(banner, { pkg : pkg } ))
+        .pipe(autoprefixer({//浏览器兼容问题，自动加私有前缀
+            browsers: [&#39;since 2010&#39;],
+            cascade: false
+        }))
+        .pipe(sass().on(&#39;error&#39;, sass.logError))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(&#39;./dist/css/&#39;));
+});
+
+gulp.task(&#39;compress:scss&#39;,function(){
+    return gulp.src(&#39;./src/css/ponyo.scss&#39;)
+    .pipe(header(banner, { pkg : pkg } ))
+    .pipe(autoprefixer({
+        browsers: [&#39;since 2010&#39;],
+        cascade: false
+    }))
+    .pipe(sass({outputStyle: &#39;compressed&#39;}).on(&#39;error&#39;, sass.logError))
+    .pipe(cleanCSS())//压缩css
+    .pipe(rename(&quot;ponyo.min.css&quot;))
+    .pipe(gulp.dest(&#39;./dist/css/&#39;));
+})
+
+gulp.task(&#39;build:pug&#39;,function(){
+    return gulp.src(&#39;./src/example/index.pug&#39;)
+        .pipe(pug().on(&#39;error&#39;,function(){}))
+        .pipe(gulp.dest(&#39;./dist/example/&#39;));
+})
+
+gulp.task(&#39;connect&#39;,function() {//在dist目录下创建一个本地服务器
+    connect.server({
+        root: &#39;dist/&#39;,
+        livereload: true
+    });
+})
+
+gulp.task(&#39;reload:html&#39;,[&#39;build:pug&#39;],function(){
+    return gulp.src(&#39;./dist/example/**/*.html&#39;)
+    .pipe(connect.reload());
+})
+
+gulp.task(&#39;reload:css&#39;,[&#39;build:scss&#39;,&#39;compress:scss&#39;],function(){
+    return gulp.src(&#39;./src/**/*.scss&#39;)
+    .pipe(connect.reload());
+})
+
+gulp.task(&#39;watch&#39;,[&#39;connect&#39;],function(){
+    gulp.watch(&#39;./src/**/*.scss&#39;,[&#39;reload:css&#39;]);//当css文件变化时服务器刷新
+    gulp.watch(&#39;./src/example/index.pug&#39;,[&#39;reload:html&#39;]);//当html文件变化时服务器刷新
+})
+
+gulp.task(&#39;default&#39;,[&#39;connect&#39;,&#39;watch&#39;])
+</code></pre>
+            </div>
+          
+           
+            <div class="copyright">
+                <div class="name">
+                    <a>本文作者:</a>
+                    <a>Sōsuke</a>
+                </div>
+                <div class="link">
+                    <a>本文链接:</a>
+                    <a class="permalink" href="https://vevlins.github.io/2018/03/07/从零制作网页样式库/">https://vevlins.github.io/2018/03/07/从零制作网页样式库/</a>
+                </div>
+                <div class="license">
+                    <a>版权声明:</a>
+                    <a>本博客所有文章除特别声明外，均采用许可协议 CC BY-NC-SA 3.0 CN。转载请注明出处！</a>
+                </div>
+            </div>
+            
+
+          
+
+
+</article>
+
+
+<div class="tip">
+<button class="tip-btn">
+    打赏
+</button>
+<div class="tip-img">
+<ul>
+    
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+ 
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+</ul>
+</div>
+</div>
+
+<div class="more">
+
+<div></div>
+
+    <div class="next">
+    <a href="/2018/03/05/见微知著-还是新式连坐/"> 见微知著,还是新式连坐? </a>
+    </div>
+    
+</div>
+
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_weixin fa fa-weixin" data-cmd="weixin" title="分享到微信" style="color:#1cbd8f">
+</a>
+<a href="#" class="bds_tsina fa fa-weibo" data-cmd="tsina" title="分享到新浪微博" style="color:#ff6363">
+</a>
+<a href="#" class="bds_twi fa fa-twitter" data-cmd="twi" title="分享到Twitter" style="color:#00A7EB">
+</a>
+<a href="#" class="bds_fbook fa fa-facebook" data-cmd="fbook" title="分享到Facebook" style="color:#00A7EB">
+</a>
+</div>
+<script>
+window._bd_share_config={
+    "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},
+    "share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='../../../../../static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+ 
+<div id="comments"></div>
+
+<script>
+    var gitment = new Gitment({
+    id: "Wed Mar 07 2018 08:45:22 GMT+0800",
+    owner: "Vevlins",
+    repo: "Vevlins.github.io",
+    oauth: {
+      client_id:"8d83609a651e972e308d",
+      client_secret: "37e40c89a47e957f654e86f71c5caaccad0774de",
+    }
+  })
+  gitment.render('comments')
+</script>
+    </main>
+    <a class="not-found">not found!</a>
+    <div class="search-items">
+    </div>
+    <a href="#header" id="top" style="display:none">
+        <i class="fa fa-sort-asc fa-2x"></i>
+    </a>
+    <footer class="footer">
+    <div class="footer-copyright">©️2017
+    <a href="//github.com/Vevlins/toki" class="link" target="_blank">Toki</a>  by Vevlins
+    </div>
+</footer>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/toki.js"></script>  
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

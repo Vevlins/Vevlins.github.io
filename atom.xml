@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://vevlins.github.io/"/>
-  <updated>2018-03-05T02:48:26.000Z</updated>
+  <updated>2018-03-07T00:49:34.911Z</updated>
   <id>https://vevlins.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从零制作网页样式库</title>
+    <link href="https://vevlins.github.io/2018/03/07/%E4%BB%8E%E9%9B%B6%E5%88%B6%E4%BD%9C%E7%BD%91%E9%A1%B5%E6%A0%B7%E5%BC%8F%E5%BA%93/"/>
+    <id>https://vevlins.github.io/2018/03/07/从零制作网页样式库/</id>
+    <published>2018-03-07T00:45:22.000Z</published>
+    <updated>2018-03-07T00:49:34.911Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="广告-amp-教材"><a href="#广告-amp-教材" class="headerlink" title="广告&amp;教材"></a>广告&amp;教材</h2><p><a href="https://github.com/Vevlins/ponyo" target="_blank" rel="noopener">GitHub - Vevlins/ponyo: 一个puputongtong的前端样式库</a></p><p>这是我自己做的练习，包含若干基本元素和组件的样式控制，压缩后的体积只有25kb，项目结构和代码都比较清晰，加上这一系列的文章，应该很好理解。</p><h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p>不说废话，先来看看项目结构。最主要的部分是<code>src</code>/<code>dist</code>/<code>gulpfile.js</code>。</p><ul><li>src 是dist中的sass和pug编译之后的文件，为常规的css和html文件。</li><li>dist是sass文件和pug文件，sass是用来编写样式的工具，pug是为了编写实例网页，方便我们在开发中实时看到效果。</li><li>gulpfile.js是前端工程自动化的文件，通过gulp这个工具控制sass和pug的编译、css的压缩、浏览器自动刷新等。通过它，我们对源文件进行更改后按下<code>crtl+s</code>就可以在浏览器中看到更改后的样式，而不需要在命令行下手工编译，再在浏览器中刷新。</li></ul><a id="more"></a><p>至于src中sass文件的组成，在以下目录树中有相关注释说明。</p><pre><code>├── LICENSE├── README.md├── dist //pug和sass输出到dist目录│   ├── css│   │   ├── ponyo.css│   │   └── ponyo.min.css│   └── example│      └── index.html├── docs //托管在github pages的文档│   ├── index.html│   └── ponyo.min.css├── gulpfile.js //！重要，前端工程自动化文件├── package-lock.json├── package.json└── src    ├── css    │   ├── base//全局的基础样式控制    │   │   ├── base.scss    │   │   ├── normalize.scss    │   │   ├── print.scss    │   │   └── typography.scss    │   ├── component//由多个标签或者标签加脚本组成的组件    │   │   ├── alert.scss    │   │   ├── annimation.scss    │   │   ├── article.scss    │   │   ├── modal.scss    │   │   ├── navbar.scss    │   │   ├── notice.scss    │   │   ├── pagination.scss    │   │   ├── panel.scss    │   │   ├── progress.scss    │   │   ├── tab.scss    │   │   └── tip.scss    │   ├── element//单一标签    │   │   ├── badge.scss    │   │   ├── button.scss    │   │   ├── form.scss    │   │   ├── icon.scss    │   │   ├── img.scss    │   │   ├── list.scss    │   │   └── table.scss    │   ├── layout//布局上的样式    │   │   ├── grid.scss//栅格系统    │   │   └── util.scss    │   ├── ponyo.scss    │   └── variable.scss    ├── example    │   └── index.pug    └── js        ├── component        │   ├── alert.js        │   ├── collapse.js        │   ├── modal.js        │   ├── progress.js        │   └── tip.js        └── ponyo.js</code></pre><h2 id="gulp文件"><a href="#gulp文件" class="headerlink" title="gulp文件"></a>gulp文件</h2><p>越是庞大的工程，越要从头开始认真搭建骨架。</p><pre><code>gulp.task(&#39;build:scss&#39;, function () {    return gulp.src(&#39;./src/css/ponyo.scss&#39;)        .pipe(sourcemaps.init())//sourcemap,调试时用来定位压缩后的文件        .pipe(header(banner, { pkg : pkg } ))        .pipe(autoprefixer({//浏览器兼容问题，自动加私有前缀            browsers: [&#39;since 2010&#39;],            cascade: false        }))        .pipe(sass().on(&#39;error&#39;, sass.logError))        .pipe(sourcemaps.write())        .pipe(gulp.dest(&#39;./dist/css/&#39;));});gulp.task(&#39;compress:scss&#39;,function(){    return gulp.src(&#39;./src/css/ponyo.scss&#39;)    .pipe(header(banner, { pkg : pkg } ))    .pipe(autoprefixer({        browsers: [&#39;since 2010&#39;],        cascade: false    }))    .pipe(sass({outputStyle: &#39;compressed&#39;}).on(&#39;error&#39;, sass.logError))    .pipe(cleanCSS())//压缩css    .pipe(rename(&quot;ponyo.min.css&quot;))    .pipe(gulp.dest(&#39;./dist/css/&#39;));})gulp.task(&#39;build:pug&#39;,function(){    return gulp.src(&#39;./src/example/index.pug&#39;)        .pipe(pug().on(&#39;error&#39;,function(){}))        .pipe(gulp.dest(&#39;./dist/example/&#39;));})gulp.task(&#39;connect&#39;,function() {//在dist目录下创建一个本地服务器    connect.server({        root: &#39;dist/&#39;,        livereload: true    });})gulp.task(&#39;reload:html&#39;,[&#39;build:pug&#39;],function(){    return gulp.src(&#39;./dist/example/**/*.html&#39;)    .pipe(connect.reload());})gulp.task(&#39;reload:css&#39;,[&#39;build:scss&#39;,&#39;compress:scss&#39;],function(){    return gulp.src(&#39;./src/**/*.scss&#39;)    .pipe(connect.reload());})gulp.task(&#39;watch&#39;,[&#39;connect&#39;],function(){    gulp.watch(&#39;./src/**/*.scss&#39;,[&#39;reload:css&#39;]);//当css文件变化时服务器刷新    gulp.watch(&#39;./src/example/index.pug&#39;,[&#39;reload:html&#39;]);//当html文件变化时服务器刷新})gulp.task(&#39;default&#39;,[&#39;connect&#39;,&#39;watch&#39;])</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;广告-amp-教材&quot;&gt;&lt;a href=&quot;#广告-amp-教材&quot; class=&quot;headerlink&quot; title=&quot;广告&amp;amp;教材&quot;&gt;&lt;/a&gt;广告&amp;amp;教材&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/Vevlins/ponyo&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub - Vevlins/ponyo: 一个puputongtong的前端样式库&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这是我自己做的练习，包含若干基本元素和组件的样式控制，压缩后的体积只有25kb，项目结构和代码都比较清晰，加上这一系列的文章，应该很好理解。&lt;/p&gt;
+&lt;h2 id=&quot;项目结构&quot;&gt;&lt;a href=&quot;#项目结构&quot; class=&quot;headerlink&quot; title=&quot;项目结构&quot;&gt;&lt;/a&gt;项目结构&lt;/h2&gt;&lt;p&gt;不说废话，先来看看项目结构。最主要的部分是&lt;code&gt;src&lt;/code&gt;/&lt;code&gt;dist&lt;/code&gt;/&lt;code&gt;gulpfile.js&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;src 是dist中的sass和pug编译之后的文件，为常规的css和html文件。&lt;/li&gt;
+&lt;li&gt;dist是sass文件和pug文件，sass是用来编写样式的工具，pug是为了编写实例网页，方便我们在开发中实时看到效果。&lt;/li&gt;
+&lt;li&gt;gulpfile.js是前端工程自动化的文件，通过gulp这个工具控制sass和pug的编译、css的压缩、浏览器自动刷新等。通过它，我们对源文件进行更改后按下&lt;code&gt;crtl+s&lt;/code&gt;就可以在浏览器中看到更改后的样式，而不需要在命令行下手工编译，再在浏览器中刷新。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="css" scheme="https://vevlins.github.io/categories/css/"/>
+    
+    
+      <category term="css" scheme="https://vevlins.github.io/tags/css/"/>
+    
+      <category term="web" scheme="https://vevlins.github.io/tags/web/"/>
+    
+  </entry>
   
   <entry>
     <title>见微知著,还是新式连坐?</title>
@@ -254,9 +285,9 @@
       <category term="css" scheme="https://vevlins.github.io/categories/css/"/>
     
     
-      <category term="css" scheme="https://vevlins.github.io/tags/css/"/>
-    
       <category term="笔记" scheme="https://vevlins.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="css" scheme="https://vevlins.github.io/tags/css/"/>
     
       <category term="counter" scheme="https://vevlins.github.io/tags/counter/"/>
     
@@ -604,37 +635,12 @@ if (canvas.getContext){
     <published>2017-12-14T05:46:23.000Z</published>
     <updated>2017-12-14T12:01:22.758Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Welcome-to-MWeb"><a href="#Welcome-to-MWeb" class="headerlink" title="Welcome to MWeb"></a>Welcome to MWeb</h1><p>What is MWeb? MWeb is a Pro Markdown writing, note taking and static blog generator App.</p><p>MWeb has two Mode, External Mode and Library Mode.<br>In External Mode, you can edit classic text and markdown files from anywhere on your Mac. As an example, you can point MWeb to a folder on Dropbox. Shortcuts <code>CMD + E</code> or <code>View</code> - <code>Open External</code> to open External Mode.<br>Library Mode design for note taking and static blog/website generator. Shortcuts <code>CMD + L</code> or <code>View</code> - <code>Open Library</code> to open Library Mode.<br>External Mode’s folders and Library Mode are supported <strong>Full Text Search</strong>, drag &amp; drop or paste to insert images.</p><a id="more"></a><h2 id="View-Mode-and-Live-Preview"><a href="#View-Mode-and-Live-Preview" class="headerlink" title="View Mode and Live Preview"></a>View Mode and Live Preview</h2><p>For Minimal UI, MWeb’s interface only has a few buttons. The right-top corner buttons shortcuts: <code>CMD + 7/8/9</code>. <code>CMD + 7</code> is Library Mode only. For enable Typewriter Scrolling, Dark Mode and switch panes, please check the <code>View</code> menu.</p><ul><li>Shortcut: <code>CMD + 1</code> to toggle Editor Only and Three Panes.</li><li>Shortcut: <code>CMD + 2</code> to toggle Two Panes and Editor Only.</li><li>Shortcut: <code>CMD + 3</code> to toggle Three Panes and Editor Only.</li><li>Shortcut: <code>CMD + 4</code> to toggle Editor/Preview and Three Panes.</li><li>Shortcut: <code>CMD + R</code> to toggle Editor and Live Preview.</li></ul><p><strong>Note</strong>: When <code>Preferences</code> - <code>General</code> - <code>Resize window when hide pane</code> is enable, shortcuts <code>CMD + 1/2/3/4</code> behavior will be changed. You can enable this option and try it. When the <code>Live Preview (CMD + R) open new window</code> is enable, shortcut <code>CMD + R</code> will open new window for Live Preview.</p><h2 id="More-about-MWeb"><a href="#More-about-MWeb" class="headerlink" title="More about MWeb"></a>More about MWeb</h2><ul><li>MWeb used Github Flavored Markdown syntax, please open <code>Help</code> - <code>Markdown syntax</code> for detail.</li><li>MWeb official website: <a href="http://www.mweb.im" target="_blank" rel="noopener">http://www.mweb.im</a></li><li>MWeb documents: <code>Help</code> - <code>Help...</code> or <a href="http://www.mweb.im/help.html" target="_blank" rel="noopener">http://www.mweb.im/help.html</a>.</li></ul><h2 id="Help-us-to-make-MWeb-better"><a href="#Help-us-to-make-MWeb-better" class="headerlink" title="Help us to make MWeb better!"></a>Help us to make MWeb better!</h2><ol><li>Tell your friends about MWeb.</li><li>Send a feedback: <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x63;&#111;&#x64;&#101;&#x72;&#x66;&#x6f;&#114;&#x61;&#x72;&#x74;&#x2b;&#50;&#51;&#x33;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;">&#x63;&#111;&#x64;&#101;&#x72;&#x66;&#x6f;&#114;&#x61;&#x72;&#x74;&#x2b;&#50;&#51;&#x33;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;</a></li><li>Leave a review or at least a rating in Mac App Store.</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="Welcome-to-MWeb"><a href="#Welcome-to-MWeb" class="headerlink" title="Welcome to MWeb"></a>Welcome to MWeb</h1><p>What is MWeb? MWeb is a Pro Markdown writing, note taking and static blog generator App.</p><p>MWeb has two Mode, External Mode and Library Mode.<br>In External Mode, you can edit classic text and markdown files from anywhere on your Mac. As an example, you can point MWeb to a folder on Dropbox. Shortcuts <code>CMD + E</code> or <code>View</code> - <code>Open External</code> to open External Mode.<br>Library Mode design for note taking and static blog/website generator. Shortcuts <code>CMD + L</code> or <code>View</code> - <code>Open Library</code> to open Library Mode.<br>External Mode’s folders and Library Mode are supported <strong>Full Text Search</strong>, drag &amp; drop or paste to insert images.</p><a id="more"></a><h2 id="View-Mode-and-Live-Preview"><a href="#View-Mode-and-Live-Preview" class="headerlink" title="View Mode and Live Preview"></a>View Mode and Live Preview</h2><p>For Minimal UI, MWeb’s interface only has a few buttons. The right-top corner buttons shortcuts: <code>CMD + 7/8/9</code>. <code>CMD + 7</code> is Library Mode only. For enable Typewriter Scrolling, Dark Mode and switch panes, please check the <code>View</code> menu.</p><ul><li>Shortcut: <code>CMD + 1</code> to toggle Editor Only and Three Panes.</li><li>Shortcut: <code>CMD + 2</code> to toggle Two Panes and Editor Only.</li><li>Shortcut: <code>CMD + 3</code> to toggle Three Panes and Editor Only.</li><li>Shortcut: <code>CMD + 4</code> to toggle Editor/Preview and Three Panes.</li><li>Shortcut: <code>CMD + R</code> to toggle Editor and Live Preview.</li></ul><p><strong>Note</strong>: When <code>Preferences</code> - <code>General</code> - <code>Resize window when hide pane</code> is enable, shortcuts <code>CMD + 1/2/3/4</code> behavior will be changed. You can enable this option and try it. When the <code>Live Preview (CMD + R) open new window</code> is enable, shortcut <code>CMD + R</code> will open new window for Live Preview.</p><h2 id="More-about-MWeb"><a href="#More-about-MWeb" class="headerlink" title="More about MWeb"></a>More about MWeb</h2><ul><li>MWeb used Github Flavored Markdown syntax, please open <code>Help</code> - <code>Markdown syntax</code> for detail.</li><li>MWeb official website: <a href="http://www.mweb.im" target="_blank" rel="noopener">http://www.mweb.im</a></li><li>MWeb documents: <code>Help</code> - <code>Help...</code> or <a href="http://www.mweb.im/help.html" target="_blank" rel="noopener">http://www.mweb.im/help.html</a>.</li></ul><h2 id="Help-us-to-make-MWeb-better"><a href="#Help-us-to-make-MWeb-better" class="headerlink" title="Help us to make MWeb better!"></a>Help us to make MWeb better!</h2><ol><li>Tell your friends about MWeb.</li><li>Send a feedback: <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#99;&#x6f;&#x64;&#101;&#114;&#x66;&#111;&#114;&#97;&#114;&#116;&#43;&#50;&#51;&#x33;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#46;&#x63;&#111;&#109;">&#99;&#x6f;&#x64;&#101;&#114;&#x66;&#111;&#114;&#97;&#114;&#116;&#43;&#50;&#51;&#x33;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#46;&#x63;&#111;&#109;</a></li><li>Leave a review or at least a rating in Mac App Store.</li></ol>]]></content>
     
     <summary type="html">
     
       &lt;h1 id=&quot;Welcome-to-MWeb&quot;&gt;&lt;a href=&quot;#Welcome-to-MWeb&quot; class=&quot;headerlink&quot; title=&quot;Welcome to MWeb&quot;&gt;&lt;/a&gt;Welcome to MWeb&lt;/h1&gt;&lt;p&gt;What is MWeb? MWeb is a Pro Markdown writing, note taking and static blog generator App.&lt;/p&gt;
 &lt;p&gt;MWeb has two Mode, External Mode and Library Mode.&lt;br&gt;In External Mode, you can edit classic text and markdown files from anywhere on your Mac. As an example, you can point MWeb to a folder on Dropbox. Shortcuts &lt;code&gt;CMD + E&lt;/code&gt; or &lt;code&gt;View&lt;/code&gt; - &lt;code&gt;Open External&lt;/code&gt; to open External Mode.&lt;br&gt;Library Mode design for note taking and static blog/website generator. Shortcuts &lt;code&gt;CMD + L&lt;/code&gt; or &lt;code&gt;View&lt;/code&gt; - &lt;code&gt;Open Library&lt;/code&gt; to open Library Mode.&lt;br&gt;External Mode’s folders and Library Mode are supported &lt;strong&gt;Full Text Search&lt;/strong&gt;, drag &amp;amp; drop or paste to insert images.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="https://vevlins.github.io/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="MWeb" scheme="https://vevlins.github.io/tags/MWeb/"/>
-    
-      <category term="Markdown" scheme="https://vevlins.github.io/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>欢迎使用MWeb</title>
-    <link href="https://vevlins.github.io/2017/12/14/%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8MWeb/"/>
-    <id>https://vevlins.github.io/2017/12/14/欢迎使用MWeb/</id>
-    <published>2017-12-14T05:42:22.000Z</published>
-    <updated>2017-12-14T12:01:38.351Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="欢迎使用-MWeb"><a href="#欢迎使用-MWeb" class="headerlink" title="欢迎使用 MWeb"></a>欢迎使用 MWeb</h1><p>首先介绍一下 MWeb 是什么，MWeb 是专业的 Markdown 写作、记笔记、静态博客生成软件。</p><p>然后这里<strong>重点说明</strong>一下：MWeb 有<strong>两个模式</strong>，外部模式和文档库模式。外部模式中把本地硬盘或 Dropbox 等网盘的文件夹引入，就可以使用 MWeb 的拖拽、粘贴插入图片、图床等特色功能。文档库模式设计为用于记笔记和静态博客生成。对于有<strong>同步和协作需求</strong>的朋友，请使用外部模式！使用视图菜单或者快捷键 <code>CMD + E</code> 可以打开外部模式，<code>CMD + L</code> 可以打开文档库。</p><a id="more"></a><h2 id="MWeb-大概用法、视图模式和预览界面"><a href="#MWeb-大概用法、视图模式和预览界面" class="headerlink" title="MWeb 大概用法、视图模式和预览界面"></a>MWeb 大概用法、视图模式和预览界面</h2><p>MWeb 使用菜单、快捷键和少量按钮完成所有操作，一般常用的操作都会有快捷键。整个界面使用三栏式结构，非常简洁。左边的第一第二栏是使用<strong>右键</strong>和底部的几个按钮操作，另外就是右上角有三个按钮了（外部模式是两个），快捷键分别是：<code>CMD + 7/8/9</code>。另外就是切换视图模式的快捷键了，建议看一下 <code>标记</code> 菜单和 <code>视图</code> 菜单。</p><ul><li>快捷键：<code>CMD + 1</code> 是在仅编辑器模式和三栏模式中切换。</li><li>快捷键：<code>CMD + 2</code> 是在二栏模式和仅编辑器模式中切换。</li><li>快捷键：<code>CMD + 3</code> 是在三栏模式和仅编辑器模式中切换。</li><li>快捷键：<code>CMD + 4</code> 是在编辑器/预览模式和三栏模式中切换。</li><li>快捷键：<code>CMD + R</code> 是在编辑器和预览模式中切换。</li></ul><p><strong>特别说明</strong>：当 <code>偏好设置</code> - <code>通用设置</code> 中 <code>切换视图模式（二三栏）时，保持编辑器大小不变</code> 被勾选后，<code>CMD + 1/2/3/4</code> 的行为会发生变化，具体如何，可以尝试一下。而 <code>在新窗口中打开实时预览（CMD + R）</code> 这个选项被选中后，快捷键 <code>CMD + R</code> 会打开新的窗口来预览文档。</p><h2 id="更多的了解-MWeb"><a href="#更多的了解-MWeb" class="headerlink" title="更多的了解 MWeb"></a>更多的了解 MWeb</h2><ul><li>MWeb 使用的是 Github Flavored Markdown 语法，请一定要打开 <code>帮助</code> - <code>Markdown 语法</code> 菜单看一下。</li><li>请一定要去官网首页看看，网址：<a href="http://zh.mweb.im" target="_blank" rel="noopener">http://zh.mweb.im</a>。</li><li>请一定要看一下官网的帮助，用菜单 <code>帮助</code> - <code>帮助...</code> 即可打开，也可以用网址：<a href="http://zh.mweb.im/help.html" target="_blank" rel="noopener">http://zh.mweb.im/help.html</a>。</li></ul><h2 id="帮助我们改进-MWeb"><a href="#帮助我们改进-MWeb" class="headerlink" title="帮助我们改进 MWeb"></a>帮助我们改进 MWeb</h2><p>如果你喜欢 MWeb，想让它变得更好，你可以：</p><ol><li>推荐 MWeb，让更多的人知道。</li><li>给我们发反馈和建议：<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#99;&#111;&#100;&#101;&#x72;&#x66;&#111;&#114;&#x61;&#114;&#116;&#43;&#x32;&#x33;&#x33;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#99;&#111;&#100;&#101;&#x72;&#x66;&#111;&#114;&#x61;&#114;&#116;&#43;&#x32;&#x33;&#x33;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;</a></li><li>在 Mac App Store 上评价 （如果是在 MAS 上购买的话）。</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;欢迎使用-MWeb&quot;&gt;&lt;a href=&quot;#欢迎使用-MWeb&quot; class=&quot;headerlink&quot; title=&quot;欢迎使用 MWeb&quot;&gt;&lt;/a&gt;欢迎使用 MWeb&lt;/h1&gt;&lt;p&gt;首先介绍一下 MWeb 是什么，MWeb 是专业的 Markdown 写作、记笔记、静态博客生成软件。&lt;/p&gt;
-&lt;p&gt;然后这里&lt;strong&gt;重点说明&lt;/strong&gt;一下：MWeb 有&lt;strong&gt;两个模式&lt;/strong&gt;，外部模式和文档库模式。外部模式中把本地硬盘或 Dropbox 等网盘的文件夹引入，就可以使用 MWeb 的拖拽、粘贴插入图片、图床等特色功能。文档库模式设计为用于记笔记和静态博客生成。对于有&lt;strong&gt;同步和协作需求&lt;/strong&gt;的朋友，请使用外部模式！使用视图菜单或者快捷键 &lt;code&gt;CMD + E&lt;/code&gt; 可以打开外部模式，&lt;code&gt;CMD + L&lt;/code&gt; 可以打开文档库。&lt;/p&gt;
     
     </summary>
     

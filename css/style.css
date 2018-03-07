@@ -144,6 +144,7 @@ main,
 }
 .post {
   margin-bottom: 2em;
+  text-shadow: none;
 }
 .post > * {
   margin: 0;
@@ -674,7 +675,6 @@ main,
   align-self: center;
   width: 100%;
   align-items: center;
-  display: flex;
   align-content: center;
   justify-content: center;
   display: none;
