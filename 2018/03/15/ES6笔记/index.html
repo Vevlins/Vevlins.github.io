@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>
+        
+            ES6笔记
+        
+    </title>
+    <link rel="icon" href="/img/favicon.png"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" href="/css/hljs.min.css">
+    <script src="/js/hljs.min.js"></script>  
+    <script src="/js/gitment.browser.js"></script>  
+</head>
+<body>
+    <header class="header" id="header">
+    <h1>
+        <a class="title" href="/">
+            Sosuke
+        </a>
+    </h1>
+    <h2>
+        <a class="motto">
+            Ponyo loves Sōsuke!
+        </a>
+    </h2>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+                <li class="menu-item">
+                    <a href="/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/archives/" class="menu-item-link">
+                        Archives
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/about/" class="menu-item-link">
+                        About
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="https://github.com/vevlins/" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+            
+                
+            
+                <li class="menu-item">
+                    <a href="/atom.xml" class="menu-item-link">
+                        RSS
+                    </a>
+                </li>
+            
+                
+            
+                
+                
+                <li class="menu-item">
+                    <a class="menu-item-link search">
+                        Search                   
+                        <i class="fa fa-long-arrow-right search-icon" aria-hidden="true"></i>
+                    </a>
+                        <input placeholder="Search..." class="search-input" style="display:none;border:none!important;" onkeydown="onEnter(event)" onkeypress="onEnter(event)"></input>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+            <h1>
+                <a class="title" href="/2018/03/15/ES6笔记/"> 
+                    ES6笔记 
+                </a>
+            </h1>
+            <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2018-03-15   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a></li></ul>
+            </div>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#let和const命令"><span class="toc-list-text">let和const命令</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#let"><span class="toc-list-text">let</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#块级作用域"><span class="toc-list-text">块级作用域</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#没有变量提升"><span class="toc-list-text">没有变量提升</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#暂时性死区"><span class="toc-list-text">暂时性死区</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#不允许重复声明"><span class="toc-list-text">不允许重复声明</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#const"><span class="toc-list-text">const</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#立即初始化"><span class="toc-list-text">立即初始化</span></a></li></ol></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#变量解构赋值"><span class="toc-list-text">变量解构赋值</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#默认值"><span class="toc-list-text">默认值</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#对象解构"><span class="toc-list-text">对象解构</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#函数参数、字符串解构"><span class="toc-list-text">函数参数、字符串解构</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#字符串"><span class="toc-list-text">字符串</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#遍历接口"><span class="toc-list-text">遍历接口</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#模板字符串"><span class="toc-list-text">模板字符串</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#保留换行和空格"><span class="toc-list-text">保留换行和空格</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#支持嵌入表达式和调用函数"><span class="toc-list-text">{}支持嵌入表达式和调用函数</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#支持多层嵌套"><span class="toc-list-text">支持多层嵌套</span></a></li></ol></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#函数"><span class="toc-list-text">函数</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#默认值-1"><span class="toc-list-text">默认值</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#rest-参数"><span class="toc-list-text">rest 参数</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#箭头函数"><span class="toc-list-text">箭头函数</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#双冒号运算符"><span class="toc-list-text">双冒号运算符</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#对象"><span class="toc-list-text">对象</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Object-assign"><span class="toc-list-text">Object.assign</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Object-setPrototypeOf"><span class="toc-list-text">Object.setPrototypeOf()</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#promise"><span class="toc-list-text">promise</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#then"><span class="toc-list-text">then</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#catch"><span class="toc-list-text">catch</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#async-await"><span class="toc-list-text">async/await</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#class"><span class="toc-list-text">class</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#model"><span class="toc-list-text">model</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#import"><span class="toc-list-text">import</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#export"><span class="toc-list-text">export</span></a></li></ol></li></ol>
+</div>
+            <div class="content">
+                <p>根据阮一峰《ECMAScript 6 入门》整理。</p>
+<h2 id="let和const命令"><a href="#let和const命令" class="headerlink" title="let和const命令"></a>let和const命令</h2><h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><h4 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h4><p>let是块级作用域变量，声明的变量只在<code>{}</code>内有效。<br>其适用于for循环内，特别需要注意的是：for循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。</p>
+<pre><code class="javascript">for (let i = 0; i &lt; 3; i++) {
+  let i = &#39;abc&#39;;
+  console.log(i);
+}
+</code></pre>
+<h4 id="没有变量提升"><a href="#没有变量提升" class="headerlink" title="没有变量提升"></a>没有变量提升</h4><pre><code class="javascript">// var 的情况
+console.log(foo); // 输出undefined
+var foo = 2;
+
+// let 的情况
+console.log(bar); // 报错ReferenceError
+let bar = 2;
+</code></pre>
+<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。存在全局变量tmp，但是块级作用域内let又声明了一个局部变量tmp，导致后者绑定这个块级作用域，所以在let声明变量前，对tmp赋值会报错。</p>
+<pre><code class="javascript">var tmp = 123;
+
+if (true) {
+  tmp = &#39;abc&#39;; // ReferenceError
+  let tmp;
+}
+</code></pre>
+<a id="more"></a>
+<h4 id="不允许重复声明"><a href="#不允许重复声明" class="headerlink" title="不允许重复声明"></a>不允许重复声明</h4><p>let在一个作用域内只能声明一次，对于函数形参，也不能在函数内部再次声明。</p>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>只读的常量。一旦声明，常量的值就不能改变。let所拥有的特性：块级作用域、没有变量提升、暂时性死区、不允许重复声明在const中也都适用。</p>
+<h4 id="立即初始化"><a href="#立即初始化" class="headerlink" title="立即初始化"></a>立即初始化</h4><p>不允许<code>const foo</code>这种情况，否则会报错<code>// SyntaxError: Missing initializer in const declaration</code>.</p>
+<h2 id="变量解构赋值"><a href="#变量解构赋值" class="headerlink" title="变量解构赋值"></a>变量解构赋值</h2><p>这种写法属于“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值。如果解构不成功，变量的值就等于undefined。如果等号的右边不是可遍历的结构，那么将会报错。</p>
+<h3 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h3><p>可以指定默认值。当本应该取到的值为undefind时候默认值生效。</p>
+<pre><code class="javascript">let [foo = true] = [];
+foo // true
+
+let [x, y = &#39;b&#39;] = [&#39;a&#39;]; // x=&#39;a&#39;, y=&#39;b&#39;
+let [x, y = &#39;b&#39;] = [&#39;a&#39;, undefined]; // x=&#39;a&#39;, y=&#39;b&#39;
+</code></pre>
+<h3 id="对象解构"><a href="#对象解构" class="headerlink" title="对象解构"></a>对象解构</h3><p>对象的属性是无序的，所以必须指定变量和属性同名，否则写成<code>foo:baz</code>用baz取出对象中foo的值。</p>
+<pre><code class="javascript">let { foo: baz } = { foo: &#39;aaa&#39;, bar: &#39;bbb&#39; };
+baz // &quot;aaa&quot;
+
+let obj = { first: &#39;hello&#39;, last: &#39;world&#39; };
+let { first: f, last: l } = obj;
+f // &#39;hello&#39;
+l // &#39;world&#39;
+</code></pre>
+<h3 id="函数参数、字符串解构"><a href="#函数参数、字符串解构" class="headerlink" title="函数参数、字符串解构"></a>函数参数、字符串解构</h3><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="遍历接口"><a href="#遍历接口" class="headerlink" title="遍历接口"></a>遍历接口</h3><pre><code class="javascript">for (let codePoint of &#39;foo&#39;) {
+  console.log(codePoint)
+}
+</code></pre>
+<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><p>模板字符串（template string）是增强版的字符串，用反引号（`）标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量，通过<code>${}</code>。</p>
+<h4 id="保留换行和空格"><a href="#保留换行和空格" class="headerlink" title="保留换行和空格"></a>保留换行和空格</h4><p>如果使用模板字符串表示多行字符串，所有的空格和缩进都会被保留在输出之中。</p>
+<h4 id="支持嵌入表达式和调用函数"><a href="#支持嵌入表达式和调用函数" class="headerlink" title="{}支持嵌入表达式和调用函数"></a>{}支持嵌入表达式和调用函数</h4><p>调用函数的情况：如果大括号中的值不是字符串，将按照一般的规则转为字符串。比如，大括号中是一个对象，将默认调用对象的toString方法。</p>
+<pre><code class="javascript">let x = 1;
+let y = 2;
+
+`${x} + ${y} = ${x + y}`
+// &quot;1 + 2 = 3&quot;
+
+`${x} + ${y * 2} = ${x + y * 2}`
+// &quot;1 + 4 = 5&quot;
+
+let obj = {x: 1, y: 2};
+`${obj.x + obj.y}`
+// &quot;3&quot;
+</code></pre>
+<h4 id="支持多层嵌套"><a href="#支持多层嵌套" class="headerlink" title="支持多层嵌套"></a>支持多层嵌套</h4><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="默认值-1"><a href="#默认值-1" class="headerlink" title="默认值"></a>默认值</h3><p>常规方法：</p>
+<pre><code class="javascript">if (typeof y === &#39;undefined&#39;) {
+  y = &#39;World&#39;;
+}
+</code></pre>
+<pre><code class="javascript">function Point(x = 0, y = 0) {
+  this.x = x;
+  this.y = y;
+}
+
+const p = new Point();
+p // { x: 0, y: 0 }
+</code></pre>
+<p>使用参数默认值时，函数不能有同名参数。</p>
+<pre><code class="javascript">// 报错
+function foo(x, x, y = 1) {
+  // ...
+}
+</code></pre>
+<p>每次都重新计算默认值表达式的值。</p>
+<pre><code class="javascript">let x = 99;
+function foo(p = x + 1) {
+  console.log(p);
+}
+
+foo() // 100
+
+x = 100;
+foo() // 101
+</code></pre>
+<h3 id="rest-参数"><a href="#rest-参数" class="headerlink" title="rest 参数"></a>rest 参数</h3><p>rest参数是真正的数组，而arguments虽然有length属性，可以用来遍历，但是并非真正的数组。rest参数之后不能再有其他参数。</p>
+<pre><code class="javascript">// arguments变量的写法
+function sortNumbers() {
+  return Array.prototype.slice.call(arguments).sort();
+}
+// rest参数的写法
+const sortNumbers = (...numbers) =&gt; numbers.sort();
+</code></pre>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><ul>
+<li>函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。</li>
+<li>不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。</li>
+<li>不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。</li>
+<li>不可以使用yield命令，因此箭头函数不能用作 Generator 函数。</li>
+</ul>
+<h3 id="双冒号运算符"><a href="#双冒号运算符" class="headerlink" title="双冒号运算符"></a>双冒号运算符</h3><p>函数绑定运算符是并排的两个冒号（::），双冒号左边是一个对象，右边是一个函数。该运算符会自动将左边的对象，作为上下文环境（即this对象），绑定到右边的函数上面。</p>
+<pre><code class="javascript">foo::bar;
+// 等同于
+bar.bind(foo);
+
+foo::bar(...arguments);
+// 等同于
+bar.apply(foo, arguments);
+
+const hasOwnProperty = Object.prototype.hasOwnProperty;
+function hasOwn(obj, key) {
+  return obj::hasOwnProperty(key);
+}
+</code></pre>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign"></a>Object.assign</h3><p>Object.assign方法实行的是浅拷贝，而不是深拷贝。</p>
+<h3 id="Object-setPrototypeOf"><a href="#Object-setPrototypeOf" class="headerlink" title="Object.setPrototypeOf()"></a>Object.setPrototypeOf()</h3><h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><p>Promise 是异步编程的一种解决方案。<br>Promise对象代表一个异步操作，有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）。</p>
+<pre><code class="javascript">let promise = new Promise(function(resolve, reject) {
+  console.log(&#39;Promise&#39;);
+  resolve();
+});
+
+promise.then(function() {
+  console.log(&#39;resolved.&#39;);
+});
+
+console.log(&#39;Hi!&#39;);
+// Promise
+// Hi!
+// resolved
+</code></pre>
+<p>上面代码中，Promise 新建后立即执行，所以首先输出的是Promise。然后，then方法指定的回调函数，将在当前脚本所有同步任务执行完才会执行，所以resolved最后输出。</p>
+<h3 id="then"><a href="#then" class="headerlink" title="then"></a>then</h3><p>Promise 实例具有then方法，也就是说，then方法是定义在原型对象Promise.prototype上的。它的作用是为 Promise 实例添加状态改变时的回调函数。前面说过，then方法的第一个参数是resolved状态的回调函数，第二个参数（可选）是rejected状态的回调函数。</p>
+<h3 id="catch"><a href="#catch" class="headerlink" title="catch"></a>catch</h3><pre><code class="javascript">getJSON(&#39;/posts.json&#39;).then(function(posts) {
+  // ...
+}).catch(function(error) {
+  // 处理 getJSON 和 前一个回调函数运行时发生的错误
+  console.log(&#39;发生错误！&#39;, error);
+});
+</code></pre>
+<h2 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h2><p>是 Generator 函数的语法糖。</p>
+<pre><code class="javascript">async function timeout(ms) {
+  await new Promise((resolve) =&gt; {
+    setTimeout(resolve, ms);
+  });
+}
+
+async function asyncPrint(value, ms) {
+  await timeout(ms);
+  console.log(value);
+}
+
+asyncPrint(&#39;hello world&#39;, 50);
+</code></pre>
+<h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><pre><code class="javascript">//定义类
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  toString() {
+    return &#39;(&#39; + this.x + &#39;, &#39; + this.y + &#39;)&#39;;
+  }
+}
+</code></pre>
+<pre><code class="javascript">class ColorPoint extends Point {
+  constructor(x, y, color) {
+    super(x, y); // 调用父类的constructor(x, y)
+    this.color = color;
+  }
+
+  toString() {
+    return this.color + &#39; &#39; + super.toString(); // 调用父类的toString()
+  }
+}
+</code></pre>
+<h2 id="model"><a href="#model" class="headerlink" title="model"></a>model</h2><h3 id="import"><a href="#import" class="headerlink" title="import"></a>import</h3><pre><code class="javascript">import { stat, exists, readFile } from &#39;fs&#39;;
+</code></pre>
+<h3 id="export"><a href="#export" class="headerlink" title="export"></a>export</h3><pre><code class="javascript">// profile.js
+var firstName = &#39;Michael&#39;;
+var lastName = &#39;Jackson&#39;;
+var year = 1958;
+
+export {firstName, lastName, year};
+</code></pre>
+
+            </div>
+          
+           
+            <div class="copyright">
+                <div class="name">
+                    <a>本文作者:</a>
+                    <a>Sōsuke</a>
+                </div>
+                <div class="link">
+                    <a>本文链接:</a>
+                    <a class="permalink" href="https://vevlins.github.io/2018/03/15/ES6笔记/">https://vevlins.github.io/2018/03/15/ES6笔记/</a>
+                </div>
+                <div class="license">
+                    <a>版权声明:</a>
+                    <a>本博客所有文章除特别声明外，均采用许可协议 CC BY-NC-SA 3.0 CN。转载请注明出处！</a>
+                </div>
+            </div>
+            
+
+          
+
+
+</article>
+
+
+<div class="tip">
+<button class="tip-btn">
+    打赏
+</button>
+<div class="tip-img">
+<ul>
+    
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+ 
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+</ul>
+</div>
+</div>
+
+<div class="more">
+
+<div></div>
+
+    <div class="next">
+    <a href="/2018/03/14/面试要点整理/"> 面试要点整理 </a>
+    </div>
+    
+</div>
+
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_weixin fa fa-weixin" data-cmd="weixin" title="分享到微信" style="color:#1cbd8f">
+</a>
+<a href="#" class="bds_tsina fa fa-weibo" data-cmd="tsina" title="分享到新浪微博" style="color:#ff6363">
+</a>
+<a href="#" class="bds_twi fa fa-twitter" data-cmd="twi" title="分享到Twitter" style="color:#00A7EB">
+</a>
+<a href="#" class="bds_fbook fa fa-facebook" data-cmd="fbook" title="分享到Facebook" style="color:#00A7EB">
+</a>
+</div>
+<script>
+window._bd_share_config={
+    "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},
+    "share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='../../../../../static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+ 
+<div id="comments"></div>
+
+<script>
+    var gitment = new Gitment({
+    id: "Thu Mar 15 2018 22:54:40 GMT+0800",
+    owner: "Vevlins",
+    repo: "Vevlins.github.io",
+    oauth: {
+      client_id:"8d83609a651e972e308d",
+      client_secret: "37e40c89a47e957f654e86f71c5caaccad0774de",
+    }
+  })
+  gitment.render('comments')
+</script>
+    </main>
+    <a class="not-found">not found!</a>
+    <div class="search-items">
+    </div>
+    <a href="#header" id="top" style="display:none">
+        <i class="fa fa-sort-asc fa-2x"></i>
+    </a>
+    <footer class="footer">
+    <div class="footer-copyright">©️2017
+    <a href="//github.com/Vevlins/toki" class="link" target="_blank">Toki</a>  by Vevlins
+    </div>
+</footer>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/toki.js"></script>  
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

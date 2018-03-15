@@ -90,6 +90,58 @@
     
         <article class="post">
             <h1>
+                <a class="title" href="/2018/01/09/Sass入门/"> 
+                    Sass入门 
+                </a>
+            </h1>
+                        <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2018-01-09   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sass/">sass</a></li></ul>
+            </div>
+            <div class="content">
+                
+                <h1 id="Sass入门"><a href="#Sass入门" class="headerlink" title="Sass入门"></a>Sass入门</h1><p>编写css的工具主要有less、sass、stylus.具体谁优谁略很难定论.昨天看了下less,感觉有些用法理解起来很奇怪,而且功能上比sass稍弱一点,所以决定使用sass作为以后编写css的工具.sass和scss是一种东西的两种写法,scss与css的写法一致,而sass需要缩进,无分号等特性.以下介绍的是scss的写法.</p>
+<h2 id="CIL"><a href="#CIL" class="headerlink" title="CIL"></a>CIL</h2><p>安装</p>
+<pre><code class="bash">gem install sass
+</code></pre>
+<p>编译风格:</p>
+<ul>
+<li>nested：嵌套缩进的css代码，它是默认值。</li>
+<li>expanded：没有缩进的、扩展的css代码。</li>
+<li>compact：简洁格式的css代码。</li>
+<li>compressed：压缩后的css代码。</li>
+</ul>
+<p>监听:</p>
+<pre><code class="bash">　// watch a file
+　　sass --watch input.scss:output.css
+　　// watch a directory
+　　sass --watch app/sass:public/stylesheets
+</code></pre>
+                
+            </div>
+            <div class="continue">
+            <a href="/2018/01/09/Sass入门/">
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+        </article>
+        
+        <article class="post">
+            <h1>
                 <a class="title" href="/2018/01/07/操作系统总结/"> 
                     操作系统总结 
                 </a>
@@ -293,46 +345,6 @@
             </div>
             <div class="continue">
             <a href="/2017/12/27/CSS计数器-counter/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2017/12/26/CSS3完全学习笔记二-属性全解/"> 
-                    CSS3完全学习笔记二: 属性全解 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-26   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <h1 id="CSS3完全学习笔记二-属性全解"><a href="#CSS3完全学习笔记二-属性全解" class="headerlink" title="CSS3完全学习笔记二: 属性全解"></a>CSS3完全学习笔记二: 属性全解</h1><p>对于目前没有主流浏览器支持的属性和一些需要特别学习的属性,在这篇笔记中没有学习.</p>
-<h2 id="动画属性"><a href="#动画属性" class="headerlink" title="动画属性"></a>动画属性</h2><h3 id="keyframes"><a href="#keyframes" class="headerlink" title="@keyframes"></a>@keyframes</h3><p>使用@keyframes规则，你可以创建动画。<br>创建动画是通过逐步改变从一个CSS样式设定到另一个。指定的变化时发生时使用％，或关键字”from”和”to”，这是和0％到100％相同。</p>
-<p>语法:</p>
-<pre><code class="css">@keyframes animationname {keyframes-selector {css-styles;}}
-</code></pre>
-                
-            </div>
-            <div class="continue">
-            <a href="/2017/12/26/CSS3完全学习笔记二-属性全解/">
             继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
             </a>
             </div>
