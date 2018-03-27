@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>
         
-            欢迎使用MWeb
+            小红书图集错落九宫格实现方案
         
     </title>
     <link rel="icon" href="/img/favicon.png"/>
@@ -88,55 +88,72 @@
     <main class="main">
         <article class="post">
             <h1>
-                <a class="title" href="/2017/12/14/欢迎使用MWeb/"> 
-                    欢迎使用MWeb 
+                <a class="title" href="/2018/03/27/小红书图集错落九宫格实现方案/"> 
+                    小红书图集错落九宫格实现方案 
                 </a>
             </h1>
             <div class="meta">
                 <a class="date"> 
                     <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-14   
+                    2018-03-27   
                 </a>
                 
                 <a class="category">
                     <i class="fa fa-th" aria-hidden="true"></i>  
                 </a>
                
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li></ul>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li></ul>
                 
                 <a class="tag">
                     <i class="fa fa-tags" aria-hidden="true"></i>  
                 </a>
                 
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MWeb/">MWeb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/九宫格/">九宫格</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片/">图片</a></li></ul>
             </div>
 <div class="toc">
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#欢迎使用-MWeb"><span class="toc-list-text">欢迎使用 MWeb</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#MWeb-大概用法、视图模式和预览界面"><span class="toc-list-text">MWeb 大概用法、视图模式和预览界面</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#更多的了解-MWeb"><span class="toc-list-text">更多的了解 MWeb</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#帮助我们改进-MWeb"><span class="toc-list-text">帮助我们改进 MWeb</span></a></li></ol></li></ol>
+  
 </div>
             <div class="content">
-                <h1 id="欢迎使用-MWeb"><a href="#欢迎使用-MWeb" class="headerlink" title="欢迎使用 MWeb"></a>欢迎使用 MWeb</h1><p>首先介绍一下 MWeb 是什么，MWeb 是专业的 Markdown 写作、记笔记、静态博客生成软件。</p>
-<p>然后这里<strong>重点说明</strong>一下：MWeb 有<strong>两个模式</strong>，外部模式和文档库模式。外部模式中把本地硬盘或 Dropbox 等网盘的文件夹引入，就可以使用 MWeb 的拖拽、粘贴插入图片、图床等特色功能。文档库模式设计为用于记笔记和静态博客生成。对于有<strong>同步和协作需求</strong>的朋友，请使用外部模式！使用视图菜单或者快捷键 <code>CMD + E</code> 可以打开外部模式，<code>CMD + L</code> 可以打开文档库。</p>
-<a id="more"></a>
-<h2 id="MWeb-大概用法、视图模式和预览界面"><a href="#MWeb-大概用法、视图模式和预览界面" class="headerlink" title="MWeb 大概用法、视图模式和预览界面"></a>MWeb 大概用法、视图模式和预览界面</h2><p>MWeb 使用菜单、快捷键和少量按钮完成所有操作，一般常用的操作都会有快捷键。整个界面使用三栏式结构，非常简洁。左边的第一第二栏是使用<strong>右键</strong>和底部的几个按钮操作，另外就是右上角有三个按钮了（外部模式是两个），快捷键分别是：<code>CMD + 7/8/9</code>。另外就是切换视图模式的快捷键了，建议看一下 <code>标记</code> 菜单和 <code>视图</code> 菜单。</p>
+                <p>最近在用vue仿小红书的h5版，在界面上唯一比较让人头大的就是这个伪九宫格(不知道有没有专业的称呼，我就这样叫了)的图集了。</p>
+<p>难点分析如下：</p>
 <ul>
-<li>快捷键：<code>CMD + 1</code> 是在仅编辑器模式和三栏模式中切换。</li>
-<li>快捷键：<code>CMD + 2</code> 是在二栏模式和仅编辑器模式中切换。</li>
-<li>快捷键：<code>CMD + 3</code> 是在三栏模式和仅编辑器模式中切换。</li>
-<li>快捷键：<code>CMD + 4</code> 是在编辑器/预览模式和三栏模式中切换。</li>
-<li>快捷键：<code>CMD + R</code> 是在编辑器和预览模式中切换。</li>
+<li>实现图片宽高一致</li>
+<li>尽量减少html标签</li>
+<li>尽量不使用js</li>
+<li>6n和12n情况下大图的左右位置不同</li>
+<li>最后一部分凑不齐9块的排布方案</li>
 </ul>
-<p><strong>特别说明</strong>：当 <code>偏好设置</code> - <code>通用设置</code> 中 <code>切换视图模式（二三栏）时，保持编辑器大小不变</code> 被勾选后，<code>CMD + 1/2/3/4</code> 的行为会发生变化，具体如何，可以尝试一下。而 <code>在新窗口中打开实时预览（CMD + R）</code> 这个选项被选中后，快捷键 <code>CMD + R</code> 会打开新的窗口来预览文档。</p>
-<h2 id="更多的了解-MWeb"><a href="#更多的了解-MWeb" class="headerlink" title="更多的了解 MWeb"></a>更多的了解 MWeb</h2><ul>
-<li>MWeb 使用的是 Github Flavored Markdown 语法，请一定要打开 <code>帮助</code> - <code>Markdown 语法</code> 菜单看一下。</li>
-<li>请一定要去官网首页看看，网址：<a href="http://zh.mweb.im" target="_blank" rel="noopener">http://zh.mweb.im</a>。</li>
-<li>请一定要看一下官网的帮助，用菜单 <code>帮助</code> - <code>帮助...</code> 即可打开，也可以用网址：<a href="http://zh.mweb.im/help.html" target="_blank" rel="noopener">http://zh.mweb.im/help.html</a>。</li>
+<p>小红书的效果如下：</p>
+<p><img src="http://ozc9m7ly1.bkt.clouddn.com/www.xiaohongshu.com_page_brands_5a4384888000862471d1493d%28iPhone%206_7_8%20Plus%29.png" alt="小红书图集"></p>
+<p>小红书自己的方案是把每一个伪九宫格区域分为竖向左右两块，通过js判断数量动态决定添加的顺序为大小还是小大。<br>这样做的缺点有二：</p>
+<ul>
+<li>增加了很多无关内容的标签嵌套</li>
+<li>通过js进行计算导致逻辑繁琐</li>
 </ul>
-<h2 id="帮助我们改进-MWeb"><a href="#帮助我们改进-MWeb" class="headerlink" title="帮助我们改进 MWeb"></a>帮助我们改进 MWeb</h2><p>如果你喜欢 MWeb，想让它变得更好，你可以：</p>
-<ol>
-<li>推荐 MWeb，让更多的人知道。</li>
-<li>给我们发反馈和建议：<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#99;&#x6f;&#100;&#x65;&#114;&#x66;&#x6f;&#114;&#x61;&#x72;&#116;&#43;&#50;&#51;&#x33;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#x6d;">&#99;&#x6f;&#100;&#x65;&#114;&#x66;&#x6f;&#114;&#x61;&#x72;&#116;&#43;&#50;&#51;&#x33;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#x6d;</a></li>
-<li>在 Mac App Store 上评价 （如果是在 MAS 上购买的话）。</li>
-</ol>
+<p>尝试过标签嵌套和绝对定位加js，最终通过vw和float实现了效果。</p>
+<pre><code class="css">.imgs div {
+  box-sizing: border-box;
+  background-size: cover;
+  width: 33.3vw;
+  height: 33.3vw;
+  padding: 1px;
+  background-clip:content-box;
+  background-position: center center;
+  float: left;
+}
+.imgs div:nth-of-type(6n-5){
+    width: 66.6vw;
+    float: right;
+    height: 66.6vw;
+}
+.imgs div:nth-of-type(12n-5){
+    float: left;
+}
+</code></pre>
+<pre><code class="html">    &lt;div class=&quot;imgs&quot;&gt;
+        &lt;div v-for=&quot;img in imgs&quot; :style=&#39;`background-image: url(${img})`&#39;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
 
             </div>
           
@@ -148,7 +165,7 @@
                 </div>
                 <div class="link">
                     <a>本文链接:</a>
-                    <a class="permalink" href="https://vevlins.github.io/2017/12/14/欢迎使用MWeb/">https://vevlins.github.io/2017/12/14/欢迎使用MWeb/</a>
+                    <a class="permalink" href="https://vevlins.github.io/2018/03/27/小红书图集错落九宫格实现方案/">https://vevlins.github.io/2018/03/27/小红书图集错落九宫格实现方案/</a>
                 </div>
                 <div class="license">
                     <a>版权声明:</a>
@@ -185,12 +202,12 @@
 
 <div class="more">
 
-    <div class="prev">
-   <a href="/2017/12/14/Dillinger/">  Dillinger</a>
-    </div>
-
 <div></div>
 
+    <div class="next">
+    <a href="/2018/03/16/Promise原理剖析/"> Promise原理剖析 </a>
+    </div>
+    
 </div>
 
 <div class="bdsharebuttonbox">
@@ -213,7 +230,7 @@ window._bd_share_config={
 
 <script>
     var gitment = new Gitment({
-    id: "Thu Dec 14 2017 13:42:22 GMT+0800",
+    id: "Tue Mar 27 2018 16:59:41 GMT+0800",
     owner: "Vevlins",
     repo: "Vevlins.github.io",
     oauth: {

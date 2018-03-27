@@ -90,6 +90,185 @@
     
         <article class="post">
             <h1>
+                <a class="title" href="/2018/03/27/小红书图集错落九宫格实现方案/"> 
+                    小红书图集错落九宫格实现方案 
+                </a>
+            </h1>
+                        <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2018-03-27   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/九宫格/">九宫格</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片/">图片</a></li></ul>
+            </div>
+            <div class="content">
+                
+                <p>最近在用vue仿小红书的h5版，在界面上唯一比较让人头大的就是这个伪九宫格(不知道有没有专业的称呼，我就这样叫了)的图集了。</p>
+<p>难点分析如下：</p>
+<ul>
+<li>实现图片宽高一致</li>
+<li>尽量减少html标签</li>
+<li>尽量不使用js</li>
+<li>6n和12n情况下大图的左右位置不同</li>
+<li>最后一部分凑不齐9块的排布方案</li>
+</ul>
+<p>小红书的效果如下：</p>
+<p><img src="http://ozc9m7ly1.bkt.clouddn.com/www.xiaohongshu.com_page_brands_5a4384888000862471d1493d%28iPhone%206_7_8%20Plus%29.png" alt="小红书图集"></p>
+<p>小红书自己的方案是把每一个伪九宫格区域分为竖向左右两块，通过js判断数量动态决定添加的顺序为大小还是小大。<br>这样做的缺点有二：</p>
+<ul>
+<li>增加了很多无关内容的标签嵌套</li>
+<li>通过js进行计算导致逻辑繁琐</li>
+</ul>
+<p>尝试过标签嵌套和绝对定位加js，最终通过vw和float实现了效果。</p>
+<pre><code class="css">.imgs div {
+  box-sizing: border-box;
+  background-size: cover;
+  width: 33.3vw;
+  height: 33.3vw;
+  padding: 1px;
+  background-clip:content-box;
+  background-position: center center;
+  float: left;
+}
+.imgs div:nth-of-type(6n-5){
+    width: 66.6vw;
+    float: right;
+    height: 66.6vw;
+}
+.imgs div:nth-of-type(12n-5){
+    float: left;
+}
+</code></pre>
+<pre><code class="html">    &lt;div class=&quot;imgs&quot;&gt;
+        &lt;div v-for=&quot;img in imgs&quot; :style=&#39;`background-image: url(${img})`&#39;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+
+                
+            </div>
+            <div class="continue">
+            <a href="/2018/03/27/小红书图集错落九宫格实现方案/">
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+        </article>
+        
+        <article class="post">
+            <h1>
+                <a class="title" href="/2018/03/16/Promise原理剖析/"> 
+                    Promise原理剖析 
+                </a>
+            </h1>
+                        <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2018-03-16   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/promise/">promise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li></ul>
+            </div>
+            <div class="content">
+                
+                <blockquote>
+<p><a href="https://segmentfault.com/a/1190000009478377" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009478377</a><br>&lt;!–<br>调用then方法，将想要在Promise异步操作成功时执行的回调放入callbacks队列，其实也就是注册回调函数。</p>
+</blockquote>
+<p>创建Promise实例时传入的函数会被赋予一个函数类型的参数，即resolve，它接收一个参数value，代表异步操作返回的结果，当一步操作执行成功后，用户会调用resolve方法，这时候其实真正执行的操作是将callbacks队列中的回调一一执行。 –&gt;</p>
+<pre><code class="javascript">function Promise(fn) {
+    var state = &#39;pending&#39;,
+        value = null,
+        callbacks = [];
+
+    this.then = function (onFulfilled, onRejected) {
+        return new Promise(function (resolve, reject) {
+            handle({
+                onFulfilled: onFulfilled || null,
+                onRejected: onRejected || null,
+                resolve: resolve,
+                reject: reject
+            });
+        });
+    };
+
+    function handle(callback) {
+        if (state === &#39;pending&#39;) {
+            callbacks.push(callback);
+            return;
+        }
+
+        var cb = state === &#39;fulfilled&#39; ? callback.onFulfilled : callback.onRejected,
+            ret;
+        if (cb === null) {
+            cb = state === &#39;fulfilled&#39; ? callback.resolve : callback.reject;
+            cb(value);
+            return;
+        }
+        ret = cb(value);
+        callback.resolve(ret);
+    }
+
+    function resolve(newValue) {
+        if (newValue &amp;&amp; (typeof newValue === &#39;object&#39; || typeof newValue === &#39;function&#39;)) {
+            var then = newValue.then;
+            if (typeof then === &#39;function&#39;) {
+                then.call(newValue, resolve, reject);
+                return;
+            }
+        }
+        state = &#39;fulfilled&#39;;
+        value = newValue;
+        execute();
+    }
+
+    function reject(reason) {
+        state = &#39;rejected&#39;;
+        value = reason;
+        execute();
+    }
+
+    function execute() {
+        setTimeout(function () {
+            callbacks.forEach(function (callback) {
+                handle(callback);
+            });
+        }, 0);
+    }
+
+    fn(resolve, reject);
+}
+</code></pre>
+
+                
+            </div>
+            <div class="continue">
+            <a href="/2018/03/16/Promise原理剖析/">
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+        </article>
+        
+        <article class="post">
+            <h1>
                 <a class="title" href="/2018/03/15/ES6笔记/"> 
                     ES6笔记 
                 </a>
@@ -222,100 +401,6 @@ if (true) {
             </div>
             <div class="continue">
             <a href="/2018/03/07/从零制作网页样式库/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2018/03/05/见微知著-还是新式连坐/"> 
-                    见微知著,还是新式连坐? 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2018-03-05   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/杂感/">杂感</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/师德/">师德</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连坐/">连坐</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <blockquote>
-<p>合肥女教师阻拦高铁发车一事不断发酵，社会舆论也是甚嚣尘上。该教师的单位对其进行停职处分，央视专门进入地方教育局调查。而后《新京报》则发文表示应该保护该女子。（澎湃新闻，1月12号）</p>
-</blockquote>
-<p>对于此事，笔者关注了一个点，即该女子的教师身份和舆论因其身份而导致的师德缺失，不配做老师的观点。</p>
-<p>据永红路小学官方网站信息显示，2009年罗海丽所带班级荣获区级优秀中队，2010年她又被评为区级德育先进个人，2011年被评委区级优秀班主任。她连续3年荣获辅导学生作文比赛金奖，2011年8月教授的阅读录像课获得安徽省录像课一等奖，2011年12月荣获区级语文教学能手。</p>
-<p>对于这些荣誉，有好事者问大家如何看待，也有网友慷慨激昂，批评该女子完全没有师德，不配教育学生，应当彻底开除。还有部分人恶意揣测这些荣誉都是凭着心机争抢来的。<br>
-                
-            </div>
-            <div class="continue">
-            <a href="/2018/03/05/见微知著-还是新式连坐/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2018/01/11/计算机网络基础/"> 
-                    计算机网络基础 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2018-01-11   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/network/">network</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/network/">network</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <h1 id="计算机网络基础"><a href="#计算机网络基础" class="headerlink" title="计算机网络基础"></a>计算机网络基础</h1><p>以谢希仁《计算机网络》第五版教学课件为参考整理.</p>
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目:"></a>题目:</h1><ul>
-<li>分组交换和电路交换的比较.</li>
-<li>有关码元、信道、香农定律、奈式准则、信噪比的计算.</li>
-<li>码分复用的计算</li>
-<li>CRC</li>
-<li>0比特填充</li>
-<li>CSMA/CD 协议</li>
-<li>网桥自学习转发表</li>
-<li>VLAN</li>
-<li>虚电路和数据报</li>
-<li>ARQ、滑动窗口、停止等待</li>
-<li>RIP和OSPF</li>
-<li>IP分类、子网掩码计</li>
-<li>TCP的握手和挥手</li>
-<li>路由表更新</li>
-<li>局域网组网配置</li>
-</ul>
-                
-            </div>
-            <div class="continue">
-            <a href="/2018/01/11/计算机网络基础/">
             继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
             </a>
             </div>

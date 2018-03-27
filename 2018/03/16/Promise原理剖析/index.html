@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>
         
-            欢迎使用MWeb
+            Promise原理剖析
         
     </title>
     <link rel="icon" href="/img/favicon.png"/>
@@ -88,55 +88,99 @@
     <main class="main">
         <article class="post">
             <h1>
-                <a class="title" href="/2017/12/14/欢迎使用MWeb/"> 
-                    欢迎使用MWeb 
+                <a class="title" href="/2018/03/16/Promise原理剖析/"> 
+                    Promise原理剖析 
                 </a>
             </h1>
             <div class="meta">
                 <a class="date"> 
                     <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-14   
+                    2018-03-16   
                 </a>
                 
                 <a class="category">
                     <i class="fa fa-th" aria-hidden="true"></i>  
                 </a>
                
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li></ul>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li></ul>
                 
                 <a class="tag">
                     <i class="fa fa-tags" aria-hidden="true"></i>  
                 </a>
                 
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MWeb/">MWeb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/promise/">promise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li></ul>
             </div>
 <div class="toc">
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#欢迎使用-MWeb"><span class="toc-list-text">欢迎使用 MWeb</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#MWeb-大概用法、视图模式和预览界面"><span class="toc-list-text">MWeb 大概用法、视图模式和预览界面</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#更多的了解-MWeb"><span class="toc-list-text">更多的了解 MWeb</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#帮助我们改进-MWeb"><span class="toc-list-text">帮助我们改进 MWeb</span></a></li></ol></li></ol>
+  
 </div>
             <div class="content">
-                <h1 id="欢迎使用-MWeb"><a href="#欢迎使用-MWeb" class="headerlink" title="欢迎使用 MWeb"></a>欢迎使用 MWeb</h1><p>首先介绍一下 MWeb 是什么，MWeb 是专业的 Markdown 写作、记笔记、静态博客生成软件。</p>
-<p>然后这里<strong>重点说明</strong>一下：MWeb 有<strong>两个模式</strong>，外部模式和文档库模式。外部模式中把本地硬盘或 Dropbox 等网盘的文件夹引入，就可以使用 MWeb 的拖拽、粘贴插入图片、图床等特色功能。文档库模式设计为用于记笔记和静态博客生成。对于有<strong>同步和协作需求</strong>的朋友，请使用外部模式！使用视图菜单或者快捷键 <code>CMD + E</code> 可以打开外部模式，<code>CMD + L</code> 可以打开文档库。</p>
-<a id="more"></a>
-<h2 id="MWeb-大概用法、视图模式和预览界面"><a href="#MWeb-大概用法、视图模式和预览界面" class="headerlink" title="MWeb 大概用法、视图模式和预览界面"></a>MWeb 大概用法、视图模式和预览界面</h2><p>MWeb 使用菜单、快捷键和少量按钮完成所有操作，一般常用的操作都会有快捷键。整个界面使用三栏式结构，非常简洁。左边的第一第二栏是使用<strong>右键</strong>和底部的几个按钮操作，另外就是右上角有三个按钮了（外部模式是两个），快捷键分别是：<code>CMD + 7/8/9</code>。另外就是切换视图模式的快捷键了，建议看一下 <code>标记</code> 菜单和 <code>视图</code> 菜单。</p>
-<ul>
-<li>快捷键：<code>CMD + 1</code> 是在仅编辑器模式和三栏模式中切换。</li>
-<li>快捷键：<code>CMD + 2</code> 是在二栏模式和仅编辑器模式中切换。</li>
-<li>快捷键：<code>CMD + 3</code> 是在三栏模式和仅编辑器模式中切换。</li>
-<li>快捷键：<code>CMD + 4</code> 是在编辑器/预览模式和三栏模式中切换。</li>
-<li>快捷键：<code>CMD + R</code> 是在编辑器和预览模式中切换。</li>
-</ul>
-<p><strong>特别说明</strong>：当 <code>偏好设置</code> - <code>通用设置</code> 中 <code>切换视图模式（二三栏）时，保持编辑器大小不变</code> 被勾选后，<code>CMD + 1/2/3/4</code> 的行为会发生变化，具体如何，可以尝试一下。而 <code>在新窗口中打开实时预览（CMD + R）</code> 这个选项被选中后，快捷键 <code>CMD + R</code> 会打开新的窗口来预览文档。</p>
-<h2 id="更多的了解-MWeb"><a href="#更多的了解-MWeb" class="headerlink" title="更多的了解 MWeb"></a>更多的了解 MWeb</h2><ul>
-<li>MWeb 使用的是 Github Flavored Markdown 语法，请一定要打开 <code>帮助</code> - <code>Markdown 语法</code> 菜单看一下。</li>
-<li>请一定要去官网首页看看，网址：<a href="http://zh.mweb.im" target="_blank" rel="noopener">http://zh.mweb.im</a>。</li>
-<li>请一定要看一下官网的帮助，用菜单 <code>帮助</code> - <code>帮助...</code> 即可打开，也可以用网址：<a href="http://zh.mweb.im/help.html" target="_blank" rel="noopener">http://zh.mweb.im/help.html</a>。</li>
-</ul>
-<h2 id="帮助我们改进-MWeb"><a href="#帮助我们改进-MWeb" class="headerlink" title="帮助我们改进 MWeb"></a>帮助我们改进 MWeb</h2><p>如果你喜欢 MWeb，想让它变得更好，你可以：</p>
-<ol>
-<li>推荐 MWeb，让更多的人知道。</li>
-<li>给我们发反馈和建议：<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#99;&#x6f;&#100;&#x65;&#114;&#x66;&#x6f;&#114;&#x61;&#x72;&#116;&#43;&#50;&#51;&#x33;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#x6d;">&#99;&#x6f;&#100;&#x65;&#114;&#x66;&#x6f;&#114;&#x61;&#x72;&#116;&#43;&#50;&#51;&#x33;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#x6d;</a></li>
-<li>在 Mac App Store 上评价 （如果是在 MAS 上购买的话）。</li>
-</ol>
+                <blockquote>
+<p><a href="https://segmentfault.com/a/1190000009478377" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009478377</a><br>&lt;!–<br>调用then方法，将想要在Promise异步操作成功时执行的回调放入callbacks队列，其实也就是注册回调函数。</p>
+</blockquote>
+<p>创建Promise实例时传入的函数会被赋予一个函数类型的参数，即resolve，它接收一个参数value，代表异步操作返回的结果，当一步操作执行成功后，用户会调用resolve方法，这时候其实真正执行的操作是将callbacks队列中的回调一一执行。 –&gt;</p>
+<pre><code class="javascript">function Promise(fn) {
+    var state = &#39;pending&#39;,
+        value = null,
+        callbacks = [];
+
+    this.then = function (onFulfilled, onRejected) {
+        return new Promise(function (resolve, reject) {
+            handle({
+                onFulfilled: onFulfilled || null,
+                onRejected: onRejected || null,
+                resolve: resolve,
+                reject: reject
+            });
+        });
+    };
+
+    function handle(callback) {
+        if (state === &#39;pending&#39;) {
+            callbacks.push(callback);
+            return;
+        }
+
+        var cb = state === &#39;fulfilled&#39; ? callback.onFulfilled : callback.onRejected,
+            ret;
+        if (cb === null) {
+            cb = state === &#39;fulfilled&#39; ? callback.resolve : callback.reject;
+            cb(value);
+            return;
+        }
+        ret = cb(value);
+        callback.resolve(ret);
+    }
+
+    function resolve(newValue) {
+        if (newValue &amp;&amp; (typeof newValue === &#39;object&#39; || typeof newValue === &#39;function&#39;)) {
+            var then = newValue.then;
+            if (typeof then === &#39;function&#39;) {
+                then.call(newValue, resolve, reject);
+                return;
+            }
+        }
+        state = &#39;fulfilled&#39;;
+        value = newValue;
+        execute();
+    }
+
+    function reject(reason) {
+        state = &#39;rejected&#39;;
+        value = reason;
+        execute();
+    }
+
+    function execute() {
+        setTimeout(function () {
+            callbacks.forEach(function (callback) {
+                handle(callback);
+            });
+        }, 0);
+    }
+
+    fn(resolve, reject);
+}
+</code></pre>
 
             </div>
           
@@ -148,7 +192,7 @@
                 </div>
                 <div class="link">
                     <a>本文链接:</a>
-                    <a class="permalink" href="https://vevlins.github.io/2017/12/14/欢迎使用MWeb/">https://vevlins.github.io/2017/12/14/欢迎使用MWeb/</a>
+                    <a class="permalink" href="https://vevlins.github.io/2018/03/16/Promise原理剖析/">https://vevlins.github.io/2018/03/16/Promise原理剖析/</a>
                 </div>
                 <div class="license">
                     <a>版权声明:</a>
@@ -186,11 +230,15 @@
 <div class="more">
 
     <div class="prev">
-   <a href="/2017/12/14/Dillinger/">  Dillinger</a>
+   <a href="/2018/03/27/小红书图集错落九宫格实现方案/">  小红书图集错落九宫格实现方案</a>
     </div>
 
 <div></div>
 
+    <div class="next">
+    <a href="/2018/03/15/ES6笔记/"> ES6笔记 </a>
+    </div>
+    
 </div>
 
 <div class="bdsharebuttonbox">
@@ -213,7 +261,7 @@ window._bd_share_config={
 
 <script>
     var gitment = new Gitment({
-    id: "Thu Dec 14 2017 13:42:22 GMT+0800",
+    id: "Fri Mar 16 2018 16:24:13 GMT+0800",
     owner: "Vevlins",
     repo: "Vevlins.github.io",
     oauth: {
