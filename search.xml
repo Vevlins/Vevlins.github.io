@@ -3,6 +3,37 @@
   
     
     <entry>
+      <title><![CDATA[瀑布流实现方案探讨]]></title>
+      <url>/2018/03/28/%E7%80%91%E5%B8%83%E6%B5%81%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88%E6%8E%A2%E8%AE%A8/</url>
+      <content type="html"><![CDATA[<p>最近在仿小红书时又遇到了一个问题，就是笔记的瀑布流展示。</p>
+<p>我采用的是张鑫旭在博客中提到的一种基于css3新的<code>column-count</code>特性的方案，这种方案本来是我最喜欢的，因为不需要额外的标签嵌套，也没有js参与布局，css写起来也是简洁又优雅。但是在使用safari调试页面时发现了一个奇怪的问题，使我最终决定放弃这种方案。<br><a id="more"></a><br>需要清楚的是safari和几乎全部的手机浏览器都是webkit内核，chrome原来使用的是webkit，但是后来脱离出来在webkit基础上研发了blink，所以这两种浏览器的表现是不完全一致的，由于chrome的调试工具比较合理，所以我习惯于在chrome下调试，没想到build出来发现在移动端出现了问题。</p>
+<p>上文提到的<code>column-count</code>实现瀑布流的问题是在webkit下除第一竖栏之外其他栏的顶部会<strong><em>莫名其妙</em></strong>地掉下来一块。经过尝试，最终确定在webkit下的其它栏头顶会把上一栏最末尾自<code>border-bottom</code>以外的<code>padding-bottom</code>、<code>margin-bottom</code>乃至<code>box-shadow</code>全都显示出来，而原本应该包含这些的上一栏末尾都不会包含。</p>
+<p>webkit对于<code>column-count</code>的渲染方式在我看来几乎等于是从第一栏底部腰斩。不仅如此，除第一竖栏之外的其他栏甚至在safari调试下根本无法被选中。</p>
+<p>通过caniuse网站查询<code>column-count</code>的支持情况是很乐观的，但是事实还是给了我<strong><em>沉重一击</em></strong>。另外如果从瀑布流的角度来说，这种方案还有一个缺点就是它是竖向排列的，而用户观察是需要一横排一横排地获取新消息，所以这样的方案对于屏幕滚动实现懒加载和对于展示顺序有权重要求的情况并不适合，虽然可以额外通过js实现分块和重排序，但是<code>column-count</code>本来的优势-纯css代码简洁就已经不存在了。</p>
+<p>除此之外，还有什么瀑布流的解决方案呢？</p>
+<p>一、absolute定位打天下</p>
+<p>始自鼻祖pinterest。pinterest的css让我神奇地想到了发牌。因为它的方式实在很像发牌的动作。原理很简单，通过绝对定位先将所有瀑布流中的元素归到左上角，然后根据屏幕宽度除以分栏数计算每一栏宽度，再计算每个图片的高度，通过transformX和transformY来指定其展示位置(向外发牌)。 </p>
+<p>这样做的好处是原理清晰，理解上没什么难度，不会像<code>column-count</code>这样碰到奇奇怪怪的bug了。而且它的计算方式也是基于每一横排，对于控制显示权限和懒加载也很友好。缺点是需要大量的计算，不出所料，pinterest很鸡贼地没有根据页面宽度实现响应，因为窗口的宽度一变，不仅每一栏的宽度变化，为了防止图片变形，高度也要随之变化，所有元素都要重新计算一番。由于窗口变化触发重绘重排而在性能上造成的问题暂且不说，缩小后原本看到的内容也都滑倒上面去了。这对于客户而言很不友好，我记得曾经在使用某个网站时由于没有外接屏幕不得不缩放而遇到这样的问题，一变化就要重新<code>command+f</code>一番。虽然实现响应很酷，可是我们还是要明白窗口resize的情况下，进行响应是否真的有意义？</p>
+<p>二、flexbox竖向布局</p>
+<p>这是大漠在文章中提出的一种解决方案，思路也很清晰。所有的分栏通过一个flexbox控制横向排列，每个分栏里通过一个<code>flex-direction:column</code>控制分栏内部的竖向排列。这种方案我认为还是比较不错的，即避免了太复杂的计算，又没有太混乱的结构，懒加载向里填充新内容也不难。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> css </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 瀑布流 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[小红书图集错落九宫格实现方案]]></title>
       <url>/2018/03/27/%E5%B0%8F%E7%BA%A2%E4%B9%A6%E5%9B%BE%E9%9B%86%E9%94%99%E8%90%BD%E4%B9%9D%E5%AE%AB%E6%A0%BC%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/</url>
       <content type="html"><![CDATA[<p>最近在用vue仿小红书的h5版，在界面上唯一比较让人头大的就是这个伪九宫格(不知道有没有专业的称呼，我就这样叫了)的图集了。</p>
@@ -14,6 +45,7 @@
 <li>6n和12n情况下大图的左右位置不同</li>
 <li>最后一部分凑不齐9块的排布方案</li>
 </ul>
+<a id="more"></a>
 <p>小红书的效果如下：</p>
 <p><img src="http://ozc9m7ly1.bkt.clouddn.com/www.xiaohongshu.com_page_brands_5a4384888000862471d1493d%28iPhone%206_7_8%20Plus%29.png" alt="小红书图集"></p>
 <p>小红书自己的方案是把每一个伪九宫格区域分为竖向左右两块，通过js判断数量动态决定添加的顺序为大小还是小大。<br>这样做的缺点有二：</p>
@@ -68,9 +100,8 @@
       <title><![CDATA[Promise原理剖析]]></title>
       <url>/2018/03/16/Promise%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/</url>
       <content type="html"><![CDATA[<blockquote>
-<p><a href="https://segmentfault.com/a/1190000009478377" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009478377</a><br>&lt;!–<br>调用then方法，将想要在Promise异步操作成功时执行的回调放入callbacks队列，其实也就是注册回调函数。</p>
+<p><a href="https://segmentfault.com/a/1190000009478377" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009478377</a></p>
 </blockquote>
-<p>创建Promise实例时传入的函数会被赋予一个函数类型的参数，即resolve，它接收一个参数value，代表异步操作返回的结果，当一步操作执行成功后，用户会调用resolve方法，这时候其实真正执行的操作是将callbacks队列中的回调一一执行。 –&gt;</p>
 <pre><code class="javascript">function Promise(fn) {
     var state = &#39;pending&#39;,
         value = null,
@@ -3677,7 +3708,7 @@ docker build -t joemccann/dillinger:${package.json.version}
 <h2 id="帮助我们改进-MWeb"><a href="#帮助我们改进-MWeb" class="headerlink" title="帮助我们改进 MWeb"></a>帮助我们改进 MWeb</h2><p>如果你喜欢 MWeb，想让它变得更好，你可以：</p>
 <ol>
 <li>推荐 MWeb，让更多的人知道。</li>
-<li>给我们发反馈和建议：<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#99;&#x6f;&#100;&#x65;&#114;&#x66;&#x6f;&#114;&#x61;&#x72;&#116;&#43;&#50;&#51;&#x33;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#x6d;">&#99;&#x6f;&#100;&#x65;&#114;&#x66;&#x6f;&#114;&#x61;&#x72;&#116;&#43;&#50;&#51;&#x33;&#64;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#x6d;</a></li>
+<li>给我们发反馈和建议：<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#x63;&#111;&#x64;&#101;&#x72;&#x66;&#x6f;&#114;&#97;&#114;&#x74;&#43;&#x32;&#51;&#x33;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#x63;&#111;&#x64;&#101;&#x72;&#x66;&#x6f;&#114;&#97;&#114;&#x74;&#43;&#x32;&#51;&#x33;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;</a></li>
 <li>在 Mac App Store 上评价 （如果是在 MAS 上购买的话）。</li>
 </ol>
 ]]></content>

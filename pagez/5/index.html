@@ -90,6 +90,155 @@
     
         <article class="post">
             <h1>
+                <a class="title" href="/2017/12/19/制作第一个hexo主题/"> 
+                    制作第一个hexo主题 
+                </a>
+            </h1>
+                        <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2017-12-19   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li></ul>
+            </div>
+            <div class="content">
+                
+                <h1 id="制作第一个hexo主题"><a href="#制作第一个hexo主题" class="headerlink" title="制作第一个hexo主题"></a>制作第一个hexo主题</h1><p>Hexo是一个知名的静态博客生成工具，尤其在github用户中广为人知。hexo的主题可以自由变换，但是想要找到一个完全合自己心意的主题仿佛大海捞针。与其不停寻找，不如自己动手制作一个主题，既解决了自己看什么主题都不合心的问题，还能在其中学习更多知识。  </p>
+<p>这里是我写的主题<a href="https://github.com/Vevlins/hexo-theme-toki" target="_blank" rel="noopener">toki</a>以及<a href="https://vevlins.github.io">预览</a>。如果你觉得这篇文章对你起到了一点作用，欢迎你star或者fork进行进一步的学习，不必担心难度，因为这也是我第一个hexo主题。</p>
+<h2 id="hexo主题结构"><a href="#hexo主题结构" class="headerlink" title="hexo主题结构"></a>hexo主题结构</h2><p>目录结构如下：</p>
+<pre><code> .
+├── _config.yml   
+├── layout        
+│   └── _partial  
+└── source        
+    ├── css
+    ├── fonts
+    └── js
+</code></pre><p>其中config文件是存储与主题相关的变量，如点赞、评论功能是否开启，在整个站点下也有一个config文件，它是用来存储一些和整个站点有关的，比如站点的标题。而并非所有的hexo主题都支持点赞，所以点赞功能的开启放在具体的theme下更合适。  </p>
+<p>Layout文件夹下存放的是布局模板文件，可以用ejs、jade等编写，里边包含index、post等hexo中默认使用的模板，也可以编写一个自己额外定义的页面，比如about页。对于这些自己额外编写的模板，需要用户自己执行<code>hexo new [layout] &lt;title&gt;</code>中声明<code>layout:about</code>才可以。_partial子文件夹中存放的是一些可以服用的组件或者想要细分的部分，如打赏部分、点赞部分，可以分离出来，使得结构更加清晰明了。</p>
+<p>Source文件夹下存放的是资源文件，比如css文件，字体文件，图片文件等。source文件在最后生成的时候会把其中的文件都直接放在根目录下，所以在文件中引用地址的时候不需要写<code>source</code>，而是直接写<code>./css/app.css</code>就可以。</p>
+<h2 id="hexo变量和函数"><a href="#hexo变量和函数" class="headerlink" title="hexo变量和函数"></a>hexo变量和函数</h2><p>想要编写一个hexo模板，我们在其中必定要添加一些hexo站点下的信息，如网站的title。还有我们之前提到的主题下也有一个config文件，其中的变量我们也需要调用。除了以上两个部分，hexo还提供了一些用来简化操作的辅助函数。<br>具体的变量和辅助函数可以访问<a href="https://hexo.io/" target="_blank" rel="noopener">hexo官网</a>。这里只介绍一些常用的。</p>
+<p>变量： </p>
+<ul>
+<li>page.title</li>
+<li>site.posts</li>
+<li>page.excerpt<br>关于整个站点下的config文件需要通过config.xxx来进行调用，对于这个主题的config文件需要通过theme.xxx来调用。而诸如page、site等就是hexo自身的一些变量了。</li>
+</ul>
+<p>函数：</p>
+<ul>
+<li>&lt;%- list_categories([options]) %&gt;</li>
+<li>&lt;%- titlecase(string) %&gt;</li>
+</ul>
+<h2 id="模板文件"><a href="#模板文件" class="headerlink" title="模板文件"></a>模板文件</h2><p>Hexo已经定义的模板文件有以下几个：</p>
+<ul>
+<li>index</li>
+<li>post</li>
+<li>page</li>
+<li>archive</li>
+<li>category</li>
+<li>tag<br>特别的还有一个layout文件，可以在layout文件中编写一些公共部分，实现在其他页面中的复用，如果你对模板引擎并不了解，我建议你先学习相关知识是非常必要的，不过不用太多，花十几分钟大概理解一下就可以。<br>当然你并不需要都要包括这些模板，只是写了这些模板文件后，你不需要<code>hexo new</code>它，它也有固定的页面地址。每个主题最少可以只包括一个index页面即可。但是为了功能上比较完善，我还是建议最少编写index、post、archive这三个页面。<br>在hexo中编写文件，需要选择一种模板引擎，这里我使用的ejs,hexo自己提供的ejs的支持，而且理解起来也很容易，没什么选择其他的理由。当然如果你想要编写的主题比较庞大，那还是选择自己最顺手的好。<br>我们分别讲解index、post、archive的编写，然后在进行拓展。</li>
+</ul>
+<h3 id="layout页面"><a href="#layout页面" class="headerlink" title="layout页面"></a>layout页面</h3><p>这一页要包含菜单、页脚声明。</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;title&gt;&lt;%= config.title %&gt;&lt;/title&gt;
+             &lt;!-- 引入站点的标题--&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        &lt;%- css(&#39;./css/app.css&#39;) %&gt;
+          &lt;!-- 这里的css 就是一个辅助函数--&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+            &lt;%- partial(&#39;_partial/header&#39;) %&gt;
+            &lt;!-- 引入其他部分--&gt;
+            &lt;main&gt;
+                 &lt;%- body %&gt;
+                &lt;!-- 这里会将其他页面的内容填充进来组成一个完整的页面 --&gt;
+            &lt;/main&gt;
+    &lt;%- partial(&#39;_partial/footer&#39;) %&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="index页面"><a href="#index页面" class="headerlink" title="index页面"></a>index页面</h3><p>显然的，这是我们进入网站看到的第一个页面，一般来说，这个页面要包含最近的文章展示，根据个人喜好，也可以添加标签云、最新评论等。</p>
+<pre><code class="html">&lt;section class=&quot;posts&quot;&gt;
+    &lt;% page.posts.each(function (post) { %&gt;
+        &lt;article class=&quot;post&quot;&gt;
+            &lt;h1&gt;
+                &lt;a class=&quot;title&quot; href=&quot;&lt;%- url_for(post.path) %&gt;&quot;&gt; 
+                    &lt;%= post.title %&gt; 
+                &lt;/a&gt;
+            &lt;/h1&gt;
+            &lt;%- partial(&#39;_partial/meta&#39;,{page:post}) %&gt;
+            &lt;div class=&quot;content&quot;&gt;
+                &lt;% if(post.excerpt) {%>
+                <%- post.excerpt="" %="">
+                <%} else{="" %&gt;="" &lt;%-="" post.content="" &lt;%="" }="" &lt;="" div&gt;="" &lt;div="" class="&quot;continue&quot;&gt;" &lt;a="" href="&quot;&lt;%-" url_for(post.path)="" %&gt;&quot;&gt;="" __(&#39;post.continue&#39;)="" -%&gt;="" &lt;i="" fa-angle-right&quot;="" aria-hidden="&quot;true&quot;&gt;&lt;/i&gt;" a&gt;="" article&gt;="" })="" section&gt;="" partial(&#39;_partial="" paginator&#39;)="" <="" code=""></%}></%-></code></pre>
+<p>这个页面看起来要复杂了许多。我们从大到小入手：通过page.posts我们获取到了文章列表，对于其中的post，又有title、tag、category等量。content四获取文章的内容，而excerpt是用来获取摘要。如果在书写markdown 文章时加入<code>&lt;!-- more --&gt;</code>那么在这之前的内容将会被视为摘要，如果你懒得做，也可以使用自动生成摘要的插件。<br><code>&lt;%- partial(&#39;_partial/meta&#39;,{page:post}) %&gt;</code>这段代码中比layout页面中的引入要多出了一个参数，这里是将meta这个页面中的page都赋值为post。主要是用来进行参数传递作用，这里是因为meta不仅在主页要用，在文章页也要使用，而文章页中我们时通过page.tags来取得内容的。<br><code>&lt;%- __(&#39;Post.Continue&#39;) -%&gt;</code>这个写法看起来有些奇怪，它也是一个辅助函数吗？虽然在hexo的文档中没有把它明确为一个辅助函数，但实际上这确实是一个函数，它的作用是进行站点国际化。听起来很高大上吧！不过其实实现很简单，在上述的项目结构中我们还可以增加一个language目录，其中针对每一种语言增加一个yml文件，把需要国际化的量储存在里边，根据整个站点config中的language声明的语言而进行动态调整。比如，我们在en.yml 将Continue声明为continue，在zh-CN.yml中声明为继续阅读。<br><code>&lt;%- partial(&#39;_partial/paginator&#39;) %&gt;</code>这里我们引入了一个paginator组件，它是用来分页的，跟普通的分页不同，hexo中分页的实际工作我们丝毫没有涉及，只需要简单地使用辅助函数就可以：</p>
+<pre><code class="html">&lt;%- paginator({
+      prev_text: &quot;&amp;laquo; &quot;+  __(&#39;Paginator.Prev&#39;),
+      next_text: __(&#39;Paginator.Next&#39;)+&quot; &amp;raquo;&quot;
+  }) %&gt;
+</code></pre>
+<h3 id="post页面"><a href="#post页面" class="headerlink" title="post页面"></a>post页面</h3><p>有了前面两个页面的基础，这里就不废话了。</p>
+<pre><code class="html">&lt;article class=&quot;post&quot;&gt;
+            &lt;h1&gt;
+                &lt;a class=&quot;title&quot; href=&quot;&lt;%- url_for(page.path) %&gt;&quot;&gt; 
+                    &lt;%= page.title %&gt; 
+                &lt;/a&gt;
+            &lt;/h1&gt;
+&lt;%- partial(&#39;_partial/meta&#39;) %&gt;
+&lt;%- partial(&#39;_partial/toc&#39;) %&gt;
+            &lt;div class=&quot;content&quot;&gt;
+                &lt;%- page.content %&gt;
+            &lt;/div&gt;
+&lt;%- partial(&#39;_partial/copyright&#39;) %&gt;
+&lt;/article&gt;
+</code></pre>
+<h3 id="archive页面"><a href="#archive页面" class="headerlink" title="archive页面"></a>archive页面</h3><pre><code class="html">&lt;section class=&quot;archive&quot;&gt;
+  &lt;ul class=&quot;post-archive&quot;&gt;
+    &lt;% var last = 1997 %&gt;
+    &lt;% page.posts.each(function (post) { %&gt;
+    &lt;% if (last != post.date.year()){ %&gt;
+     &lt;span class=&quot;year&quot;&gt; &lt;a&gt;&lt;%=post.date.year()%&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;% last = post.date.year()%&gt;
+    &lt;%}%&gt;
+      &lt;li class=&quot;post-item&quot;&gt;
+        &lt;span class=&quot;date&quot;&gt;&lt;%= date(post.date, &quot;MM-DD&quot;) %&gt;&lt;/span&gt;
+        &lt;a class=&quot;title&quot; href=&quot;&lt;%- url_for(post.path) %&gt;&quot;&gt;&lt;%= post.title %&gt;&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;% }) %&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+&lt;%- partial(&#39;_partial/paginator&#39;) %&gt;
+</code></pre>
+<p>对这个页面，我们只讲解一下<code>&lt;% var last = 1997 %&gt;</code>,这里参考了hexo自带主题landscape的方案。为了实现按照不同年份归档，先定义一个很小的年份值，如果以后的年份不同于之前的值，那就把last置为它，并且显示一个较大的年份块。</p>
+<h2 id="添加样式"><a href="#添加样式" class="headerlink" title="添加样式"></a>添加样式</h2><p>这里我们选用的是stylus来书写css，选择它的原因也很简单，因为hexo自带。</p>
+<p>这里已经没什么需要额外讲解的了，css总不会也跟其他的有不同吧。只是请注意，为了保证你的主题能够被更多人使用，请务必做好不同浏览器的兼容。类似地，你也应该在配置文件中增加更多的自定义开关，你不能默认认为用户总是想向你提供两个打赏的二维码，所以一个二维码的样式呢？或者索性不想要打赏呢？</p>
+<h2 id="提交主题"><a href="#提交主题" class="headerlink" title="提交主题"></a>提交主题</h2><p>经历了以上这些，你的主题已经基本具有可用性了，但是如何让更多人知道并且使用你的主题呢？你可以通过在各种技术型社区发帖，也可以发动身边的人使用。更官方的方案，是向hexo提交自己的主题。你具体可以参考这里<a href="https://hexo.io/zh-cn/docs/themes.html" target="_blank" rel="noopener">主题| Hexo</a>。准备好一份截图，fork一份<a href="https://github.com/hexojs/site" target="_blank" rel="noopener">hexojs/site</a>添加自己的主题信息和截图后再向官方提出pull request请求，不必担心，因为他们真的很友善。</p>
+
+                
+            </div>
+            <div class="continue">
+            <a href="/2017/12/19/制作第一个hexo主题/">
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+        </article>
+        
+        <article class="post">
+            <h1>
                 <a class="title" href="/2017/12/14/Dillinger/"> 
                     Dillinger 
                 </a>

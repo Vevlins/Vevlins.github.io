@@ -90,6 +90,43 @@
     
         <article class="post">
             <h1>
+                <a class="title" href="/2018/03/28/瀑布流实现方案探讨/"> 
+                    瀑布流实现方案探讨 
+                </a>
+            </h1>
+                        <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2018-03-28   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/瀑布流/">瀑布流</a></li></ul>
+            </div>
+            <div class="content">
+                
+                <p>最近在仿小红书时又遇到了一个问题，就是笔记的瀑布流展示。</p>
+<p>我采用的是张鑫旭在博客中提到的一种基于css3新的<code>column-count</code>特性的方案，这种方案本来是我最喜欢的，因为不需要额外的标签嵌套，也没有js参与布局，css写起来也是简洁又优雅。但是在使用safari调试页面时发现了一个奇怪的问题，使我最终决定放弃这种方案。<br>
+                
+            </div>
+            <div class="continue">
+            <a href="/2018/03/28/瀑布流实现方案探讨/">
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+        </article>
+        
+        <article class="post">
+            <h1>
                 <a class="title" href="/2018/03/27/小红书图集错落九宫格实现方案/"> 
                     小红书图集错落九宫格实现方案 
                 </a>
@@ -123,38 +160,6 @@
 <li>6n和12n情况下大图的左右位置不同</li>
 <li>最后一部分凑不齐9块的排布方案</li>
 </ul>
-<p>小红书的效果如下：</p>
-<p><img src="http://ozc9m7ly1.bkt.clouddn.com/www.xiaohongshu.com_page_brands_5a4384888000862471d1493d%28iPhone%206_7_8%20Plus%29.png" alt="小红书图集"></p>
-<p>小红书自己的方案是把每一个伪九宫格区域分为竖向左右两块，通过js判断数量动态决定添加的顺序为大小还是小大。<br>这样做的缺点有二：</p>
-<ul>
-<li>增加了很多无关内容的标签嵌套</li>
-<li>通过js进行计算导致逻辑繁琐</li>
-</ul>
-<p>尝试过标签嵌套和绝对定位加js，最终通过vw和float实现了效果。</p>
-<pre><code class="css">.imgs div {
-  box-sizing: border-box;
-  background-size: cover;
-  width: 33.3vw;
-  height: 33.3vw;
-  padding: 1px;
-  background-clip:content-box;
-  background-position: center center;
-  float: left;
-}
-.imgs div:nth-of-type(6n-5){
-    width: 66.6vw;
-    float: right;
-    height: 66.6vw;
-}
-.imgs div:nth-of-type(12n-5){
-    float: left;
-}
-</code></pre>
-<pre><code class="html">    &lt;div class=&quot;imgs&quot;&gt;
-        &lt;div v-for=&quot;img in imgs&quot; :style=&#39;`background-image: url(${img})`&#39;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-</code></pre>
-
                 
             </div>
             <div class="continue">
@@ -191,9 +196,8 @@
             <div class="content">
                 
                 <blockquote>
-<p><a href="https://segmentfault.com/a/1190000009478377" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009478377</a><br>&lt;!–<br>调用then方法，将想要在Promise异步操作成功时执行的回调放入callbacks队列，其实也就是注册回调函数。</p>
+<p><a href="https://segmentfault.com/a/1190000009478377" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009478377</a></p>
 </blockquote>
-<p>创建Promise实例时传入的函数会被赋予一个函数类型的参数，即resolve，它接收一个参数value，代表异步操作返回的结果，当一步操作执行成功后，用户会调用resolve方法，这时候其实真正执行的操作是将callbacks队列中的回调一一执行。 –&gt;</p>
 <pre><code class="javascript">function Promise(fn) {
     var state = &#39;pending&#39;,
         value = null,
@@ -358,49 +362,6 @@ if (true) {
             </div>
             <div class="continue">
             <a href="/2018/03/14/面试要点整理/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2018/03/07/从零制作网页样式库/"> 
-                    从零制作网页样式库 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2018-03-07   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <h2 id="广告-amp-教材"><a href="#广告-amp-教材" class="headerlink" title="广告&amp;教材"></a>广告&amp;教材</h2><p><a href="https://github.com/Vevlins/ponyo" target="_blank" rel="noopener">GitHub - Vevlins/ponyo: 一个puputongtong的前端样式库</a></p>
-<p>这是我自己做的练习，包含若干基本元素和组件的样式控制，压缩后的体积只有25kb，项目结构和代码都比较清晰，加上这一系列的文章，应该很好理解。</p>
-<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p>不说废话，先来看看项目结构。最主要的部分是<code>src</code>/<code>dist</code>/<code>gulpfile.js</code>。</p>
-<ul>
-<li>src 是dist中的sass和pug编译之后的文件，为常规的css和html文件。</li>
-<li>dist是sass文件和pug文件，sass是用来编写样式的工具，pug是为了编写实例网页，方便我们在开发中实时看到效果。</li>
-<li>gulpfile.js是前端工程自动化的文件，通过gulp这个工具控制sass和pug的编译、css的压缩、浏览器自动刷新等。通过它，我们对源文件进行更改后按下<code>crtl+s</code>就可以在浏览器中看到更改后的样式，而不需要在命令行下手工编译，再在浏览器中刷新。</li>
-</ul>
-                
-            </div>
-            <div class="continue">
-            <a href="/2018/03/07/从零制作网页样式库/">
             继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
             </a>
             </div>
