@@ -3,6 +3,54 @@
   
     
     <entry>
+      <title><![CDATA[图片自适应的五种可能]]></title>
+      <url>/2018/03/29/%E5%9B%BE%E7%89%87%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E4%BA%94%E7%A7%8D%E5%8F%AF%E8%83%BD/</url>
+      <content type="html"><![CDATA[<p>在自适应问题上，图片的自适应可以说是最关键了。<br>在仿做小红书的过程中，我也遇到了这个问题，小红书作为一个商品展示性的社区，商品图片的自适应是很重要的。在放眼望去都是图片的页面里，一两个变形可能会极大地影响用户的感受。</p>
+<p>我在两个地方遇到了图片适应的问题，一个是品牌精选的卡片，对于宽固定，图片高度不规则并且比容器本身要大的情况；还有一个是在做九宫格要求图片宽高一致。<br><a id="more"></a></p>
+<h2 id="transform实现居中"><a href="#transform实现居中" class="headerlink" title="transform实现居中"></a>transform实现居中</h2><p>这是小红书官方采用的方案，设置外层<code>overflow:hidden</code>，然后将内部图片设置居中，多余的部分直接被隐藏。这种方案对于不能明确容器和待展示图片大小关系的情况时并不使用。</p>
+<h2 id="background"><a href="#background" class="headerlink" title="background"></a>background</h2><p>主要应用到的是一个<code>background-size:cover</code>属性，这个属性可以使图片适应填满，多余的部分会被裁剪掉。</p>
+<pre><code class="css">background-image:url();
+background-size: cover;
+background-posiiton:center;
+</code></pre>
+<p>这种方案是目前使用范围最广泛，并且认为最理想的解决方案，但是张鑫旭的博客中对于这种方案提了一点问题：由于cover存在剪裁，所以在大小发生变化时展示出来的背景图区域也是不同的。这主要是因为视窗宽度变化时，高度没有等比例变化。对此他提出了本文最后的两种解决方案。</p>
+<hr>
+<p>一点延伸，在复习background属性时碰到了一个知识点。</p>
+<p>background-clip和background-origin的可选值都是一样的，border-box、padding-box、content-box。那么他们的区别是什么？</p>
+<p>简单来说，clip是规定了定位的区域，而origin只是定义了原点，也就是左上角。</p>
+<p>另外对于border-box，如果填充的是图片，左边和上边实际上并不会填充进去。</p>
+<h2 id="object-fit"><a href="#object-fit" class="headerlink" title="object-fit"></a>object-fit</h2><p><code>object-fit</code>基本上算是<code>background-size</code>的姐妹篇，不同的是，这个属性是对于置换元素而言而非背景图像。</p>
+<h2 id="height使用vw单位"><a href="#height使用vw单位" class="headerlink" title="height使用vw单位"></a>height使用vw单位</h2><p>一言以蔽之：这主要是因为视窗宽度变化时，高度没有等比例变化。</p>
+<h2 id="活用padding"><a href="#活用padding" class="headerlink" title="活用padding"></a>活用padding</h2><p>padding使用百分比单位时，是根据父级元素的宽度来确定的，所以通过设定padding，可以实现自适应，他们的宽高是同时变化的。</p>
+<p>接下来是偷css大招。</p>
+<pre><code class="css">.banner {
+    padding: 15.15% 0 0;
+    position: relative;
+}
+.banner &gt; img {
+    position: absolute;
+    width: 100%; height: 100%;
+    left: 0; top: 0;
+}
+</code></pre>
+]]></content>
+      
+        <categories>
+            
+            <category> css </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 自适应 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[瀑布流实现方案探讨]]></title>
       <url>/2018/03/28/%E7%80%91%E5%B8%83%E6%B5%81%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88%E6%8E%A2%E8%AE%A8/</url>
       <content type="html"><![CDATA[<p>最近在仿小红书时又遇到了一个问题，就是笔记的瀑布流展示。</p>
@@ -3708,7 +3756,7 @@ docker build -t joemccann/dillinger:${package.json.version}
 <h2 id="帮助我们改进-MWeb"><a href="#帮助我们改进-MWeb" class="headerlink" title="帮助我们改进 MWeb"></a>帮助我们改进 MWeb</h2><p>如果你喜欢 MWeb，想让它变得更好，你可以：</p>
 <ol>
 <li>推荐 MWeb，让更多的人知道。</li>
-<li>给我们发反馈和建议：<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#x63;&#111;&#x64;&#101;&#x72;&#x66;&#x6f;&#114;&#97;&#114;&#x74;&#43;&#x32;&#51;&#x33;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#x63;&#111;&#x64;&#101;&#x72;&#x66;&#x6f;&#114;&#97;&#114;&#x74;&#43;&#x32;&#51;&#x33;&#x40;&#103;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;</a></li>
+<li>给我们发反馈和建议：<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#x63;&#x6f;&#100;&#x65;&#114;&#102;&#x6f;&#x72;&#x61;&#114;&#116;&#43;&#50;&#x33;&#51;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#46;&#x63;&#111;&#109;">&#x63;&#x6f;&#100;&#x65;&#114;&#102;&#x6f;&#x72;&#x61;&#114;&#116;&#43;&#50;&#x33;&#51;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#46;&#x63;&#111;&#109;</a></li>
 <li>在 Mac App Store 上评价 （如果是在 MAS 上购买的话）。</li>
 </ol>
 ]]></content>
