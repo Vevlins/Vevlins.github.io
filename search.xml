@@ -5,7 +5,8 @@
     <entry>
       <title><![CDATA[图片自适应的五种可能]]></title>
       <url>/2018/03/29/%E5%9B%BE%E7%89%87%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84%E4%BA%94%E7%A7%8D%E5%8F%AF%E8%83%BD/</url>
-      <content type="html"><![CDATA[<p>在自适应问题上，图片的自适应可以说是最关键了。<br>在仿做小红书的过程中，我也遇到了这个问题，小红书作为一个商品展示性的社区，商品图片的自适应是很重要的。在放眼望去都是图片的页面里，一两个变形可能会极大地影响用户的感受。</p>
+      <content type="html"><![CDATA[<p>在自适应问题上，图片的自适应可以说是最关键了。</p>
+<p>在仿做小红书的过程中，我也遇到了这个问题，小红书作为一个商品展示性的社区，商品图片的自适应是很重要的。在放眼望去都是图片的页面里，一两个变形可能会极大地影响用户的感受。</p>
 <p>我在两个地方遇到了图片适应的问题，一个是品牌精选的卡片，对于宽固定，图片高度不规则并且比容器本身要大的情况；还有一个是在做九宫格要求图片宽高一致。<br><a id="more"></a></p>
 <h2 id="transform实现居中"><a href="#transform实现居中" class="headerlink" title="transform实现居中"></a>transform实现居中</h2><p>这是小红书官方采用的方案，设置外层<code>overflow:hidden</code>，然后将内部图片设置居中，多余的部分直接被隐藏。这种方案对于不能明确容器和待展示图片大小关系的情况时并不使用。</p>
 <h2 id="background"><a href="#background" class="headerlink" title="background"></a>background</h2><p>主要应用到的是一个<code>background-size:cover</code>属性，这个属性可以使图片适应填满，多余的部分会被裁剪掉。</p>
