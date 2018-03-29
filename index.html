@@ -246,14 +246,14 @@
         
         <article class="post">
             <h1>
-                <a class="title" href="/2018/03/16/Promise原理剖析/"> 
-                    Promise原理剖析 
+                <a class="title" href="/2018/03/15/ES6笔记/"> 
+                    ES6笔记 
                 </a>
             </h1>
                         <div class="meta">
                 <a class="date"> 
                     <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2018-03-16   
+                    2018-03-15   
                 </a>
                 
                 <a class="category">
@@ -266,81 +266,37 @@
                     <i class="fa fa-tags" aria-hidden="true"></i>  
                 </a>
                 
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/promise/">promise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li></ul>
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a></li></ul>
             </div>
             <div class="content">
                 
-                <blockquote>
-<p><a href="https://segmentfault.com/a/1190000009478377" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009478377</a></p>
-</blockquote>
-<pre><code class="javascript">function Promise(fn) {
-    var state = &#39;pending&#39;,
-        value = null,
-        callbacks = [];
-
-    this.then = function (onFulfilled, onRejected) {
-        return new Promise(function (resolve, reject) {
-            handle({
-                onFulfilled: onFulfilled || null,
-                onRejected: onRejected || null,
-                resolve: resolve,
-                reject: reject
-            });
-        });
-    };
-
-    function handle(callback) {
-        if (state === &#39;pending&#39;) {
-            callbacks.push(callback);
-            return;
-        }
-
-        var cb = state === &#39;fulfilled&#39; ? callback.onFulfilled : callback.onRejected,
-            ret;
-        if (cb === null) {
-            cb = state === &#39;fulfilled&#39; ? callback.resolve : callback.reject;
-            cb(value);
-            return;
-        }
-        ret = cb(value);
-        callback.resolve(ret);
-    }
-
-    function resolve(newValue) {
-        if (newValue &amp;&amp; (typeof newValue === &#39;object&#39; || typeof newValue === &#39;function&#39;)) {
-            var then = newValue.then;
-            if (typeof then === &#39;function&#39;) {
-                then.call(newValue, resolve, reject);
-                return;
-            }
-        }
-        state = &#39;fulfilled&#39;;
-        value = newValue;
-        execute();
-    }
-
-    function reject(reason) {
-        state = &#39;rejected&#39;;
-        value = reason;
-        execute();
-    }
-
-    function execute() {
-        setTimeout(function () {
-            callbacks.forEach(function (callback) {
-                handle(callback);
-            });
-        }, 0);
-    }
-
-    fn(resolve, reject);
+                <p>根据阮一峰《ECMAScript 6 入门》整理。</p>
+<h2 id="let和const命令"><a href="#let和const命令" class="headerlink" title="let和const命令"></a>let和const命令</h2><h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><h4 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h4><p>let是块级作用域变量，声明的变量只在<code>{}</code>内有效。<br>其适用于for循环内，特别需要注意的是：for循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。</p>
+<pre><code class="javascript">for (let i = 0; i &lt; 3; i++) {
+  let i = &#39;abc&#39;;
+  console.log(i);
 }
 </code></pre>
+<h4 id="没有变量提升"><a href="#没有变量提升" class="headerlink" title="没有变量提升"></a>没有变量提升</h4><pre><code class="javascript">// var 的情况
+console.log(foo); // 输出undefined
+var foo = 2;
 
+// let 的情况
+console.log(bar); // 报错ReferenceError
+let bar = 2;
+</code></pre>
+<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。存在全局变量tmp，但是块级作用域内let又声明了一个局部变量tmp，导致后者绑定这个块级作用域，所以在let声明变量前，对tmp赋值会报错。</p>
+<pre><code class="javascript">var tmp = 123;
+
+if (true) {
+  tmp = &#39;abc&#39;; // ReferenceError
+  let tmp;
+}
+</code></pre>
                 
             </div>
             <div class="continue">
-            <a href="/2018/03/16/Promise原理剖析/">
+            <a href="/2018/03/15/ES6笔记/">
             继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
             </a>
             </div>

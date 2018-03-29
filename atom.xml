@@ -119,34 +119,6 @@
   </entry>
   
   <entry>
-    <title>Promise原理剖析</title>
-    <link href="https://vevlins.github.io/2018/03/16/Promise%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/"/>
-    <id>https://vevlins.github.io/2018/03/16/Promise原理剖析/</id>
-    <published>2018-03-16T08:24:13.000Z</published>
-    <updated>2018-03-28T16:03:52.774Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p><a href="https://segmentfault.com/a/1190000009478377" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009478377</a></p></blockquote><pre><code class="javascript">function Promise(fn) {    var state = &#39;pending&#39;,        value = null,        callbacks = [];    this.then = function (onFulfilled, onRejected) {        return new Promise(function (resolve, reject) {            handle({                onFulfilled: onFulfilled || null,                onRejected: onRejected || null,                resolve: resolve,                reject: reject            });        });    };    function handle(callback) {        if (state === &#39;pending&#39;) {            callbacks.push(callback);            return;        }        var cb = state === &#39;fulfilled&#39; ? callback.onFulfilled : callback.onRejected,            ret;        if (cb === null) {            cb = state === &#39;fulfilled&#39; ? callback.resolve : callback.reject;            cb(value);            return;        }        ret = cb(value);        callback.resolve(ret);    }    function resolve(newValue) {        if (newValue &amp;&amp; (typeof newValue === &#39;object&#39; || typeof newValue === &#39;function&#39;)) {            var then = newValue.then;            if (typeof then === &#39;function&#39;) {                then.call(newValue, resolve, reject);                return;            }        }        state = &#39;fulfilled&#39;;        value = newValue;        execute();    }    function reject(reason) {        state = &#39;rejected&#39;;        value = reason;        execute();    }    function execute() {        setTimeout(function () {            callbacks.forEach(function (callback) {                handle(callback);            });        }, 0);    }    fn(resolve, reject);}</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000009478377&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://segmentfault.com/a/119000000947
-      
-    
-    </summary>
-    
-      <category term="javascript" scheme="https://vevlins.github.io/categories/javascript/"/>
-    
-    
-      <category term="promise" scheme="https://vevlins.github.io/tags/promise/"/>
-    
-      <category term="异步" scheme="https://vevlins.github.io/tags/%E5%BC%82%E6%AD%A5/"/>
-    
-  </entry>
-  
-  <entry>
     <title>ES6笔记</title>
     <link href="https://vevlins.github.io/2018/03/15/ES6%E7%AC%94%E8%AE%B0/"/>
     <id>https://vevlins.github.io/2018/03/15/ES6笔记/</id>
@@ -649,6 +621,35 @@ if (canvas.getContext){
 } else {
 }
 &lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="html" scheme="https://vevlins.github.io/categories/html/"/>
+    
+    
+      <category term="笔记" scheme="https://vevlins.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="教程" scheme="https://vevlins.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="html5" scheme="https://vevlins.github.io/tags/html5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML5完全学习笔记二：events全解</title>
+    <link href="https://vevlins.github.io/2017/12/23/HTML5%E5%AE%8C%E5%85%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%9Aevents%E5%85%A8%E8%A7%A3/"/>
+    <id>https://vevlins.github.io/2017/12/23/HTML5完全学习笔记二：events全解/</id>
+    <published>2017-12-23T10:56:55.000Z</published>
+    <updated>2017-12-23T10:58:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="HTML5完全学习笔记二：events全解"><a href="#HTML5完全学习笔记二：events全解" class="headerlink" title="HTML5完全学习笔记二：events全解"></a>HTML5完全学习笔记二：events全解</h1><h2 id="窗口事件"><a href="#窗口事件" class="headerlink" title="窗口事件"></a>窗口事件</h2><p>适用于body标签</p><ul><li>onafterprint<blockquote><p>注意： 目前只有 Internet Explorer 和 Firefox 浏览器支持 onafterprint 事件属性。在 IE 浏览器中, onafterprint 属性在打印对话框之前执行Javascript而不是之后。//?是否意味着在ie中onafterprint=onberforeprint</p><a id="more"></a></blockquote></li><li>onbeforeprint</li><li>onbeforeunload    <blockquote><p> 在onload之前执行，可以阻止unload的执行，在页面关闭页面或者刷新时执行</p></blockquote></li><li>onblur</li><li>onerror<blockquote><p>此外，onerror方法还提供了三个参数用来确定错误确切的信息，分别是：1）message：一个字符串，声明了出现的错误的信息(不同的浏览器中返回的消息内容略有差异)。2）url：一个字符串，声明了出现错误的文档的URL。3）line：一个数字，声明了出现错误的代码行的行号。</p></blockquote></li></ul><blockquote><p>当JavaScript运行时错误（包括语法错误）发生时，window会触发一个ErrorEvent接口的error事件，并执行window.onerror()。当一项资源（如<img>或<script>）加载失败，加载资源的元素会触发一个Event接口的error事件，并执行该元素上的onerror()处理函数。这些error事件不会向上冒泡到window，不过（至少在Firefox中）能被单一的window.addEventListener捕获。</p><ul><li>onfocus</li><li>onhaschange<br>锚改变时触发，有两个属性newURL和oldURL。</li><li>onload<br>onload 通常用于 <body> 元素，在页面完全载入后(包括图片、css文件等等。)执行脚本代码。</li><li>onmessage<br>Web Workers </li><li>onoffline</li><li>ononline<br>使用navigator.onLine 也可以检测是否在线</li><li>onpagehide</li><li>onpageshow<br>onpageshow 事件类似于 onload 事件，onload 事件在页面第一次加载时触发， onpageshow 事件在每次加载页面时触发，即 onload 事件在页面从浏览器缓存中读取时不触发。</li><li>onpopstate<br>每当处于激活状态的历史记录条目发生变化时,popstate事件就会在对应window对象上触发. 如果当前处于激活状态的历史记录条目是由history.pushState()方法创建,或者由history.replaceState()方法修改过的, 则popstate事件对象的state属性包含了这个历史记录条目的state对象的一个拷贝.调用history.pushState()或者history.replaceState()不会触发popstate事件. popstate事件只会在浏览器某些行为下触发, 比如点击后退、前进按钮(或者在JavaScript中调用history.back()、history.forward()、history.go()方法).当网页加载时,各浏览器对popstate事件是否触发有不同的表现,Chrome 和 Safari会触发popstate事件, 而Firefox不会.</li><li>onredo</li><li>onresize</li><li>onstorage<br>web存储区域（DOM Storage）更新时触发onstorage事件。如果变更了Storage对象的属性值，或者调用了setItem()、removeItem()等方法，就会触发onstorage事件。//这里的或者是什么意思，如果调用setitem但并不更改值只是设定为和之前的值一样，是否会触发这个事件。</li><li>onundo</li><li>onunload</li></ul></blockquote><p>//有些类似于生命周期函数或者就是生命周期函数？</p><h2 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h2><p>适用于在form内部的所有元素</p><ul><li>onblur</li><li>onchange</li><li>oncontextmenu<blockquote><p>此事件会发生在没有阻止右键事件的情况下而且这不取决于此元素是否拥有了”contextmenu”属性.</p></blockquote></li><li>onfocus</li><li>onformchange</li><li>onforminput</li><li>oninput</li><li>oninvalid</li><li>onselect</li><li>onsubmit</li></ul><h2 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h2><ul><li>onkeydown</li><li>onkeypress</li><li>onkeyup</li></ul><h2 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h2><ul><li>onclick</li><li>ondbclick</li><li>ondrag</li><li>ondragend</li><li>ondragenter</li><li>ondragleave</li><li>ondragover</li><li>ondragstart</li><li>ondrop</li><li>onmousedown</li><li>onmousemove</li><li>onmouseout</li><li>onmouseover</li><li>onmouseup</li><li>onmousewheel</li><li>onscrolll</li></ul><h2 id="多媒体事件"><a href="#多媒体事件" class="headerlink" title="多媒体事件"></a>多媒体事件</h2><ul><li>onabort</li><li>oncanplay</li><li>oncanplaythrough</li><li>ondurationchange</li><li>onemptied</li><li>onended</li><li>onerror</li><li>onloadeddata</li><li>onloadedmetadata</li><li>onloadstart</li><li>onpause</li><li>onplay</li><li>onplaying</li><li>onprogress</li><li>onratechange</li><li>onreadystatechange</li><li>onseeked</li><li>onseeking</li><li>onstalled</li><li>onsuspend</li><li>ontimeupdate</li><li>onvolumechage</li><li>onwaiting</li></ul><h2 id="其他事件"><a href="#其他事件" class="headerlink" title="其他事件"></a>其他事件</h2><ul><li>onshow：menu显示时触发，兼容性不佳</li><li>ontoggle：打开或关闭details时触发</li></ul><p>参考资料：</p><ul><li><a href="http://www.runoob.com/tags/ref-eventattributes.html">HTML 事件 | 菜鸟教程</a></li><li><a href="https://www.cnblogs.com/arinna/archive/2011/08/08/2130629.html">JavaScript中的onerror事件 - arinna - 博客园</a></li></ul></script></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;HTML5完全学习笔记二：events全解&quot;&gt;&lt;a href=&quot;#HTML5完全学习笔记二：events全解&quot; class=&quot;headerlink&quot; title=&quot;HTML5完全学习笔记二：events全解&quot;&gt;&lt;/a&gt;HTML5完全学习笔记二：events全解&lt;/h1&gt;&lt;h2 id=&quot;窗口事件&quot;&gt;&lt;a href=&quot;#窗口事件&quot; class=&quot;headerlink&quot; title=&quot;窗口事件&quot;&gt;&lt;/a&gt;窗口事件&lt;/h2&gt;&lt;p&gt;适用于body标签&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;onafterprint&lt;blockquote&gt;
+&lt;p&gt;注意： 目前只有 Internet Explorer 和 Firefox 浏览器支持 onafterprint 事件属性。在 IE 浏览器中, onafterprint 属性在打印对话框之前执行Javascript而不是之后。//?是否意味着在ie中onafterprint=onberforeprint&lt;/p&gt;
     
     </summary>
     
