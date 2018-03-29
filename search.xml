@@ -108,7 +108,8 @@ background-posiiton:center;
       <title><![CDATA[瀑布流实现方案探讨]]></title>
       <url>/2018/03/28/%E7%80%91%E5%B8%83%E6%B5%81%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88%E6%8E%A2%E8%AE%A8/</url>
       <content type="html"><![CDATA[<p>最近在仿小红书时又遇到了一个问题，就是笔记的瀑布流展示。</p>
-<p>我采用的是张鑫旭在博客中提到的一种基于css3新的<code>column-count</code>特性的方案，这种方案本来是我最喜欢的，因为不需要额外的标签嵌套，也没有js参与布局，css写起来也是简洁又优雅。但是在使用safari调试页面时发现了一个奇怪的问题，使我最终决定放弃这种方案。<br><a id="more"></a><br>需要清楚的是safari和几乎全部的手机浏览器都是webkit内核，chrome原来使用的是webkit，但是后来脱离出来在webkit基础上研发了blink，所以这两种浏览器的表现是不完全一致的，由于chrome的调试工具比较合理，所以我习惯于在chrome下调试，没想到build出来发现在移动端出现了问题。</p>
+<p>我采用的是张鑫旭在博客中提到的一种基于css3新的<code>column-count</code>特性的方案，这种方案本来是我最喜欢的，因为不需要额外的标签嵌套，也没有js参与布局，css写起来也是简洁又优雅。但是在使用safari调试页面时发现了一个奇怪的问题，使我最终决定放弃这种方案。<br><a id="more"></a></p>
+<p>需要清楚的是safari和几乎全部的手机浏览器都是webkit内核，chrome原来使用的是webkit，但是后来脱离出来在webkit基础上研发了blink，所以这两种浏览器的表现是不完全一致的，由于chrome的调试工具比较合理，所以我习惯于在chrome下调试，没想到build出来发现在移动端出现了问题。</p>
 <p>上文提到的<code>column-count</code>实现瀑布流的问题是在webkit下除第一竖栏之外其他栏的顶部会<strong><em>莫名其妙</em></strong>地掉下来一块。经过尝试，最终确定在webkit下的其它栏头顶会把上一栏最末尾自<code>border-bottom</code>以外的<code>padding-bottom</code>、<code>margin-bottom</code>乃至<code>box-shadow</code>全都显示出来，而原本应该包含这些的上一栏末尾都不会包含。</p>
 <p>webkit对于<code>column-count</code>的渲染方式在我看来几乎等于是从第一栏底部腰斩。不仅如此，除第一竖栏之外的其他栏甚至在safari调试下根本无法被选中。</p>
 <p>通过caniuse网站查询<code>column-count</code>的支持情况是很乐观的，但是事实还是给了我<strong><em>沉重一击</em></strong>。另外如果从瀑布流的角度来说，这种方案还有一个缺点就是它是竖向排列的，而用户观察是需要一横排一横排地获取新消息，所以这样的方案对于屏幕滚动实现懒加载和对于展示顺序有权重要求的情况并不适合，虽然可以额外通过js实现分块和重排序，但是<code>column-count</code>本来的优势-纯css代码简洁就已经不存在了。</p>
