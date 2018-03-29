@@ -115,7 +115,7 @@
 </div>
             <div class="content">
                 <p>在移动端自适应上，文本的溢出处理没出问题时不容易察觉，一旦出了问题却表现地很明显。当然，移动端对于文本的控制也要结合rem来达到各个平台统一的效果。</p>
-<p>最近发现<code>text-overflow</code>的表现非常不可控，有时生效有时无效，为了彻底解决这个问题，查阅了一番资料，最终整理如下。</p>
+<p>最近发现<code>text-overflow</code>的表现非常不可控(实际上是根本没学会)，有时生效有时无效，为了彻底解决这个问题，查阅了一番资料，最终整理如下。<br><a id="more"></a></p>
 <h2 id="单行文本"><a href="#单行文本" class="headerlink" title="单行文本"></a>单行文本</h2><pre><code class="css">text-overflow:ellipsis;
 overflow: hidden;
 white-space:nowrap;//神之white-space有啥用呢？去掉之后你就会发现它可以竖向扩展，不过奇妙的是对于单独的一行溢出还是会显示出省略号，分析在下边

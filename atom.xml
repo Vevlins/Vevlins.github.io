@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://vevlins.github.io/"/>
-  <updated>2018-03-29T07:52:29.000Z</updated>
+  <updated>2018-03-29T07:55:26.000Z</updated>
   <id>https://vevlins.github.io/</id>
   
   <author>
@@ -21,17 +21,14 @@
     <link href="https://vevlins.github.io/2018/03/29/%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E5%A4%84%E7%90%86%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/"/>
     <id>https://vevlins.github.io/2018/03/29/文本溢出处理的正确姿势/</id>
     <published>2018-03-29T06:25:19.000Z</published>
-    <updated>2018-03-29T07:52:29.000Z</updated>
+    <updated>2018-03-29T07:55:26.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在移动端自适应上，文本的溢出处理没出问题时不容易察觉，一旦出了问题却表现地很明显。当然，移动端对于文本的控制也要结合rem来达到各个平台统一的效果。</p><p>最近发现<code>text-overflow</code>的表现非常不可控，有时生效有时无效，为了彻底解决这个问题，查阅了一番资料，最终整理如下。</p><h2 id="单行文本"><a href="#单行文本" class="headerlink" title="单行文本"></a>单行文本</h2><pre><code class="css">text-overflow:ellipsis;overflow: hidden;white-space:nowrap;//神之white-space有啥用呢？去掉之后你就会发现它可以竖向扩展，不过奇妙的是对于单独的一行溢出还是会显示出省略号，分析在下边</code></pre><p>这是最普遍的用法，但是在实际应用时很多人会发现并不起效果。这是因为如果想要生效，必须设置width，否则无法判断到底满不满足溢出的条件。需要使用block(相当于隐式设置了宽度)或者inline-block加width，另外absolute会使display隐式变为block，也可以收到同样的奇效。</p><h2 id="多行文本-webkit"><a href="#多行文本-webkit" class="headerlink" title="多行文本-webkit"></a>多行文本-webkit</h2><p>以上的方案只能适用于单行文本，如果想要指定多行溢出，需要借助于<code>-webkit-line-clamp</code>,完整的css如下。</p><pre><code class="css">text-overflow:ellipsis;overflow: hidden;display: -webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;</code></pre><h2 id="非webkit多行文本？"><a href="#非webkit多行文本？" class="headerlink" title="非webkit多行文本？"></a>非webkit多行文本？</h2><p>可是除去webkit和blink(需要注意blink目前与webkit使用同样的前缀-webkit)，其他的浏览器怎么实现呢？</p><p>张鑫旭提出了一个float+负margin的方案，我认为最根本的思路跟下面的基本一致。<br>我们可以通过一种比较笨的方案，具体的思路是通过after在文本的父元素上添加一个伪元素，absolute定位定到右下角，可是这样出现了三个问题：</p><p>一、怎么防止出现最后一行被横向拦腰截断<br>由于webkit私有属性，可以通过line-clamp控制行数我们不必担心这个问题，在其他浏览器中可以通过将height设置为line-height的整数倍避免这种情况。</p><p>二、怎样防止溢出区域字体被竖向截断<br>逃过了懒腰还没有逃过劈断，有一种方案是跟一类似的，我们只要控制好这块区域正好盖住整数倍的字宽就好了，不过还有一个问题就是单词的换行可能引起右侧不对齐，虽然我们的方案从盒子的角度来讲是真的在右下角判断溢出，但是给人的观感可能是稍微偏向右侧，为了防止这种行为，最好还是使用<code>word-break</code>强制地进行换行。</p><p>除此之外，还有常见的方案是把这个块的background-image设置为一个linear的渐变，达到左边缘模糊的效果，实现平稳过渡。</p><hr><p>延伸一下，关于word-break、word-wrap、hyphens实现换行。</p><p>简单说来，word-break:break-all可以控制是否单词内部拦腰截断，而word-wrap: break-word可以机智地实现根据单个单词断行。hyphens有点陌生，浏览器的支持仍然比较差，它可以像我们在书写英文一样加上一个连字符号。<br>另外white-space可能给人感觉也是用来实现同样的效果的，但是实际上他是控制原来的换行符如何工作的，是一种被动换行，而上述是一个主动换行。</p><p>三、最最重要的，怎么判断加不加这个溢出呢？</p><p>我们似乎没有任何可以判断是否溢出的方法（啪啪啪打脸了！）</p><p>来自segmentfault的方案，确实是没想到scrollWidth</p><pre><code class="javascript">$(selector).map(function() {    if (this.offsetWidth &lt; this.scrollWidth) {        // do whatever you want        //scrollWidth是原始的宽度，而offsetWidth是overflow：hidden之后的宽度    }});</code></pre><p>除了这种机智的方案，也可以通过计算字数和字体大小来判断，不过相比上面的方案，这种方法似乎没什么优势。</p>]]></content>
+    <content type="html"><![CDATA[<p>在移动端自适应上，文本的溢出处理没出问题时不容易察觉，一旦出了问题却表现地很明显。当然，移动端对于文本的控制也要结合rem来达到各个平台统一的效果。</p><p>最近发现<code>text-overflow</code>的表现非常不可控(实际上是根本没学会)，有时生效有时无效，为了彻底解决这个问题，查阅了一番资料，最终整理如下。<br><a id="more"></a></p><h2 id="单行文本"><a href="#单行文本" class="headerlink" title="单行文本"></a>单行文本</h2><pre><code class="css">text-overflow:ellipsis;overflow: hidden;white-space:nowrap;//神之white-space有啥用呢？去掉之后你就会发现它可以竖向扩展，不过奇妙的是对于单独的一行溢出还是会显示出省略号，分析在下边</code></pre><p>这是最普遍的用法，但是在实际应用时很多人会发现并不起效果。这是因为如果想要生效，必须设置width，否则无法判断到底满不满足溢出的条件。需要使用block(相当于隐式设置了宽度)或者inline-block加width，另外absolute会使display隐式变为block，也可以收到同样的奇效。</p><h2 id="多行文本-webkit"><a href="#多行文本-webkit" class="headerlink" title="多行文本-webkit"></a>多行文本-webkit</h2><p>以上的方案只能适用于单行文本，如果想要指定多行溢出，需要借助于<code>-webkit-line-clamp</code>,完整的css如下。</p><pre><code class="css">text-overflow:ellipsis;overflow: hidden;display: -webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;</code></pre><h2 id="非webkit多行文本？"><a href="#非webkit多行文本？" class="headerlink" title="非webkit多行文本？"></a>非webkit多行文本？</h2><p>可是除去webkit和blink(需要注意blink目前与webkit使用同样的前缀-webkit)，其他的浏览器怎么实现呢？</p><p>张鑫旭提出了一个float+负margin的方案，我认为最根本的思路跟下面的基本一致。<br>我们可以通过一种比较笨的方案，具体的思路是通过after在文本的父元素上添加一个伪元素，absolute定位定到右下角，可是这样出现了三个问题：</p><p>一、怎么防止出现最后一行被横向拦腰截断<br>由于webkit私有属性，可以通过line-clamp控制行数我们不必担心这个问题，在其他浏览器中可以通过将height设置为line-height的整数倍避免这种情况。</p><p>二、怎样防止溢出区域字体被竖向截断<br>逃过了懒腰还没有逃过劈断，有一种方案是跟一类似的，我们只要控制好这块区域正好盖住整数倍的字宽就好了，不过还有一个问题就是单词的换行可能引起右侧不对齐，虽然我们的方案从盒子的角度来讲是真的在右下角判断溢出，但是给人的观感可能是稍微偏向右侧，为了防止这种行为，最好还是使用<code>word-break</code>强制地进行换行。</p><p>除此之外，还有常见的方案是把这个块的background-image设置为一个linear的渐变，达到左边缘模糊的效果，实现平稳过渡。</p><hr><p>延伸一下，关于word-break、word-wrap、hyphens实现换行。</p><p>简单说来，word-break:break-all可以控制是否单词内部拦腰截断，而word-wrap: break-word可以机智地实现根据单个单词断行。hyphens有点陌生，浏览器的支持仍然比较差，它可以像我们在书写英文一样加上一个连字符号。<br>另外white-space可能给人感觉也是用来实现同样的效果的，但是实际上他是控制原来的换行符如何工作的，是一种被动换行，而上述是一个主动换行。</p><p>三、最最重要的，怎么判断加不加这个溢出呢？</p><p>我们似乎没有任何可以判断是否溢出的方法（啪啪啪打脸了！）</p><p>来自segmentfault的方案，确实是没想到scrollWidth</p><pre><code class="javascript">$(selector).map(function() {    if (this.offsetWidth &lt; this.scrollWidth) {        // do whatever you want        //scrollWidth是原始的宽度，而offsetWidth是overflow：hidden之后的宽度    }});</code></pre><p>除了这种机智的方案，也可以通过计算字数和字体大小来判断，不过相比上面的方案，这种方法似乎没什么优势。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;在移动端自适应上，文本的溢出处理没出问题时不容易察觉，一旦出了问题却表现地很明显。当然，移动端对于文本的控制也要结合rem来达到各个平台统一的效果。&lt;/p&gt;
-&lt;p&gt;最近发现&lt;code&gt;text-overflow&lt;/code&gt;的表现非常不可控，有时生效有时无效，为了彻底解决这
-      
+      &lt;p&gt;在移动端自适应上，文本的溢出处理没出问题时不容易察觉，一旦出了问题却表现地很明显。当然，移动端对于文本的控制也要结合rem来达到各个平台统一的效果。&lt;/p&gt;
+&lt;p&gt;最近发现&lt;code&gt;text-overflow&lt;/code&gt;的表现非常不可控(实际上是根本没学会)，有时生效有时无效，为了彻底解决这个问题，查阅了一番资料，最终整理如下。&lt;br&gt;
     
     </summary>
     
