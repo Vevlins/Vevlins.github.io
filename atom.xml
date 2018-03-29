@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://vevlins.github.io/"/>
-  <updated>2018-03-28T19:24:12.000Z</updated>
+  <updated>2018-03-29T07:52:29.000Z</updated>
   <id>https://vevlins.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>文本溢出处理的正确姿势</title>
+    <link href="https://vevlins.github.io/2018/03/29/%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E5%A4%84%E7%90%86%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/"/>
+    <id>https://vevlins.github.io/2018/03/29/文本溢出处理的正确姿势/</id>
+    <published>2018-03-29T06:25:19.000Z</published>
+    <updated>2018-03-29T07:52:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在移动端自适应上，文本的溢出处理没出问题时不容易察觉，一旦出了问题却表现地很明显。当然，移动端对于文本的控制也要结合rem来达到各个平台统一的效果。</p><p>最近发现<code>text-overflow</code>的表现非常不可控，有时生效有时无效，为了彻底解决这个问题，查阅了一番资料，最终整理如下。</p><h2 id="单行文本"><a href="#单行文本" class="headerlink" title="单行文本"></a>单行文本</h2><pre><code class="css">text-overflow:ellipsis;overflow: hidden;white-space:nowrap;//神之white-space有啥用呢？去掉之后你就会发现它可以竖向扩展，不过奇妙的是对于单独的一行溢出还是会显示出省略号，分析在下边</code></pre><p>这是最普遍的用法，但是在实际应用时很多人会发现并不起效果。这是因为如果想要生效，必须设置width，否则无法判断到底满不满足溢出的条件。需要使用block(相当于隐式设置了宽度)或者inline-block加width，另外absolute会使display隐式变为block，也可以收到同样的奇效。</p><h2 id="多行文本-webkit"><a href="#多行文本-webkit" class="headerlink" title="多行文本-webkit"></a>多行文本-webkit</h2><p>以上的方案只能适用于单行文本，如果想要指定多行溢出，需要借助于<code>-webkit-line-clamp</code>,完整的css如下。</p><pre><code class="css">text-overflow:ellipsis;overflow: hidden;display: -webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;</code></pre><h2 id="非webkit多行文本？"><a href="#非webkit多行文本？" class="headerlink" title="非webkit多行文本？"></a>非webkit多行文本？</h2><p>可是除去webkit和blink(需要注意blink目前与webkit使用同样的前缀-webkit)，其他的浏览器怎么实现呢？</p><p>张鑫旭提出了一个float+负margin的方案，我认为最根本的思路跟下面的基本一致。<br>我们可以通过一种比较笨的方案，具体的思路是通过after在文本的父元素上添加一个伪元素，absolute定位定到右下角，可是这样出现了三个问题：</p><p>一、怎么防止出现最后一行被横向拦腰截断<br>由于webkit私有属性，可以通过line-clamp控制行数我们不必担心这个问题，在其他浏览器中可以通过将height设置为line-height的整数倍避免这种情况。</p><p>二、怎样防止溢出区域字体被竖向截断<br>逃过了懒腰还没有逃过劈断，有一种方案是跟一类似的，我们只要控制好这块区域正好盖住整数倍的字宽就好了，不过还有一个问题就是单词的换行可能引起右侧不对齐，虽然我们的方案从盒子的角度来讲是真的在右下角判断溢出，但是给人的观感可能是稍微偏向右侧，为了防止这种行为，最好还是使用<code>word-break</code>强制地进行换行。</p><p>除此之外，还有常见的方案是把这个块的background-image设置为一个linear的渐变，达到左边缘模糊的效果，实现平稳过渡。</p><hr><p>延伸一下，关于word-break、word-wrap、hyphens实现换行。</p><p>简单说来，word-break:break-all可以控制是否单词内部拦腰截断，而word-wrap: break-word可以机智地实现根据单个单词断行。hyphens有点陌生，浏览器的支持仍然比较差，它可以像我们在书写英文一样加上一个连字符号。<br>另外white-space可能给人感觉也是用来实现同样的效果的，但是实际上他是控制原来的换行符如何工作的，是一种被动换行，而上述是一个主动换行。</p><p>三、最最重要的，怎么判断加不加这个溢出呢？</p><p>我们似乎没有任何可以判断是否溢出的方法（啪啪啪打脸了！）</p><p>来自segmentfault的方案，确实是没想到scrollWidth</p><pre><code class="javascript">$(selector).map(function() {    if (this.offsetWidth &lt; this.scrollWidth) {        // do whatever you want        //scrollWidth是原始的宽度，而offsetWidth是overflow：hidden之后的宽度    }});</code></pre><p>除了这种机智的方案，也可以通过计算字数和字体大小来判断，不过相比上面的方案，这种方法似乎没什么优势。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在移动端自适应上，文本的溢出处理没出问题时不容易察觉，一旦出了问题却表现地很明显。当然，移动端对于文本的控制也要结合rem来达到各个平台统一的效果。&lt;/p&gt;
+&lt;p&gt;最近发现&lt;code&gt;text-overflow&lt;/code&gt;的表现非常不可控，有时生效有时无效，为了彻底解决这
+      
+    
+    </summary>
+    
+      <category term="css" scheme="https://vevlins.github.io/categories/css/"/>
+    
+    
+      <category term="文本溢出" scheme="https://vevlins.github.io/tags/%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>图片自适应的五种可能</title>
@@ -64,11 +90,11 @@
   </entry>
   
   <entry>
-    <title>小红书图集错落九宫格实现方案</title>
+    <title>图集错落九宫格实现方案</title>
     <link href="https://vevlins.github.io/2018/03/27/%E5%B0%8F%E7%BA%A2%E4%B9%A6%E5%9B%BE%E9%9B%86%E9%94%99%E8%90%BD%E4%B9%9D%E5%AE%AB%E6%A0%BC%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/"/>
     <id>https://vevlins.github.io/2018/03/27/小红书图集错落九宫格实现方案/</id>
     <published>2018-03-27T08:59:41.000Z</published>
-    <updated>2018-03-28T16:02:36.000Z</updated>
+    <updated>2018-03-29T07:52:53.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近在用vue仿小红书的h5版，在界面上唯一比较让人头大的就是这个伪九宫格(不知道有没有专业的称呼，我就这样叫了)的图集了。</p><p>难点分析如下：</p><ul><li>实现图片宽高一致</li><li>尽量减少html标签</li><li>尽量不使用js</li><li>6n和12n情况下大图的左右位置不同</li><li>最后一部分凑不齐9块的排布方案</li></ul><a id="more"></a><p>小红书的效果如下：</p><p><img src="http://ozc9m7ly1.bkt.clouddn.com/www.xiaohongshu.com_page_brands_5a4384888000862471d1493d%28iPhone%206_7_8%20Plus%29.png" alt="小红书图集"></p><p>小红书自己的方案是把每一个伪九宫格区域分为竖向左右两块，通过js判断数量动态决定添加的顺序为大小还是小大。<br>这样做的缺点有二：</p><ul><li>增加了很多无关内容的标签嵌套</li><li>通过js进行计算导致逻辑繁琐</li></ul><p>尝试过标签嵌套和绝对定位加js，最终通过vw和float实现了效果。</p><pre><code class="css">.imgs div {  box-sizing: border-box;  background-size: cover;  width: 33.3vw;  height: 33.3vw;  padding: 1px;  background-clip:content-box;  background-position: center center;  float: left;}.imgs div:nth-of-type(6n-5){    width: 66.6vw;    float: right;    height: 66.6vw;}.imgs div:nth-of-type(12n-5){    float: left;}</code></pre><pre><code class="html">    &lt;div class=&quot;imgs&quot;&gt;        &lt;div v-for=&quot;img in imgs&quot; :style=&#39;`background-image: url(${img})`&#39;&gt;&lt;/div&gt;    &lt;/div&gt;</code></pre>]]></content>
     
@@ -626,35 +652,6 @@ if (canvas.getContext){
 } else {
 }
 &lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-      <category term="html" scheme="https://vevlins.github.io/categories/html/"/>
-    
-    
-      <category term="笔记" scheme="https://vevlins.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="教程" scheme="https://vevlins.github.io/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="html5" scheme="https://vevlins.github.io/tags/html5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML5完全学习笔记二：events全解</title>
-    <link href="https://vevlins.github.io/2017/12/23/HTML5%E5%AE%8C%E5%85%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C%EF%BC%9Aevents%E5%85%A8%E8%A7%A3/"/>
-    <id>https://vevlins.github.io/2017/12/23/HTML5完全学习笔记二：events全解/</id>
-    <published>2017-12-23T10:56:55.000Z</published>
-    <updated>2017-12-23T10:58:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="HTML5完全学习笔记二：events全解"><a href="#HTML5完全学习笔记二：events全解" class="headerlink" title="HTML5完全学习笔记二：events全解"></a>HTML5完全学习笔记二：events全解</h1><h2 id="窗口事件"><a href="#窗口事件" class="headerlink" title="窗口事件"></a>窗口事件</h2><p>适用于body标签</p><ul><li>onafterprint<blockquote><p>注意： 目前只有 Internet Explorer 和 Firefox 浏览器支持 onafterprint 事件属性。在 IE 浏览器中, onafterprint 属性在打印对话框之前执行Javascript而不是之后。//?是否意味着在ie中onafterprint=onberforeprint</p><a id="more"></a></blockquote></li><li>onbeforeprint</li><li>onbeforeunload    <blockquote><p> 在onload之前执行，可以阻止unload的执行，在页面关闭页面或者刷新时执行</p></blockquote></li><li>onblur</li><li>onerror<blockquote><p>此外，onerror方法还提供了三个参数用来确定错误确切的信息，分别是：1）message：一个字符串，声明了出现的错误的信息(不同的浏览器中返回的消息内容略有差异)。2）url：一个字符串，声明了出现错误的文档的URL。3）line：一个数字，声明了出现错误的代码行的行号。</p></blockquote></li></ul><blockquote><p>当JavaScript运行时错误（包括语法错误）发生时，window会触发一个ErrorEvent接口的error事件，并执行window.onerror()。当一项资源（如<img>或<script>）加载失败，加载资源的元素会触发一个Event接口的error事件，并执行该元素上的onerror()处理函数。这些error事件不会向上冒泡到window，不过（至少在Firefox中）能被单一的window.addEventListener捕获。</p><ul><li>onfocus</li><li>onhaschange<br>锚改变时触发，有两个属性newURL和oldURL。</li><li>onload<br>onload 通常用于 <body> 元素，在页面完全载入后(包括图片、css文件等等。)执行脚本代码。</li><li>onmessage<br>Web Workers </li><li>onoffline</li><li>ononline<br>使用navigator.onLine 也可以检测是否在线</li><li>onpagehide</li><li>onpageshow<br>onpageshow 事件类似于 onload 事件，onload 事件在页面第一次加载时触发， onpageshow 事件在每次加载页面时触发，即 onload 事件在页面从浏览器缓存中读取时不触发。</li><li>onpopstate<br>每当处于激活状态的历史记录条目发生变化时,popstate事件就会在对应window对象上触发. 如果当前处于激活状态的历史记录条目是由history.pushState()方法创建,或者由history.replaceState()方法修改过的, 则popstate事件对象的state属性包含了这个历史记录条目的state对象的一个拷贝.调用history.pushState()或者history.replaceState()不会触发popstate事件. popstate事件只会在浏览器某些行为下触发, 比如点击后退、前进按钮(或者在JavaScript中调用history.back()、history.forward()、history.go()方法).当网页加载时,各浏览器对popstate事件是否触发有不同的表现,Chrome 和 Safari会触发popstate事件, 而Firefox不会.</li><li>onredo</li><li>onresize</li><li>onstorage<br>web存储区域（DOM Storage）更新时触发onstorage事件。如果变更了Storage对象的属性值，或者调用了setItem()、removeItem()等方法，就会触发onstorage事件。//这里的或者是什么意思，如果调用setitem但并不更改值只是设定为和之前的值一样，是否会触发这个事件。</li><li>onundo</li><li>onunload</li></ul></blockquote><p>//有些类似于生命周期函数或者就是生命周期函数？</p><h2 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h2><p>适用于在form内部的所有元素</p><ul><li>onblur</li><li>onchange</li><li>oncontextmenu<blockquote><p>此事件会发生在没有阻止右键事件的情况下而且这不取决于此元素是否拥有了”contextmenu”属性.</p></blockquote></li><li>onfocus</li><li>onformchange</li><li>onforminput</li><li>oninput</li><li>oninvalid</li><li>onselect</li><li>onsubmit</li></ul><h2 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h2><ul><li>onkeydown</li><li>onkeypress</li><li>onkeyup</li></ul><h2 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h2><ul><li>onclick</li><li>ondbclick</li><li>ondrag</li><li>ondragend</li><li>ondragenter</li><li>ondragleave</li><li>ondragover</li><li>ondragstart</li><li>ondrop</li><li>onmousedown</li><li>onmousemove</li><li>onmouseout</li><li>onmouseover</li><li>onmouseup</li><li>onmousewheel</li><li>onscrolll</li></ul><h2 id="多媒体事件"><a href="#多媒体事件" class="headerlink" title="多媒体事件"></a>多媒体事件</h2><ul><li>onabort</li><li>oncanplay</li><li>oncanplaythrough</li><li>ondurationchange</li><li>onemptied</li><li>onended</li><li>onerror</li><li>onloadeddata</li><li>onloadedmetadata</li><li>onloadstart</li><li>onpause</li><li>onplay</li><li>onplaying</li><li>onprogress</li><li>onratechange</li><li>onreadystatechange</li><li>onseeked</li><li>onseeking</li><li>onstalled</li><li>onsuspend</li><li>ontimeupdate</li><li>onvolumechage</li><li>onwaiting</li></ul><h2 id="其他事件"><a href="#其他事件" class="headerlink" title="其他事件"></a>其他事件</h2><ul><li>onshow：menu显示时触发，兼容性不佳</li><li>ontoggle：打开或关闭details时触发</li></ul><p>参考资料：</p><ul><li><a href="http://www.runoob.com/tags/ref-eventattributes.html">HTML 事件 | 菜鸟教程</a></li><li><a href="https://www.cnblogs.com/arinna/archive/2011/08/08/2130629.html">JavaScript中的onerror事件 - arinna - 博客园</a></li></ul></script></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;HTML5完全学习笔记二：events全解&quot;&gt;&lt;a href=&quot;#HTML5完全学习笔记二：events全解&quot; class=&quot;headerlink&quot; title=&quot;HTML5完全学习笔记二：events全解&quot;&gt;&lt;/a&gt;HTML5完全学习笔记二：events全解&lt;/h1&gt;&lt;h2 id=&quot;窗口事件&quot;&gt;&lt;a href=&quot;#窗口事件&quot; class=&quot;headerlink&quot; title=&quot;窗口事件&quot;&gt;&lt;/a&gt;窗口事件&lt;/h2&gt;&lt;p&gt;适用于body标签&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;onafterprint&lt;blockquote&gt;
-&lt;p&gt;注意： 目前只有 Internet Explorer 和 Firefox 浏览器支持 onafterprint 事件属性。在 IE 浏览器中, onafterprint 属性在打印对话框之前执行Javascript而不是之后。//?是否意味着在ie中onafterprint=onberforeprint&lt;/p&gt;
     
     </summary>
     
