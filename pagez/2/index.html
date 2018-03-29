@@ -90,6 +90,64 @@
     
         <article class="post">
             <h1>
+                <a class="title" href="/2018/03/15/ES6笔记/"> 
+                    ES6笔记 
+                </a>
+            </h1>
+                        <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2018-03-15   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a></li></ul>
+            </div>
+            <div class="content">
+                
+                <p>根据阮一峰《ECMAScript 6 入门》整理。</p>
+<h2 id="let和const命令"><a href="#let和const命令" class="headerlink" title="let和const命令"></a>let和const命令</h2><h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><h4 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h4><p>let是块级作用域变量，声明的变量只在<code>{}</code>内有效。<br>其适用于for循环内，特别需要注意的是：for循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。</p>
+<pre><code class="javascript">for (let i = 0; i &lt; 3; i++) {
+  let i = &#39;abc&#39;;
+  console.log(i);
+}
+</code></pre>
+<h4 id="没有变量提升"><a href="#没有变量提升" class="headerlink" title="没有变量提升"></a>没有变量提升</h4><pre><code class="javascript">// var 的情况
+console.log(foo); // 输出undefined
+var foo = 2;
+
+// let 的情况
+console.log(bar); // 报错ReferenceError
+let bar = 2;
+</code></pre>
+<h3 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h3><p>只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。存在全局变量tmp，但是块级作用域内let又声明了一个局部变量tmp，导致后者绑定这个块级作用域，所以在let声明变量前，对tmp赋值会报错。</p>
+<pre><code class="javascript">var tmp = 123;
+
+if (true) {
+  tmp = &#39;abc&#39;; // ReferenceError
+  let tmp;
+}
+</code></pre>
+                
+            </div>
+            <div class="continue">
+            <a href="/2018/03/15/ES6笔记/">
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+        </article>
+        
+        <article class="post">
+            <h1>
                 <a class="title" href="/2018/03/14/面试要点整理/"> 
                     面试要点整理 
                 </a>
@@ -258,58 +316,6 @@
             </div>
             <div class="continue">
             <a href="/2018/01/11/计算机网络基础/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2018/01/09/Sass入门/"> 
-                    Sass入门 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2018-01-09   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/sass/">sass</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sass/">sass</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <h1 id="Sass入门"><a href="#Sass入门" class="headerlink" title="Sass入门"></a>Sass入门</h1><p>编写css的工具主要有less、sass、stylus.具体谁优谁略很难定论.昨天看了下less,感觉有些用法理解起来很奇怪,而且功能上比sass稍弱一点,所以决定使用sass作为以后编写css的工具.sass和scss是一种东西的两种写法,scss与css的写法一致,而sass需要缩进,无分号等特性.以下介绍的是scss的写法.</p>
-<h2 id="CIL"><a href="#CIL" class="headerlink" title="CIL"></a>CIL</h2><p>安装</p>
-<pre><code class="bash">gem install sass
-</code></pre>
-<p>编译风格:</p>
-<ul>
-<li>nested：嵌套缩进的css代码，它是默认值。</li>
-<li>expanded：没有缩进的、扩展的css代码。</li>
-<li>compact：简洁格式的css代码。</li>
-<li>compressed：压缩后的css代码。</li>
-</ul>
-<p>监听:</p>
-<pre><code class="bash">　// watch a file
-　　sass --watch input.scss:output.css
-　　// watch a directory
-　　sass --watch app/sass:public/stylesheets
-</code></pre>
-                
-            </div>
-            <div class="continue">
-            <a href="/2018/01/09/Sass入门/">
             继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
             </a>
             </div>

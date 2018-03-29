@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>
         
-            Sosuke
+            由一道奇奇怪怪的js加法引发的
         
     </title>
     <link rel="icon" href="/img/favicon.png"/>
@@ -86,15 +86,13 @@
     </nav>
 </header>
     <main class="main">
-        <section class="posts">
-    
         <article class="post">
             <h1>
                 <a class="title" href="/2018/03/29/由一道奇奇怪怪的js加法引发的/"> 
                     由一道奇奇怪怪的js加法引发的 
                 </a>
             </h1>
-                        <div class="meta">
+            <div class="meta">
                 <a class="date"> 
                     <i class="fa fa-calendar" aria-hidden="true"></i>                    
                     2018-03-29   
@@ -112,8 +110,10 @@
                 
                     <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/toString/">toString</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/valueof/">valueof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原始类型/">原始类型</a></li></ul>
             </div>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#"><span class="toc-list-text">{}+[]</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#-1"><span class="toc-list-text">[]+{}</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#valueOf-NaN"><span class="toc-list-text">valueOf</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#toString-NaN"><span class="toc-list-text">toString</span></a></li></ol></li></ol>
+</div>
             <div class="content">
-                
                 <p>当当～当当！</p>
 <p><code>{}+[]和[]+{}</code>这个问题眼熟吗？</p>
 <p>说实话第一眼看起来就像是什么老油条搜肠刮肚然后狡黠一笑写出来坑人的，仿佛是茴香豆的茴字有几种写法属于同一类的问题。</p>
@@ -172,177 +172,91 @@
 <p>对于问题二，通过上述例子，也可以猜得出来，这个toString应当是各个对象自己写的了，如果没有自己写，他会继承Object直接返回”[object Object]”。而对于Array这种，虽然自己定义了，但并不能表现自己的类型，所以也不能使用。</p>
 <p>再回到问题本身，两边分别变成了””+”[object Object]”。结果不必多说了。</p>
 
-                
             </div>
-            <div class="continue">
-            <a href="/2018/03/29/由一道奇奇怪怪的js加法引发的/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
+          
+           
+            <div class="copyright">
+                <div class="name">
+                    <a>本文作者:</a>
+                    <a>Sōsuke</a>
+                </div>
+                <div class="link">
+                    <a>本文链接:</a>
+                    <a class="permalink" href="https://vevlins.github.io/2018/03/29/由一道奇奇怪怪的js加法引发的/">https://vevlins.github.io/2018/03/29/由一道奇奇怪怪的js加法引发的/</a>
+                </div>
+                <div class="license">
+                    <a>版权声明:</a>
+                    <a>本博客所有文章除特别声明外，均采用许可协议 CC BY-NC-SA 3.0 CN。转载请注明出处！</a>
+                </div>
             </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2018/03/29/文本溢出处理的正确姿势/"> 
-                    文本溢出处理的正确姿势 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2018-03-29   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/文本溢出/">文本溢出</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <p>在移动端自适应上，文本的溢出处理没出问题时不容易察觉，一旦出了问题却表现地很明显。当然，移动端对于文本的控制也要结合rem来达到各个平台统一的效果。</p>
-<p>最近发现<code>text-overflow</code>的表现非常不可控(实际上是根本没学会)，有时生效有时无效，为了彻底解决这个问题，查阅了一番资料，最终整理如下。<br>
-                
-            </div>
-            <div class="continue">
-            <a href="/2018/03/29/文本溢出处理的正确姿势/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2018/03/29/图片自适应的五种可能/"> 
-                    图片自适应的五种可能 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2018-03-29   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/自适应/">自适应</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <p>在自适应问题上，图片的自适应可以说是最关键了。</p>
-<p>在仿做小红书的过程中，我也遇到了这个问题，小红书作为一个商品展示性的社区，商品图片的自适应是很重要的。在放眼望去都是图片的页面里，一两个变形可能会极大地影响用户的感受。</p>
-<p>我在两个地方遇到了图片适应的问题，一个是品牌精选的卡片，对于宽固定，图片高度不规则并且比容器本身要大的情况；还有一个是在做九宫格要求图片宽高一致。<br>
-                
-            </div>
-            <div class="continue">
-            <a href="/2018/03/29/图片自适应的五种可能/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2018/03/28/瀑布流实现方案探讨/"> 
-                    瀑布流实现方案探讨 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2018-03-28   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/瀑布流/">瀑布流</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <p>最近在仿小红书时又遇到了一个问题，就是笔记的瀑布流展示。</p>
-<p>我采用的是张鑫旭在博客中提到的一种基于css3新的<code>column-count</code>特性的方案，这种方案本来是我最喜欢的，因为不需要额外的标签嵌套，也没有js参与布局，css写起来也是简洁又优雅。但是在使用safari调试页面时发现了一个奇怪的问题，使我最终决定放弃这种方案。<br>
-                
-            </div>
-            <div class="continue">
-            <a href="/2018/03/28/瀑布流实现方案探讨/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2018/03/27/小红书图集错落九宫格实现方案/"> 
-                    图集错落九宫格实现方案 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2018-03-27   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/九宫格/">九宫格</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片/">图片</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <p>最近在用vue仿小红书的h5版，在界面上唯一比较让人头大的就是这个伪九宫格(不知道有没有专业的称呼，我就这样叫了)的图集了。</p>
-<p>难点分析如下：</p>
+            
+
+          
+
+
+</article>
+
+
+<div class="tip">
+<button class="tip-btn">
+    打赏
+</button>
+<div class="tip-img">
 <ul>
-<li>实现图片宽高一致</li>
-<li>尽量减少html标签</li>
-<li>尽量不使用js</li>
-<li>6n和12n情况下大图的左右位置不同</li>
-<li>最后一部分凑不齐9块的排布方案</li>
+    
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
+ 
+<li>
+    <img src="/img/qrcode.jpeg"></img>
+</li>
+
 </ul>
-                
-            </div>
-            <div class="continue">
-            <a href="/2018/03/27/小红书图集错落九宫格实现方案/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-</section>
+</div>
+</div>
 
-  <nav class="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/pagez/2/">2</a><a class="page-number" href="/pagez/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/pagez/5/">5</a><a class="extend next" rel="next" href="/pagez/2/">下一页 &raquo;</a>
-  </nav>
+<div class="more">
 
+<div></div>
+
+    <div class="next">
+    <a href="/2018/03/29/文本溢出处理的正确姿势/"> 文本溢出处理的正确姿势 </a>
+    </div>
+    
+</div>
+
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_weixin fa fa-weixin" data-cmd="weixin" title="分享到微信" style="color:#1cbd8f">
+</a>
+<a href="#" class="bds_tsina fa fa-weibo" data-cmd="tsina" title="分享到新浪微博" style="color:#ff6363">
+</a>
+<a href="#" class="bds_twi fa fa-twitter" data-cmd="twi" title="分享到Twitter" style="color:#00A7EB">
+</a>
+<a href="#" class="bds_fbook fa fa-facebook" data-cmd="fbook" title="分享到Facebook" style="color:#00A7EB">
+</a>
+</div>
+<script>
+window._bd_share_config={
+    "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},
+    "share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='../../../../../static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+ 
+<div id="comments"></div>
+
+<script>
+    var gitment = new Gitment({
+    id: "Thu Mar 29 2018 23:35:31 GMT+0800",
+    owner: "Vevlins",
+    repo: "Vevlins.github.io",
+    oauth: {
+      client_id:"8d83609a651e972e308d",
+      client_secret: "37e40c89a47e957f654e86f71c5caaccad0774de",
+    }
+  })
+  gitment.render('comments')
+</script>
     </main>
     <a class="not-found">not found!</a>
     <div class="search-items">
