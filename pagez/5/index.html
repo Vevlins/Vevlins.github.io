@@ -90,6 +90,94 @@
     
         <article class="post">
             <h1>
+                <a class="title" href="/2017/12/23/HTML5完全学习笔记四：api全解/"> 
+                    HTML5完全学习笔记四：api全解 
+                </a>
+            </h1>
+                        <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2017-12-23   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+            </div>
+            <div class="content">
+                
+                <h1 id="HTML5完全学习笔记四：api全解"><a href="#HTML5完全学习笔记四：api全解" class="headerlink" title="HTML5完全学习笔记四：api全解"></a>HTML5完全学习笔记四：api全解</h1><h2 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h2><p>地理位置 API 通过 navigator.geolocation 提供。默认不开启,需要请求.<br>Geolocation API 的数据来源可能是 GPS、IP 地址、RFID、WiFi、蓝牙 MAC 地址、GSM/CDMA 卡 ID 等。</p>
+<p>方法如下:</p>
+<ul>
+<li>Geolocation.getCurrentPosition():获取位置返回position对象</li>
+</ul>
+<blockquote>
+<p>这会异步地请求获取用户位置，并查询定位硬件来获取最新信息。当定位被确定后，定义的回调函数就会被执行。您可以选择性地提供第二个回调函数，当有错误时会被执行。第三个参数也是可选的，您可以通过该对象参数设定最长可接受的定位返回时间、等待请求的时间和是否获取高精度定位。</p>
+</blockquote>
+                
+            </div>
+            <div class="continue">
+            <a href="/2017/12/23/HTML5完全学习笔记四：api全解/">
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+        </article>
+        
+        <article class="post">
+            <h1>
+                <a class="title" href="/2017/12/23/HTML5完全学习笔记三：canvas全解/"> 
+                    HTML5完全学习笔记三：canvas全解 
+                </a>
+            </h1>
+                        <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2017-12-23   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+            </div>
+            <div class="content">
+                
+                <h1 id="HTML5完全学习笔记三：canvas全解"><a href="#HTML5完全学习笔记三：canvas全解" class="headerlink" title="HTML5完全学习笔记三：canvas全解"></a>HTML5完全学习笔记三：canvas全解</h1><p>Canvas用于通过js绘制图片和动画。最早由apple引入webkit。</p>
+<p>Canvas元素只有width和height属性，默认情况下的值为300*150.该元素可以使用CSS来定义大小，但在绘制时图像会伸缩以适应它的框架尺寸：如果CSS的尺寸与初始画布的比例不一致，它会出现扭曲。尽量使用width和height来设定canvas的形状大小而非css。</p>
+<h2 id="getContext"><a href="#getContext" class="headerlink" title="getContext"></a>getContext</h2><p>访问绘图上下文，检测是否支持canvas也可以通过检测getcontext。</p>
+<pre><code>var canvas = document.getElementById(&#39;tutorial&#39;);
+
+if (canvas.getContext){
+  var ctx = canvas.getContext(&#39;2d&#39;);
+} else {
+}
+</code></pre>
+                
+            </div>
+            <div class="continue">
+            <a href="/2017/12/23/HTML5完全学习笔记三：canvas全解/">
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+        </article>
+        
+        <article class="post">
+            <h1>
                 <a class="title" href="/2017/12/23/HTML5完全学习笔记二：events全解/"> 
                     HTML5完全学习笔记二：events全解 
                 </a>
@@ -317,85 +405,10 @@
             </div>
         </article>
         
-        <article class="post">
-            <h1>
-                <a class="title" href="/2017/12/14/Dillinger/"> 
-                    Dillinger 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-14   
-                </a>
-                
-                
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dillinger/">Dillinger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Online/">Online</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <h1 id="Dillinger"><a href="#Dillinger" class="headerlink" title="Dillinger"></a>Dillinger</h1><p><a href="https://nodesource.com/products/nsolid" target="_blank" rel="noopener"><img src="http://cdn2.jianshu.io/assets/web/web-note-ad-1-10f08e404d3887d2d45a4bc8f1831403.png" alt="N|Solid"></a></p>
-<p>Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.</p>
-<ul>
-<li>Type some Markdown on the left</li>
-<li>See HTML in the right</li>
-<li>Magic </li>
-</ul>
-                
-            </div>
-            <div class="continue">
-            <a href="/2017/12/14/Dillinger/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2017/12/14/欢迎使用MWeb/"> 
-                    欢迎使用MWeb 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-14   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MWeb/">MWeb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <h1 id="欢迎使用-MWeb"><a href="#欢迎使用-MWeb" class="headerlink" title="欢迎使用 MWeb"></a>欢迎使用 MWeb</h1><p>首先介绍一下 MWeb 是什么，MWeb 是专业的 Markdown 写作、记笔记、静态博客生成软件。</p>
-<p>然后这里<strong>重点说明</strong>一下：MWeb 有<strong>两个模式</strong>，外部模式和文档库模式。外部模式中把本地硬盘或 Dropbox 等网盘的文件夹引入，就可以使用 MWeb 的拖拽、粘贴插入图片、图床等特色功能。文档库模式设计为用于记笔记和静态博客生成。对于有<strong>同步和协作需求</strong>的朋友，请使用外部模式！使用视图菜单或者快捷键 <code>CMD + E</code> 可以打开外部模式，<code>CMD + L</code> 可以打开文档库。</p>
-                
-            </div>
-            <div class="continue">
-            <a href="/2017/12/14/欢迎使用MWeb/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
 </section>
 
   <nav class="page-nav">
-    <a class="extend prev" rel="prev" href="/pagez/4/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/pagez/3/">3</a><a class="page-number" href="/pagez/4/">4</a><span class="page-number current">5</span>
+    <a class="extend prev" rel="prev" href="/pagez/4/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/pagez/3/">3</a><a class="page-number" href="/pagez/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/pagez/6/">6</a><a class="extend next" rel="next" href="/pagez/6/">下一页 &raquo;</a>
   </nav>
 
     </main>
