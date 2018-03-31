@@ -90,6 +90,43 @@
     
         <article class="post">
             <h1>
+                <a class="title" href="/2018/01/05/游戏策划案-说想法更合适-社交网络/"> 
+                    游戏策划-社交网络 
+                </a>
+            </h1>
+                        <div class="meta">
+                <a class="date"> 
+                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
+                    2018-01-05   
+                </a>
+                
+                <a class="category">
+                    <i class="fa fa-th" aria-hidden="true"></i>  
+                </a>
+               
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/随感/">随感</a></li></ul>
+                
+                <a class="tag">
+                    <i class="fa fa-tags" aria-hidden="true"></i>  
+                </a>
+                
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/哲学/">哲学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/感想/">感想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏/">游戏</a></li></ul>
+            </div>
+            <div class="content">
+                
+                <h1 id="游戏策划-《社交网络》"><a href="#游戏策划-《社交网络》" class="headerlink" title="游戏策划-《社交网络》"></a>游戏策划-《社交网络》</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h2><p>这不像是一个游戏策划案,更像是一篇对人性探讨的哲学向论文.</p>
+<h2 id="游戏概述"><a href="#游戏概述" class="headerlink" title="游戏概述:"></a>游戏概述:</h2><p>人本思想随着资本主义遍布全球.一句“我不在乎大国崛起,我只在乎小民尊严.”将所有人引导到了一个现实问题的岔路口上:做一个精致的利己主义者还是一个仁义道德的卫道士?<br>
+                
+            </div>
+            <div class="continue">
+            <a href="/2018/01/05/游戏策划案-说想法更合适-社交网络/">
+            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+            </div>
+        </article>
+        
+        <article class="post">
+            <h1>
                 <a class="title" href="/2017/12/30/CSS3完全学习笔记三-BFC、IFC、GFC、FFC/"> 
                     CSS3完全学习笔记三:BFC、IFC、GFC、FFC 
                 </a>
@@ -302,45 +339,6 @@
             </div>
             <div class="continue">
             <a href="/2017/12/25/CSS3完全学习笔记一-选择器/">
-            继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </a>
-            </div>
-        </article>
-        
-        <article class="post">
-            <h1>
-                <a class="title" href="/2017/12/25/http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT/"> 
-                    http无状态和鉴权解决方案:cookie、session、token、oauth2及JWT 
-                </a>
-            </h1>
-                        <div class="meta">
-                <a class="date"> 
-                    <i class="fa fa-calendar" aria-hidden="true"></i>                    
-                    2017-12-25   
-                </a>
-                
-                <a class="category">
-                    <i class="fa fa-th" aria-hidden="true"></i>  
-                </a>
-               
-                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li></ul>
-                
-                <a class="tag">
-                    <i class="fa fa-tags" aria-hidden="true"></i>  
-                </a>
-                
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/session/">session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-            </div>
-            <div class="content">
-                
-                <h1 id="http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT"><a href="#http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT" class="headerlink" title="http无状态和鉴权解决方案:cookie、session、token、oauth2及JWT"></a>http无状态和鉴权解决方案:cookie、session、token、oauth2及JWT</h1><p>http协议本身是无状态的,但是在实际的web开发中常有一些操作需要有状态.比如想要访问一些私人访问权限的文章,或者这种操作需要明确当前用户身份.</p>
-<p>显然,最简单的方案就是每次都发送账户和密码,但是这样重复操作用用户并不友好,对服务器页增添了额外的压力.为了解决无状态带来的鉴权问题,一般有以下几种解决方案:cookie、session、token.至于标题中提及的outh2、jwt本质上也是token方案.</p>
-<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>Cookie是储存在客户端的一串字符,一般说来大小不超过4kb.比如我们常见的记住密码功能,或者一些基于之前输入的提醒和默认配置,就是通过cookie来实现的,cookie简单说来就是一种本地存储方法.但是这里存储的信息常用来进行鉴权操作.cookie只能保存文本信息,浏览器可以禁止cookie.cookie的期限可以被自由设定,可以是仅仅一次浏览起效,也可以长达一年.如果是短期的,那么这些信息会被存储在内存中,如果是长期则会存储在硬盘上.cookie的起效范围是路径下的所有子路径.不允许其他来源的访问.</p>
-<p>单纯的采用cookie来认证身份会带来一个比较麻烦的问题,就是伪造比较容易.因为这样处理,cookie中必然要带有身份信息,但是服务器也要解析这个身份信息,所以必然要在原理上支持双向的编码和解码,那么这个信息很容易被破解和进一步伪造.想一想,如果想要解决这个问题,我们常用的方案应该是加一个secret,而这个secret应该是放在服务器上的,服务器返回这样一个<code>带有secret编码的字符串</code>,而在服务器端再带上这个secret反向解密,如此一来,问题不就解决了吗?确实如此,但是这不代表cookie就安全,因为这已经不叫cookie了,而是我们要讲的第二个对象:session.<br>
-                
-            </div>
-            <div class="continue">
-            <a href="/2017/12/25/http无状态和鉴权解决方案-cookie、session、token、oauth2及JWT/">
             继续阅读            <i class="fa fa-angle-right" aria-hidden="true"></i>
             </a>
             </div>
